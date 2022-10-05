@@ -33,4 +33,5 @@ page {
 
 .more-link {
   text-decoration-line: underline;
+  color:#FD5200;
 }

@@ -29,6 +29,12 @@ Page({
 
   },
 
+  goToFAQ() {
+    wx.switchTab({
+      url: '/pages/admin/faq'
+    })
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */

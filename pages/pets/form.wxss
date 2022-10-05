@@ -1,1 +1,33 @@
 /* pages/pets/form.wxss */
+.picker{
+  padding: 16rpx;
+}
+.main {
+background: #ffffff;
+display: flex;
+justify-content: center;
+margin-top: 40rpx;
+height: 100vh;
+font-family: Montserrat;
+}
+
+.form-box {
+color: #404040;
+font-size: 12pt;
+}
+
+.form-item {
+margin-bottom: 10rpx;
+}
+
+input {
+background-color: #F0EFEF;
+border-radius: 120rpx;
+padding: 14rpx;
+margin-top: 14rpx;
+}
+textarea {
+background-color: #F0EFEF;
+border-radius: 80rpx;
+margin-top: 14rpx;
+}

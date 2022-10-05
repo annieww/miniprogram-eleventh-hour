@@ -6,7 +6,7 @@
     <view class="ehr-heading">Eleventh Hour Rescues</view>
     <view class="ehr-title">about us</view>
     <view class="ehr-content">We are a small organization of rescuers living in Shanghai, China. We come from all over the world, and met one another through our individual work in the rescue community.</view>
-    <view class="more-link">more</view>
+    <view bindtap="goToFAQ" class="more-link">more</view>
   </view>
 </view>
 
