@@ -36,7 +36,7 @@
       "selectedIconPath": "images/paw-active.png"
     }, {
       "pagePath": "pages/pets/form",
-      "text": "Submit",
+      "text": "Post",
       "iconPath": "images/add.png",
       "selectedIconPath": "images/add-active.png"
     }, {

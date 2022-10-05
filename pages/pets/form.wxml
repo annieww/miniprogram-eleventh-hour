@@ -1,4 +1,8 @@
 <!--pages/pets/form.wxml-->
+<view class="header-content">
+  <view class="page-title">pet information</view>
+</view>
+
 <view class="main">
   <view class="form-box">
     <form bindsubmit="save">
@@ -33,7 +37,7 @@
       <view class="form-item" style="display: flex;" >
         <picker bindchange="bindPickerChange" data-field="sex" value="{{sexIndex}}" range="{{sexes}}">
           <view class="picker">
-            I am a ：{{formData.sex}} 
+            I am a：{{formData.sex}} 
           </view>
         </picker>
         <picker bindchange="bindPickerChange" data-field="species" value="{{speciesIndex}}" range="{{speciess}}">
@@ -46,13 +50,13 @@
       <view class="form-item">
         <picker bindchange="bindPickerChange" data-field="fur_type" value="{{furTypeIndex}}" range="{{fur_types}}">
           <view class="picker">
-            I wear ：{{formData.fur_type}} coat
+            I wear：{{formData.fur_type}} coat
           </view>
         </picker>
       </view>
 
-      <view class="form-item">
-          <button style="background-color: #00B5A3; color:white;" type="positive" formType="submit">Save</button>          
+      <view class="form-btn">
+          <button style="background-color: #00B5A3; color:white;" type="positive" formType="submit">submit</button>          
       </view>
     </form>
   </view>

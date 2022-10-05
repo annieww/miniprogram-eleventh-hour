@@ -1,33 +1,52 @@
 /* pages/pets/form.wxss */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.page-title {
+  font-size: 40rpx;
+  color: #00B5A3;
+  font-weight: bold;
+}
+
 .picker{
-  padding: 16rpx;
+    padding: 16rpx;
 }
 .main {
-background: #ffffff;
-display: flex;
-justify-content: center;
-margin-top: 40rpx;
-height: 100vh;
-font-family: Montserrat;
+  background: #ffffff;
+  margin-top: 40rpx;
+  height: 100vh;
+  padding: 20rpx 80rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  font-family: Montserrat;
 }
 
 .form-box {
-color: #404040;
-font-size: 12pt;
+  color: #404040;
+  font-size: 12pt;
+  padding-bottom: 40rpx;
 }
 
 .form-item {
-margin-bottom: 10rpx;
+  margin-bottom: 20rpx;
 }
 
 input {
-background-color: #F0EFEF;
-border-radius: 120rpx;
-padding: 14rpx;
-margin-top: 14rpx;
+  background-color: #F0EFEF;
+  border-radius: 120rpx;
+  padding: 20rpx;
+  margin-top: 14rpx;
 }
 textarea {
-background-color: #F0EFEF;
-border-radius: 80rpx;
-margin-top: 14rpx;
+  background-color: #F0EFEF;
+  border-radius: 80rpx;
+  margin-top: 14rpx;
+}
+
+.form-btn {
+  margin: 40rpx;
 }
