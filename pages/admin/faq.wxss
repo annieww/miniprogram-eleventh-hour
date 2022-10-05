@@ -1,0 +1,14 @@
+/* pages/admin/faq.wxss */
+.header {
+  height: 250rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.page-title {
+  font-size: 40rpx;
+  color: #FD5200;
+  font-weight: bold;
+}

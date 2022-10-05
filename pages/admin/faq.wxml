@@ -1,0 +1,4 @@
+<!--pages/admin/faq.wxml-->
+<view class="header">
+  <view class="page-title">frequently asked questions</view>
+</view>

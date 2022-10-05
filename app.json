@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/pets/index",
+    "pages/pets/show",
+    "pages/pets/form",
+    "pages/admin/profile",
+    "pages/admin/faq",
+    "pages/user/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Eleventh Hour Rescues",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#808080",
+    "selectedColor": "#FD5200",
+    "list": [{
+      "pagePath": "pages/pets/index",
+      "text": "Home",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home-active.png"
+    }, {
+      "pagePath": "pages/admin/faq",
+      "text": "FAQ",
+      "iconPath": "images/faq.png",
+      "selectedIconPath": "images/faq-active.png"
+    }, {
+      "pagePath": "pages/user/profile",
+      "text": "My Application",
+      "iconPath": "images/paw.png",
+      "selectedIconPath": "images/paw-active.png"
+    }, {
+      "pagePath": "pages/pets/form",
+      "text": "Submit",
+      "iconPath": "images/add.png",
+      "selectedIconPath": "images/add-active.png"
+    }, {
+      "pagePath": "pages/admin/profile",
+      "text": "Admin",
+      "iconPath": "images/admin.png",
+      "selectedIconPath": "images/admin-active.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,25 @@
+<!--pages/admin/profile.wxml-->
+<view class="main">
+  <view class="header">
+      <view class="admin-box">
+        <view><image class="profilepic" src="/images/admin.png"></image></view>
+      </view>
+      <view class="page-title">admin</view>
+    </view>
+    <view class="header-content">
+      <view class="application-info">
+        <view class="info-title">current application</view>
+      </view>
+      <view class="listing-info">
+        <view class="info-title">current listing</view>
+      </view>
+      <view class="event-info">
+        <view class="info-title">event</view>
+        <view class="info-edit">edit</view>
+      </view>
+      <view class="faq-info">
+        <view class="info-title">FAQ</view>
+        <view class="info-edit">edit</view>
+      </view>
+    </view>
+</view>

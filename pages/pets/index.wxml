@@ -1,0 +1,24 @@
+<!--pages/pets/index.wxml-->
+<!-- 1.about us -->
+<view class="header">
+  <view class="header-content">
+    <view class="logo"><image class="ehr-logo" src="/images/logo_1.png"></image></view>
+    <view class="ehr-heading">Eleventh Hour Rescues</view>
+    <view class="ehr-title">about us</view>
+    <view class="ehr-content">We are a small organization of rescuers living in Shanghai, China. We come from all over the world, and met one another through our individual work in the rescue community.</view>
+    <view class="more-link">more</view>
+  </view>
+</view>
+
+<!-- 2.event swiper -->
+<swiper class="event-swiper" autoplay="true" interval="4000" circular="true" indicator-dots="true" indicator-color="rgba(128,128,128,1)" indicator-active-color="rgba(253,82,0,1)"> 
+  <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
+    <swiper-item class="event-card" style="background-image: url({{event.backgroundurl}})">
+      <view class="event-name">{{event.name}}</view>
+      <view class="event-location">{{event.location}}</view>
+      <view class="event-time">{{event.time}}</view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 3.pet list -->
