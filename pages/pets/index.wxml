@@ -11,14 +11,49 @@
 </view>
 
 <!-- 2.event swiper -->
-<swiper class="event-swiper" autoplay="true" interval="4000" circular="true" indicator-dots="true" indicator-color="rgba(128,128,128,1)" indicator-active-color="rgba(253,82,0,1)"> 
-  <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
-    <swiper-item class="event-card" style="background-image: url({{event.backgroundurl}})">
-      <view class="event-name">{{event.name}}</view>
-      <view class="event-location">{{event.location}}</view>
-      <view class="event-time">{{event.time}}</view>
-    </swiper-item>
-  </block>
-</swiper>
+<view class="swiper-swiper">
+  <swiper class="event-swiper" autoplay="true" interval="4000" circular="true" indicator-dots="true" indicator-color="rgba(128,128,128,1)" indicator-active-color="rgba(253,82,0,1)"> 
+    <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
+      <swiper-item class="event-card">
+        <view class="filter"></view>
+        <image class="event-image" style="width:100%" mode="widthFix" src="{{event.imageurl}}"></image>
+        <view class="event-name">{{event.name}}</view>
+        <view class="event-location">{{event.location}}</view>
+        <view class="event-time">{{event.time}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
 
-<!-- 3.pet list -->
+<!-- 3.pet tag -->
+<view class="scroll-view-box-box">
+  <view class="tag-scroll-filter"></view>
+  <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
+    <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" wx:key="*this" data-index="{{index}}" data-tag="{{item.name}}" style="background: {{tag === item.name ? 'rgba(225, 91, 153, .1)' : 'white'}};">
+      <image class="selected-tag-img" src="/images/tick.png" style="visibility: {{tag === item.name ? 'visible' : 'hidden'}};"></image>
+      <view class="inner-tag-view">
+        <image class="tag-img" src="{{item.imageurl}}"></image>
+        <view class="tag-name">{{item.name}}</view>
+        <view>{{item.show}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 4.pet list -->
+<view class="pet-cards-box">
+  <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
+    <!-- <view class="filter"></view> -->
+    <view class="image-box">
+      <image class="pet-image" src="{{pet.imageurl}}" mode="aspectFill"></image>
+    </view>
+    <!-- <image class="favorite-icon" src="/images/like-red.png"></image> -->
+    <view class="pet-info">
+      <view class="pet-title-box">
+        <view class="pet-name">{{pet.name}}</view>
+        <view class="pet-sex">{{pet.sex}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- </block>   -->
+</view>

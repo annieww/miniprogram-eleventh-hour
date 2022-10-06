@@ -60,5 +60,8 @@
         }
       ]
     }
+  },
+  "setting": {
+    "urlCheck": false
   }
 }
