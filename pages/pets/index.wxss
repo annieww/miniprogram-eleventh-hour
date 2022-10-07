@@ -1,23 +1,25 @@
 /* pages/pets/index.wxss */
 page {
   margin: 0;
-  padding: 0;
+  padding-bottom: 50rpx;
 }
 
 .header {
-  height: 870rpx;
+  height: 880rpx;
+  margin-bottom: 100rpx;
 }
 
 .header-content {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  padding: 20rpx;
+  align-items: center;
+  padding: 10rpx;
 }
 
 .ehr-heading {
   font-size: 40rpx;
   font-weight: bold;
+  margin-bottom: 10rpx;
 }
 
 .ehr-title {
@@ -28,6 +30,7 @@ page {
 
 .ehr-content {
   font-size: 35rpx;
+  padding: 15rpx;
 }
 
 .more-link {
@@ -150,7 +153,7 @@ page {
 .tag-name {
   font-size: 30rpx;
   font-weight: bold;
-  color: black;
+  color: #FD5200;
 }
 
 /* pet cards */
@@ -184,7 +187,6 @@ page {
 
 .pet-info {
   color: black;
-  font-weight: bold;
   margin: 18rpx;
   display: flex;
   flex-direction: column;

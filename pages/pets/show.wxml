@@ -1,2 +1,27 @@
 <!--pages/pets/show.wxml-->
-<text>pages/pets/show.wxml</text>
+
+  <!-- 1.pet image -->
+  <view class="pet-img">
+    <view class="pet-name">{{pet.name}}</view>
+    <view class="filter"></view>
+    <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
+  </view>
+
+<view class="pet-card">
+   <!-- 2.pet info -->
+  <view class="pet-info">
+    <view class="info-title" style="padding-bottom: 10rpx;">{{pet.description}}</view>
+    <view style="padding-bottom: 8rpx;"><text class="info">I live in</text> {{pet.district}} district</view>
+    <view style="padding-bottom: 8rpx;"><text class="info">I am</text> {{pet.age}} old</view>
+    <view style="padding-bottom: 8rpx;"><text class="info">My gender is</text> {{pet.gender}}</view>
+    <view style="padding-bottom: 8rpx;"><text class="info">My vaccination status: </text> {{pet.vaccination}}</view>
+  </view>
+
+  <!-- 3.adopt button -->
+  <view class="buttons-card">
+    <view class="adopt-card" wx:if="{{(!isCreater)&&(!isBooker)}}">
+      <button style="width:60vw" class="adopt-btn" bindtap="showBookingWindow">apply to adopt</button>
+    </view>
+  </view>
+
+</view>
