@@ -1,1 +1,68 @@
 /* pages/pets/show.wxss */
+page {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* pet image */
+.pet-name {
+  position: absolute;
+  bottom: 60rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  left: 30rpx;
+  color: white;
+  z-index: 2;
+}
+
+.pet-avt {
+  height: 700rpx;
+  object-fit: cover;
+  margin-bottom: 30rpx;
+  width: 100%;
+}
+
+.picture {
+  position: relative;
+}
+
+/* pet card */
+.pet-card {
+  background-color: beige;
+}
+
+.pet-info {
+  padding: 40rpx;
+}
+
+.pet-info text {
+  font-size: 35rpx;
+}
+
+.info-title {
+  margin-bottom: 20rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.info{
+  color: grey;
+}
+
+.h1 {
+   font-size: 16pt;
+}
+
+.adopt-card {
+  background-color: transparent;
+  height: 250rpx;
+}
+
+.adopt-btn {
+  background-color: #00B5A3;
+  color: white;
+  margin-bottom: 50rpx;
+}
+
+
+  

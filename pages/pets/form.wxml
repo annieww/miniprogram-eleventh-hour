@@ -1,6 +1,6 @@
 <!--pages/pets/form.wxml-->
 <view class="header-content">
-  <view class="page-title">pet information</view>
+  <view class="page-title">upload pet information</view>
 </view>
 
 <view class="main">
@@ -27,31 +27,44 @@
       </view>
 
       <view class="form-item">
+        <label for="picker">my location</label>
         <picker bindchange="bindPickerChange" data-field="district" value="{{districtIndex}}" range="{{districts}}">
-          <view class="picker">
-            I'm at：{{formData.district}}
-          </view>
-        </picker>
-      </view>
-
-      <view class="form-item" style="display: flex;" >
-        <picker bindchange="bindPickerChange" data-field="sex" value="{{sexIndex}}" range="{{sexes}}">
-          <view class="picker">
-            I am a：{{formData.sex}} 
-          </view>
-        </picker>
-        <picker bindchange="bindPickerChange" data-field="species" value="{{speciesIndex}}" range="{{speciess}}">
-          <view class="picker" style="margin-top: 5rpx;">
-           {{formData.species}} .
-          </view>
+        <input value="{{formData.district}}"/>
         </picker>
       </view>
 
       <view class="form-item">
+        <label for="picker">my gender</label>
+        <picker bindchange="bindPickerChange" data-field="sex" value="{{sexIndex}}" range="{{sexes}}">
+            <input value="{{formData.sex}} "/>
+        </picker>
+      </view>
+
+      <view>
+      <label for="picker">my kin</label>
+        <picker bindchange="bindPickerChange" data-field="species" value="{{speciesIndex}}" range="{{speciess}}">
+        <input value="{{formData.species}}"/>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <label for="picker">my fur type</label>
         <picker bindchange="bindPickerChange" data-field="fur_type" value="{{furTypeIndex}}" range="{{fur_types}}">
-          <view class="picker">
-            I wear：{{formData.fur_type}} coat
-          </view>
+        <input value="{{formData.fur_type}}"/>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <label for="picker">adopt or foster</label>
+        <picker bindchange="bindPickerChange" data-field="adoption_type" value="{{adoptionTypeIndex}}" range="{{adoption_types}}">
+        <input value="{{formData.adoption_type}}"/>
+        </picker>
+      </view>
+
+      <view class="form-item">
+        <label for="picker">vaccination status</label>
+        <picker bindchange="bindPickerChange" data-field="vaccination_status" value="{{vaccinationStatusIndex}}" range="{{vaccination_types}}">
+        <input value="{{formData.vaccination_status}}"/>
         </picker>
       </view>
 

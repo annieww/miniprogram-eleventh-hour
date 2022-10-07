@@ -13,13 +13,13 @@
 }
 
 .picker{
-    padding: 16rpx;
+  padding: 16rpx;
 }
+
 .main {
   background: #ffffff;
   margin-top: 40rpx;
   height: 100vh;
-  padding: 20rpx 80rpx;
   padding-left: 50rpx;
   padding-right: 50rpx;
   font-family: Montserrat;
@@ -32,18 +32,21 @@
 }
 
 .form-item {
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 
 input {
   background-color: #F0EFEF;
-  border-radius: 120rpx;
-  padding: 20rpx;
+  border-radius: 20rpx;
+  padding: 14rpx;
   margin-top: 14rpx;
+  padding-left: 40rpx;
+  font-family: Montserrat;
+  font-size: 12pt;
 }
 textarea {
   background-color: #F0EFEF;
-  border-radius: 80rpx;
+  border-radius: 20rpx;
   margin-top: 14rpx;
 }
 
