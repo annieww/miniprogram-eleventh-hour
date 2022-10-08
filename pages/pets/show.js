@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-    pets: []
   },
 
   /**
