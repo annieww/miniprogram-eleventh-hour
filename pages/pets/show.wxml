@@ -4,7 +4,7 @@
   <view class="pet-img">
     <view class="pet-name">{{pet.name}}</view>
     <view class="filter"></view>
-    <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
+    <!-- <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image> -->
   </view>
 
 <view class="pet-card">
@@ -14,7 +14,7 @@
     <view style="padding-bottom: 8rpx;"><text class="info">I live in</text> {{pet.district}} district</view>
     <view style="padding-bottom: 8rpx;"><text class="info">I am</text> {{pet.age}} old</view>
     <view style="padding-bottom: 8rpx;"><text class="info">My gender is</text> {{pet.gender}}</view>
-    <view style="padding-bottom: 8rpx;"><text class="info">My vaccination status: </text> {{pet.vaccination}}</view>
+    <!-- <view style="padding-bottom: 8rpx;"><text class="info">My vaccination status: </text> {{pet.vaccination}}</view> -->
   </view>
 
   <!-- 3.adopt button -->
