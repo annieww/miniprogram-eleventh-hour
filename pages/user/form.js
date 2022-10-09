@@ -1,11 +1,20 @@
-// pages/pets/form.js
+// pages/user/form.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    preferences: [
+      {value: 'puppy', name: 'puppy'},
+      {value: 'adult', name: 'adult'},
+      {value: 'senior', name: 'senior'},
+      {value: 'no preference', name: 'no preference'}
+    ],
+    options: [
+      {value: 'adopt', name: 'adopt'},
+      {value: 'foster', name: 'foster'}
+    ]
   },
 
   /**
@@ -31,7 +40,7 @@ Page({
 
   goBack() {
     wx.redirectTo({
-      url: '/pages/admin/profile',
+      url: '/pages/user/profile',
     })
   },
   /**
