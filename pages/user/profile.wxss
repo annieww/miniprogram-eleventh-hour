@@ -55,10 +55,22 @@
 
 .my-info {
   margin-bottom: 40rpx;
+  height: 160rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  border: 1px solid #FD5200;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
 }
 
 .my-status {
   margin-bottom: 40rpx;
+  height: 160rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  border: 1px solid #FD5200;
+  padding: 20rpx;
 }
 
 .info-title {
@@ -66,15 +78,60 @@
   font-weight: bold;
 }
 
+.info-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-edit, .info-preview {
+  background-color: transparent;
+  border-radius: 20rpx;
+  border: 1px solid grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.info-edit {
+  margin-right: 15rpx
+}
+
 .status-title {
   font-size: 40rpx;
   font-weight: bold;
 }
 
-/* .pet-swiper {
-  height: 250rpx;
-  margin-bottom: 20rpx;
-} */
+.review {
+  background-color: rgb(245, 241, 233);
+  border-radius: 20rpx;
+  border: 1px solid grey;
+  width: 300rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  padding: 15rpx 0;
+  font-size: 35rpx;
+}
+
+.my-booking-box {
+  padding: 20rpx;
+  background-color: rgb(245, 241, 233);
+  margin-bottom: 10rpx;
+}
+
+.swiper-title {
+  margin-top: 20rpx;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.my-favorite-box {
+  padding: 20rpx;
+  background-color: rgb(245, 241, 233);
+}
 
 .pet-scroll-view {
   height: 240rpx;
@@ -168,12 +225,4 @@
 .pet-sex-icon {
   width: 35rpx;
   height: 35rpx;
-}
-
-.swiper-title {
-  margin-top: 20rpx;
-  padding-left: 5%;
-  padding-right: 5%;
-  font-size: 40rpx;
-  font-weight: 700;
 }
