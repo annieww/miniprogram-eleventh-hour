@@ -17,7 +17,7 @@
       <view class="my-info">
         <view class="info-title">my info</view>
         <view class="info-btn">
-          <view class="info-edit">edit</view>
+          <view bindtap="goToForm" class="info-edit">edit</view>
           <view class="info-preview">preview</view>
         </view>
       </view>

@@ -69,7 +69,9 @@
       </view>
 
       <view class="form-btn">
-          <button style="background-color: #00B5A3; color:white;" type="positive" formType="submit">submit</button>          
+        <button bindtap="goBack" class="cancel-btn" style="width: 280rpx;" type="positive" formType="submit">cancel</button>   
+
+        <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">submit</button>          
       </view>
     </form>
   </view>
