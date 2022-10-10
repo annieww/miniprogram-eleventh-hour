@@ -1,7 +1,7 @@
 /* pages/user/profile.wxss */
 .main {
-  /* display: flex; */
   flex-direction: column;
+  padding-bottom: 20rpx;
 }
 
 .header {
@@ -55,7 +55,7 @@
 
 .my-info {
   margin-bottom: 40rpx;
-  height: 160rpx;
+  height: 70rpx;
   background-color: white;
   border-radius: 20rpx;
   border: 1px solid #FD5200;
@@ -130,7 +130,8 @@
 
 .my-favorite-box {
   padding: 20rpx;
-  background-color: rgb(245, 241, 233);
+  background-color: rgb(245, 241, 233); 
+  margin-bottom: 40rpx;
 }
 
 .pet-scroll-view {
