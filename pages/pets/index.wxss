@@ -5,8 +5,8 @@ page {
 }
 
 .header {
-  height: 880rpx;
-  margin-bottom: 100rpx;
+  height: 750rpx;
+  margin-bottom: 20rpx;
 }
 
 .header-content {
@@ -20,6 +20,11 @@ page {
   font-size: 40rpx;
   font-weight: bold;
   margin-bottom: 10rpx;
+}
+
+.ehr-logo {
+  height: 250rpx;
+  width: 350rpx;
 }
 
 .ehr-title {
