@@ -14,23 +14,23 @@
     <!-- CURRENT APPLICATION -->
     <view class="application-info">
       <view class="info-title">current application</view>
+      <view class="all-btn">see all</view>
     </view>
-    <view class="application-box">
-      <swiper class="application-swiper">
-        <block wx:for="{{applied_users}}"
-          wx:key="*this">
-          <swiper-item class="swiper-item" data-id="{{item.id}}">
-            <view class="swiper-view">
-              <image class="user-image" src="{{item.image_url}}" mode="aspectFill"></image>
-              <view class="user-info">
-                <view class="user-name">{{item.name}}</view>
-                <view class="user-location">{{item.location}}</view>
-                <view class="user-contact">{{item.contact}}</view>
-              </view>
+
+    <view class="application-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="inner-view"
+        wx:for="{{applied_users}}"  
+        wx:key="*this" style="background: white">
+          <view class="view-info">
+            <view class="info-text">
+              <view class="user-name">{{item.name}}</view>
+              <view class="user-location">{{item.location}}</view>
+              <view class="user-contact">{{item.contact}}</view>
             </view>
-          </swiper-item>
-        </block>
-      </swiper>
+          </view>  
+        </view>
+      </scroll-view>
     </view>
 
     <!-- CURRENT LISTING -->
