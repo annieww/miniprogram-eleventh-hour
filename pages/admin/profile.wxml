@@ -14,6 +14,7 @@
     <!-- CURRENT APPLICATION -->
     <view class="application-info">
       <view class="info-title">current application</view>
+      <view class="all-btn">see all</view>
     </view>
     <view class="application-box">
       <swiper class="application-swiper">
