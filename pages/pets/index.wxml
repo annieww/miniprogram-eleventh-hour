@@ -1,5 +1,14 @@
 <!--pages/pets/index.wxml-->
 <view class="main">
+  <!-- 0.language tab -->
+  <view class="language-tab">
+    <view class="en-cn">
+      <view class="en-cn-btn" bindtap="selectLanguage" wx:for="{{languages}}" wx:key="*this" data-index="{{index}}" data-tag="{{item.name}}" style="background: {{language === item.name ? '#FD5200' : 'none'}};">
+      {{item.name}}
+      </view>
+    </view>
+  </view>
+
   <!-- 1.about us -->
   <view class="header">
     <view class="header-content">

@@ -66,6 +66,15 @@ Page({
         name: "adopt",
         image_url: "/images/adopt.png"
       }
+    ],
+
+    languages: [
+      {
+        name: "EN"
+      },
+      {
+        name: "中文"
+      }
     ]
 
   },
@@ -122,7 +131,14 @@ Page({
       this.setData({
         tag: e.currentTarget.dataset.tag
       })
-      this.getData()
+    }
+  },
+
+  selectLanguage(e) {
+    if (this.data.tag !== e.currentTarget.dataset.tag) {
+      this.setData({
+        language: e.currentTarget.dataset.tag
+      })
     }
   },
 
