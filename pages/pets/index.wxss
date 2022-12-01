@@ -8,8 +8,7 @@ page {
   width: 500rpx;
   height: 50rpx;
   margin-left: 20rpx;
-  /* display: flex;
-  justify-content: flex-start; */
+  margin-top: 20rpx;
 }
 
 .en-cn {
@@ -156,7 +155,7 @@ page {
   width: 300rpx;
   margin: 5rpx 20rpx;
   /* border: 1px solid #FD5200; */
-  border-radius: 20rpx;
+  border-radius: 45rpx;
   display: inline-block;
   justify-content: center;
   align-items: center;

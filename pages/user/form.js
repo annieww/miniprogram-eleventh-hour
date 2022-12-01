@@ -5,10 +5,15 @@ Page({
    * Page initial data
    */
   data: {
-    preferences: [
+    agePreferences: [
       {value: 'puppy', name: 'puppy'},
       {value: 'adult', name: 'adult'},
       {value: 'senior', name: 'senior'},
+      {value: 'no preference', name: 'no preference'}
+    ],
+    genderPreferences: [
+      {value: 'girl', name: 'girl'},
+      {value: 'boy', name: 'boy'},
       {value: 'no preference', name: 'no preference'}
     ],
     options: [
