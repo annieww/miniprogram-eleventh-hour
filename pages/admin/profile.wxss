@@ -38,12 +38,13 @@
 }
 
 .application-info {
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   padding: 20rpx;
   background-color: rgb(245, 241, 233);
   display: flex;
   justify-content: space-between;
   height: 60rpx;
+  border-radius: 20rpx;
 }
 
 .all-btn {
@@ -58,27 +59,30 @@
 }
 
 .listing-info {
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   padding: 20rpx;
   background-color: rgb(245, 241, 233);
+  border-radius: 20rpx;
 }
 
 .event-info {
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   padding: 20rpx;
   background-color: rgb(245, 241, 233);
   display: flex;
   justify-content: space-between;
   height: 60rpx;
+  border-radius: 20rpx;
 }
 
 .faq-info {
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   padding: 20rpx;
   background-color: rgb(245, 241, 233);
   display: flex;
   justify-content: space-between;
   height: 60rpx;
+  border-radius: 20rpx;
 }
 
 .info-title {
@@ -101,6 +105,7 @@
 .application-scroll-view-box {
   margin: 0 10rpx;
   position: relative;
+  margin-bottom: 40rpx;
 }
 
 .scroll-view {

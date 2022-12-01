@@ -25,7 +25,7 @@
 
       <view class="form-item">
         <label for="picker">
-          <view class="form-item-title">my location
+          <view class="form-item-title">location
           </view>
         </label>
         <picker bindchange="bindPickerChange" data-field="district" value="{{districtIndex}}" range="{{districts}}">
@@ -34,7 +34,7 @@
       </view>
 
       <view class="form-item">
-        <view class="form-item-title">my past experience, skills or expertise with pets</view>
+        <view class="form-item-title">past experience, skills or expertise with pets</view>
         <textarea bindinput="setInputData" data-field="experience" name="description" value="{{formData.experience}}" rows="4" placeholder="eg. socializing, house training including litter, potty etc.">
         </textarea>
       </view>
@@ -43,7 +43,20 @@
         <view class="form-item-title">age preferences</view>
         <view>
           <radio-group bindchange="radioChange">
-            <label class="weui-cell weui-check__label" wx:for="{{preferences}}" wx:key="{{item.value}}">
+            <label class="weui-cell weui-check__label" wx:for="{{agePreferences}}" wx:key="{{item.value}}">
+              <view class="weui-cell__hd" style="padding: 10rpx 0;">
+                <radio value="{{item.value}}" checked="true"/> {{item.name}}
+              </view>            
+            </label>
+          </radio-group>
+        </view>
+      </view>
+
+      <view class="form-item">
+        <view class="form-item-title">gender preferences</view>
+        <view>
+          <radio-group bindchange="radioChange">
+            <label class="weui-cell weui-check__label" wx:for="{{genderPreferences}}" wx:key="{{item.value}}">
               <view class="weui-cell__hd" style="padding: 10rpx 0;">
                 <radio value="{{item.value}}" checked="true"/> {{item.name}}
               </view>            

@@ -44,7 +44,7 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 30rpx;
+  padding: 0 30rpx;
 }
 
 .page-title {
@@ -56,9 +56,8 @@
 .my-info {
   margin-bottom: 40rpx;
   height: 70rpx;
-  background-color: white;
+  background-color: rgb(245, 241, 233);
   border-radius: 20rpx;
-  border: 1px solid #FD5200;
   padding: 20rpx;
   display: flex;
   justify-content: space-between;
@@ -67,9 +66,8 @@
 .my-status {
   margin-bottom: 40rpx;
   height: 160rpx;
-  background-color: white;
+  background-color: rgb(245, 241, 233);
   border-radius: 20rpx;
-  border: 1px solid #FD5200;
   padding: 20rpx;
 }
 
@@ -116,10 +114,9 @@
 
 .my-booking-box {
   /* padding: 20rpx; */
-  background-color: white;
-  margin-bottom: 10rpx;
+  background-color: rgb(245, 241, 233);
+  margin-bottom: 40rpx;
   border-radius: 20rpx;
-  border: 1px solid #FD5200;
 }
 
 .swiper-title {
@@ -132,10 +129,9 @@
 
 .my-favorite-box {
   /* padding: 20rpx; */
-  background-color: white; 
-  margin-bottom: 10rpx;
+  background-color: rgb(245, 241, 233);
+  margin-bottom: 40rpx;
   border-radius: 20rpx;
-  border: 1px solid #FD5200;
 }
 
 .pet-scroll-view {
