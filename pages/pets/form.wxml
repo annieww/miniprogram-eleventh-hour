@@ -41,13 +41,6 @@
       </view>
 
       <view class="form-item">
-        <label for="picker">my location</label>
-        <picker bindchange="bindPickerChange" data-field="district" value="{{districtIndex}}" range="{{districts}}">
-        <input value="{{formData.district}}"/>
-        </picker>
-      </view>
-
-      <view class="form-item">
         <label for="picker">neuter status</label>
         <picker bindchange="bindPickerChange" data-field="neutered" value="{{neuterStatusIndex}}" range="{{neuter_status}}">
         <input value="{{formData.neutered}}"/>
