@@ -1,6 +1,6 @@
 <!--pages/pets/index.wxml-->
 <view class="main">
-  <view class="language-btn" bindtap="changeLanguage"> EN|中文</view>
+  <view class="language-btn" bindtap="changeLanguage"> EN | 中文</view>
   <!-- 1.about us -->
   <view class="header">
     <view class="header-content">

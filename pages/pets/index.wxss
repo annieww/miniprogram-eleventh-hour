@@ -5,15 +5,16 @@ page {
 }
 .language-btn {
   position: absolute;
-  top: 0;
-  right: 15rpx;
-  padding: 10rpx;
+  top: 25rpx;
+  right: 25rpx;
+  padding: 0rpx;
   /* background-color: orange; */
-  font-size: 25rpx;
+  font-size: 30rpx;
 }
+
 .header {
-  height: 880rpx;
-  margin-bottom: 100rpx
+  height: 750rpx;
+  margin-bottom: 20rpx
 }
 
 .header-content {
@@ -152,9 +153,9 @@ page {
   border-radius: 50%;
 }
 
-.tags-scroll-view .tag-button:nth-child(1) {
+/* .tags-scroll-view .tag-button:nth-child(1) {
   margin-left: 10rpx;
-}
+} */
 
 .tag-img {
   height: 80rpx;
