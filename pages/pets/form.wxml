@@ -40,6 +40,14 @@
         <textarea bindinput="setInputData" data-field="character" type="text" style="padding: 25rpx" name="character" value="{{formData.character}}"/>  
       </view>
 
+      <view class="form-item">special need
+        <input bindinput="setInputData" data-field="special_need" type="text" style="padding: 25rpx" name="special_need" value="{{formData.special_need}}"/>
+      </view>
+
+      <view class="form-item">breed
+        <input bindinput="setInputData" data-field="breed" name="breed" value="{{formData.breed}}"/>
+      </view>
+
       <view class="form-item">
         <label for="picker">neuter status</label>
         <picker bindchange="bindPickerChange" data-field="neutered" value="{{neuterStatusIndex}}" range="{{neuter_status}}">
@@ -54,21 +62,10 @@
         </picker>
       </view>
 
-      <view class="form-item">special need
-        <input bindinput="setInputData" data-field="special_need" name="special_need" value="{{formData.special_need}}"/>
-      </view>
-
-      <view class="form-item">
-        <label for="picker">breed</label>
-        <picker bindchange="bindPickerChange" data-field="breed" value="{{breedTypeIndex}}" range="{{breed_types}}">
-        <input value="{{formData.breed}}"/>
-        </picker>
-      </view>
-
       <view class="form-item">
         <label for="picker">adoption status</label>
         <picker bindchange="bindPickerChange" data-field="adoption_type" value="{{adoptionTypeIndex}}" range="{{adoption_types}}">
-        <input value="{{formData.adoption_type}}"/>
+        <input value="{{formData.adoption_status}}"/>
         </picker>
       </view>
 
