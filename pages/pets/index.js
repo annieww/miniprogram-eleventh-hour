@@ -61,16 +61,23 @@ Page({
         image_url: "/images/adopt.png"
       }
     ]
-
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    this.setData({
+      content: wx.getStorageSync('content')
+    })
   },
-
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/pets/index',
+    })
+  },
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -82,10 +89,11 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    if (app.globalData.header) {
+    // if (app.globalData.header) {
       // proceed to fetch api
-      this.getData()
-    } 
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   getData(){

@@ -4,9 +4,17 @@ page {
   padding-bottom: 50rpx;
 }
 
+.language-btn {
+  position: absolute;
+  top: 0;
+  right: 15rpx;
+  padding: 10rpx;
+  /* background-color: orange; */
+  font-size: 25rpx;
+}
 .header {
   height: 880rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 100rpx
 }
 
 .header-content {
