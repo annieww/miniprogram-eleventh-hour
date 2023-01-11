@@ -3,38 +3,17 @@ page {
   margin: 0;
   padding-bottom: 50rpx;
 }
-
-.language-tab {
-  width: 500rpx;
-  height: 50rpx;
-  margin-left: 20rpx;
-  margin-top: 20rpx;
+.language-btn {
+  position: absolute;
+  top: 0;
+  right: 15rpx;
+  padding: 10rpx;
+  /* background-color: orange; */
+  font-size: 25rpx;
 }
-
-.en-cn {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border-radius: 20rpx;
-  border: 1px solid #FD5200;
-  box-shadow: 0rpx 2rpx 4rpx rgba(0, 0, 0, 0.25);
-  width: 145rpx;
-  height: 50rpx;
-  font-size: 30rpx;
-}
-
-.en-cn-btn {
-  width: 75rpx;
-  height: 50rpx;
-  border-radius: 20rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .header {
-  height: 750rpx;
-  margin-bottom: 20rpx;
+  height: 880rpx;
+  margin-bottom: 100rpx
 }
 
 .header-content {
