@@ -1,25 +1,55 @@
 <!--pages/admin/profile.wxml-->
 <view class="main">
+
+  <!-- HEADER -->
   <view class="header">
-      <view class="admin-box">
-        <view><image class="profilepic" src="/images/admin.png"></image></view>
+    <view class="admin-box">
+      <view><image class="profilepic" src="/images/admin.png"></image></view>
       </view>
-      <view class="page-title">admin</view>
+    <view class="page-title">admin</view>
+  </view>
+
+  <!-- CONTENT -->
+  <view class="page-content">
+    <!-- CURRENT APPLICATION -->
+    <view class="application-info">
+      <view class="info-title">current application</view>
+      <view class="all-btn">see all</view>
     </view>
-    <view class="header-content">
-      <view class="application-info">
-        <view class="info-title">current application</view>
-      </view>
-      <view class="listing-info">
-        <view class="info-title">current listing</view>
-      </view>
-      <view class="event-info">
-        <view class="info-title">event</view>
-        <view class="info-edit">edit</view>
-      </view>
-      <view class="faq-info">
-        <view class="info-title">FAQ</view>
-        <view class="info-edit">edit</view>
-      </view>
+
+    <view class="application-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="inner-view"
+        wx:for="{{applied_users}}"  
+        wx:key="*this" style="background: white">
+          <view class="view-info">
+            <view class="info-text">
+              <view class="user-name">{{item.name}}</view>
+              <view class="user-location">📍 {{item.location}}</view>
+              <view class="user-contact">📞 {{item.contact}}</view>
+            </view>
+          </view>  
+        </view>
+      </scroll-view>
     </view>
+
+    <!-- CURRENT LISTING -->
+    <view class="listing-info">
+      <view class="info-title">current listing</view>
+    </view>
+
+    <!-- EVENT EDIT -->
+    <view class="event-info">
+      <view class="info-title">event</view>
+      <view class="info-edit">edit</view>
+    </view>
+
+    <!-- FAQ EDIT -->
+    <view class="faq-info">
+      <view class="info-title">FAQ</view>
+      <view class="info-edit">edit</view>
+    </view>
+    
+  </view>
+
 </view>

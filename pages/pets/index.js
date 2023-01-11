@@ -34,20 +34,26 @@ Page({
 
     pets: [
       {
+        // id: 1,
         name: "Dobby",
         gender: "boy",
         district: "Pudong",
         age: "1 year",
-        image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        description: "Dog waiting for a foster home."
+        tag: "foster",
+        vaccination_status: "fully vaccinated",
+        neutered: "true",
+        image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       },
       {
+        // id: 2,
         name: "Tiger",
         gender: "girl",
         district: "Huangpu",
         age: "6 months",
-        image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
-        description: "Cat for adoption!"
+        tag: "adopt",
+        vaccination: "fully vaccinated",
+        neutered: "false",
+        image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
       }
     ],
 
@@ -60,17 +66,33 @@ Page({
         name: "adopt",
         image_url: "/images/adopt.png"
       }
-    ]
+    ],
 
+    languages: [
+      {
+        name: "EN"
+      },
+      {
+        name: "中文"
+      }
+    ]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    this.setData({
+      content: wx.getStorageSync('content')
+    })
   },
-
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/pets/index',
+    })
+  },
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -82,10 +104,11 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    if (app.globalData.header) {
+    // if (app.globalData.header) {
       // proceed to fetch api
-      this.getData()
-    } 
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   getData(){
@@ -116,7 +139,14 @@ Page({
       this.setData({
         tag: e.currentTarget.dataset.tag
       })
-      this.getData()
+    }
+  },
+
+  selectLanguage(e) {
+    if (this.data.tag !== e.currentTarget.dataset.tag) {
+      this.setData({
+        language: e.currentTarget.dataset.tag
+      })
     }
   },
 

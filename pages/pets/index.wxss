@@ -3,10 +3,17 @@ page {
   margin: 0;
   padding-bottom: 50rpx;
 }
-
+.language-btn {
+  position: absolute;
+  top: 0;
+  right: 15rpx;
+  padding: 10rpx;
+  /* background-color: orange; */
+  font-size: 25rpx;
+}
 .header {
   height: 880rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 100rpx
 }
 
 .header-content {
@@ -20,6 +27,11 @@ page {
   font-size: 40rpx;
   font-weight: bold;
   margin-bottom: 10rpx;
+}
+
+.ehr-logo {
+  height: 250rpx;
+  width: 350rpx;
 }
 
 .ehr-title {
@@ -122,7 +134,7 @@ page {
   width: 300rpx;
   margin: 5rpx 20rpx;
   /* border: 1px solid #FD5200; */
-  border-radius: 20rpx;
+  border-radius: 45rpx;
   display: inline-block;
   justify-content: center;
   align-items: center;
