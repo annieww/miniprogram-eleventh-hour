@@ -40,7 +40,7 @@
 .application-info {
   margin-bottom: 40rpx;
   padding: 20rpx;
-  background-color: rgb(245, 241, 233);
+  background-color: #c5ebe7;
   display: flex;
   justify-content: space-between;
   height: 60rpx;
@@ -61,14 +61,14 @@
 .listing-info {
   margin-bottom: 40rpx;
   padding: 20rpx;
-  background-color: rgb(245, 241, 233);
+  background-color: #c5ebe7;
   border-radius: 20rpx;
 }
 
 .event-info {
   margin-bottom: 40rpx;
   padding: 20rpx;
-  background-color: rgb(245, 241, 233);
+  background-color:#c5ebe7;
   display: flex;
   justify-content: space-between;
   height: 60rpx;
@@ -78,7 +78,7 @@
 .faq-info {
   margin-bottom: 40rpx;
   padding: 20rpx;
-  background-color: rgb(245, 241, 233);
+  background-color: #c5ebe7;
   display: flex;
   justify-content: space-between;
   height: 60rpx;

@@ -40,7 +40,7 @@ Page({
         district: "Pudong",
         age: "1 year",
         tag: "foster",
-        vaccination: "fully vaccinated",
+        vaccination_status: "fully vaccinated",
         neutered: "true",
         image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       },

@@ -25,8 +25,8 @@
           <view class="view-info">
             <view class="info-text">
               <view class="user-name">{{item.name}}</view>
-              <view class="user-location">{{item.location}}</view>
-              <view class="user-contact">{{item.contact}}</view>
+              <view class="user-location">📍 {{item.location}}</view>
+              <view class="user-contact">📞 {{item.contact}}</view>
             </view>
           </view>  
         </view>
