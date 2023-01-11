@@ -1,7 +1,7 @@
 /* pages/user/profile.wxss */
 .main {
-  /* display: flex; */
   flex-direction: column;
+  padding-bottom: 20rpx;
 }
 
 .header {
@@ -40,11 +40,11 @@
   text-decoration: underline;
 }
 
-.header-content {
+.page-content {
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 30rpx;
+  padding: 0 30rpx;
 }
 
 .page-title {
@@ -55,10 +55,20 @@
 
 .my-info {
   margin-bottom: 40rpx;
+  height: 70rpx;
+  background-color: rgb(245, 241, 233);
+  border-radius: 20rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
 }
 
 .my-status {
   margin-bottom: 40rpx;
+  height: 160rpx;
+  background-color: rgb(245, 241, 233);
+  border-radius: 20rpx;
+  padding: 20rpx;
 }
 
 .info-title {
@@ -66,27 +76,75 @@
   font-weight: bold;
 }
 
+.info-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-edit, .info-preview {
+  background-color: transparent;
+  border-radius: 20rpx;
+  border: 1px solid grey;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.info-edit {
+  margin-right: 15rpx
+}
+
 .status-title {
   font-size: 40rpx;
   font-weight: bold;
 }
 
-/* .pet-swiper {
-  height: 250rpx;
-  margin-bottom: 20rpx;
-} */
+.review {
+  background-color: rgb(245, 241, 233);
+  border-radius: 20rpx;
+  border: 1px solid grey;
+  width: 300rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  padding: 15rpx 0;
+  font-size: 35rpx;
+}
+
+.my-booking-box {
+  /* padding: 20rpx; */
+  background-color: rgb(245, 241, 233);
+  margin-bottom: 40rpx;
+  border-radius: 20rpx;
+}
+
+.swiper-title {
+  margin-top: 20rpx;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+
+.my-favorite-box {
+  /* padding: 20rpx; */
+  background-color: rgb(245, 241, 233);
+  margin-bottom: 40rpx;
+  border-radius: 20rpx;
+}
 
 .pet-scroll-view {
   height: 240rpx;
   margin-bottom: 20rpx;
-  /* background-color: #E4E4E4; */
-  /* border: 1px solid rgba(0, 181, 163, 1); */
-
 }
+
 .scroll-title {
-  margin-left: 30rpx;
-  font-weight: bold;
+  margin-top: 20rpx;
+  padding-left: 5%;
+  padding-right: 5%;
   font-size: 40rpx;
+  font-weight: 700;
 }
 
 .filter {
@@ -97,83 +155,4 @@
   height: 100%;
   border-radius: 14rpx;
   z-index: 1;
-}
-
-/* .swiper-item {
-  border-radius: 10rpx;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-  border-radius: 10rpx;
-  border: 1px solid rgba(0, 181, 163, 1);
-  box-sizing: border-box;
-  height: 90%;
-  border: 1px solid black;
-} */
-
-.pet-card {
-  height: 190rpx;
-  width: 190rpx;
-  /* overflow: hidden; */
-  position: relative;
-  border-radius: 14rpx;
-  /* border: 1px solid rgba(0, 181, 163, 1); */
-  box-sizing: border-box;
-  color: white;
-  display: inline-block;
-  margin: 20rpx;
-  box-shadow: 0 0 15rpx rgba(0,0,0,0.5);
-}
-
-/* .pet-swiper{
-  white-space: nowrap;
-  padding-left: 5%; 
-  padding-right: 5%;
-  font-size: 30rpx;
-  color: #404040;
-} */
-
-.pet-image {
-  position: absolute;
-  height: 190rpx;
-  width: 190rpx;
-  overflow: hidden;
-  border-radius: 10rpx;
-}
-
-.pet-name, .pet-posted-at {
-  position: absolute;
-  font-family: Montserrat;
-  z-index: 999;
-}
-
-.pet-name {
-  top: 10rpx;
-  left: 10rpx;
-  font-size: 32rpx;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
-
-.pet-posted-at {
-  bottom: -30rpx;
-  left:0rpx;
-  font-size: 20rpx;
-  /* font-weight: bold; */
-  color: black;
-  z-index: 999;
-}
-
-.pet-sex-icon {
-  width: 35rpx;
-  height: 35rpx;
-}
-
-.swiper-title {
-  margin-top: 20rpx;
-  padding-left: 5%;
-  padding-right: 5%;
-  font-size: 40rpx;
-  font-weight: 700;
 }

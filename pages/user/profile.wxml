@@ -1,7 +1,8 @@
 <!--pages/user/profile.wxml-->
 <view class="main">
-  <!-- USER BOX -->
+
   <view>
+    <!-- HEADER -->
     <view class="header">
       <view class="user-box">
         <view><image class="profilepic" src="/images/paw.png"></image></view>
@@ -10,10 +11,15 @@
       </view>
       <view class="page-title">my application</view>
     </view>
-    <view class="header-content">
+
+    <!-- USER INFO AND STATUS -->
+    <view class="page-content">
       <view class="my-info">
         <view class="info-title">my info</view>
-        <view class="info-edit">edit</view>
+        <view class="info-btn">
+          <view bindtap="goToForm" class="info-edit">edit</view>
+          <view class="info-preview">preview</view>
+        </view>
       </view>
       <view class="my-status">
         <view class="status-title">my status</view>
@@ -22,40 +28,46 @@
     </view>
   </view>
 
-
-  <!-- MY FAVORITE -->
-  <view class="pet-title-and-scroll-v">
-    <view class="scroll-title">my favorite</view>
-    <scroll-view class="pet-scroll-view" scroll-x="true" style="width: 100%; white-space: nowrap;">
-      <block wx:for="{{pets}}" wx:for-item="pet" wx:key="*this" >
-        <view class="pet-card" data-id="{{pet.id}}" bindtap="goToPet">
-          <view class="filter"></view>
-          <image mode="aspectFill" class="pet-image" src="{{pet.image_url}}"></image>
-          <!-- <view class="pet-info"> -->
-            <view class="pet-name">{{pet.name}}</view>
-            <view class="pet-sex"><image class="pet-sex-icon" src="{{ pet.sex == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image></view>
-            <view class="pet-posted-at">Posted {{pet.created_at}}</view>
-          <!-- </view> -->
-        </view>
-        <!-- <view class="pet-posted-at">Posted {{pet.created_at}}</view> -->
-      </block>
-    </scroll-view>
+  <!-- MY BOOKING -->
+  <view class="page-content">
+    <view class="my-booking-box">
+      <view class="swiper-title">my booking</view>
+      <swiper> 
+        <swiper-item class="swiper-item"
+                    wx:for="{{booked_pets}}" wx:for-item="pet" wx:key="*this" bindtap="goToPet" data-id="{{pet.id}}">
+        each card
+          <view style="background-color: red;" class="swiper-card">
+            <image class="pet-image" style="width:50%;" src="{{pet.image_url}}" mode="widthFix"></image>
+            <view class="pet-info">
+              <view class="pet-name">{{pet.name}}</view>
+              <view class="pet-sex"><image class="pet-sex-icon" src="{{ pet.sex == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image></view>
+              <view class="pet-location">📍 {{pet.district}}</view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
   </view>
 
+  <!-- MY FAVORITE -->
+  <view class="page-content">
+    <view class="my-favorite-box">
+      <view class="scroll-title">my favorite</view>
+      <scroll-view class="pet-scroll-view" scroll-x="true" style="width: 100%; white-space: nowrap;">
+        <block wx:for="{{pets}}" wx:for-item="pet" wx:key="*this" >
+          <view class="pet-card" data-id="{{pet.id}}" bindtap="goToPet">
+            <view class="filter"></view>
+            <image mode="aspectFill" class="pet-image" src="{{pet.image_url}}"></image>
+          <!-- <view class="pet-info"> -->
+              <view class="pet-name">{{pet.name}}</view>
+              <view class="pet-sex"><image class="pet-sex-icon" src="{{ pet.sex == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image></view>
+              <view class="pet-posted-at">Posted {{pet.created_at}}</view>
+          <!-- </view> -->
+          </view>
+        <!-- <view class="pet-posted-at">Posted {{pet.created_at}}</view> -->
+        </block>
+      </scroll-view>
+    </view>
+  </view>
 
-  <view class="swiper-title">my booking</view>
-  <swiper> 
-    <swiper-item class="swiper-item"
-                  wx:for="{{booked_pets}}" wx:for-item="pet" wx:key="*this" bindtap="goToPet" data-id="{{pet.id}}">
-      each card
-      <view style="background-color: red;" class="swiper-card">
-        <image class="pet-image" style="width:50%;" src="{{pet.image_url}}" mode="widthFix"></image>
-        <view class="pet-info">
-          <view class="pet-name">{{pet.name}}</view>
-          <view class="pet-sex"><image class="pet-sex-icon" src="{{ pet.sex == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image></view>
-          <view class="pet-location">📍 {{pet.district}}</view>
-        </view>
-      </view>
-    </swiper-item>
-  </swiper>
 </view>

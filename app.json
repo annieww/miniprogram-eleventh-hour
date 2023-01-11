@@ -7,7 +7,8 @@
     "pages/pets/form",
     "pages/admin/profile",
     "pages/admin/faq",
-    "pages/user/profile"
+    "pages/user/profile",
+    "pages/user/form"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -5,6 +5,11 @@ page {
 }
 
 /* pet image */
+.pet-img {
+  height: 700rpx;
+  background-color: rgb(177, 171, 171);
+}
+
 .pet-name {
   position: absolute;
   bottom: 60rpx;
@@ -62,6 +67,7 @@ page {
   background-color: #00B5A3;
   color: white;
   margin-bottom: 50rpx;
+  border-radius: 32rpx; 
 }
 
 

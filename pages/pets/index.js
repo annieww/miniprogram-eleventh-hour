@@ -34,20 +34,26 @@ Page({
 
     pets: [
       {
+        // id: 1,
         name: "Dobby",
         gender: "boy",
         district: "Pudong",
         age: "1 year",
-        image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        description: "Dog waiting for a foster home."
+        tag: "foster",
+        vaccination_status: "fully vaccinated",
+        neutered: "true",
+        image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       },
       {
+        // id: 2,
         name: "Tiger",
         gender: "girl",
         district: "Huangpu",
         age: "6 months",
-        image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
-        description: "Cat for adoption!"
+        tag: "adopt",
+        vaccination: "fully vaccinated",
+        neutered: "false",
+        image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
       }
     ],
 
@@ -59,6 +65,15 @@ Page({
       {
         name: "adopt",
         image_url: "/images/adopt.png"
+      }
+    ],
+
+    languages: [
+      {
+        name: "EN"
+      },
+      {
+        name: "中文"
       }
     ]
   },
@@ -124,7 +139,14 @@ Page({
       this.setData({
         tag: e.currentTarget.dataset.tag
       })
-      this.getData()
+    }
+  },
+
+  selectLanguage(e) {
+    if (this.data.tag !== e.currentTarget.dataset.tag) {
+      this.setData({
+        language: e.currentTarget.dataset.tag
+      })
     }
   },
 
