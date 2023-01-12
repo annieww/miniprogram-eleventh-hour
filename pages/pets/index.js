@@ -126,23 +126,35 @@ Page({
                 value: 'male'
               }
             ]
+          },
+          {
+            type: 'radio',
+            label: 'Size',
+            value: 'size',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true
+              },
+              {
+                label: 'Mini',
+                value: 'mini'
+              },
+              {
+                label: 'Small',
+                value: 'small'
+              },
+              {
+                label: 'Medium',
+                value: 'medium',
+              },
+              {
+                label: 'Large',
+                value: 'large'
+              }
+            ]
           }
-          // {
-          //   type: 'radio',
-          //   label: 'Breed',
-          //   value: 'breed',
-          //   children: [
-          //     {
-          //       label: 'All',
-          //       value: 'all',
-          //       checked: true
-          //     },
-          //     {
-          //       label: 'Mini',
-          //       value: 'mini'
-          //     }
-          //   ]
-          // }
         ]
       }
     ]
