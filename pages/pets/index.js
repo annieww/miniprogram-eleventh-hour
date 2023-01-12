@@ -126,23 +126,35 @@ Page({
                 value: 'male'
               }
             ]
+          },
+          {
+            type: 'radio',
+            label: 'Size',
+            value: 'size',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true
+              },
+              {
+                label: 'Mini',
+                value: 'mini'
+              },
+              {
+                label: 'Small',
+                value: 'small'
+              },
+              {
+                label: 'Medium',
+                value: 'medium',
+              },
+              {
+                label: 'Large',
+                value: 'large'
+              }
+            ]
           }
-          // {
-          //   type: 'radio',
-          //   label: 'Breed',
-          //   value: 'breed',
-          //   children: [
-          //     {
-          //       label: 'All',
-          //       value: 'all',
-          //       checked: true
-          //     },
-          //     {
-          //       label: 'Mini',
-          //       value: 'mini'
-          //     }
-          //   ]
-          // }
         ]
       }
     ]
@@ -151,16 +163,12 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
+  
   onLoad(options) {
     this.setData({
       content: wx.getStorageSync('content')
     })
-  },
-  changeLanguage() {
-    app.changeLanguage()
-    wx.reLaunch({
-      url: '/pages/pets/index',
-    })
+    console.log(this.data)
   },
   
   /**
@@ -174,25 +182,27 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    // if (app.globalData.header) {
-      // proceed to fetch api
-    this.setData({
-      content: app.globalData.content
-    })
+    if (app.globalData.header) {
+    // proceed to fetch api
+    this.getData()
+    } else {
+      // wait until loginFinished, then fetch API
+      wx.event.on('loginFinished', this, this.getData)
+    }
   },
 
   getData(){
     const page = this
-    console.log('From index.js onshow: header', app.globalData.header)
+    // console.log('From getData onshow: header', app.globalData.header)
     wx.request({
       url: `${app.globalData.baseURL}/pets`,
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        // let pets = res.data
         console.log("From index.js onshow: res.data",res.data)
         page.setData({
-          pets: res.data
+          pets: res.data,
+          content: app.globalData.content
         })
       }
     })
@@ -215,6 +225,11 @@ Page({
             .join(',')
           } else if (n.value === 'gender') {
             params.gender  = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } else if (n.value === 'size') {
+            params.size = n.children
             .filter((n) => n.checked)
             .map((n) => n.value)
             .join(',')
@@ -258,6 +273,12 @@ Page({
         language: e.currentTarget.dataset.tag
       })
     }
+  },
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/pets/index',
+    })
   },
 
   onOpen(e) {
