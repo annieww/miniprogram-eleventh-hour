@@ -75,6 +75,76 @@ Page({
       {
         name: "中文"
       }
+    ], 
+    items: [
+      {
+        type: 'filter',
+        label: 'Filter',
+        value: 'filter',
+        checked: true, 
+        children: [
+          {
+            type: 'radio',
+            label: 'Species',
+            value: 'species',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true
+              },
+              {
+                label: 'Dogs',
+                value: 'dog'
+              },
+              {
+                label: 'Cats',
+                value: 'cat'
+              },
+              {
+                label: 'Other',
+                value: 'other'
+              }
+            ]
+          },
+          {
+            type: 'radio',
+            label: 'Gender',
+            value: 'gender',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true
+              },
+              {
+                label: 'Female',
+                value: 'female'
+              },
+              {
+                label: 'Male',
+                value: 'male'
+              }
+            ]
+          }
+          // {
+          //   type: 'radio',
+          //   label: 'Breed',
+          //   value: 'breed',
+          //   children: [
+          //     {
+          //       label: 'All',
+          //       value: 'all',
+          //       checked: true
+          //     },
+          //     {
+          //       label: 'Mini',
+          //       value: 'mini'
+          //     }
+          //   ]
+          // }
+        ]
+      }
     ]
   },
 
@@ -119,15 +189,55 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        let pets = res.data
+        // let pets = res.data
         console.log("From index.js onshow: res.data",res.data)
         page.setData({
-          pets: pets
+          pets: res.data
         })
       }
     })
   },
 
+  onChange(e) {
+    const { checkedItems, items, checkedValues } = e.detail
+    const params = { filter: true }
+    console.log("From index.js - filter onChange: e", e)
+    console.log(checkedItems, items, checkedValues)
+
+    checkedItems.forEach((n) => {
+      n.children
+        .filter((n) => n.selected)
+        .forEach((n) => {
+          if (n.value === 'species'){
+            params.species = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } else if (n.value === 'gender') {
+            params.gender  = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          }
+        })
+    })
+    this.getRepos(params)
+  },
+  getRepos(params = {}) {
+    console.log("From index.js - getRepos: params", params)
+    wx.request({
+      url: `${app.globalData.baseURL}/pets`,
+      header: app.globalData.header,
+      data: params,
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          pets: res.data
+        })
+      }
+    })
+  },
+  
   goToFAQ() {
     wx.switchTab({
       url: '/pages/admin/faq'
@@ -150,6 +260,14 @@ Page({
     }
   },
 
+  onOpen(e) {
+    this.setData({ opened: true })
+  },
+  onClose(e) {
+    this.setData({ opened: false })
+  },
+  noop() {},
+
   goToPet(e) {
     console.log('From index.js - goToPet: e', e)
     const id = e.currentTarget.dataset.id
@@ -158,6 +276,11 @@ Page({
         url: `/pages/pets/show?id=${id}`,
       })
   },
+
+  showMenu(e) {
+    console.log(e);
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */

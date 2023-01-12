@@ -22,27 +22,22 @@
     "selectedColor": "#FD5200",
     "list": [{
       "pagePath": "pages/pets/index",
-      "text": "Home",
       "iconPath": "images/home.png",
       "selectedIconPath": "images/home-active.png"
     }, {
       "pagePath": "pages/admin/faq",
-      "text": "FAQ",
       "iconPath": "images/faq.png",
       "selectedIconPath": "images/faq-active.png"
     }, {
       "pagePath": "pages/user/profile",
-      "text": "My Application",
       "iconPath": "images/paw.png",
       "selectedIconPath": "images/paw-active.png"
     }, {
       "pagePath": "pages/pets/form",
-      "text": "Post",
       "iconPath": "images/add.png",
       "selectedIconPath": "images/add-active.png"
     }, {
       "pagePath": "pages/admin/profile",
-      "text": "Admin",
       "iconPath": "images/admin.png",
       "selectedIconPath": "images/admin-active.png"
     }]
