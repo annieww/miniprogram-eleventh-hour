@@ -41,7 +41,22 @@
       </view>
     </scroll-view>
   </view>
+  <!--3a. filters -->
+  <block wx:for="{{filterbaritems}}" wx:for-item="item">
+    <view class="filter-bar-item" bindtap="showMenu">
+      <view class="filter-bar-item-name">{{item.title}}</view>
+    </view>
+  </block>
 
+  <wux-filterbar
+      items="{{ items }}"
+      bind:change="onChange"
+      bind:open="onOpen"
+      bind:close="onClose"
+      confirmText="Confirm"
+      cancelText="Cancel"
+    />
+    
   <!-- 4.pet list -->
   <view class="pet-cards-box">
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">

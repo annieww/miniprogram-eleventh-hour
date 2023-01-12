@@ -189,10 +189,10 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        let pets = res.data
+        // let pets = res.data
         console.log("From index.js onshow: res.data",res.data)
         page.setData({
-          pets: pets
+          pets: res.data
         })
       }
     })
@@ -221,17 +221,20 @@ Page({
           }
         })
     })
-
     this.getRepos(params)
   },
-
   getRepos(params = {}) {
     console.log("From index.js - getRepos: params", params)
     wx.request({
       url: `${app.globalData.baseURL}/pets`,
       header: app.globalData.header,
       data: params,
-      success(res)
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          pets: res.data
+        })
+      }
     })
   },
   
@@ -257,6 +260,14 @@ Page({
     }
   },
 
+  onOpen(e) {
+    this.setData({ opened: true })
+  },
+  onClose(e) {
+    this.setData({ opened: false })
+  },
+  noop() {},
+
   goToPet(e) {
     console.log('From index.js - goToPet: e', e)
     const id = e.currentTarget.dataset.id
@@ -265,6 +276,11 @@ Page({
         url: `/pages/pets/show?id=${id}`,
       })
   },
+
+  showMenu(e) {
+    console.log(e);
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */
