@@ -2,10 +2,6 @@
 const app = getApp()
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
     events: [
       {
@@ -104,8 +100,8 @@ Page({
               {
                 label: 'Other',
                 value: 'other'
-              }
-            ]
+              },
+            ],
           },
           {
             type: 'radio',
@@ -115,7 +111,7 @@ Page({
               {
                 label: 'All',
                 value: 'all',
-                checked: true
+                checked: true,
               },
               {
                 label: 'Female',
@@ -124,8 +120,8 @@ Page({
               {
                 label: 'Male',
                 value: 'male'
-              }
-            ]
+              },
+            ],
           },
           {
             type: 'radio',
@@ -135,28 +131,29 @@ Page({
               {
                 label: 'All',
                 value: 'all',
-                checked: true
+                checked: true,
               },
               {
                 label: 'Mini',
-                value: 'mini'
+                value: 'Mini'
               },
               {
                 label: 'Small',
-                value: 'small'
+                value: 'Small'
               },
               {
                 label: 'Medium',
-                value: 'medium',
+                value: 'Medium',
               },
               {
                 label: 'Large',
-                value: 'large'
-              }
-            ]
-          }
-        ]
-      }
+                value: 'Large'
+              },
+            ],
+          },
+        ],
+        groups: ['001', '002', '003'],
+      },
     ]
   },
 
