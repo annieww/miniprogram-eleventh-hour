@@ -12,7 +12,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    this.setData({
+      content: wx.getStorageSync('content')
+    })
   },
 
   /**
@@ -26,7 +28,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   /**

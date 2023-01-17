@@ -37,7 +37,20 @@
     <view class="listing-info">
       <view class="info-title">current listing</view>
     </view>
-
+    <view class="listing-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="inner-view"
+        wx:for="{{listed_pets}}"  
+        wx:key="*this" style="background: white">
+          <view class="view-info">
+            <view class="info-text">
+              <view class="pet-name">{{item.name}}</view>
+              <view class="pet-id">{{item.id}}</view>
+            </view>
+          </view>  
+        </view>
+      </scroll-view>
+    </view>
     <!-- EVENT EDIT -->
     <view class="event-info">
       <view class="info-title">event</view>
