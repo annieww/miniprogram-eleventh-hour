@@ -1,25 +1,91 @@
 <!--pages/admin/profile.wxml-->
 <view class="main">
+
+  <!-- HEADER -->
   <view class="header">
+    <view class="header-box">
       <view class="admin-box">
         <view><image class="profilepic" src="/images/admin.png"></image></view>
+        <view class="page-title">admin</view>
       </view>
-      <view class="page-title">admin</view>
-    </view>
-    <view class="header-content">
-      <view class="application-info">
-        <view class="info-title">current application</view>
-      </view>
-      <view class="listing-info">
-        <view class="info-title">current listing</view>
-      </view>
-      <view class="event-info">
-        <view class="info-title">event</view>
-        <view class="info-edit">edit</view>
-      </view>
-      <view class="faq-info">
-        <view class="info-title">FAQ</view>
-        <view class="info-edit">edit</view>
+      
+      <view class="event-and-faq">
+        <view>event</view>
+        <view>FAQ</view>
       </view>
     </view>
+  </view>
+
+  <!-- CONTENT -->
+  <view class="page-content">
+    <!-- TABS -->
+    <view class="tabs-box">
+      <!-- APPLICATION TAB-->
+      <view class="application-tab">
+        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">general applications</view>
+        <view wx:if="{{active_tab === 'application'}}" class="highlight" bindtap="active_application"></view>
+      </view>
+      <!-- REQUESTS TAB -->
+      <view>
+        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">adoption requests</view>
+        <view wx:if="{{active_tab === 'request'}}" class="highlight"></view>
+      </view>
+      <!-- LISTINGS TAB -->    
+      <view class="listing-tab">
+        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">pet listings</view>
+        <view wx:if="{{active_tab === 'listing'}}" class="highlight"></view>
+      </view>
+    </view>
+
+    <!-- GENERAL APPLICATION SCROLL VIEW -->
+    <view wx:if="{{active_tab === 'application'}}"  class="application-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="application-view"
+        wx:for="{{applied_users}}"  
+        wx:key="*this">
+          <view class="application-inner-view"></view>
+          <view class="view-info">
+            <view class="info-text">
+              <view class="user-name">{{item.name}}</view>
+            </view>
+          </view>  
+        </view>
+
+      </scroll-view>
+    </view>
+
+
+    <!-- ADOPTION REQUEST SCROLL VIEW -->
+    <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="request-view"
+        wx:for="{{requested_users}}"  
+        wx:key="*this">
+          <view class="request-inner-view"></view>
+          <view class="view-info">
+            <view class="info-text">
+              <view class="user-name">{{item.name}}</view>
+            </view>
+          </view>  
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- PET LISTING SCROLL VIEW -->
+    <view wx:if="{{active_tab === 'listing'}}" class="listing-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="listing-inner-view"
+        wx:for="{{listed_pets}}"  
+        wx:key="*this">
+          <view class="listing-view-info">
+            <view class="listing-info-text">
+              <view class="pet-name">{{item.name}}</view>
+            </view>
+          </view>  
+        </view>
+      </scroll-view>
+    </view>
+    
+  </view>
+
 </view>

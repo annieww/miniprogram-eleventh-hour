@@ -2,10 +2,6 @@
 const app = getApp()
 
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
     events: [
       {
@@ -40,7 +36,7 @@ Page({
         district: "Pudong",
         age: "1 year",
         tag: "foster",
-        vaccination: "fully vaccinated",
+        vaccination_status: "fully vaccinated",
         neutered: "true",
         image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       },
@@ -66,17 +62,112 @@ Page({
         name: "adopt",
         image_url: "/images/adopt.png"
       }
-    ]
+    ],
 
+    languages: [
+      {
+        name: "EN"
+      },
+      {
+        name: "中文"
+      }
+    ], 
+    items: [
+      {
+        type: 'filter',
+        label: 'Filter',
+        value: 'filter',
+        checked: true, 
+        children: [
+          {
+            type: 'radio',
+            label: 'Species',
+            value: 'species',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true
+              },
+              {
+                label: 'Dogs',
+                value: 'dog'
+              },
+              {
+                label: 'Cats',
+                value: 'cat'
+              },
+              {
+                label: 'Other',
+                value: 'other'
+              },
+            ],
+          },
+          {
+            type: 'radio',
+            label: 'Gender',
+            value: 'gender',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true,
+              },
+              {
+                label: 'Female',
+                value: 'female'
+              },
+              {
+                label: 'Male',
+                value: 'male'
+              },
+            ],
+          },
+          {
+            type: 'radio',
+            label: 'Size',
+            value: 'size',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true,
+              },
+              {
+                label: 'Mini',
+                value: 'Mini'
+              },
+              {
+                label: 'Small',
+                value: 'Small'
+              },
+              {
+                label: 'Medium',
+                value: 'Medium',
+              },
+              {
+                label: 'Large',
+                value: 'Large'
+              },
+            ],
+          },
+        ],
+        groups: ['001', '002', '003'],
+      },
+    ]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+  
   onLoad(options) {
-
+    this.setData({
+      content: wx.getStorageSync('content')
+    })
+    console.log(this.data)
   },
-
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -89,28 +180,76 @@ Page({
    */
   onShow() {
     if (app.globalData.header) {
-      // proceed to fetch api
-      this.getData()
-    } 
+    // proceed to fetch api
+    this.getData()
+    } else {
+      // wait until loginFinished, then fetch API
+      wx.event.on('loginFinished', this, this.getData)
+    }
   },
 
   getData(){
     const page = this
-    console.log('From index.js onshow: header', app.globalData.header)
+    // console.log('From getData onshow: header', app.globalData.header)
     wx.request({
       url: `${app.globalData.baseURL}/pets`,
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        let pets = res.data
         console.log("From index.js onshow: res.data",res.data)
         page.setData({
-          pets: pets
+          pets: res.data,
+          content: app.globalData.content
         })
       }
     })
   },
 
+  onChange(e) {
+    const { checkedItems, items, checkedValues } = e.detail
+    const params = { filter: true }
+    console.log("From index.js - filter onChange: e", e)
+    console.log(checkedItems, items, checkedValues)
+
+    checkedItems.forEach((n) => {
+      n.children
+        .filter((n) => n.selected)
+        .forEach((n) => {
+          if (n.value === 'species'){
+            params.species = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } else if (n.value === 'gender') {
+            params.gender  = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } else if (n.value === 'size') {
+            params.size = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          }
+        })
+    })
+    this.getRepos(params)
+  },
+  getRepos(params = {}) {
+    console.log("From index.js - getRepos: params", params)
+    wx.request({
+      url: `${app.globalData.baseURL}/pets`,
+      header: app.globalData.header,
+      data: params,
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          pets: res.data
+        })
+      }
+    })
+  },
+  
   goToFAQ() {
     wx.switchTab({
       url: '/pages/admin/faq'
@@ -122,9 +261,30 @@ Page({
       this.setData({
         tag: e.currentTarget.dataset.tag
       })
-      this.getData()
     }
   },
+
+  selectLanguage(e) {
+    if (this.data.tag !== e.currentTarget.dataset.tag) {
+      this.setData({
+        language: e.currentTarget.dataset.tag
+      })
+    }
+  },
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/pets/index',
+    })
+  },
+
+  onOpen(e) {
+    this.setData({ opened: true })
+  },
+  onClose(e) {
+    this.setData({ opened: false })
+  },
+  noop() {},
 
   goToPet(e) {
     console.log('From index.js - goToPet: e', e)
@@ -134,6 +294,11 @@ Page({
         url: `/pages/pets/show?id=${id}`,
       })
   },
+
+  showMenu(e) {
+    console.log(e);
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */

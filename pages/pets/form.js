@@ -29,6 +29,11 @@ Page({
 
   },
 
+  goBack() {
+    wx.redirectTo({
+      url: '/pages/admin/profile',
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */

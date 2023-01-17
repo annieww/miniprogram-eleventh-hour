@@ -15,6 +15,9 @@ Page({
     console.log('options from onLoad', options)
     let id = options.id
     let page = this
+    this.setData({
+      content: wx.getStorageSync('content')
+    })
     // Get api data
     wx.request({
       url: `http://localhost:3000/api/v1/pets/${id}`,
@@ -63,7 +66,9 @@ Page({
 
   onShow() {
     if (app.globalData.header) {
-      this.getData()
+      this.getData({
+        content: app.globalData.content
+      })
     } else {
       wx.event.on('loginFinished', this, this.getData)
     }

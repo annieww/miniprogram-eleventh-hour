@@ -1,8 +1,18 @@
 // app.js
 import event from './utils/event';
 wx.event = event;
+import zh from '/utils/zh'
+import en from '/utils/en' 
 
 App({
+  globalData: {
+    userInfo: null,
+    header: null,
+    user: null,
+    baseURL: "http://localhost:3000/api/v1", 
+    language: wx.getStorageSync('language')
+  }, 
+
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -28,12 +38,27 @@ App({
           }
         })
       }
-    })
+    }),
+     // 
+     this.updateContent()
   },
-  globalData: {
-    userInfo: null,
-    header: null,
-    user: null,
-    baseURL: "http://localhost:3000/api/v1"
+  updateContent() {
+    let lastLanguage = wx.getStorageSync('language') // identify the current language
+    if (lastLanguage == 'en') {
+      this.globalData.content = en.content // sets the language according to current language setting
+      wx.setStorageSync('language', 'en') // keeps the language setting
+    } else {
+      this.globalData.content = zh.content
+      wx.setStorageSync('language', 'zh')
+    }
+  }, 
+  changeLanguage() {
+    let language = wx.getStorageSync('language') // identify the current language
+    if (language == 'zh') {
+      wx.setStorageSync('language', 'en') // change the language
+    } else {
+      wx.setStorageSync('language', 'zh')
+    }
+    this.updateContent()
   }
 })

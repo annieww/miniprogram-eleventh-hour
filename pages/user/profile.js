@@ -29,6 +29,12 @@ Page({
 
   },
 
+  goToForm() {
+    wx.redirectTo({
+      url: '/pages/user/form',
+    })
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */

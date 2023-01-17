@@ -64,11 +64,40 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/user/profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null,
+          "partialCompile": {
+            "enabled": false,
+            "pages": [
+              "pages/user/form"
+            ]
+          }
+        },
+        {
+          "name": "",
+          "pathName": "pages/pets/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
   "setting": {
-    "urlCheck": false
-  }
+    "urlCheck": false,
+    "compileHotReLoad": true
+  },
+  "projectname": "miniprogram-eleventh-hour"
 }

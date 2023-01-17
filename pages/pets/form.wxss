@@ -28,7 +28,7 @@
 .form-box {
   color: #404040;
   font-size: 12pt;
-  padding-bottom: 40rpx;
+  padding-bottom: 100rpx;
 }
 
 .form-item {
@@ -51,5 +51,20 @@ textarea {
 }
 
 .form-btn {
-  margin: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80rpx;
+}
+
+.cancel-btn {
+  background-color: white; 
+  border-radius: 32rpx; 
+  border: 1px solid grey; 
+  color: grey; 
+}
+
+.submit-btn {
+  background-color: #00B5A3; 
+  border-radius: 32rpx; 
+  color:white;
 }
