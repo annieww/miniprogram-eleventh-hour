@@ -1,4 +1,5 @@
 // pages/admin/profile.js
+let app = getApp()
 Page({
 
   /**
@@ -14,7 +15,9 @@ Page({
     listed_pets: [
       {name: 'Dobby'},
       {name: 'Tiger'}
-    ]
+    ],
+
+    active_tab: "application"
   },
 
   /**
@@ -71,5 +74,23 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  active_application() {
+    this.setData({
+      active_tab: "application"
+    })
+  },
+
+  active_request() {
+    this.setData({
+      active_tab: "request"
+    })
+  },
+
+  active_listing() {
+    this.setData({
+      active_tab: "listing"
+    })
   }
 })
