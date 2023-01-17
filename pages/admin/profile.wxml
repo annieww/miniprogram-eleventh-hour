@@ -40,16 +40,34 @@
     <!-- GENERAL APPLICATION SCROLL VIEW -->
     <view wx:if="{{active_tab === 'application'}}"  class="application-scroll-view-box">
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="application-inner-view"
+        <view class="application-view"
         wx:for="{{applied_users}}"  
-        wx:key="*this" style="background: white">
-        </view>
-        <view class="view-info">
+        wx:key="*this">
+          <view class="application-inner-view"></view>
+          <view class="view-info">
             <view class="info-text">
               <view class="user-name">{{item.name}}</view>
-              <view class="user-location">📍{{item.location}}</view>
             </view>
           </view>  
+        </view>
+
+      </scroll-view>
+    </view>
+
+
+    <!-- ADOPTION REQUEST SCROLL VIEW -->
+    <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
+      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
+        <view class="request-view"
+        wx:for="{{requested_users}}"  
+        wx:key="*this">
+          <view class="request-inner-view"></view>
+          <view class="view-info">
+            <view class="info-text">
+              <view class="user-name">{{item.name}}</view>
+            </view>
+          </view>  
+        </view>
       </scroll-view>
     </view>
 
@@ -58,11 +76,10 @@
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
         <view class="listing-inner-view"
         wx:for="{{listed_pets}}"  
-        wx:key="*this" style="background: white">
-          <view class="view-info">
-            <view class="info-text">
+        wx:key="*this">
+          <view class="listing-view-info">
+            <view class="listing-info-text">
               <view class="pet-name">{{item.name}}</view>
-              <view class="pet-id">{{item.id}}</view>
             </view>
           </view>  
         </view>
