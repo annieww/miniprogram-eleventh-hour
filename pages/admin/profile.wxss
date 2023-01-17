@@ -5,30 +5,39 @@
 }
 
 .header {
-  height: 250rpx;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  height: 200rpx;
   padding: 20rpx;
 }
 
-.admin-box {
-  margin: 0 auto;
+.header-box {
+  height: 200rpx;
   display: flex;
-  margin-bottom: 30rpx;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #00B5A3;
+  border-radius: 20rpx;
+}
+
+.admin-box {
+  display: flex;
 }
 
 .profilepic {
-  height: 150rpx;
-  width: 150rpx;
-  margin-left: 30rpx;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.event-and-faq {
+  display: flex;
+  flex-direction: column;
+  text-decoration: underline;
 }
 
 .page-content {
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 30rpx;
+  padding: 20rpx;
 }
 
 .page-title {
@@ -37,109 +46,85 @@
   font-weight: bold;
 }
 
-.application-info {
+.tabs-box {
+  /* height: 200rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.highlight{
   margin-bottom: 40rpx;
-  padding: 20rpx;
+  padding: 10rpx;
   background-color: #c5ebe7;
   display: flex;
   justify-content: space-between;
-  height: 60rpx;
+  height: 5rpx;
+  width: 100rpx;
   border-radius: 20rpx;
 }
 
-.all-btn {
-  background-color: transparent;
-  border-radius: 20rpx;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  width: 150rpx;
-  height: 50rpx;
-  text-align: center;
+.tab-title{
+  width: 120rpx;
   font-size: 35rpx;
 }
 
-.listing-info {
-  margin-bottom: 40rpx;
-  padding: 20rpx;
-  background-color: #c5ebe7;
-  border-radius: 20rpx;
-}
-
-.event-info {
-  margin-bottom: 40rpx;
-  padding: 20rpx;
-  background-color:#c5ebe7;
-  display: flex;
-  justify-content: space-between;
-  height: 60rpx;
-  border-radius: 20rpx;
-}
-
-.faq-info {
-  margin-bottom: 40rpx;
-  padding: 20rpx;
-  background-color: #c5ebe7;
-  display: flex;
-  justify-content: space-between;
-  height: 60rpx;
-  border-radius: 20rpx;
-}
-
-.info-title {
+.active {
+  width: 120rpx;
   font-size: 40rpx;
   font-weight: bold;
 }
 
-.info-edit {
-  background-color: transparent;
-  border-radius: 20rpx;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  width: 150rpx;
-  height: 50rpx;
-  text-align: center;
-  font-size: 35rpx;
+.inactive {
+  font-weight: 400;
+  color: #868686;
 }
 
 /* APPLICATION SCROLL VIEW */
-.application-scroll-view-box {
+.application-scroll-view-box, .request-scroll-view-box {
   margin: 0 10rpx;
   position: relative;
   margin-bottom: 40rpx;
 }
 
 .scroll-view {
-  height: 200rpx;
+  height: 350rpx;
 }
 
-.inner-view {
-  box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
-  height: 150rpx;
-  width: 280rpx;
+.application-view, .request-view {
+  height: 200rpx;
   margin: 5rpx 10rpx;
-  border: 1px solid transparent;
-  border-radius: 15rpx;
   display: inline-block;
   justify-content: center;
   align-items: center;
+}
+
+.application-inner-view, .request-inner-view {
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
+  height: 200rpx;
+  width: 200rpx;
+  margin: 5rpx 20rpx;
+  border: 1px solid transparent;
+  border-radius: 150rpx;
   font-size: 12px;
   color: grey;
   position: relative;
 }
 
 .view-info {
+  color: black;
   display: flex;
-  align-items:flex-end;
-  margin-left: 10rpx;
+  justify-content: center;
 }
 
 .info-text {
-  margin-left: 10rpx;
   margin-top: 10rpx;
+  color: black;
 }
 
 .user-name {
-  font-weight: bold;
   font-size: 30rpx;
 }
 
@@ -150,7 +135,33 @@
   margin-bottom: 40rpx;
 }
 
+.listing-view-info {
+  position: relative;
+  left: 10rpx;
+  top: 150rpx;
+  color: black;
+}
+
+.listing-info-text {
+  position: absolute;
+  color: black;
+}
+
 .pet-name {
-  font-weight: bold;
   font-size: 30rpx;
+}
+
+.listing-inner-view {
+  box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
+  height: 200rpx;
+  width: 200rpx;
+  margin: 5rpx 20rpx;
+  border: 1px solid transparent;
+  border-radius: 15rpx;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: grey;
+  position: relative;
 }
