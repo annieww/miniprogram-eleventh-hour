@@ -4,25 +4,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/pets/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null,
-          "partialCompile": {
-            "enabled": true,
-            "pages": []
-          }
-        },
-        {
-          "name": "",
-          "pathName": "pages/user/profile",
+          "pathName": "dist",
           "query": "",
           "launchMode": "default",
           "scene": null,
@@ -54,13 +36,6 @@
         {
           "name": "",
           "pathName": "pages/pets/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/pets/show",
           "query": "",
           "launchMode": "default",
           "scene": null
