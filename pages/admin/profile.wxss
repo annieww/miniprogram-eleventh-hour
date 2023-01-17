@@ -142,3 +142,15 @@
   font-weight: bold;
   font-size: 30rpx;
 }
+
+/* LISTING SCROLL VIEW */
+.listing-scroll-view-box {
+  margin: 0 10rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+}
+
+.pet-name {
+  font-weight: bold;
+  font-size: 30rpx;
+}

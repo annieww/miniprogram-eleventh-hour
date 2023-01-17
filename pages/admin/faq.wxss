@@ -1,6 +1,6 @@
 /* pages/admin/faq.wxss */
 .header {
-  height: 250rpx;
+  height: 500rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -11,4 +11,13 @@
   font-size: 40rpx;
   color: #FD5200;
   font-weight: bold;
+}
+
+.page-content {
+  font-size: 35rpx;
+  padding: 40rpx;
+}
+
+.content-card {
+  margin-bottom: 30rpx;
 }

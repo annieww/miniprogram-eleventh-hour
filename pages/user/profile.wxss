@@ -56,7 +56,8 @@
 .my-info {
   margin-bottom: 40rpx;
   height: 70rpx;
-  background-color: rgb(245, 241, 233);
+  /* background-color: rgb(245, 241, 233); */
+  border: 1px solid #FD5200;
   border-radius: 20rpx;
   padding: 20rpx;
   display: flex;
@@ -66,7 +67,8 @@
 .my-status {
   margin-bottom: 40rpx;
   height: 160rpx;
-  background-color: rgb(245, 241, 233);
+  /* background-color: rgb(245, 241, 233); */
+  border: 1px solid #FD5200;
   border-radius: 20rpx;
   padding: 20rpx;
 }
@@ -102,7 +104,7 @@
 }
 
 .review {
-  background-color: rgb(245, 241, 233);
+  /* background-color: rgb(245, 241, 233); */
   border-radius: 20rpx;
   border: 1px solid grey;
   width: 300rpx;
@@ -114,7 +116,7 @@
 
 .my-booking-box {
   /* padding: 20rpx; */
-  background-color: rgb(245, 241, 233);
+  /* background-color: rgb(245, 241, 233); */
   margin-bottom: 40rpx;
   border-radius: 20rpx;
 }
@@ -125,11 +127,14 @@
   padding-right: 5%;
   font-size: 40rpx;
   font-weight: 700;
+  background-color: #f7bca2; 
+  border-radius: 20rpx;
+  padding: 20rpx;
 }
 
 .my-favorite-box {
   /* padding: 20rpx; */
-  background-color: rgb(245, 241, 233);
+  /* background-color: rgb(245, 241, 233); */
   margin-bottom: 40rpx;
   border-radius: 20rpx;
 }
@@ -141,10 +146,13 @@
 
 .scroll-title {
   margin-top: 20rpx;
-  padding-left: 5%;
-  padding-right: 5%;
+  /* padding-left: 5%;
+  padding-right: 5%; */
   font-size: 40rpx;
   font-weight: 700;
+  background-color: #f7bca2; 
+  border-radius: 20rpx;
+  padding: 20rpx;
 }
 
 .filter {
