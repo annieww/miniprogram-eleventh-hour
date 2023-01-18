@@ -98,7 +98,7 @@
   display: flex;
   justify-content: space-between;
   height: 5rpx;
-  width: 200rpx;
+  width: 150rpx;
   border-radius: 20rpx;
 }
 

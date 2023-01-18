@@ -39,7 +39,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   goToForm() {
