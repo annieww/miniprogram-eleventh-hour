@@ -1,11 +1,22 @@
 // pages/user/profile.js
+let app = getApp()
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    requested_pets: [
+      {name: 'Tiger'},
+      {name: 'Snowy'}
+    ],
 
+    favorited_pets: [
+      {name: 'Dobby'},
+      {name: 'Buddy'}
+    ],
+
+    active_tab: "request"
   },
 
   /**
@@ -68,5 +79,17 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+
+  active_request() {
+    this.setData({
+      active_tab: "request"
+    })
+  },
+
+  active_favorite() {
+    this.setData({
+      active_tab: "favorite"
+    })
+  },
 })
