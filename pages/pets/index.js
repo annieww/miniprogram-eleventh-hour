@@ -177,6 +177,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    this.setData({
+      content: app.globalData.content,
+    })
     if (app.globalData.header) {
     // proceed to fetch api
     this.getData()
