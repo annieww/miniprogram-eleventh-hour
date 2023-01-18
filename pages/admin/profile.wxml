@@ -26,7 +26,7 @@
         <view wx:if="{{active_tab === 'application'}}" class="highlight" bindtap="active_application"></view>
       </view>
       <!-- REQUESTS TAB -->
-      <view>
+      <view class="request-tab">
         <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">adoption requests</view>
         <view wx:if="{{active_tab === 'request'}}" class="highlight"></view>
       </view>
@@ -50,7 +50,6 @@
             </view>
           </view>  
         </view>
-
       </scroll-view>
     </view>
 
