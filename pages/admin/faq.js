@@ -1,4 +1,5 @@
 // pages/admin/faq.js
+const app = getApp()
 Page({
 
   /**

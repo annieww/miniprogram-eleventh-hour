@@ -1,7 +1,7 @@
 <!--pages/admin/faq.wxml-->
 <view class="header">
   <view><image src="../../images/stick.jpg"/></view>
-  <view class="page-title">frequently asked questions</view>
+  <view class="page-title">{{content.text7}}</view>
 </view>
 <view class="page-content">
     <view class="content-card">

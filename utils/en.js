@@ -4,7 +4,8 @@ let en = {
   text3: 'more',
   text4: 'What to do when you found a stray/lost pet in the street?',
   text5: 'What should you know about adopting pets? ',
-  text6: 'Who to contact if you want help out the organization? '
+  text6: 'Who to contact if you want help out the organization? ',
+  text7: 'Frequently Asked Questions'
 }
 module.exports = {
   content: en
