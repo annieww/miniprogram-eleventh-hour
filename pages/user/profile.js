@@ -8,12 +8,14 @@ Page({
   data: {
     requested_pets: [
       {name: 'Tiger'},
-      {name: 'Snowy'}
+      {name: 'Snowy'},
+      {name: 'Dobby'}
     ],
 
     favorited_pets: [
       {name: 'Dobby'},
-      {name: 'Buddy'}
+      {name: 'Buddy'},
+      {name: 'Snowy'}
     ],
 
     active_tab: "request"
