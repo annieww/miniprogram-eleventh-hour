@@ -106,6 +106,11 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage() {
-
+    console.log("share button ->", this.options)
+    return {
+      name: this.data.pet.name,
+      image_url: this.data.pet.image_url,
+      path: `pages/pets/show?id=${this.options.id}`
+    }
   }
 })

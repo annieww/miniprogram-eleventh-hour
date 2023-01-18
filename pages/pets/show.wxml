@@ -18,15 +18,21 @@
           <view>
             <view> Neutered: {{pet.neutered}}</view>
             <view> Vaccinated: {{pet.vaccination}}</view>
-            <view> Special Need: {{pet.special_need}}</view>
+            <view> Size: {{pet.size}}</view>
           </view>
         </view>
+  <!-- 3. add info container -->
+  <view class="more-info">
+  <text> More: </text>
+    <text class="more-cmnt"> Character: {{pet.character}}</text>
+    <text class="more-cmnt"> Special need: {{pet.special_need}}</text>
+  </view>
     </view>
   
-  <!-- 3.adopt button -->
-    <view class="buttons-card">
-      <view class="adopt-card" wx:if="{{(!isCreater)&&(!isBooker)}}">
-        <button style="width:60vw" class="adopt-btn" bindtap="showBookingWindow">apply to adopt</button>
-      </view>
+  <!-- 4.adopt button -->
+    <view class="buttons">
+      <button type="primary" plain="true" open-type="share" class="btn">Share</button>
+      <!-- <view class="adopt-card" wx:if="{{(!isCreater)&&(!isBooker)}}"> -->
+      <button type="default" plain="true" class="btn" bindtap="showBookingWindow">Adopt</button>
     </view>
   </view>

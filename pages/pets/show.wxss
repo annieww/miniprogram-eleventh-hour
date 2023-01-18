@@ -32,12 +32,26 @@
   padding: 10rpx 0;
   display: flex;
   justify-content: space-evenly;
-  background-color: lavenderblush;
+  background-color: #eeeeee;
+}
+.more-info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
 }
 
-.adopt-btn {
-  background-color: #00B5A3;
-  color: white;
+.more-cmnt {
+  padding: 30rpx 20rpx;
+  background-color: #eeeeee;
+  border: 1px solid white;
+  margin-top: 10px;
+}
+
+.buttons {
+  display: flex;
+  margin: 20rpx;
+  display: flex;
+  gap: 30rpx;
 }
 
 .bottom-container {
