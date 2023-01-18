@@ -1,73 +1,70 @@
 /* pages/pets/show.wxss */
-page {
-  margin: 0;
-  padding-bottom: 0;
-}
 
 /* pet image */
 .pet-img {
+  z-index: 1;
+  position: sticky;
+  width: 100vw;
   height: 700rpx;
+  top: 0;
   background-color: rgb(177, 171, 171);
-}
-
-.pet-name {
-  position: absolute;
-  bottom: 60rpx;
-  font-size: 50rpx;
-  font-weight: bold;
-  left: 30rpx;
-  color: white;
-  z-index: 2;
 }
 
 .pet-avt {
   height: 700rpx;
   object-fit: cover;
-  margin-bottom: 30rpx;
   width: 100%;
-}
-
-.picture {
-  position: relative;
 }
 
 /* pet card */
 .pet-card {
-  background-color: beige;
+  padding: 20rpx;
+}
+
+.pet-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: black;
+  padding-bottom: 10rpx;
 }
 
 .pet-info {
-  padding: 40rpx;
+  padding: 10rpx 0;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #eeeeee;
+}
+.more-info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20rpx;
 }
 
-.pet-info text {
-  font-size: 35rpx;
+.more-cmnt {
+  padding: 30rpx 20rpx;
+  background-color: #eeeeee;
+  border: 1px solid white;
+  margin-top: 10px;
 }
 
-.info-title {
-  margin-bottom: 20rpx;
-  font-size: 50rpx;
-  font-weight: bold;
+.buttons {
+  display: flex;
+  margin: 20rpx;
+  display: flex;
+  gap: 30rpx;
 }
 
-.info{
-  color: grey;
-}
-
-.h1 {
-   font-size: 16pt;
-}
-
-.adopt-card {
-  background-color: transparent;
-  height: 250rpx;
-}
-
-.adopt-btn {
-  background-color: #00B5A3;
-  color: white;
-  margin-bottom: 50rpx;
-  border-radius: 32rpx; 
+.bottom-container {
+  z-index: 3;
+  position: relative;
+  border: 1px solid black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  margin-top: -40rpx;
+  background-color: white;
+  padding: 20rpx;
+  min-height: 60vh;
 }
 
 
