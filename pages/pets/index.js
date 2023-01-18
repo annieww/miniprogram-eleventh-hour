@@ -32,8 +32,7 @@ Page({
       {
         // id: 1,
         name: "Dobby",
-        gender: "boy",
-        district: "Pudong",
+        gender: "Male",
         age: "1 year",
         tag: "foster",
         vaccination_status: "fully vaccinated",
@@ -43,11 +42,10 @@ Page({
       {
         // id: 2,
         name: "Tiger",
-        gender: "girl",
-        district: "Huangpu",
+        gender: "Female",
         age: "6 months",
         tag: "adopt",
-        vaccination: "fully vaccinated",
+        vaccination_status: "fully vaccinated",
         neutered: "false",
         image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
       }

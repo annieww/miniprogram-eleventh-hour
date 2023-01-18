@@ -58,7 +58,6 @@
 .complete-profile {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: start;
   margin-bottom: 30rpx;
 }

@@ -1,7 +1,7 @@
 <!--pages/user/profile.wxml-->
 <view class="main">
 
-    <!-- HEADER -->
+  <!-- HEADER -->
   <view class="header">
     <view class="header-box">
       <view class="user-box">
@@ -42,7 +42,7 @@
     </view>
     </view>
 
-    <!-- MY REQUESTS SWIPER -->
+    <!-- MY REQUESTS SCROLL VIEW -->
     <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
         <view class="request-view"
