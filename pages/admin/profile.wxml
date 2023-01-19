@@ -10,8 +10,8 @@
       </view>
       
       <view class="event-and-faq">
-        <view>event</view>
-        <view>FAQ</view>
+        <view>{{content.event_link}}</view>
+        <view>{{content.faq_link}}</view>
       </view>
     </view>
   </view>
@@ -22,17 +22,17 @@
     <view class="tabs-box">
       <!-- APPLICATION TAB-->
       <view class="application-tab">
-        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">general applications</view>
+        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">{{content.application_tab}}</view>
         <view wx:if="{{active_tab === 'application'}}" class="highlight" bindtap="active_application"></view>
       </view>
       <!-- REQUESTS TAB -->
       <view class="request-tab">
-        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">adoption requests</view>
+        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">{{content.request_tab}}</view>
         <view wx:if="{{active_tab === 'request'}}" class="highlight"></view>
       </view>
       <!-- LISTINGS TAB -->    
       <view class="listing-tab">
-        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">pet listings</view>
+        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">{{content.listing_tab}}</view>
         <view wx:if="{{active_tab === 'listing'}}" class="highlight"></view>
       </view>
     </view>

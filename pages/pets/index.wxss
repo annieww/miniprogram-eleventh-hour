@@ -101,7 +101,7 @@ page {
   position: absolute;
   top: 20rpx;
   right: 20rpx;
-  font-size: 40rpx;
+  font-size: 35rpx;
   font-weight: bold;
   color: white;
 }
@@ -110,7 +110,7 @@ page {
   position: absolute;
   top: 70rpx;
   right: 20rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
   font-weight: bold;
   color: white;
 }
@@ -119,7 +119,7 @@ page {
   position: absolute;
   top: 120rpx;
   right: 20rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
   font-weight: bold;
   color: white;
 }
@@ -133,7 +133,6 @@ page {
 .tags-scroll-view {
   margin-top: 30rpx;
   height: 160rpx;
-  font-family: Fira Sans;
 }
 
 .tag-scroll-filter {
@@ -227,4 +226,5 @@ page {
   height: 140rpx;
   justify-content: space-between;
   box-sizing: border-box;
+  font-size: 30rpx;
 }

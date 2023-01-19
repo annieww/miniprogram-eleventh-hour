@@ -12,7 +12,7 @@
       <view class="info-and-status">
         <view class="my-info">{{content.text10}}</view>
         <view class="my-status">{{content.text11}}</view>
-        <view class="review">under review</view>
+        <view class="review">pending</view>
       </view>
     </view>
   </view>

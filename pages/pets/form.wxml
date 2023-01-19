@@ -1,6 +1,6 @@
 <!--pages/pets/form.wxml-->
 <view class="header-content">
-  <view class="page-title">upload pet information</view>
+  <view class="page-title">{{content.pets_form}}</view>
 </view>
 
 <view class="main">
@@ -70,9 +70,9 @@
       </view>
 
       <view class="form-btn">
-        <button bindtap="goBack" class="cancel-btn" style="width: 280rpx;" type="positive" formType="submit">cancel</button>   
+        <button bindtap="goBack" class="cancel-btn" style="width: 280rpx;" type="positive" formType="submit">{{content.cancel}}</button>   
 
-        <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">submit</button>          
+        <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">{{content.submit}}</button>          
       </view>
     </form>
   </view>

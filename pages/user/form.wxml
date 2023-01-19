@@ -1,6 +1,6 @@
 <!--pages/user/form.wxml-->
 <view class="header-content">
-  <view class="page-title">complete my general information</view>
+  <view class="page-title">{{content.user_form}}</view>
 </view>
 
 <view class="main">
@@ -80,9 +80,9 @@
       </view>
  
       <view class="form-btn">
-          <button class="cancel-btn" bindtap="goBack" style="width: 280rpx;" type="positive" >cancel</button>  
+          <button class="cancel-btn" bindtap="goBack" style="width: 280rpx;" type="positive" >{{content.cancel}}</button>  
           
-          <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">submit</button>          
+          <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">{{content.submit}}</button>          
       </view>
     </form>
   </view>

@@ -7,6 +7,7 @@
 .header {
   height: 200rpx;
   padding: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .header-box {
@@ -67,12 +68,12 @@
 }
 
 .tab-title{
-  width: 120rpx;
+  width: 130rpx;
   font-size: 35rpx;
 }
 
 .active {
-  width: 120rpx;
+  width: 130rpx;
   font-size: 40rpx;
   font-weight: bold;
 }
@@ -125,7 +126,7 @@
 }
 
 .user-name {
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 /* LISTING SCROLL VIEW */
@@ -148,14 +149,14 @@
 }
 
 .pet-name {
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 .listing-inner-view {
   box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
   height: 200rpx;
   width: 200rpx;
-  margin: 5rpx 20rpx;
+  margin: 40rpx 20rpx;
   border: 1px solid transparent;
   border-radius: 15rpx;
   display: inline-block;

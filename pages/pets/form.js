@@ -1,4 +1,5 @@
 // pages/pets/form.js
+const app = getApp()
 Page({
 
   /**
@@ -26,7 +27,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   goBack() {
