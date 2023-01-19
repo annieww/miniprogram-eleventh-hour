@@ -22,13 +22,15 @@
   display: flex;
 }
 
-.profilepic {
-  height: 100rpx;
+.avatar {
   width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
 }
 
 .user-name {
-  font-size: 40rpx;
+  font-size: 30rpx;
+  margin-left: 15rpx;
 }
 
 .info-and-status {
@@ -53,6 +55,7 @@
   text-align: center;
   padding: 5rpx 0;
   font-size: 25rpx;
+  margin-top: 10rpx;
 }
 
 .complete-profile {

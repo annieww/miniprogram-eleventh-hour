@@ -3,11 +3,17 @@
   <view class="language-btn" bindtap="changeLanguage"> EN | 中文</view>
   <!-- 1.about us -->
   <view class="header">
-    <view class="header-content">
-      <view class="logo"><image class="ehr-logo" src="/images/logo_1.png"></image></view>
-      <view class="ehr-heading">Eleventh Hour Rescues</view>
+    <view class="logo-box">
+      <view class="logo-and-heading">
+        <image class="ehr-logo" mode="widthFix" src="/images/pet-logo.png"></image>
+        <view class="ehr-heading">Eleventh Hour Rescues 动物救助</view>
+      </view>
+    </view>
+    <view class="content-box">
       <view class="ehr-title">{{content.text1}}</view>
-      <view class="ehr-content">{{content.text2}}</view>
+      <view class="header-content">
+        <view class="ehr-content">{{content.about1}}</view>
+      </view>
       <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view>
     </view>
   </view>

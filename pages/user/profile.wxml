@@ -5,7 +5,7 @@
   <view class="header">
     <view class="header-box">
       <view class="user-box">
-        <view><image class="profilepic" src="/images/paw.png"></image></view>
+        <view><image class="avatar" mode="aspectFill" src="/images/stick.jpg"></image></view>
         <view class="user-name">username{{user.name}}</view>
       </view>
 
