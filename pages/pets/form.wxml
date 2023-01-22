@@ -1,80 +1,128 @@
 <!--pages/pets/form.wxml-->
-<view class="header-content">
-  <view class="page-title">upload pet information</view>
-</view>
-
-<view class="main">
-  <view class="form-box">
-    <form bindsubmit="save">
-    <!-- <view>{{Object.keys(formData).length === 0}}</view> -->
-    <!-- wx:if="{{Object.keys(formData).length === 0}} -->
-    <block>
-      <view class="form-item" style="text-align: center">
-            <image src="{{src}}" style="width: 200rpx; height: 200rpx; border-radius:50%; margin-top: 18rpx; transition: linear 0.25s; box-shadow: 0px 3px 8px rgba(0,0,0,0.6 ); transition: linear 0.25s;" mode="aspectFill" bindtap="listenerBtnChooseImage"/>
+   
+<view class="page">
+  <view class="page-body">
+    <form bindsubmit="formSubmit">
+    <!-- Name -->
+    <view class="page-section">
+        <wux-cell 
+        hover-class="none"
+        >
+          <wux-input 
+          label="Name"
+          value="{{ name }}"
+          bind:change="inputName"
+          label="Name" 
+          placeholder="type here" />
+        </wux-cell>
       </view>
-    </block>
+    <!-- Gender -->
+      <wux-popup-select
+        value="{{ value1 }}"
+        options="{{ options1 }}"
+        data-index="1"
+        bind:confirm="onConfirm"
+        bind:valueChange="onValueChange"
+      >
+        <wux-cell title="Gender" is-link extra="{{ displayValue1 }}"></wux-cell>
+      </wux-popup-select>
+    <!-- Species -->
+      <wux-popup-select
+        value="{{ value2 }}"
+        options="{{ options2 }}"
+        data-index="2"
+        bind:confirm="onConfirm"
+        bind:valueChange="onValueChange"
+      >
+        <wux-cell title="Species" is-link extra="{{ displayValue2 }}"></wux-cell>
+      </wux-popup-select>
+    <!-- Size -->
+      <wux-popup-select
+        value="{{ value3 }}"
+        options="{{ options3 }}"
+        data-index="3"
+        bind:confirm="onConfirm"
+        bind:valueChange="onValueChange"
+      >
+        <wux-cell title="Size" is-link extra="{{ displayValue3 }}"></wux-cell>
+      </wux-popup-select>
+    <!-- Age -->
+      <wux-cell hover-class="none">
+        <wux-input
+          label="Age"
+          value="{{ age }}"
+          controlled
+          type="number"
+          bind:change="inputAge"
+        />
+      </wux-cell>
+    <!-- Neutered & Vaccinated & Special need-->
+    <wux-cell-group title="Health related information">
+      <wux-cell name="neutered">
+        <text>Neutered</text>
+        <wux-switch
+          name="neutered"
+          value="{{ neutered }}"
+          bindchange="inputNeutered"
+          slot="footer"
+        > 
+        </wux-switch>
+      </wux-cell>
 
-      <view class="form-item">my name
-        <input bindinput="setInputData" data-field="name" name="name" value="{{formData.name}}"/>
-      </view>
+      <wux-cell name="vaccinated">
+        <text>First Vaccination</text>
+        <wux-switch
+          name="vaccinated"
+          value="{{ vaccinated }}"
+          bindchange="inputVaccinated"
+          slot="footer"
+        > 
+        </wux-switch>
+      </wux-cell>
 
-      <view>
-      <label for="picker">my species</label>
-        <picker bindchange="bindPickerChange" data-field="species" value="{{speciesIndex}}" range="{{species}}">
-        <input value="{{formData.species}}"/>
-        </picker>
-      </view>
-      
-      <view class="form-item">my age
-        <input bindinput="setInputData" data-field="age" name="age" value="{{formData.age}}"/>
-      </view>
+      <wux-cell name="special_need">
+        <text>Special Need</text>
+        <wux-switch
+          name="special_need"
+          value="{{ special_need }}"
+          bindchange="inputSpecialNeed"
+          slot="footer"
+        > 
+        </wux-switch>
+      </wux-cell>
+    </wux-cell-group>
+    <!-- Image Upload -->
+    <wux-upload
+      listType="picture-card"
+      defaultFileList="{{ fileList }}"
+      max="4"
+      url="https://www.skyvow.cn/api/common/file"
+      bindtap="uploadImg"
+      bind:preview="onPreview"
+      bind:remove="onRemove"
+    >
+      <image src="{{ imageUrl }}" wx:if="{{ imageUrl }}" />
+      <text wx:else>Upload</text>
+    </wux-upload>
 
-      <view class="form-item">
-        <label for="picker">my gender</label>
-        <picker bindchange="bindPickerChange" data-field="sex" value="{{genderIndex}}" range="{{genders}}">
-            <input value="{{formData.gender}} "/>
-        </picker>
-      </view>
+    <!-- Character -->
+    <wux-cell-group title="Additional information">
+      <wux-cell hover-class="none">
+        <wux-textarea
+          hasCount
+          rows="3"
+          cursorSpacing="80"
+          bind:change="inputAddInfo"
+        />
+      </wux-cell>
+    </wux-cell-group>
 
-      <view class="form-item">my character
-        <textarea bindinput="setInputData" data-field="character" type="text" style="padding: 25rpx" name="character" value="{{formData.character}}"/>  
-      </view>
-
-      <view class="form-item">special need
-        <input bindinput="setInputData" data-field="special_need" type="text" style="padding: 25rpx" name="special_need" value="{{formData.special_need}}"/>
-      </view>
-
-      <view class="form-item">breed
-        <input bindinput="setInputData" data-field="breed" name="breed" value="{{formData.breed}}"/>
-      </view>
-
-      <view class="form-item">
-        <label for="picker">neuter status</label>
-        <picker bindchange="bindPickerChange" data-field="neutered" value="{{neuterStatusIndex}}" range="{{neuter_status}}">
-        <input value="{{formData.neutered}}"/>
-        </picker>
-      </view>
-
-      <view class="form-item">
-        <label for="picker">vaccination status</label>
-        <picker bindchange="bindPickerChange" data-field="vaccination_status" value="{{vaccinationStatusIndex}}" range="{{vaccination_types}}">
-        <input value="{{formData.vaccination_status}}"/>
-        </picker>
-      </view>
-
-      <view class="form-item">
-        <label for="picker">adoption status</label>
-        <picker bindchange="bindPickerChange" data-field="adoption_type" value="{{adoptionTypeIndex}}" range="{{adoption_types}}">
-        <input value="{{formData.adoption_status}}"/>
-        </picker>
-      </view>
-
-      <view class="form-btn">
-        <button bindtap="goBack" class="cancel-btn" style="width: 280rpx;" type="positive" formType="submit">cancel</button>   
-
-        <button class="submit-btn" style="width: 280rpx;" type="positive" formType="submit">submit</button>          
+    <!-- Buttons -->
+      <view class="page-section">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">Submit</button>
+        <button style="margin: 30rpx 0" formType="reset">Reset</button>
       </view>
     </form>
   </view>
-</view> 
-     
+</view>
+
