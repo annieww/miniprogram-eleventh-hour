@@ -51,25 +51,17 @@ Page({
       }
     ],
 
-    tags: [
-      {
-        name: "foster",
-        image_url: "/images/foster.png"
-      },
-      {
-        name: "adopt",
-        image_url: "/images/adopt.png"
-      }
-    ],
+    // tags: [
+    //   {
+    //     name: "foster",
+    //     image_url: "/images/foster.png"
+    //   },
+    //   {
+    //     name: "adopt",
+    //     image_url: "/images/adopt.png"
+    //   }
+    // ],
 
-    languages: [
-      {
-        name: "EN"
-      },
-      {
-        name: "中文"
-      }
-    ], 
     items: [
       {
         type: 'filter',
