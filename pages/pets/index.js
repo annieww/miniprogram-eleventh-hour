@@ -189,7 +189,7 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        console.log("From index.js onshow: res.data",res.data)
+        // console.log("From index.js onshow: res.data",res.data)
         page.setData({
           pets: res.data,
           content: app.globalData.content

@@ -1,0 +1,32 @@
+.tab-bar {
+  position: fixed;
+  border: 1px solid #808080;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0px 0px;
+  border-radius: 50rpx;
+  height: 80px;
+  background-color: white;
+  display: flex;
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item-cover-image {
+  width: 54rpx;
+  height: 54rpx;
+  margin-bottom: 8rpx;
+}
+
+.tab-bar-item-cover-view {
+  font-size: 24rpx;
+  width: 200rpx;
+}
