@@ -17,11 +17,11 @@ Component({
       iconPath: "/images/paw.png",
       selectedIconPath: "/images/paw-active.png"
       }, {
-      pagePath: "pages/pets/form",
+      pagePath: "/pages/pets/form",
       iconPath: "/images/add.png",
       selectedIconPath: "/images/add-active.png"
       }, {
-      pagePath: "pages/admin/profile",
+      pagePath: "/pages/admin/profile",
       iconPath: "/images/admin.png",
       selectedIconPath: "/images/admin-active.png"       
       }

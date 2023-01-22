@@ -53,7 +53,7 @@
     </view>
   </block>
 
-  <wux-filterbar
+  <wux-filterbar 
       items="{{ items }}"
       bind:change="onChange"
       bind:open="onOpen"

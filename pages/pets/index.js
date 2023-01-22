@@ -172,6 +172,12 @@ Page({
     this.setData({
       content: app.globalData.content,
     })
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 0
+      })
+    }
     if (app.globalData.header) {
     // proceed to fetch api
     this.getData()
