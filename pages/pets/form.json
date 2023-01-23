@@ -17,6 +17,8 @@
       "wux-picker": "../../dist/picker/index",
       "wux-date-picker": "../../dist/date-picker/index",
       "wux-popup-select": "../../dist/popup-select/index",
-      "wux-upload": "../../dist/upload/index"
+      "wux-upload": "../../dist/upload/index",
+      "wux-icon": "../../dist/icon/index",
+      "wux-button": "../../dist/button/index"
     }
   }

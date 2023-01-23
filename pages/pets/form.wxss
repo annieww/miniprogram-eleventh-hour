@@ -1,12 +1,10 @@
 /* pages/pets/form.wxss */
+.btn {
+  margin-top: 30rpx
 
-.pet-img {
-  height: 250rpx; 
-  width: 250rpx; 
-  background-color: #eeeeee;
 }
-
-.picker{
-  padding: 16rpx;
+.btn-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-

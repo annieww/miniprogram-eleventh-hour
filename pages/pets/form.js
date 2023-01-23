@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    imageUrl: ["/images/admin-active.png"], 
+    imageUrl: [], 
     name: '',
     value1: "",
     value2:"",
@@ -129,10 +129,10 @@ Page({
     })
   },
 
-  onRemove(e) {
+  onImgRemove(e) {
     const { file, fileList } = e.detail
     wx.showModal({
-      content: '确定删除？',
+      content: 'Delete this image？',
       success: (res) => {
         if (res.confirm) {
           this.setData({
