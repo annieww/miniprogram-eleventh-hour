@@ -67,5 +67,8 @@
   min-height: 60vh;
 }
 
-
+.box {
+  display: flex;
+  
+}
   

@@ -3,31 +3,53 @@ const app = getApp()
 
 Page({
   data: {
-    imageUrl: [], 
     name: '',
     value1: '',
-    value2: "",
-    value3: "",
+    value2: '',
+    value3: '',
     neutered: false,
     vaccination: false,
     special_need: false,
     options1: ['Female', 'Male'],
-    displayValue1: 'select',
     options2: ['Dog', 'Cat', 'Other'],
-    displayValue2: 'select',
     options3: ['Mini', 'Small', 'Medium', 'Large'],
-    displayValue3: 'select',
-    // resetForm: true, 
+    resetForm: true, 
+    src: "/images/camera.png",
     formData: {},
     character: "",
-    fileList: [],
+    fileList: []
   },
   onLoad(options) {
   },
   onReady() {
   },
-  onShow() {
+  onShow: function() {
+    const page = this
+    if (page.data.resetForm) this.resetForm();
+    const id = wx.getStorageSync('editId')
+    console.log("from storage", id)
+    if (id) {
+      console.log('id found -> get pet data from server (to show in form)')
+      wx.showToast({
+        title: 'Loading...',
+        icon: 'loading',
+        duration: 1500
+      })
+      wx.request({
+        header: app.globalData.header,
+        url: `${app.globalData.baseURL}/pets/${id}`,
+        method: 'GET',
+        success(res) {
+          page.setData({
+            formData: res.data.pet,
+            src: res.data.pet.image_url
+          })
+        },
+      })
+      wx.removeStorageSync('editId')
+    }
   },
+
   resetForm() {
     this.setData({formData: {}})
   },
@@ -37,7 +59,6 @@ Page({
     formData[field] = values.value
     this.setData({
       [`value${key}`]: values.value,
-      [`displayValue${key}`]: values.label,
       formData
     })
   },
@@ -75,70 +96,38 @@ Page({
   inputAddInfo(e) {
     this.onChange('character', e)
   },
-
-  uploadImg(e) {
-    const { file, fileList } = e.detail
-    console.log(e.detail)
-    // wx.upload({
-    //   url: `${app.globalData.baseURL}/pets/${id}/upload`,
-
-    // })
-    if (file.status === 'uploading') {
-      this.setData({
-        progress: 0,
-      })
-      wx.showLoading()
-    } else if (file.status === 'done') {
-      this.setData({
-        imageUrl: file.url,
-      })
-    }
-    // Controlled state should set fileList
-    this.setData({ fileList })
-
-  //   const page = this
-  //   wx.uploadFile({
-  //     url: `${app.globalData.baseURL}/pets/${id}/upload`,
-  //     filePath: 'page.data.src[]',
-  //     header: page.globalData.header,
-  //     name: 'image',
-  //     success(res) {
-  //       wx.navigateTo ({
-  //         url: `pages/pets/${id}`
-  //       })
-  //       console.log(res)
-  //     }
-  //   })
-  // },
-  },
-
-  onPreview(e) {
-    console.log('onPreview', e)
-    const { file, fileList } = e.detail
-    wx.previewImage({
-      current: file.url,
-      urls: fileList.map((n) => n.url),
+  chooseImage: function () {
+    const page = this
+    page.setData({resetForm: false})
+    // Upload an image
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        console.log('img successfully uploaded', res)
+        page.setData({
+          src: res.tempFilePaths
+        })
+      }
     })
-  },
+   },
 
-  onImgRemove(e) {
-    const { file, fileList } = e.detail
-    wx.showModal({
-      content: 'Delete this image？',
-      success: (res) => {
-        if (res.confirm) {
-          this.setData({
-            fileList: fileList.filter((n) => n.uid !== file.uid),
-          })
-        }
-      },
+  upload(id){
+    const page = this
+    wx.uploadFile({
+      url: `${app.globalData.baseURL}/pets/${id}/upload`,
+      filePath: page.data.src[0],
+      header: app.globalData.header,
+      name: 'image',
+      success (res){
+        page.setData({resetForm: true})
+      }
     })
   },
 
    create(e) {
-     console.log("from submit button -->", e)
      const page = this
-     console.log('header:', app.globalData.header)
      let pet = page.data.formData
      page.setData({pet})
      console.log("this is the data to send back -->", page.data.pet)
@@ -147,19 +136,18 @@ Page({
     if (page.data.pet.id !== undefined && page.data.pet.id !== null) {
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${page.data.pet}`,
+        url: `${app.globalData.baseURL}/pets/${page.data.pet.id}`,
         method: 'PUT',
         data: {
           pet: pet
         },
         success(res) {
           console.log('update success?', res)
-          // page.upload(page.data.pet.id)
+          page.upload(page.data.pet.id)
           page.setData({resetForm: true})
-          wx.switchTab({
-            url: '/pages/pets/index',
-          })
-
+          // wx.switchTab({
+          //   url: '/pages/pets/index',
+          // })
           wx.navigateBack({
             delta: 0,
           })
@@ -183,21 +171,18 @@ Page({
               showCancel: false,
               confirmText: 'OK'
             })
-          } else if (res.statusCode === 500) {
-            wx.showModal({
-              title: "Sorry, please try again!",
-              showCancel: false,
-              confirmText: 'OK'
-            })
           } else {
             wx.showToast({
               title: "Success!",
               duration: 2000
             })  
-            // Calling upload image function
+            // Calling IMG UPLOAD FUNCTION
             const id = res.data.pet.id
             page.setData({resetForm: true})
-            // page.upload(id)
+            page.upload(id)
+            wx.navigateTo({
+              url: '/pages/pets/form'
+            })
           }
         },
         fail(error) {

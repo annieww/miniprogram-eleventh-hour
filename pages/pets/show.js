@@ -2,63 +2,30 @@
 const app = getApp()
 Page({
 
-  /**
-   * Page initial data
-   */
   data: {
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad(options) {
-    console.log('options from onLoad', options)
-    let id = options.id
-    let page = this
-    this.setData({
-      content: wx.getStorageSync('content')
-    })
-    // Get api data
-    wx.request({
-      url: `http://localhost:3000/api/v1/pets/${id}`,
-      // method: 'GET',
-      success(res) {
-        console.log({res})
-        const pet = res.data;
-        console.log("Pet:" + res.data)
-        // Update local data
-        page.setData({pet: pet});
-        // wx.hideToast();
-      }
-    })
+
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   onReady() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
   getData() {
     let page = this
-    console.log('from show.js = onshow: options', page.options)
     let id = page.options.id
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/pets/${id}`,
       success(res) {
-        console.log("From show.js - onshow: res",res)
         if (res.statusCode === 200) {
           const pet = res.data.pet;
           page.setData({
             pet: pet
-
           });
-          console.log("From show.js: status code is", res.statusCode)
+          console.log("From show.js: status code", res.statusCode)
         }
       }
     })
@@ -66,47 +33,61 @@ Page({
 
   onShow() {
     if (app.globalData.header) {
-      this.getData({
-        content: app.globalData.content
-      })
+      this.getData()
     } else {
       wx.event.on('loginFinished', this, this.getData)
     }
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
+  edit(e) {
+    wx.setStorageSync('editId', this.data.pet.id)
+    wx.switchTab({
+      header: app.globalData.header,
+      url: `/pages/pets/form`
+    })
+  },
+
+  delete(e) {
+    let id = this.data.pet.id
+    wx.showModal({
+      title: 'Are you sure?',
+      content: 'Are you sure to delete this post?',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            header: app.globalData.header,
+            url: `${app.globalData.baseURL}/pets/${id}`,
+            method: 'DELETE',
+            success(res){
+              wx.switchTab({
+                url: '/pages/pets/index',
+              })
+            }
+          })
+
+        } else {
+        }
+      }
+    })
+  },
+
   onHide() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
   onUnload() {
 
   },
 
-  /**
-   * Page event handler function--Called when user drop down
-   */
   onPullDownRefresh() {
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
   onReachBottom() {
 
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
   onShareAppMessage() {
-    console.log("share button ->", this.options)
     return {
       name: this.data.pet.name,
       image_url: this.data.pet.image_url,

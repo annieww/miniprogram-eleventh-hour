@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "wux-icon": "../../dist/icon/index"
+  }
 }

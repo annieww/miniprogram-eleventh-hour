@@ -10,9 +10,23 @@
         >
           <wux-input 
           label="Name"
-          value="{{ name }}"
+          controlled
+          type="text"
+          maxlength="10"
+          value="{{formData.name}}"
           bind:change="inputName" 
-          placeholder="type here" />
+         />
+        </wux-cell>
+        <!-- Age -->
+        <wux-cell >
+            <wux-input 
+            label="Age"
+            controlled
+            type="text"
+            maxlength="10"
+            value="{{formData.age}}"
+            bind:change="inputAge" 
+            />
         </wux-cell>
         <!-- Gender -->
           <wux-popup-select
@@ -23,7 +37,7 @@
             bind:confirm="onConfirm"
             bind:valueChange="onValueChange"
           >
-            <wux-cell title="Gender" is-link extra="{{ displayValue1 }}"></wux-cell>
+            <wux-cell title="Gender" is-link extra="{{ formData.gender }}"></wux-cell>
           </wux-popup-select>
         <!-- Species -->
           <wux-popup-select
@@ -34,7 +48,7 @@
             bind:confirm="onConfirm"
             bind:valueChange="onValueChange"
           >
-            <wux-cell title="Species" is-link extra="{{ displayValue2 }}"></wux-cell>
+            <wux-cell title="Species" is-link extra="{{ formData.species }}"></wux-cell>
           </wux-popup-select>
         <!-- Size -->
           <wux-popup-select
@@ -45,18 +59,8 @@
             bind:confirm="onConfirm"
             bind:valueChange="onValueChange"
           >
-            <wux-cell title="Size" is-link extra="{{ displayValue3 }}"></wux-cell>
+            <wux-cell title="Size" is-link extra="{{ formData.size }}"></wux-cell>
           </wux-popup-select>
-        <!-- Age -->
-          <wux-cell title="Age">
-            <wux-input-number
-            label="Age"
-            controlled
-            min="{{1}}"
-            max="{{15}}"
-            bind:change="inputAge"
-            />
-          </wux-cell>
         </wux-cell-group>
     <!-- Neutered & Vaccinated & Special need-->
       <wux-cell-group title="Health related information">
@@ -64,7 +68,7 @@
           <text>Neutered</text>
           <wux-switch
             name="neutered"
-            value="{{ neutered }}"
+            value="{{ formData.neutered }}"
             bindchange="inputNeutered"
             slot="footer"
           > 
@@ -75,7 +79,7 @@
           <text>First Vaccination</text>
           <wux-switch
             name="vaccination"
-            value="{{ vaccination }}"
+            value="{{ formData.vaccination }}"
             bindchange="inputVaccination"
             slot="footer"
           > 
@@ -86,7 +90,7 @@
           <text>Special Need</text>
           <wux-switch
             name="special_need"
-            value="{{ special_need }}"
+            value="{{ formData.special_need }}"
             bindchange="inputSpecialNeed"
             slot="footer"
           > 
@@ -94,28 +98,17 @@
         </wux-cell>
         </wux-cell-group>
     <!-- Image Upload -->
-      <wux-cell-group title="Upload up to 4 images">
-        <wux-cell>
-          <wux-upload
-            listType="picture-card"
-            defaultFileList="{{ fileList }}"
-            url="https://www.skyvow.cn/api/common/file"      
-            max="4"
-            bind:change="uploadImg"
-            bind:preview="onPreview"
-            bind:remove="onImgRemove"
-          >
-            <!-- <image src="{{ imageUrl }}" wx:if="{{ imageUrl }}" /> -->
-            <wux-icon type="md-add" color="#33cd5f"/>
-          </wux-upload>
-        </wux-cell>
-        </wux-cell-group>
+      <wux-cell-group title="Upload up to 4 images" bindtap="chooseImage">
+        <image src="{{src}}" style="width: 150rpx; height: 150rpx; margin-top: 25rpx; margin-left: 25rpx;" />
+      </wux-cell-group>
     <!-- Character -->
       <wux-cell-group title="Additional information">
-        <wux-cell hover-class="none" >
+        <wux-cell hover-class="none">
           <wux-textarea
             hasCount
             rows="3"
+            controlled
+            value="{{formData.character}}"
             cursorSpacing="80"
             bind:change="inputAddInfo"
           />
@@ -124,7 +117,7 @@
     <!-- Buttons -->
       <view class="btn-area">
         <button class="btn" plain="true" type="primary" formType="submit">Submit</button>
-        <button class="btn" plain="true" formType="reset">Reset</button>
+        <button class="btn" plain="true" bindtap="resetForm">Reset</button>
         </view>
     </form>
   </view>
