@@ -6,7 +6,7 @@
   right: 0;
   margin: 0px 0px;
   border-radius: 50rpx;
-  height: 80px;
+  height: 40px;
   background-color: white;
   display: flex;
 }
