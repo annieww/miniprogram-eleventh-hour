@@ -27,9 +27,6 @@ Component({
       }
     ]
   },
-  attached() {
-    this.loadFonts();
-  },
 
   methods: {
     switchTab: function (e) {
@@ -41,12 +38,6 @@ Component({
         selectedTabIndex: data.index
       })
       wx.switchTab({url: url})
-    }, 
-    loadFonts: function () {
-      wx.loadFontFace({
-        family: 'Fira Sans',
-        source: 'https://fonts-triptrip.oss-cn-shanghai.aliyuncs.com/fira-sans/FiraSans-Regular.otf',
-      })
     }
   }
 })
