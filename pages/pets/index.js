@@ -32,6 +32,7 @@ Page({
       {
         // id: 1,
         name: "Dobby",
+        species: "Dog",
         gender: "Male",
         age: "1 year",
         tag: "foster",
@@ -42,6 +43,7 @@ Page({
       {
         // id: 2,
         name: "Tiger",
+        species: 'Cat',
         gender: "Female",
         age: "6 months",
         tag: "adopt",
@@ -155,7 +157,7 @@ Page({
     this.setData({
       content: wx.getStorageSync('content')
     })
-    console.log(this.data)
+    // console.log(this.data)
   },
   
   /**
@@ -257,13 +259,13 @@ Page({
     }
   },
 
-  selectLanguage(e) {
-    if (this.data.tag !== e.currentTarget.dataset.tag) {
-      this.setData({
-        language: e.currentTarget.dataset.tag
-      })
-    }
-  },
+  // selectLanguage(e) {
+  //   if (this.data.tag !== e.currentTarget.dataset.tag) {
+  //     this.setData({
+  //       language: e.currentTarget.dataset.tag
+  //     })
+  //   }
+  // },
   changeLanguage() {
     app.changeLanguage()
     wx.reLaunch({
