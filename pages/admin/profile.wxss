@@ -48,7 +48,7 @@
 }
 
 .tabs-box {
-  /* height: 200rpx; */
+  height: 170rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,7 +156,7 @@
   box-shadow: 0 0 10rpx rgba(0,0,0,0.2);
   height: 200rpx;
   width: 200rpx;
-  margin: 40rpx 20rpx;
+  margin: 5rpx 20rpx;
   border: 1px solid transparent;
   border-radius: 15rpx;
   display: inline-block;
