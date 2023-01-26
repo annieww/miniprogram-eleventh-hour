@@ -52,7 +52,7 @@
 .review {
   border-radius: 20rpx;
   border: 1px solid grey;
-  width: 200rpx;
+  width: 160rpx;
   text-align: center;
   padding: 5rpx 0;
   font-size: 25rpx;

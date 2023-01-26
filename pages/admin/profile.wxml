@@ -5,12 +5,12 @@
   <view class="header">
     <view class="header-box">
       <view class="admin-box">
-        <view><image class="profilepic" src="/images/admin.png"></image></view>
-        <view class="page-title">admin</view>
+        <view><image class="avatar" mode="aspectFill" src="/images/admin.png"></image></view>
+        <view class="admin-name">admin</view>
       </view>
       
       <view class="event-and-faq">
-        <view>{{content.event_link}}</view>
+        <!-- <view>{{content.event_link}}</view> -->
         <view>{{content.faq_link}}</view>
       </view>
     </view>

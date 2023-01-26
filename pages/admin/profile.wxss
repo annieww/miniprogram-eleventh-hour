@@ -23,15 +23,17 @@
   display: flex;
 }
 
-.profilepic {
+.avatar {
   height: 100rpx;
   width: 100rpx;
+  border-radius: 50%;
 }
 
 .event-and-faq {
   display: flex;
   flex-direction: column;
   text-decoration: underline;
+  font-size: 30rpx;
 }
 
 .page-content {
@@ -41,10 +43,10 @@
   padding: 20rpx;
 }
 
-.page-title {
-  font-size: 40rpx;
+.admin-name {
+  font-size: 30rpx;
   color: #00B5A3;
-  font-weight: bold;
+  margin-left: 15rpx;
 }
 
 .tabs-box {
