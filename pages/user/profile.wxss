@@ -88,7 +88,7 @@
 }
 
 .tabs-box {
-  /* height: 200rpx; */
+  height: 170rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -155,14 +155,10 @@
   position: relative;
 }
 
-.view-info {
-  color: black;
+.info-text {
   display: flex;
   justify-content: center;
-}
-
-.info-text {
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   color: black;
   font-size: 28rpx;
 }

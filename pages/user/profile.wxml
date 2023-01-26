@@ -49,11 +49,10 @@
         wx:for="{{requested_pets}}"  
         wx:key="*this">
           <view class="request-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
+
         </view>
       </scroll-view>
     </view>
@@ -64,11 +63,9 @@
         wx:for="{{favorited_pets}}"  
         wx:key="*this">
           <view class="favorite-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
         </view>
       </scroll-view>
     </view>

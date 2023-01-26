@@ -44,11 +44,9 @@
         wx:for="{{applied_users}}"  
         wx:key="*this">
           <view class="application-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="user-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="user-name">{{item.name}}</view>
+          </view> 
         </view>
       </scroll-view>
     </view>
@@ -61,11 +59,9 @@
         wx:for="{{requested_users}}"  
         wx:key="*this">
           <view class="request-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="user-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="user-name">{{item.name}}</view>
+          </view>
         </view>
       </scroll-view>
     </view>
@@ -73,14 +69,14 @@
     <!-- PET LISTING SCROLL VIEW -->
     <view wx:if="{{active_tab === 'listing'}}" class="listing-scroll-view-box">
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="listing-inner-view"
+        <view class="listing-view"
         wx:for="{{listed_pets}}"  
         wx:key="*this">
-          <view class="listing-view-info">
-            <view class="listing-info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="listing-inner-view"></view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
+          
         </view>
       </scroll-view>
     </view>
