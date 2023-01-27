@@ -6,3 +6,15 @@
   display: flex;
   gap: 20rpx;
 }
+
+.image-card {
+  width: 156rpx;
+  height: 156rpx;
+  border: 1PX dashed #d9d9d9;
+  border-radius: 8rpx;
+  margin: 0rpx 0rpx 0rpx 25rpx;
+  background-color: #fafafa;
+  transition: border-color .3s ease;
+  /* box-sizing: border-box; */
+  /* float: left */
+}

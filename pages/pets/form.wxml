@@ -75,11 +75,11 @@
           </wux-switch>
         </wux-cell>
 
-        <wux-cell name="vaccination">
+        <wux-cell name="vaccinated">
           <text>First Vaccination</text>
           <wux-switch
-            name="vaccination"
-            value="{{ formData.vaccination }}"
+            name="vaccinated"
+            value="{{ formData.vaccinated}}"
             bindchange="inputVaccination"
             slot="footer"
           > 
@@ -98,17 +98,18 @@
         </wux-cell>
         </wux-cell-group>
     <!-- Image Upload -->
-      <wux-cell-group title="Upload up to 4 images" bindtap="chooseImage">
-        <image src="{{src}}" style="width: 150rpx; height: 150rpx; margin-top: 25rpx; margin-left: 25rpx;" />
+      <wux-cell-group title="Upload an image" >
+        <view class="image-card" bindtap="chooseImage" >
+        <image src="{{src}}" style="width: 156rpx; height: 156rpx;" mode="aspectFill"/></view>
       </wux-cell-group>
-    <!-- Character -->
+    <!-- Description -->
       <wux-cell-group title="Additional information">
         <wux-cell hover-class="none">
           <wux-textarea
             hasCount
             rows="3"
             controlled
-            value="{{formData.character}}"
+            value="{{formData.description}}"
             cursorSpacing="80"
             bind:change="inputAddInfo"
           />

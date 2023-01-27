@@ -8,15 +8,16 @@ Page({
     value2: '',
     value3: '',
     neutered: false,
-    vaccination: false,
+    vaccinated: false,
     special_need: false,
-    options1: ['Female', 'Male'],
-    options2: ['Dog', 'Cat', 'Other'],
-    options3: ['Mini', 'Small', 'Medium', 'Large'],
+    // adoptable: true,
+    options1: ['female', 'male'],
+    options2: ['dog', 'cat', 'other'],
+    options3: ['mini', 'small', 'medium', 'large'],
     resetForm: true, 
-    src: "/images/camera.png",
+    src: "/images/add+.png",
     formData: {},
-    character: "",
+    description: "",
     fileList: []
   },
   onLoad(options) {
@@ -51,7 +52,8 @@ Page({
   },
 
   resetForm() {
-    this.setData({formData: {}})
+    this.setData(
+      {formData: {}, src: "/images/add+.png"})
   },
   // Pop-up selection for Gender, Species, and Size
   setValue(values, key, field) {
@@ -82,7 +84,7 @@ Page({
     this.onChange('neutered', e)
   },
   inputVaccination(e) {
-    this.onChange('vaccination', e)
+    this.onChange('vaccinated', e)
   },
   inputSpecialNeed(e) {
     this.onChange('special_need', e)
@@ -94,7 +96,7 @@ Page({
     this.onChange('name', e)
   },
   inputAddInfo(e) {
-    this.onChange('character', e)
+    this.onChange('description', e)
   },
   chooseImage: function () {
     const page = this
@@ -145,11 +147,8 @@ Page({
           console.log('update success?', res)
           page.upload(page.data.pet.id)
           page.setData({resetForm: true})
-          // wx.switchTab({
-          //   url: '/pages/pets/index',
-          // })
-          wx.navigateBack({
-            delta: 0,
+          wx.switchTab({
+            url: 'index'
           })
         }
       })
@@ -180,8 +179,8 @@ Page({
             const id = res.data.pet.id
             page.setData({resetForm: true})
             page.upload(id)
-            wx.navigateTo({
-              url: '/pages/pets/form'
+            wx.switchTab({
+              url: 'index',
             })
           }
         },
