@@ -18,31 +18,38 @@ Page({
       {name: 'Snowy'}
     ],
 
-    active_tab: "request"
+    active_tab: "request",
+
+    nickName: '',
+    avatarUrl: '', 
+    userInfo: {},
+    hasUserInfo: false,
+    canIuseGetUserProfile: false
   },
 
+  getUserProfile: function(e) {
+    wx.getUserProfile({
+      desc: 'complete your profile',
+      success: (res) => {
+        console.log('res.userInfo -->', res.userInfo)
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true,
+          nickName: res.userInfo.nickName,
+          avatarUrl: res.userInfo.avatarUrl
+        })
+      }
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    wx.getUserInfo({
-      withCredentials: false,
-      lang: 'zh_CN',
-      timeout: 10000,
-      success: (result) => {
-        console.log("from user/profile, userInfo -->", result.userInfo)
-        this.setData({
-          nickName: result.userInfo.nickName,
-          avatarUrl: result.userInfo.avatarUrl
-        })
-      },
-      fail: () => {
-      },
-      complete: () => { 
-      }
-    })
-    const accInfo = wx.getAccountInfoSync();
-    console.log("accInfo -->", accInfo)
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
   },
 
   /**
@@ -85,23 +92,6 @@ Page({
         console.log("From user/profile.js: onshow request succesfully")
         console.log("From user/profile.js: res",res)
           let general_info = res.data.upcoming
-          // upcoming_trips.map((trip) => {
-          //   trip.start_date = wx.se.prettyDate(trip.start_date)
-          // })
-        // if (res.statusCode === 200) {
-        //   let past_trips = res.data.past
-        //   past_trips.map((trip) => {
-        //     trip.start_date = wx.se.prettyDate(trip.start_date)
-        //   })
-        //   page.setData({
-        //     loadingHidden: true,
-        //     past_trips,
-        //     upcoming_trips
-        //     // user_id: user_id
-        //   })
-        // } else {
-        //   console.log("From profile.js: status code is", res.statusCode)
-        // }
       }
     })
   },

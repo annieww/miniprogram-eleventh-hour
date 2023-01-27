@@ -25,7 +25,8 @@ let en = {
   request_tab: 'adoption requests',
   listing_tab: 'pet listings',
   event_link: 'event',
-  faq_link: 'FAQ'
+  faq_link: 'FAQ',
+  authorize_button: 'Authorize'
 }
 module.exports = {
   content: en

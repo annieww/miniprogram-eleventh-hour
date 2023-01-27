@@ -25,7 +25,8 @@ let zh = {
   request_tab: '收到的请求',
   listing_tab: '已上传',
   event_link: '最新活动',
-  faq_link: '常见问题'
+  faq_link: '常见问题',
+  authorize_button: '点击授权'
 }
 
 module.exports = {
