@@ -18,14 +18,38 @@ Page({
       {name: 'Snowy'}
     ],
 
-    active_tab: "request"
+    active_tab: "request",
+
+    nickName: '',
+    avatarUrl: '', 
+    userInfo: {},
+    hasUserInfo: false,
+    canIuseGetUserProfile: false
   },
 
+  getUserProfile: function(e) {
+    wx.getUserProfile({
+      desc: 'complete your profile',
+      success: (res) => {
+        console.log('res.userInfo -->', res.userInfo)
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true,
+          nickName: res.userInfo.nickName,
+          avatarUrl: res.userInfo.avatarUrl
+        })
+      }
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
   },
 
   /**
@@ -47,6 +71,28 @@ Page({
     }
     this.setData({
       content: app.globalData.content
+    })
+    if (app.globalData.header) {
+      // proceed to fetch api
+      this.getData()
+    } else {
+      // wait until loginFinished, then fetch API
+      wx.event.on('loginFinished', this, this.getData)
+    }
+  },
+
+  getData(){
+    const user_id = app.globalData.user.id
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseURL}/users/${user_id}`,
+      method: "GET",
+      header: app.globalData.header,
+      success(res) {
+        console.log("From user/profile.js: onshow request succesfully")
+        console.log("From user/profile.js: res",res)
+          let general_info = res.data.upcoming
+      }
     })
   },
 

@@ -4,11 +4,14 @@
   <!-- HEADER -->
   <view class="header">
     <view class="header-box">
-      <view class="user-box">
-        <view><image class="avatar" mode="aspectFill" src="/images/stick.jpg"></image></view>
-        <view class="user-name">username{{user.name}}</view>
+      <view class="authorize-box">
+        <button wx:if='{{!hasUserInfo}}' open-type="getUserProfile" bindtap="getUserProfile">{{content.authorize_button}}</button> 
+        <view wx:else class="user-box">
+          <img class="avatar" mode="aspectFill" src="{{avatarUrl}}"></img>
+          <view class="user-name">{{nickName}}</view>
+        </view>
       </view>
-
+    
       <view class="info-and-status">
         <view class="my-info">{{content.text10}}</view>
         <view class="my-status">{{content.text11}}</view>
@@ -18,7 +21,7 @@
   </view>
 
   <!-- COMPLETE PROFILE -->
-  <view class="complete-profile">
+  <view wx:if="{{!general_info.length}}" class="complete-profile">
     <view class="complete-text">
       {{content.text8}}
     </view>
