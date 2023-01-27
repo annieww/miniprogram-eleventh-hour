@@ -25,7 +25,24 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    wx.getUserInfo({
+      withCredentials: false,
+      lang: 'zh_CN',
+      timeout: 10000,
+      success: (result) => {
+        console.log("from user/profile, userInfo -->", result.userInfo)
+        this.setData({
+          nickName: result.userInfo.nickName,
+          avatarUrl: result.userInfo.avatarUrl
+        })
+      },
+      fail: () => {
+      },
+      complete: () => { 
+      }
+    })
+    const accInfo = wx.getAccountInfoSync();
+    console.log("accInfo -->", accInfo)
   },
 
   /**
@@ -47,6 +64,45 @@ Page({
     }
     this.setData({
       content: app.globalData.content
+    })
+    if (app.globalData.header) {
+      // proceed to fetch api
+      this.getData()
+    } else {
+      // wait until loginFinished, then fetch API
+      wx.event.on('loginFinished', this, this.getData)
+    }
+  },
+
+  getData(){
+    const user_id = app.globalData.user.id
+    const page = this
+    wx.request({
+      url: `${app.globalData.baseURL}/users/${user_id}`,
+      method: "GET",
+      header: app.globalData.header,
+      success(res) {
+        console.log("From user/profile.js: onshow request succesfully")
+        console.log("From user/profile.js: res",res)
+          let general_info = res.data.upcoming
+          // upcoming_trips.map((trip) => {
+          //   trip.start_date = wx.se.prettyDate(trip.start_date)
+          // })
+        // if (res.statusCode === 200) {
+        //   let past_trips = res.data.past
+        //   past_trips.map((trip) => {
+        //     trip.start_date = wx.se.prettyDate(trip.start_date)
+        //   })
+        //   page.setData({
+        //     loadingHidden: true,
+        //     past_trips,
+        //     upcoming_trips
+        //     // user_id: user_id
+        //   })
+        // } else {
+        //   console.log("From profile.js: status code is", res.statusCode)
+        // }
+      }
     })
   },
 
