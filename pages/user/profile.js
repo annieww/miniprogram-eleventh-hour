@@ -8,12 +8,14 @@ Page({
   data: {
     requested_pets: [
       {name: 'Tiger'},
-      {name: 'Snowy'}
+      {name: 'Snowy'},
+      {name: 'Dobby'}
     ],
 
     favorited_pets: [
       {name: 'Dobby'},
-      {name: 'Buddy'}
+      {name: 'Buddy'},
+      {name: 'Snowy'}
     ],
 
     active_tab: "request"
@@ -37,7 +39,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 2
+      })
+    }
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   goToForm() {

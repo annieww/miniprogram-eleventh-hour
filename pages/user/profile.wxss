@@ -7,6 +7,7 @@
 .header {
   height: 200rpx;
   padding: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .header-box {
@@ -22,13 +23,15 @@
   display: flex;
 }
 
-.profilepic {
-  height: 100rpx;
+.avatar {
   width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
 }
 
 .user-name {
-  font-size: 40rpx;
+  font-size: 30rpx;
+  margin-left: 15rpx;
 }
 
 .info-and-status {
@@ -49,16 +52,16 @@
 .review {
   border-radius: 20rpx;
   border: 1px solid grey;
-  width: 200rpx;
+  width: 160rpx;
   text-align: center;
   padding: 5rpx 0;
   font-size: 25rpx;
+  margin-top: 10rpx;
 }
 
 .complete-profile {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: start;
   margin-bottom: 30rpx;
 }
@@ -67,7 +70,8 @@
   background-color: #D9D9D9;
   border-radius: 20rpx;
   padding: 25rpx;
-  margin: 30rpx;
+  margin: 15rpx;
+  margin-bottom: 20rpx;
 }
 
 .complete-btn {
@@ -84,7 +88,7 @@
 }
 
 .tabs-box {
-  /* height: 200rpx; */
+  height: 170rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,7 +103,7 @@
   display: flex;
   justify-content: space-between;
   height: 5rpx;
-  width: 200rpx;
+  width: 150rpx;
   border-radius: 20rpx;
 }
 
@@ -151,13 +155,10 @@
   position: relative;
 }
 
-.view-info {
-  color: black;
+.info-text {
   display: flex;
   justify-content: center;
-}
-
-.info-text {
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   color: black;
+  font-size: 28rpx;
 }

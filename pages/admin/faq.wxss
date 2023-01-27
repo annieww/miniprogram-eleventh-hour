@@ -1,10 +1,15 @@
 /* pages/admin/faq.wxss */
 .header {
-  height: 500rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 20rpx;
+}
+
+.avatar {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
 }
 
 .page-title {
@@ -13,11 +18,10 @@
   font-weight: bold;
 }
 
-.page-content {
-  font-size: 35rpx;
-  padding: 40rpx;
+.ehr-content {
+  margin-bottom: 20rpx;
 }
 
-.content-card {
-  margin-bottom: 30rpx;
+.page-content {
+  padding: 40rpx;
 }

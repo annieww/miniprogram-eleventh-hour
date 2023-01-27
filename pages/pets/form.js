@@ -51,6 +51,7 @@ Page({
     }
   },
 
+
   resetForm() {
     this.setData(
       {formData: {}, src: "/images/add+.png"})
@@ -69,6 +70,17 @@ Page({
     const { field } = e.currentTarget.dataset
     this.setValue(e.detail, index, field)
     console.log(`onConfirm${index}`, e.detail, field)
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 3
+      })
+    }
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   // Switch Area for Age & Health Related Info

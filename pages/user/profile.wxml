@@ -1,18 +1,18 @@
 <!--pages/user/profile.wxml-->
 <view class="main">
 
-    <!-- HEADER -->
+  <!-- HEADER -->
   <view class="header">
     <view class="header-box">
       <view class="user-box">
-        <view><image class="profilepic" src="/images/paw.png"></image></view>
+        <view><image class="avatar" mode="aspectFill" src="/images/stick.jpg"></image></view>
         <view class="user-name">username{{user.name}}</view>
       </view>
 
       <view class="info-and-status">
-        <view class="my-info">my info</view>
-        <view class="my-status">my status</view>
-        <view class="review">under review</view>
+        <view class="my-info">{{content.text10}}</view>
+        <view class="my-status">{{content.text11}}</view>
+        <view class="review">pending</view>
       </view>
     </view>
   </view>
@@ -20,9 +20,9 @@
   <!-- COMPLETE PROFILE -->
   <view class="complete-profile">
     <view class="complete-text">
-      tell us a bit more about yourself by completing your general information.
+      {{content.text8}}
     </view>
-    <button bindtap="goToForm" class="complete-btn" style="width: 460rpx;" type="positive">complete my profile</button>    
+    <button bindtap="goToForm" class="complete-btn" style="width: 460rpx;" type="positive">{{content.text9}}</button>    
   </view>
 
   <view class="page-content">
@@ -31,29 +31,28 @@
       <!-- REQUESTS TAB -->
       <view class="request-tab">
         <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">
-        my adoption requests</view>
+          {{content.text12}}</view>
         <view wx:if="{{active_tab === 'request'}}" class="highlight" bindtap="active_request"></view>
       </view>
       <!-- FAVORITES TAB --> 
       <view class="favorite-tab">
         <view class="tab-title {{active_tab === 'favorite' ? 'active': 'inactive'}}" bindtap="active_favorite">
-          my favorites</view>
+          {{content.text13}}</view>
         <view wx:if="{{active_tab === 'favorite'}}" class="highlight" bindtap="active_favorite"></view>
     </view>
     </view>
 
-    <!-- MY REQUESTS SWIPER -->
+    <!-- MY REQUESTS SCROLL VIEW -->
     <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
         <view class="request-view"
         wx:for="{{requested_pets}}"  
         wx:key="*this">
           <view class="request-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
+
         </view>
       </scroll-view>
     </view>
@@ -64,11 +63,9 @@
         wx:for="{{favorited_pets}}"  
         wx:key="*this">
           <view class="favorite-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
         </view>
       </scroll-view>
     </view>

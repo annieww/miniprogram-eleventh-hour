@@ -1,21 +1,25 @@
-// pages/admin/faq.js
-const app = getApp()
+// pages/user/info.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    // general_info: [
+    //   {
+    //     name: 'Julian', 
+    //     age: '27',
+    //     job: 'University teacher',
+    //     experience: 'trained a cat before'
+    //   }
+    // ]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-    this.setData({
-      content: wx.getStorageSync('content')
-    })
+    console.log('hello from user/info.js onLoad')
   },
 
   /**
@@ -29,15 +33,18 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()){
-      this.getTabBar().setData({
-        selectedTabIndex: 1
-      })
-    }
-    this.setData({
-      content: app.globalData.content
-    })
+    // let page = this;
+    // wx.request({
+    //   url: `http://localhost:3000/api/v1/applications`,
+    //   method: 'GET',
+    //   success(res) {
+    //     console.log({res});
+    //     const applications = res.data.applications;
+    //     page.setData({ 
+    //       applications: applications 
+    //     });
+    //   }
+    // })
   },
 
   /**
@@ -73,5 +80,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  goBack() {
+    wx.redirectTo({
+      url: '/pages/user/profile',
+    })
   }
 })

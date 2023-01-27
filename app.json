@@ -17,6 +17,7 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "custom": true,
     "backgroundColor": "#ffffff",
     "color": "#808080",
     "selectedColor": "#FD5200",
@@ -42,6 +43,7 @@
       "selectedIconPath": "images/admin-active.png"
     }]
   },
+  "usingComponents": {},
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
