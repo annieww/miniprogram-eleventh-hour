@@ -4,19 +4,6 @@
       "list": [
         {
           "name": "",
-          "pathName": "dist",
-          "query": "",
-          "launchMode": "default",
-          "scene": null,
-          "partialCompile": {
-            "enabled": true,
-            "pages": [
-              "pages/pets/index"
-            ]
-          }
-        },
-        {
-          "name": "",
           "pathName": "pages/admin/profile",
           "query": "",
           "launchMode": "default",
@@ -42,10 +29,14 @@
         },
         {
           "name": "",
-          "pathName": "pages/user/profile",
+          "pathName": "pages/pets/form",
           "query": "",
           "launchMode": "default",
-          "scene": null
+          "scene": null,
+          "partialCompile": {
+            "enabled": true,
+            "pages": []
+          }
         },
         {
           "name": "",
