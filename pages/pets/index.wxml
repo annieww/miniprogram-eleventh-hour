@@ -72,7 +72,7 @@
       <view class="pet-info">
         <view class="pet-title-box">
           <view class="pet-name">
-            {{pet.name}}<image class="pet-gender-icon" src="{{ pet.gender == 'Male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+            {{pet.name}}<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
           </view>
           <view class="pet-age">{{pet.age}}</view>
         </view>
