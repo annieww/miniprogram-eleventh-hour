@@ -98,8 +98,8 @@
   position: absolute;
   right: 0;
   top: 50%;
-  width: 40rpx;
-  height: 45rpx;
+  width: 45rpx;
+  height: 55rpx;
   margin-top: -12rpx;
   display: inline-block;
   background-repeat: no-repeat;
