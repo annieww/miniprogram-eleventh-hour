@@ -27,7 +27,7 @@
   height: 100rpx;
   line-height: 48rpx;
   text-align: right;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 .wux-filterbar__bd::after {
   content: " ";
@@ -52,6 +52,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
+  height: 80rpx;
+  background-color:white;
+  border-radius: 18rpx;
+  margin: 0 20rpx;
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
 }
 .wux-filterbar__item::after {
   content: " ";
@@ -89,17 +94,18 @@
   white-space: nowrap;
   word-wrap: normal;
   font-weight: bold;
-  font-size: 32rpx;
+  font-size: 36rpx;
+  margin-top: 15rpx;
 }
 .wux-filterbar__item--has-icon .wux-filterbar__text {
-  padding-right: 40rpx
+  padding-right: 50rpx
 }
 .wux-filterbar__icon {
   position: absolute;
   right: 0;
   top: 50%;
-  width: 30rpx;
-  height: 24rpx;
+  width: 45rpx;
+  height: 55rpx;
   margin-top: -12rpx;
   display: inline-block;
   background-repeat: no-repeat;
@@ -137,11 +143,11 @@
   box-sizing: border-box
 }
 .wux-filterbar__pop {
-  height: 100%;
+  height: 65%;
   width: 90%;
   overflow: hidden;
   position: fixed;
-  top: 0;
+  top: 10%;
   left: 10%;
   z-index: 1010;
   background-color: #fff;
@@ -240,7 +246,7 @@
   background-color: #00B5A3;
   border-radius: 8rpx;
   border: 2rpx solid #00B5A3;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 .wux-filterbar__check,
 .wux-filterbar__radio {
@@ -288,7 +294,7 @@
   border-radius: 0;
   min-height: 44px;
   height: auto;
-  line-height: 44px
+  line-height: 44px;
 }
 .wux-filterbar__btns .wux-filterbar__btn::before {
   content: " ";
@@ -300,11 +306,12 @@
   border-top: 1PX solid #d9d9d9;
   color: #E4E4E4;
   transform-origin: 0 0;
-  transform: scaleY(.5)
+  transform: scaleY(.5);
 }
 .wux-filterbar__btns .wux-filterbar__btn--danger {
   background-color: #00B5A3;
-  color: #fff
+  color: #fff;
+  margin-bottom: 150rpx;
 }
 .wux-filterbar__btns .wux-filterbar__btn--danger::before {
   display: none

@@ -3,11 +3,20 @@
   <view class="language-btn" bindtap="changeLanguage"> EN | 中文</view>
   <!-- 1.about us -->
   <view class="header">
-    <view class="header-content">
-      <view class="logo"><image class="ehr-logo" src="/images/logo_1.png"></image></view>
-      <view class="ehr-heading">Eleventh Hour Rescues</view>
+    <view class="logo-box">
+      <view class="logo-and-heading">
+        <image class="ehr-logo" mode="widthFix" src="/images/pet-logo.png"></image>
+        <view class="ehr-heading">Eleventh Hour Rescues 动物救助</view>
+      </view>
+    </view>
+    <view class="divider">
+      <view class="div-line"></view> 
+    </view>
+    <view class="content-box">
       <view class="ehr-title">{{content.text1}}</view>
-      <view class="ehr-content">{{content.text2}}</view>
+      <view class="header-content">
+        <view class="ehr-content">{{content.about1}}</view>
+      </view>
       <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view>
     </view>
   </view>
@@ -18,28 +27,32 @@
       <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
         <swiper-item class="event-card">
           <view class="filter"></view>
-          <image class="event-image" style="width:100%" mode="widthFix" src="{{event.image_url}}"></image>
-          <view class="event-name">{{event.name}}</view>
-          <view class="event-location">{{event.location}}</view>
-          <view class="event-time">{{event.time}}</view>
+          <image class="event-image" style="width:100%" mode="aspectFill" src="{{event.image_url}}"></image>
+          <view class="event-text">
+            <view class="event-name">{{event.name}}</view>
+            <view class="event-location">{{event.location}}</view>
+            <view class="event-time">{{event.time}}</view>
+          </view>
         </swiper-item>
       </block>
     </swiper>
   </view>
 
   <!-- 3.pet tag -->
-  <view class="scroll-view-box-box">
+
     <!-- <view class="tag-scroll-filter"></view> -->
-    <scroll-view scroll-x="true" style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
+    <!-- <view style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
       <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" wx:key="*this" data-index="{{index}}" data-tag="{{item.name}}" style="border: {{tag === item.name ? '1px solid #FD5200' : 'none'}}; box-shadow: {{tag === item.name ? 'none' : '0 0 15rpx rgba(0,0,0,0.2)'}};">
-        <!-- <image class="selected-tag-img" src="/images/tick.png" style="visibility: {{tag === item.name ? 'visible' : 'hidden'}};"></image> -->
         <view class="inner-tag-view">
           <image class="tag-img" src="{{item.image_url}}"></image>
           <view class="tag-name">{{item.name}}</view>
           <view>{{item.show}}</view>
         </view>
       </view>
-    </scroll-view>
+    </view> -->
+
+  <view class="divider">
+    <view class="div-line"></view> 
   </view>
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
@@ -48,7 +61,7 @@
     </view>
   </block>
 
-  <wux-filterbar
+  <wux-filterbar 
       items="{{ items }}"
       bind:change="onChange"
       bind:open="onOpen"
@@ -64,11 +77,11 @@
       <view class="image-box">
         <image class="pet-image" src="{{pet.image_url}}" mode="aspectFill"></image>
       </view>
-      <!-- <image class="favorite-icon" src="/images/like-red.png"></image> -->
       <view class="pet-info">
         <view class="pet-title-box">
-          <view class="pet-name">{{pet.name}}</view>
-          <view class="pet-gender">{{pet.gender}}</view>
+          <view class="pet-name">
+            {{pet.name}}<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+          </view>
           <view class="pet-age">{{pet.age}}</view>
         </view>
       </view>

@@ -5,13 +5,13 @@
   <view class="header">
     <view class="header-box">
       <view class="admin-box">
-        <view><image class="profilepic" src="/images/admin.png"></image></view>
-        <view class="page-title">admin</view>
+        <view><image class="avatar" mode="aspectFill" src="/images/admin.png"></image></view>
+        <view class="admin-name">admin</view>
       </view>
       
       <view class="event-and-faq">
-        <view>event</view>
-        <view>FAQ</view>
+        <!-- <view>{{content.event_link}}</view> -->
+        <view>{{content.faq_link}}</view>
       </view>
     </view>
   </view>
@@ -22,17 +22,17 @@
     <view class="tabs-box">
       <!-- APPLICATION TAB-->
       <view class="application-tab">
-        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">general applications</view>
+        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">{{content.application_tab}}</view>
         <view wx:if="{{active_tab === 'application'}}" class="highlight" bindtap="active_application"></view>
       </view>
       <!-- REQUESTS TAB -->
       <view class="request-tab">
-        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">adoption requests</view>
+        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">{{content.request_tab}}</view>
         <view wx:if="{{active_tab === 'request'}}" class="highlight"></view>
       </view>
       <!-- LISTINGS TAB -->    
       <view class="listing-tab">
-        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">pet listings</view>
+        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">{{content.listing_tab}}</view>
         <view wx:if="{{active_tab === 'listing'}}" class="highlight"></view>
       </view>
     </view>
@@ -44,11 +44,9 @@
         wx:for="{{applied_users}}"  
         wx:key="*this">
           <view class="application-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="user-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="user-name">{{item.name}}</view>
+          </view> 
         </view>
       </scroll-view>
     </view>
@@ -61,11 +59,9 @@
         wx:for="{{requested_users}}"  
         wx:key="*this">
           <view class="request-inner-view"></view>
-          <view class="view-info">
-            <view class="info-text">
-              <view class="user-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="info-text">
+            <view class="user-name">{{item.name}}</view>
+          </view>
         </view>
       </scroll-view>
     </view>
@@ -73,14 +69,14 @@
     <!-- PET LISTING SCROLL VIEW -->
     <view wx:if="{{active_tab === 'listing'}}" class="listing-scroll-view-box">
       <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="listing-inner-view"
+        <view class="listing-view"
         wx:for="{{listed_pets}}"  
         wx:key="*this">
-          <view class="listing-view-info">
-            <view class="listing-info-text">
-              <view class="pet-name">{{item.name}}</view>
-            </view>
-          </view>  
+          <view class="listing-inner-view"></view>  
+          <view class="info-text">
+            <view class="pet-name">{{item.name}}</view>
+          </view>
+          
         </view>
       </scroll-view>
     </view>

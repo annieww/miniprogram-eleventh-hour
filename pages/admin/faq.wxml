@@ -1,9 +1,13 @@
 <!--pages/admin/faq.wxml-->
 <view class="header">
-  <view><image src="../../images/stick.jpg"/></view>
-  <view class="page-title">frequently asked questions</view>
+  <view><image class="avatar" mode="aspectFill" src="../../images/stick.jpg"/></view>
 </view>
+
 <view class="page-content">
+  <view class="page-title">{{content.about_title}}</view>
+  <view class="ehr-content">{{content.about2}}</view>
+
+  <view class="page-title">{{content.faq_title}}</view>
     <view class="content-card">
       {{content.text4}}
     </view>

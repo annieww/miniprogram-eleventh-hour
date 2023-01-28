@@ -43,7 +43,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 4
+      })
+    }
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   /**

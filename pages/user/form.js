@@ -1,4 +1,5 @@
 // pages/user/form.js
+let app = getApp()
 Page({
 
   /**
@@ -40,7 +41,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    this.setData({
+      content: app.globalData.content
+    })
   },
 
   goBack() {

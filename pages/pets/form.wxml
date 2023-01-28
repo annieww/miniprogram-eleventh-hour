@@ -1,4 +1,5 @@
 <!--pages/pets/form.wxml-->
+
    
 <view class="page">
   <view class="page-body">
@@ -74,7 +75,6 @@
           > 
           </wux-switch>
         </wux-cell>
-
         <wux-cell name="vaccinated">
           <text>First Vaccination</text>
           <wux-switch
@@ -85,6 +85,7 @@
           > 
           </wux-switch>
         </wux-cell>
+
 
         <wux-cell name="special_need">
           <text>Special Need</text>

@@ -7,6 +7,7 @@
 .header {
   height: 200rpx;
   padding: 20rpx;
+  margin-bottom: 20rpx;
 }
 
 .header-box {
@@ -22,15 +23,17 @@
   display: flex;
 }
 
-.profilepic {
+.avatar {
   height: 100rpx;
   width: 100rpx;
+  border-radius: 50%;
 }
 
 .event-and-faq {
   display: flex;
   flex-direction: column;
   text-decoration: underline;
+  font-size: 30rpx;
 }
 
 .page-content {
@@ -40,14 +43,14 @@
   padding: 20rpx;
 }
 
-.page-title {
-  font-size: 40rpx;
+.admin-name {
+  font-size: 30rpx;
   color: #00B5A3;
-  font-weight: bold;
+  margin-left: 15rpx;
 }
 
 .tabs-box {
-  /* height: 200rpx; */
+  height: 170rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,12 +70,12 @@
 }
 
 .tab-title{
-  width: 120rpx;
+  width: 130rpx;
   font-size: 35rpx;
 }
 
 .active {
-  width: 120rpx;
+  width: 130rpx;
   font-size: 40rpx;
   font-weight: bold;
 }
@@ -113,19 +116,12 @@
   position: relative;
 }
 
-.view-info {
-  color: black;
+.info-text {
   display: flex;
   justify-content: center;
-}
-
-.info-text {
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   color: black;
-}
-
-.user-name {
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 /* LISTING SCROLL VIEW */
@@ -135,20 +131,12 @@
   margin-bottom: 40rpx;
 }
 
-.listing-view-info {
-  position: relative;
-  left: 10rpx;
-  top: 150rpx;
-  color: black;
-}
-
-.listing-info-text {
-  position: absolute;
-  color: black;
-}
-
-.pet-name {
-  font-size: 30rpx;
+.listing-view {
+  height: 200rpx;
+  margin: 5rpx 10rpx;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
 }
 
 .listing-inner-view {
@@ -158,9 +146,6 @@
   margin: 5rpx 20rpx;
   border: 1px solid transparent;
   border-radius: 15rpx;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
   font-size: 12px;
   color: grey;
   position: relative;

@@ -20,20 +20,20 @@ Page({
         id: 3,
         name: "Cats of the month",
         image_url: "https://images.unsplash.com/photo-1594142404563-64cccaf5a10f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-      },
-      {
-        id: 4,
-        name: "Adoption FAQ",
-        image_url: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
       }
+      // {
+      //   id: 4,
+      //   name: "Adoption FAQ",
+      //   image_url: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+      // }
     ],
 
     pets: [
       {
         // id: 1,
         name: "Dobby",
-        gender: "boy",
-        district: "Pudong",
+        species: "Dog",
+        gender: "Male",
         age: "1 year",
         tag: "foster",
         vaccination_status: "fully vaccinated",
@@ -43,35 +43,27 @@ Page({
       {
         // id: 2,
         name: "Tiger",
-        gender: "girl",
-        district: "Huangpu",
+        species: 'Cat',
+        gender: "Female",
         age: "6 months",
         tag: "adopt",
-        vaccination: "fully vaccinated",
+        vaccination_status: "fully vaccinated",
         neutered: "false",
         image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
       }
     ],
 
-    tags: [
-      {
-        name: "foster",
-        image_url: "/images/foster.png"
-      },
-      {
-        name: "adopt",
-        image_url: "/images/adopt.png"
-      }
-    ],
+    // tags: [
+    //   {
+    //     name: "foster",
+    //     image_url: "/images/foster.png"
+    //   },
+    //   {
+    //     name: "adopt",
+    //     image_url: "/images/adopt.png"
+    //   }
+    // ],
 
-    languages: [
-      {
-        name: "EN"
-      },
-      {
-        name: "中文"
-      }
-    ], 
     items: [
       {
         type: 'filter',
@@ -165,7 +157,7 @@ Page({
     this.setData({
       content: wx.getStorageSync('content')
     })
-    console.log(this.data)
+    // console.log(this.data)
   },
   
   /**
@@ -179,6 +171,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    this.setData({
+      content: app.globalData.content,
+    })
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()){
+      this.getTabBar().setData({
+        selectedTabIndex: 0
+      })
+    }
     if (app.globalData.header) {
     // proceed to fetch api
     this.getData()
@@ -196,7 +197,7 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        console.log("From index.js onshow: res.data",res.data)
+        // console.log("From index.js onshow: res.data",res.data)
         page.setData({
           pets: res.data,
           content: app.globalData.content
@@ -264,13 +265,13 @@ Page({
     }
   },
 
-  selectLanguage(e) {
-    if (this.data.tag !== e.currentTarget.dataset.tag) {
-      this.setData({
-        language: e.currentTarget.dataset.tag
-      })
-    }
-  },
+  // selectLanguage(e) {
+  //   if (this.data.tag !== e.currentTarget.dataset.tag) {
+  //     this.setData({
+  //       language: e.currentTarget.dataset.tag
+  //     })
+  //   }
+  // },
   changeLanguage() {
     app.changeLanguage()
     wx.reLaunch({

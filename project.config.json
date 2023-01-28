@@ -21,7 +21,8 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "ignoreUploadUnusedFiles": true
+    "ignoreDevUnusedFiles": true,
+    "ignoreUploadUnusedFiles": false
   },
   "editorSetting": {
     "tabIndent": "insertSpaces",
