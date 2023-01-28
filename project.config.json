@@ -21,7 +21,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "ignoreDevUnusedFiles": true,
+    "ignoreDevUnusedFiles": false,
     "ignoreUploadUnusedFiles": false
   },
   "editorSetting": {
