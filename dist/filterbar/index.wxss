@@ -52,6 +52,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
+  height: 80rpx;
+  background-color:white;
+  border-radius: 18rpx;
+  margin: 0 20rpx;
+  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
 }
 .wux-filterbar__item::after {
   content: " ";
@@ -90,6 +95,7 @@
   word-wrap: normal;
   font-weight: bold;
   font-size: 36rpx;
+  margin-top: 15rpx;
 }
 .wux-filterbar__item--has-icon .wux-filterbar__text {
   padding-right: 50rpx

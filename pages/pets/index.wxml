@@ -9,6 +9,9 @@
         <view class="ehr-heading">Eleventh Hour Rescues 动物救助</view>
       </view>
     </view>
+    <view class="divider">
+      <view class="div-line"></view> 
+    </view>
     <view class="content-box">
       <view class="ehr-title">{{content.text1}}</view>
       <view class="header-content">
@@ -24,10 +27,12 @@
       <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
         <swiper-item class="event-card">
           <view class="filter"></view>
-          <image class="event-image" style="width:100%" mode="widthFix" src="{{event.image_url}}"></image>
-          <view class="event-name">{{event.name}}</view>
-          <view class="event-location">{{event.location}}</view>
-          <view class="event-time">{{event.time}}</view>
+          <image class="event-image" style="width:100%" mode="aspectFill" src="{{event.image_url}}"></image>
+          <view class="event-text">
+            <view class="event-name">{{event.name}}</view>
+            <view class="event-location">{{event.location}}</view>
+            <view class="event-time">{{event.time}}</view>
+          </view>
         </swiper-item>
       </block>
     </swiper>
@@ -46,6 +51,9 @@
       </view>
     </view> -->
 
+  <view class="divider">
+    <view class="div-line"></view> 
+  </view>
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
     <view class="filter-bar-item" bindtap="showMenu">
