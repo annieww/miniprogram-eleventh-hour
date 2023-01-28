@@ -31,8 +31,8 @@
 }
 
 .avatar {
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;

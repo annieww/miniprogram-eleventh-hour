@@ -15,24 +15,24 @@ App({
 
   onLaunch() {
     // obtain user current setting
-    wx.getSetting({
-      success: res => {
-        console.log(res.authSetting);
-        if(res.authSetting['scope.userInfo']){
-          console.log('already authorized -- obtain user info')
-            // obtain user info
-            wx.getUserInfo({
-              success: data => {
-                console.log(data.userInfo);
-                // save to global data
-                this.globalData.userInfo = data.userInfo;
-              }
-            })
-        } else {
-          console.log('not authorized yet -- ask user to authorize')
-        }
-      }
-    })
+    // wx.getSetting({
+    //   success: res => {
+    //     console.log(res.authSetting);
+    //     if(res.authSetting['scope.userInfo']){
+    //       console.log('already authorized -- obtain user info')
+    //         // obtain user info
+    //         wx.getUserInfo({
+    //           success: data => {
+    //             console.log(data.userInfo);
+    //             // save to global data
+    //             this.globalData.userInfo = data.userInfo;
+    //           }
+    //         })
+    //     } else {
+    //       console.log('not authorized yet -- ask user to authorize')
+    //     }
+    //   }
+    // })
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
