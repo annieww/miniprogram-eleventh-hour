@@ -10,7 +10,7 @@ Page({
     neutered: false,
     vaccinated: false,
     special_need: false,
-    // adoptable: true,
+    adoptable: true, 
     options1: ['female', 'male'],
     options2: ['dog', 'cat', 'other'],
     options3: ['mini', 'small', 'medium', 'large'],
@@ -28,7 +28,6 @@ Page({
     const page = this
     if (page.data.resetForm) this.resetForm();
     const id = wx.getStorageSync('editId')
-    console.log("from storage", id)
     if (id) {
       console.log('id found -> get pet data from server (to show in form)')
       wx.showToast({
@@ -43,7 +42,7 @@ Page({
         success(res) {
           page.setData({
             formData: res.data.pet,
-            src: res.data.pet.image_url
+            src: res.data.pet.image_url,
           })
         },
       })
@@ -53,17 +52,18 @@ Page({
 
   resetForm() {
     this.setData(
-      {formData: {}, src: "/images/add+.png"})
+      {formData: {} , src: "/images/add+.png"})
   },
   // Pop-up selection for Gender, Species, and Size
   setValue(values, key, field) {
     let { formData } = this.data
     formData[field] = values.value
     this.setData({
-      [`value${key}`]: values.value,
+      [`value${key}`]: values.value, 
       formData
     })
   },
+
   onConfirm(e) {
     const { index } = e.currentTarget.dataset
     const { field } = e.currentTarget.dataset
@@ -77,7 +77,7 @@ Page({
     formData[field] = e.detail.value
     this.setData({      
       [field]: e.detail.value,
-      formData
+      formData 
     })
   },
   inputNeutered(e) {
@@ -85,7 +85,7 @@ Page({
   },
   inputVaccination(e) {
     this.onChange('vaccinated', e)
-  },
+  }, 
   inputSpecialNeed(e) {
     this.onChange('special_need', e)
   },
@@ -98,6 +98,7 @@ Page({
   inputAddInfo(e) {
     this.onChange('description', e)
   },
+
   chooseImage: function () {
     const page = this
     page.setData({resetForm: false})
@@ -132,6 +133,7 @@ Page({
      const page = this
      let pet = page.data.formData
      page.setData({pet})
+     pet.adoptable = true
      console.log("this is the data to send back -->", page.data.pet)
    
      // UPDATE FUNCTION
