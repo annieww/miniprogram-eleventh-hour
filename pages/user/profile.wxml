@@ -7,10 +7,10 @@
       <view class="authorize-box">
         <button wx:if='{{!hasUserInfo}}' open-type="getUserProfile" bindtap="getUserProfile">{{content.authorize_button}}</button> 
         <view wx:else class="user-box">
-          <img class="avatar" mode="aspectFill" src="{{avatarUrl}}"></img>
+          <view><image class="avatar" mode="aspectFill" src="{{avatarUrl}}"></image></view>
           <view class="user-name">{{nickName}}</view>
         </view>
-      </view>
+      </view> 
     
       <view class="info-and-status">
         <view class="my-info">{{content.text10}}</view>
