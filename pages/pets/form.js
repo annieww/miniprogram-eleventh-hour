@@ -70,7 +70,8 @@ Page({
     const { field } = e.currentTarget.dataset
     this.setValue(e.detail, index, field)
     console.log(`onConfirm${index}`, e.detail, field)
-
+  },
+  
   onShow() {
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){

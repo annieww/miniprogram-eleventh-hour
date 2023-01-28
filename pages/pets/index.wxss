@@ -1,7 +1,7 @@
 /* pages/pets/index.wxss */
 page {
   margin: 0;
-  padding-bottom: 50rpx;
+  padding-bottom: 150rpx;
 }
 .language-btn {
   position: absolute;

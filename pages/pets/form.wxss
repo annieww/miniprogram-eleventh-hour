@@ -1,4 +1,8 @@
 /* pages/pets/form.wxss */
+.page {
+  padding-top: 50rpx;
+  padding-bottom: 150rpx;
+}
 
 .btn-area {
   display: flex;
