@@ -1,12 +1,5 @@
 {
-  "appid": "wx284411007d10a5d0",
-  "projectname": "miniprogram-ehr",
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
   "setting": {
     "coverView": true,
     "es6": true,
@@ -27,5 +20,11 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "libVersion": "2.19.4",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wx284411007d10a5d0"
 }

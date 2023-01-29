@@ -1,5 +1,5 @@
-import baseComponent from '../helpers/baseComponent'
-import createFieldsStore from '../helpers/createFieldsStore'
+import baseComponent from '../../helpers/baseComponent'
+import createFieldsStore from '../../helpers/createFieldsStore'
 
 baseComponent({
     relations: {

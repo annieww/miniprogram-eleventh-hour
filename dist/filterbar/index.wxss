@@ -21,7 +21,7 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
   padding: 20rpx 0;
   font-size: 28rpx;
   height: 100rpx;
@@ -36,7 +36,7 @@
   bottom: 0;
   right: 0;
   height: 1PX;
-  border-bottom: 1PX solid #d9d9d9;
+  /* border-bottom: 1PX solid #d9d9d9; */
   color: #d9d9d9;
   transform-origin: 0 100%;
   transform: scaleY(.5)
@@ -53,10 +53,10 @@
   white-space: nowrap;
   word-wrap: normal;
   height: 80rpx;
-  background-color:white;
-  border-radius: 18rpx;
-  margin: 0 20rpx;
-  box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+  /* background-color:white; */
+  /* border-radius: 18rpx; */
+  /* margin: 0 20rpx; */
+  /* box-shadow: 0 0 5rpx rgba(0,0,0,0.2); */
 }
 .wux-filterbar__item::after {
   content: " ";
@@ -95,7 +95,6 @@
   word-wrap: normal;
   font-weight: bold;
   font-size: 36rpx;
-  margin-top: 15rpx;
 }
 .wux-filterbar__item--has-icon .wux-filterbar__text {
   padding-right: 50rpx
