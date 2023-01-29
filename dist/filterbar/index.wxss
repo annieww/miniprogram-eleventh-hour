@@ -24,7 +24,7 @@
   /* background-color: #fafafa; */
   padding: 20rpx 0;
   font-size: 28rpx;
-  height: 100rpx;
+  height: 50rpx;
   line-height: 48rpx;
   text-align: right;
   box-sizing: border-box;
@@ -52,7 +52,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
-  height: 80rpx;
+  height: 60rpx;
   /* background-color:white; */
   /* border-radius: 18rpx; */
   /* margin: 0 20rpx; */

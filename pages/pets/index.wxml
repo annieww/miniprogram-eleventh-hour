@@ -70,6 +70,9 @@
       cancelText="Cancel"
     />
     
+  <!-- <view class="divider">
+    <view class="div-line"></view> 
+  </view> -->
   <!-- 4.pet list -->
   <view class="pet-cards-box">
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
