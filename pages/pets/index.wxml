@@ -57,7 +57,10 @@
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
     <view class="filter-bar-item" bindtap="showMenu">
-      <view class="filter-bar-item-name">{{item.title}}</view>
+      <view class="filter-bar-item-name">
+        {{item.title}}search
+        <image class="search-icon" src="/images/search.png"></image>
+      </view>
     </view>
   </block>
 
@@ -70,6 +73,9 @@
       cancelText="Cancel"
     />
     
+  <!-- <view class="divider">
+    <view class="div-line"></view> 
+  </view> -->
   <!-- 4.pet list -->
   <view class="pet-cards-box">
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
