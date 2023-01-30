@@ -139,6 +139,10 @@ page {
   margin-bottom: 15rpx;
 }
 
+.search-icon {
+  width: 40rpx;
+}
+
 /* pet tags */
 .scroll-view-box-box {
   margin: 0 40rpx;

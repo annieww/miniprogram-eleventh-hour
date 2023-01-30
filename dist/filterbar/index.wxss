@@ -46,15 +46,15 @@
   display: block;
   -ms-flex: 1;
   flex: 1;
-  padding: 0 10rpx;
+  padding: 0 20rpx;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
   height: 60rpx;
-  /* background-color:white; */
-  /* border-radius: 18rpx; */
+  /* background-color: grey;
+  border-radius: 18rpx; */
   /* margin: 0 20rpx; */
   /* box-shadow: 0 0 5rpx rgba(0,0,0,0.2); */
 }
@@ -87,29 +87,31 @@
   position: relative;
   box-sizing: border-box;
   display: inline-block;
-  max-width: 100%;
+  /* max-width: 100%;
   width: auto;
-  overflow: hidden;
+  overflow: hidden; */
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
   font-weight: bold;
-  font-size: 36rpx;
+  font-size: 32rpx;
+  margin-right: 15rpx;
+  height: 60rpx;
 }
 .wux-filterbar__item--has-icon .wux-filterbar__text {
-  padding-right: 50rpx
+  padding-right: 70rpx
 }
 .wux-filterbar__icon {
   position: absolute;
   right: 0;
-  top: 50%;
-  width: 45rpx;
-  height: 55rpx;
-  margin-top: -12rpx;
+  top: 0;
+  width: 65rpx;
+  height: 65rpx;
+  margin-top: 0rpx;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain
+  background-size: contain;
 }
 .wux-filterbar__icon--checkbox,
 .wux-filterbar__icon--radio {
@@ -130,8 +132,9 @@
   background-position: 0 -24rpx
 }
 .wux-filterbar__icon--filter {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaBAMAAABbZFH9AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAVUExURUdwTMzMzM7OzszMzNDQ0MfHx8zMzDEar9oAAAAGdFJOUwDTFcQWF87ZqzkAAABeSURBVBjTYzBLQ4BkBlSeYmIAAwSwigkxMImJQnmBiQoMcEmQFANQUgQhBZJ0AJIsYCmYpCNECiIJkwJJGjAww6QYGNQSGNiSYBwGtgQQoi6P2QCZB5GmMQ9oJRAAANAtGtSzNppcAAAAAElFTkSuQmCC) no-repeat;
-  background-size: 26rpx auto
+  /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaBAMAAABbZFH9AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAVUExURUdwTMzMzM7OzszMzNDQ0MfHx8zMzDEar9oAAAAGdFJOUwDTFcQWF87ZqzkAAABeSURBVBjTYzBLQ4BkBlSeYmIAAwSwigkxMImJQnmBiQoMcEmQFANQUgQhBZJ0AJIsYCmYpCNECiIJkwJJGjAww6QYGNQSGNiSYBwGtgQQoi6P2QCZB5GmMQ9oJRAAANAtGtSzNppcAAAAAElFTkSuQmCC) no-repeat; */
+  background: url(https://tse1-mm.cn.bing.net/th/id/OIP-C.PuI4zskl2guvdfUFLcZ-2gHaHa?pid=ImgDet&rs=1) no-repeat;
+  background-size: 60rpx auto
 }
 .wux-filterbar__select {
   position: absolute;

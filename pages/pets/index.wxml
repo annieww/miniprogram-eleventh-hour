@@ -57,7 +57,10 @@
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
     <view class="filter-bar-item" bindtap="showMenu">
-      <view class="filter-bar-item-name">{{item.title}}</view>
+      <view class="filter-bar-item-name">
+        {{item.title}}search
+        <image class="search-icon" src="/images/search.png"></image>
+      </view>
     </view>
   </block>
 
