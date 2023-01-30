@@ -220,7 +220,7 @@ page {
   position: relative;
   border-radius: 20rpx;
   width: 300rpx;
-  height: 450rpx;
+  height: 430rpx;
   box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
   font-family:'Fira Sans', sans-serif;
 }
@@ -251,5 +251,12 @@ page {
 .pet-gender-icon {
   width: 35rpx;
   height: 35rpx;
+  margin-top: 6rpx;
   margin-left: 10rpx;
+}
+
+.pet-name {
+  display: flex;
+  justify-content: start;
+  font-weight: 600;
 }
