@@ -38,7 +38,7 @@ Page({
           wx.removeStorageSync('editId')
         }
       })
-    }
+    } 
   },
   onReady() {
   },
@@ -137,12 +137,14 @@ Page({
   },
 
    create(e) {
-     const page = this
-     let pet = page.data.formData
-     page.setData({pet})
-     pet.adoptable = true
-     console.log("this is the data to send back -->", page.data.pet)
-   
+    const page = this
+    let pet = page.data.formData
+    page.setData({pet})
+    if (pet.adoptable === undefined || pet.adoptable === null) {
+      pet.adoptable = true;
+    }
+    console.log("this is the data to send back -->", page.data.pet)
+  
      // UPDATE FUNCTION
     if (page.data.pet.id !== undefined && page.data.pet.id !== null) {
       wx.request({
