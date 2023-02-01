@@ -144,7 +144,8 @@ Page({
    create(e) {
      const page = this
      let pet = page.data.formData
-     page.setData({pet})
+		 page.setData({pet})
+		 pet.adoptable = true
      console.log("this is the data to send back -->", page.data.pet)
    
      // UPDATE FUNCTION
