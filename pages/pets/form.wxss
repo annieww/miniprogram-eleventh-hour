@@ -22,3 +22,7 @@
   /* box-sizing: border-box; */
   /* float: left */
 }
+
+.wux-select {
+  margin-bottom: 55rpx;
+}
