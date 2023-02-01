@@ -10,7 +10,7 @@ Page({
     neutered: false,
     vaccinated: false,
     special_need: false,
-    adoptable: true, 
+    adoptable: true,
     options1: ['female', 'male'],
     options2: ['dog', 'cat', 'other'],
     options3: ['mini', 'small', 'medium', 'large'],

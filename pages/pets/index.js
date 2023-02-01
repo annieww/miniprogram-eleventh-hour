@@ -67,7 +67,7 @@ Page({
     items: [
       {
         type: 'filter',
-        label: 'Filter',
+        // label: 'Filter',
         value: 'filter',
         checked: true, 
         children: [

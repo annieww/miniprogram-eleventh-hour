@@ -1,31 +1,30 @@
 {
-  "appid": "wx284411007d10a5d0",
-  "projectname": "miniprogram-ehr",
-  "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
-  "setting": {
-    "coverView": true,
-    "es6": true,
-    "postcss": true,
-    "minified": true,
-    "enhance": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmRelationList": [],
-    "compileHotReLoad": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "ignoreDevUnusedFiles": false,
-    "ignoreUploadUnusedFiles": false
-  },
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
-  }
+	"compileType": "miniprogram",
+	"setting": {
+		"coverView": true,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"enhance": true,
+		"showShadowRootInWxmlPanel": true,
+		"packNpmRelationList": [],
+		"compileHotReLoad": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"ignoreDevUnusedFiles": true,
+		"ignoreUploadUnusedFiles": true
+	},
+	"editorSetting": {
+		"tabIndent": "tab",
+		"tabSize": 2
+	},
+	"libVersion": "2.29.2",
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"appid": "wx8652da79b43d0eb0"
 }
