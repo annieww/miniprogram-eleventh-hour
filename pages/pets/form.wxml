@@ -85,8 +85,6 @@
           > 
           </wux-switch>
         </wux-cell>
-
-
         <wux-cell name="special_need">
           <text>Special Need</text>
           <wux-switch
