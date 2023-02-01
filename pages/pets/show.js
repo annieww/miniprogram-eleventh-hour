@@ -41,11 +41,11 @@ Page({
 
   edit(e) {
     wx.setStorageSync('editId', this.data.pet.id)
-    console.log("edit", e)
     wx.switchTab({
       header: app.globalData.header,
-      url: `/pages/pets/form`
+      url: "form"
     })
+    console.log('editId is ->', this.data.pet.id)
   },
 
   delete(e) {

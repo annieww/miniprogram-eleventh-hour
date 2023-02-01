@@ -21,20 +21,11 @@ Page({
     fileList: []
   },
   onLoad(options) {
-  },
-  onReady() {
-  },
-  onShow: function() {
     const page = this
     if (page.data.resetForm) this.resetForm();
     const id = wx.getStorageSync('editId')
     if (id) {
       console.log('id found -> get pet data from server (to show in form)')
-      wx.showToast({
-        title: 'Loading...',
-        icon: 'loading',
-        duration: 1500
-      })
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/pets/${id}`,
@@ -42,14 +33,17 @@ Page({
         success(res) {
           page.setData({
             formData: res.data.pet,
-            src: res.data.pet.image_url,
+            src: res.data.pet.image_url
           })
-        },
+          wx.removeStorageSync('editId')
+        }
       })
-      wx.removeStorageSync('editId')
     }
   },
-
+  onReady() {
+  },
+  onShow() {
+  },
 
   resetForm() {
     this.setData(
