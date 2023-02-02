@@ -17,11 +17,11 @@
           <view>
             <view> Age: {{pet.age}}</view>
             <view> Gender: {{pet.gender}}</view>
-            <view> Status: {{pet.adoptable}}</view>
+            <view> Status: {{adoptionStatus}}</view>
           </view>
           <view>
-            <view> Neutered: {{pet.neutered}}</view>
-            <view> Vaccinated: {{pet.vaccinated}}</view>
+            <view> Neutered: {{neuteredDisplay}}</view>
+            <view> Vaccinated: {{vaccinatedDisplay}}</view>
             <view> Size: {{pet.size}}</view>
           </view>
         </view>
@@ -29,7 +29,7 @@
   <view class="more-info">
   <text> More: </text>
     <text class="more-cmnt">{{pet.description}}</text>
-    <text class="more-cmnt"> Special need: {{pet.special_need}}</text>
+    <text class="more-cmnt"> Special need: {{specialNeedDisplay}}</text>
   </view>
     </view>
   

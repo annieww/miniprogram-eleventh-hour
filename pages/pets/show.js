@@ -3,6 +3,10 @@ const app = getApp()
 Page({
 
   data: {
+		neuteredDisplay: '',
+		vaccinatedDisplay:'',
+		specialNeedDisplay: '',
+		adoptionStatus: ''
   },
 
   onLoad(options) {
@@ -22,9 +26,17 @@ Page({
       success(res) {
         if (res.statusCode === 200) {
           const pet = res.data.pet;
+					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
+					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
+					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
+					let adoptionStatus = pet.adoptable? 'available': 'not available';
           page.setData({
-            pet: pet
-          });
+						pet: pet,
+						neuteredDisplay: neuteredDisplay,
+						vaccinatedDisplay: vaccinatedDisplay,
+						specialNeedDisplay: specialNeedDisplay,
+						adoptionStatus: adoptionStatus
+					});
           console.log("From show.js: status code", res.statusCode)
         }
       }
@@ -35,7 +47,7 @@ Page({
     if (app.globalData.header) {
       this.getData()
     } else {
-      wx.event.on('loginFinished', this, this.getData)
+			wx.event.on('loginFinished', this, this.getData)
     }
   },
 
