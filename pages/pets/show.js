@@ -6,7 +6,9 @@ Page({
 		neuteredDisplay: '',
 		vaccinatedDisplay:'',
 		specialNeedDisplay: '',
-		adoptionStatus: ''
+		adoptionStatus: '', 
+		my_booking: {}, 
+		current_user: {}
   },
 
   onLoad(options) {
@@ -18,14 +20,18 @@ Page({
   },
 
   getData() {
-    let page = this
-    let id = page.options.id
+		let page = this
+		let id = page.options.id
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/pets/${id}`,
       success(res) {
         if (res.statusCode === 200) {
-          const pet = res.data.pet;
+					console.log('user', res.data)
+					const pet = res.data.pet;
+					const current_user = res.data.current_user
+					const my_booking = res.data.my_booking;
+					const date = new Date();
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
@@ -35,8 +41,9 @@ Page({
 						neuteredDisplay: neuteredDisplay,
 						vaccinatedDisplay: vaccinatedDisplay,
 						specialNeedDisplay: specialNeedDisplay,
-						adoptionStatus: adoptionStatus
-					});
+						adoptionStatus: adoptionStatus,
+						current_user: current_user, 
+					})
           console.log("From show.js: status code", res.statusCode)
         }
       }
@@ -49,7 +56,25 @@ Page({
     } else {
 			wx.event.on('loginFinished', this, this.getData)
     }
-  },
+	},
+	
+	showBookingModal(e){
+		console.log('pet show - booking:', e)
+	},
+
+	submitBooking(e){
+		console.log("submit booking -> e",e)
+		let page = this
+		let date = Date.now()
+		wx.request({
+      url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
+      header: app.globalData.header,
+      method: "POST",
+      data: {
+        date: date 
+			},
+		})
+	},
 
   edit(e) {
     wx.setStorageSync('editId', this.data.pet.id)

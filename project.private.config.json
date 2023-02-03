@@ -21,6 +21,13 @@
 							"pages/admin/profile"
 						]
 					}
+				},
+				{
+					"name": "",
+					"pathName": "pages/admin/profile",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
 				}
 			]
 		}

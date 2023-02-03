@@ -5,8 +5,11 @@
   <view class="header">
     <view class="header-box">
       <view class="admin-box">
-        <view><image class="avatar" mode="aspectFill" src="/images/admin.png"></image></view>
+        <view>
+				<image class="avatar" mode="aspectFill" src='{{src}}'>
+				</image>
         <view class="admin-name">admin</view>
+				</view>
       </view>
       
       <view class="event-and-faq">
@@ -65,22 +68,6 @@
         </view>
       </scroll-view>
     </view>
-
-    <!-- PET LISTING SCROLL VIEW -->
-    <view wx:if="{{active_tab === 'listing'}}" class="listing-scroll-view-box">
-      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="listing-view"
-        wx:for="{{listed_pets}}"  
-        wx:key="*this">
-          <view class="listing-inner-view"></view>  
-          <view class="info-text">
-            <view class="pet-name">{{item.name}}</view>
-          </view>
-          
-        </view>
-      </scroll-view>
-    </view>
-    
   </view>
 
 </view>

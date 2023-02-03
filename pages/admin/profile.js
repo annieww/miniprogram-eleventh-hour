@@ -6,30 +6,39 @@ Page({
    * Page initial data
    */
   data: {
-    applied_users: [
-      {name: 'Zora', location: 'Changning', contact: '3456789', image_url: 'https://images.unsplash.com/photo-1610295399810-4964d7fdc693?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'},
-      
-      {name: 'Ann', location: 'JingAn', contact: '2345678', image_url: 'https://images.unsplash.com/photo-1643386620665-0888553791d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'}
-    ],
-
+		bookings: {},
     requested_users: [
       {name: 'Julian'},
       {name: 'Annie'}
     ],
 
-    listed_pets: [
-      {name: 'Dobby'},
-      {name: 'Tiger'}
-    ],
-
-    active_tab: "application"
+		active_tab: "application",
+		src: "/images/admin.png"
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+		console.log(options)
+		if(app.globalData.header) {
+			this.getData()
+		}else{
+			wx.event.on('loginFinished', this, this.getData)
+		}
+	},
+	getData() {
+		let page = this
+		wx.request({
+			header: app.globalData.header,
+			url: `${app.globalData.baseURL}/admin`,
+			success(res){
+				const bookings = res.data.bookings
+				page.setData({
+					bookings
+				})
+			}
+		})
   },
 
   /**
@@ -89,11 +98,11 @@ Page({
 
   },
 
-  active_application() {
-    this.setData({
-      active_tab: "application"
-    })
-  },
+  // active_application() {
+  //   this.setData({
+  //     active_tab: "application"
+  //   })
+  // },
 
   active_request() {
     this.setData({
@@ -101,9 +110,9 @@ Page({
     })
   },
 
-  active_listing() {
-    this.setData({
-      active_tab: "listing"
-    })
-  }
+  // active_listing() {
+  //   this.setData({
+  //     active_tab: "listing"
+  //   })
+  // }
 })
