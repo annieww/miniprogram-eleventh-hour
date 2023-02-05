@@ -30,12 +30,12 @@
     </view>
   
   <!-- 4.adopt button -->
-    <view class="buttons" wx:if="{{!current_user.admin}}">
-      <button type="default" plain="true" class="btn" bindtap="showBookingModal">Adopt</button>
+    <view class="buttons" wx:if="{{!current_user.admin || !isBooker}}">
+      <button  type="default" plain="true" class="btn" bindtap="submitBooking">Adopt</button>
       <button type="primary" plain="true" open-type="share" class="btn">Share</button>
     </view>
 		<view class="buttons" wx:if="{{current_user.admin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>
-      <button type="delete" plain="true" open-type="share" bindtap="delete">Share</button>
+      <button type="delete" plain="true" open-type="share" bindtap="delete">Delete</button>
     </view>
   </view>

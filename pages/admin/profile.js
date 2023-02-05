@@ -1,56 +1,44 @@
 // pages/admin/profile.js
 let app = getApp()
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-		bookings: {},
-    requested_users: [
-      {name: 'Julian'},
-      {name: 'Annie'}
-    ],
-
-		active_tab: "application",
-		src: "/images/admin.png"
+    requested_users: [],
   },
-
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad(options) {
-		console.log(options)
 		if(app.globalData.header) {
 			this.getData()
 		}else{
 			wx.event.on('loginFinished', this, this.getData)
 		}
 	},
+
 	getData() {
 		let page = this
 		wx.request({
 			header: app.globalData.header,
 			url: `${app.globalData.baseURL}/admin`,
 			success(res){
-				const bookings = res.data.bookings
+				const requested_users = res.data
 				page.setData({
-					bookings
+					requested_users
 				})
+				console.log("requested_users -> ", requested_users)
 			}
 		})
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
+	navigateToPetShowPage: function (e) {
+		console.log(e)
+    let petId = e.currentTarget.dataset.petId;
+    wx.navigateTo({
+			url: `/pages/pets/show?id=${petId}`,
+		})
+  },
+
   onReady() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
   onShow() {
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
@@ -63,56 +51,29 @@ Page({
     })
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
   onHide() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
   onUnload() {
 
   },
 
-  /**
-   * Page event handler function--Called when user drop down
-   */
   onPullDownRefresh() {
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
   onReachBottom() {
 
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
   onShareAppMessage() {
 
   },
-
-  // active_application() {
-  //   this.setData({
-  //     active_tab: "application"
-  //   })
-  // },
 
   active_request() {
     this.setData({
       active_tab: "request"
     })
   },
-
-  // active_listing() {
-  //   this.setData({
-  //     active_tab: "listing"
-  //   })
-  // }
 })

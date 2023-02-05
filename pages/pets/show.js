@@ -7,8 +7,7 @@ Page({
 		vaccinatedDisplay:'',
 		specialNeedDisplay: '',
 		adoptionStatus: '', 
-		my_booking: {}, 
-		current_user: {}
+		current_user: {}, 
   },
 
   onLoad(options) {
@@ -27,11 +26,11 @@ Page({
       url: `${app.globalData.baseURL}/pets/${id}`,
       success(res) {
         if (res.statusCode === 200) {
-					console.log('user', res.data)
+					console.log(res.data.my_booking)
 					const pet = res.data.pet;
-					const current_user = res.data.current_user
 					const my_booking = res.data.my_booking;
-					const date = new Date();
+					const current_user = res.data.current_user;
+					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
@@ -43,7 +42,9 @@ Page({
 						specialNeedDisplay: specialNeedDisplay,
 						adoptionStatus: adoptionStatus,
 						current_user: current_user, 
+						isBooker: isBooker
 					})
+					console.log("isbooker", isBooker)
           console.log("From show.js: status code", res.statusCode)
         }
       }
@@ -71,8 +72,31 @@ Page({
       header: app.globalData.header,
       method: "POST",
       data: {
-        date: date 
+        created_at: date
 			},
+			success(res) {
+				console.log("submit booking: res", res)
+				if (res.statusCode === 201) {
+					console.log("From show.js : res.data", res.data)
+					const booking = res.data.booking;
+					wx.showModal({
+						title: 'Elevent Hour Rescues',
+						content: 'Thank you for your kind request. Our team will contact you shortly',
+						complete: (res) => {
+							if (res.cancel) {
+								
+							}
+					
+							if (res.confirm) {
+								
+							}
+						}
+					})
+				} else {
+					console.log("From show.js: status code is", res.statusCode)
+					console.log("From show.js: error message", res.data.errors)
+				}
+				}
 		})
 	},
 

@@ -212,6 +212,7 @@ Page({
   },
 
   onUnload() {
+		this.resetForm()
   },
 
   onPullDownRefresh() {

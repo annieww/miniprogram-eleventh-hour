@@ -1,5 +1,4 @@
 <!--pages/admin/profile.wxml-->
-<view class="main">
 
   <!-- HEADER -->
   <view class="header">
@@ -11,63 +10,27 @@
         <view class="admin-name">admin</view>
 				</view>
       </view>
-      
-      <view class="event-and-faq">
-        <!-- <view>{{content.event_link}}</view> -->
-        <view>{{content.faq_link}}</view>
-      </view>
     </view>
   </view>
 
   <!-- CONTENT -->
-  <view class="page-content">
-    <!-- TABS -->
-    <view class="tabs-box">
-      <!-- APPLICATION TAB-->
-      <view class="application-tab">
-        <view class="tab-title {{active_tab === 'application' ? 'active': 'inactive'}}" bindtap="active_application">{{content.application_tab}}</view>
-        <view wx:if="{{active_tab === 'application'}}" class="highlight" bindtap="active_application"></view>
-      </view>
-      <!-- REQUESTS TAB -->
-      <view class="request-tab">
-        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">{{content.request_tab}}</view>
-        <view wx:if="{{active_tab === 'request'}}" class="highlight"></view>
-      </view>
-      <!-- LISTINGS TAB -->    
-      <view class="listing-tab">
-        <view class="tab-title {{active_tab === 'listing' ? 'active': 'inactive'}}" bindtap="active_listing">{{content.listing_tab}}</view>
-        <view wx:if="{{active_tab === 'listing'}}" class="highlight"></view>
-      </view>
-    </view>
-
-    <!-- GENERAL APPLICATION SCROLL VIEW -->
-    <view wx:if="{{active_tab === 'application'}}"  class="application-scroll-view-box">
-      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="application-view"
-        wx:for="{{applied_users}}"  
-        wx:key="*this">
-          <view class="application-inner-view"></view>
-          <view class="info-text">
-            <view class="user-name">{{item.name}}</view>
-          </view> 
-        </view>
-      </scroll-view>
-    </view>
-
-
-    <!-- ADOPTION REQUEST SCROLL VIEW -->
-    <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
-      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="request-view"
-        wx:for="{{requested_users}}"  
-        wx:key="*this">
-          <view class="request-inner-view"></view>
-          <view class="info-text">
-            <view class="user-name">{{item.name}}</view>
-          </view>
-        </view>
-      </scroll-view>
-    </view>
-  </view>
-
+	<view class="user-list">
+  <block wx:for="{{requested_users}}" wx:key="id">
+    <view class="user-card">
+		<view class="user-header">
+			<!-- <text class="user-name">{{item.name}}</text> -->
+      <text class="user-id">ID: {{item.id}}</text> 
+      <text class="user-booking-count">  Bookings: {{item.booked_pets.length}} </text>
+		</view>
+      <view class="pet-gallery">
+        <view class="pet-card" wx:for="{{item.booked_pets}}" wx:key="index" bindtap="navigateToPetShowPage" data-pet-id="{{item.id}}">
+    		<view class="pet-image" style="background-image:url({{item.image_url}})"></view>
+    		<view class="pet-name">{{item.name}}</view>
+  			</view>
+  		</view>
+		</view>
+	</block>
 </view>
+
+
+
