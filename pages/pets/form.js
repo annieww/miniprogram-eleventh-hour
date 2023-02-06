@@ -144,7 +144,7 @@ Page({
       pet.adoptable = true;
     }
     console.log("this is the data to send back -->", page.data.pet)
-  
+
      // UPDATE FUNCTION
     if (page.data.pet.id !== undefined && page.data.pet.id !== null) {
       wx.request({
