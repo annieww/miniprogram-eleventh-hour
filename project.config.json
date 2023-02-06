@@ -14,8 +14,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"ignoreDevUnusedFiles": true,
-		"ignoreUploadUnusedFiles": true
+		"ignoreDevUnusedFiles": false,
+		"ignoreUploadUnusedFiles": false
 	},
 	"editorSetting": {
 		"tabIndent": "tab",
