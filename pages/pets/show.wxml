@@ -9,19 +9,15 @@
   <view class="bottom-container">
     <view class="pet-card">
         <view class="pet-name"> {{pet.name}}</view>
-      <view class="box">
-        <icon type="success" color="#fd5200" bindtap="edit"/>
-        <icon type="clear" bindtap="delete"/>
-      </view>
         <view class="pet-info">
           <view>
             <view> Age: {{pet.age}}</view>
             <view> Gender: {{pet.gender}}</view>
-            <view> Status: {{pet.adoptable}}</view>
+            <view> Status: {{adoptionStatus}}</view>
           </view>
           <view>
-            <view> Neutered: {{pet.neutered}}</view>
-            <view> Vaccinated: {{pet.vaccinated}}</view>
+            <view> Neutered: {{neuteredDisplay}}</view>
+            <view> Vaccinated: {{vaccinatedDisplay}}</view>
             <view> Size: {{pet.size}}</view>
           </view>
         </view>
@@ -29,14 +25,17 @@
   <view class="more-info">
   <text> More: </text>
     <text class="more-cmnt">{{pet.description}}</text>
-    <text class="more-cmnt"> Special need: {{pet.special_need}}</text>
+    <text class="more-cmnt"> Special need: {{specialNeedDisplay}}</text>
   </view>
     </view>
   
   <!-- 4.adopt button -->
-    <view class="buttons">
+    <view class="buttons" wx:if="{{!current_user.admin || !isBooker}}">
+      <button  type="default" plain="true" class="btn" bindtap="submitBooking">Adopt</button>
       <button type="primary" plain="true" open-type="share" class="btn">Share</button>
-      <!-- <view class="adopt-card" wx:if="{{(!isCreater)&&(!isBooker)}}"> -->
-      <button type="default" plain="true" class="btn" bindtap="showBookingWindow">Adopt</button>
+    </view>
+		<view class="buttons" wx:if="{{current_user.admin}}">
+      <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>
+      <button type="delete" plain="true" open-type="share" bindtap="delete">Delete</button>
     </view>
   </view>

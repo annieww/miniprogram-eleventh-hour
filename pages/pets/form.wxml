@@ -3,8 +3,8 @@
    
 <view class="page">
   <view class="page-body">
-    <form bindsubmit="create">
-      <wux-cell-group title="Basic information">
+    <form bindsubmit="create">      
+    <wux-cell-group title="Basic information">
         <!-- Name -->
         <wux-cell 
         hover-class="none"
@@ -15,7 +15,7 @@
           type="text"
           maxlength="10"
           value="{{formData.name}}"
-          bind:change="inputName" 
+          bind:change="inputName"
          />
         </wux-cell>
         <!-- Age -->
@@ -85,8 +85,6 @@
           > 
           </wux-switch>
         </wux-cell>
-
-
         <wux-cell name="special_need">
           <text>Special Need</text>
           <wux-switch
