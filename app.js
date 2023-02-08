@@ -10,7 +10,8 @@ App({
     header: null,
     user: null,
     baseURL: "http://localhost:3000/api/v1", 
-    language: wx.getStorageSync('language')
+		language: wx.getStorageSync('language'),
+		routerList: []
   }, 
 
   onLaunch() {

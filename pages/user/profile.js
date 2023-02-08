@@ -7,19 +7,11 @@ Page({
    */
   data: {
     requested_pets: [
-      {name: 'Tiger'},
-      {name: 'Snowy'},
-      {name: 'Dobby'}
-    ],
-
-    favorited_pets: [
-      {name: 'Dobby'},
-      {name: 'Buddy'},
-      {name: 'Snowy'}
-    ],
-
-    active_tab: "request",
-
+      {name: 'Tiger', description: 'active cat'},
+      {name: 'Snowy', description: 'friendly dog'},
+      {name: 'Dobby', description: 'nice puppy'}
+		],
+		
     nickName: '',
     avatarUrl: '', 
     userInfo: {},
