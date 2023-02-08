@@ -62,6 +62,11 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
+	handleContact (e) {
+		console.log(e.detail.path)
+		console.log(e.detail.query)
+	},
+
   onShow() {
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){

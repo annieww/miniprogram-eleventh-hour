@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+ <view class="remind-box" wx:if="{{remind}}">
+ </view>
+ <block wx:else>
+  <view class="content">
+   <view class="hd" style="transform:rotateZ({{angle}}deg);">
+    <!-- <image class="wave" src="/image/bo.png" mode="aspectFill"></image> -->
+		<image class="logo" src="/images/pet-logo.png"></image>
+    <image class="wave wave-bg" src="/image/bo.png" mode="aspectFill"></image>
+   </view>
+   <view class="bd">
+    <view class="confirm-btn">
+     <button open-type="getUserInfo" lang="zh_CN" bindtap="goLogin">Find a pet</button>
+    </view>
+    <view class="copyright">©2023<text bindtap='goTeam'>EHR</text> </view>
+   </view>
+  </view>
+ </block>
+</view>
+

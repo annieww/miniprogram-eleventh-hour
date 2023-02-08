@@ -28,6 +28,11 @@
     <button bindtap="goToForm" class="complete-btn" style="width: 460rpx;" type="positive">{{content.text9}}</button>    
   </view>
 
+	<!-- CONTACT CUSTOMER SERVICE -->
+	<view>
+		<button class="contact-btn" open-type="contact" bindcontact="handleContact">Enquire Now</button>	
+	</view>
+
   <view class="page-content">
     <!-- TABS -->
     <view class="tabs-box">

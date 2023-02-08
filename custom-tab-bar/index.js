@@ -41,3 +41,42 @@ Component({
     }
   }
 })
+
+const generalUser = [{
+		pagePath: "/pages/pets/index",
+		iconPath: "/images/home.png",
+		selectedIconPath: "/images/home-active.png"
+	}, {
+		pagePath: "/pages/admin/faq",
+		iconPath: "/images/faq.png",
+		selectedIconPath: "/images/faq-active.png"
+	}, {
+		pagePath: "/pages/user/profile",
+		iconPath: "/images/paw.png",
+		selectedIconPath: "/images/paw-active.png"
+	}, {
+		pagePath: "/pages/pets/form",
+		iconPath: "/images/add.png",
+		selectedIconPath: "/images/add-active.png"
+	}, {
+		pagePath: "/pages/admin/profile",
+		iconPath: "/images/admin.png",
+		selectedIconPath: "/images/admin-active.png"       
+	}
+]
+
+const admin = [{
+		pagePath: "/pages/pets/index",
+		iconPath: "/images/home.png",
+		selectedIconPath: "/images/home-active.png"
+	}, {
+		pagePath: "/pages/admin/faq",
+		iconPath: "/images/faq.png",
+		selectedIconPath: "/images/faq-active.png"
+	}
+] 
+
+export default {
+	generalUser,
+	admin
+}

@@ -85,9 +85,13 @@
 }
 
 .complete-btn {
-  background-color: #FD5200;
+	background-color: #FD5200;
   border-radius: 32rpx; 
   color:white;
+}
+
+.contact-btn {
+	color: #FD5200;
 }
 
 .page-content {
