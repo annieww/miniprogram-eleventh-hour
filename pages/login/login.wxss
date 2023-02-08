@@ -138,14 +138,16 @@
 	text-align: center;
 	border-radius: 50px;
 	margin-top: 10%;
-	padding: 20rpx 20rpx;
+	padding: 15rpx;
+	font-size: 38rpx;
 }
 
 .admin-btn {
 	background-color: transparent;
 	color: grey;
 	text-decoration: underline;
-	margin-top: 60rpx;
+	font-weight:normal;
+	margin-top: 80rpx;
 }
 
 .copyright {
