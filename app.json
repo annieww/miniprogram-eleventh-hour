@@ -9,8 +9,7 @@
     "pages/admin/profile",
     "pages/admin/faq",
     "pages/user/profile",
-		"pages/user/form",
-		"pages/user/info"
+		"pages/user/form"
   ],
   "window":{
     "backgroundTextStyle":"light",
