@@ -131,7 +131,7 @@
   }
 }
 
-.confirm-btn button {
+.user-btn {
   height: 85rpx;
   background: #00B5A3; 
   color: white;
@@ -139,6 +139,13 @@
 	border-radius: 50px;
 	margin-top: 10%;
 	padding: 20rpx 20rpx;
+}
+
+.admin-btn {
+	background-color: transparent;
+	color: grey;
+	text-decoration: underline;
+	margin-top: 60rpx;
 }
 
 .copyright {
