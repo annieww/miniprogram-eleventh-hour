@@ -2,7 +2,7 @@
 let app = getApp()
 Page({
   data: {
-    requested_users: [],
+		requested_users: []
   },
   onLoad(options) {
 		if(app.globalData.header) {
@@ -18,9 +18,11 @@ Page({
 			header: app.globalData.header,
 			url: `${app.globalData.baseURL}/admin`,
 			success(res){
+				const admin = app.globalData.user
 				const requested_users = res.data
 				page.setData({
-					requested_users
+					requested_users,
+					admin
 				})
 				console.log("requested_users -> ", requested_users)
 			}
@@ -69,11 +71,5 @@ Page({
 
   onShareAppMessage() {
 
-  },
-
-  active_request() {
-    this.setData({
-      active_tab: "request"
-    })
-  },
+  }
 })

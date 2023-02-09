@@ -53,17 +53,6 @@ Page({
       }
     ],
 
-    // tags: [
-    //   {
-    //     name: "foster",
-    //     image_url: "/images/foster.png"
-    //   },
-    //   {
-    //     name: "adopt",
-    //     image_url: "/images/adopt.png"
-    //   }
-    // ],
-
     items: [
       {
         type: 'filter',
@@ -146,7 +135,7 @@ Page({
         ],
         groups: ['001', '002', '003'],
       },
-    ]
+		], 
   },
 
   /**
@@ -156,8 +145,7 @@ Page({
   onLoad(options) {
     this.setData({
       content: wx.getStorageSync('content')
-    })
-    // console.log(this.data)
+		})
   },
   
   /**
@@ -172,13 +160,12 @@ Page({
    */
   onShow() {
     this.setData({
-      content: app.globalData.content,
-    })
+			content: app.globalData.content
+		})
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
       this.getTabBar().setData({
-        selectedTabIndex: 0
-      })
+				selectedTabIndex: 0      })
     }
     if (app.globalData.header) {
     // proceed to fetch api
@@ -191,16 +178,14 @@ Page({
 
   getData(){
     const page = this
-    // console.log('From getData onshow: header', app.globalData.header)
     wx.request({
       url: `${app.globalData.baseURL}/pets`,
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        // console.log("From index.js onshow: res.data",res.data)
         page.setData({
           pets: res.data,
-          content: app.globalData.content
+					content: app.globalData.content,
         })
       }
     })
