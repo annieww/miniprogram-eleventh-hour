@@ -152,7 +152,12 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  
+	goToLogin() {
+		wx.redirectTo({
+			url: '/pages/login/login',
+		})
+	},
+	
   onLoad(options) {
     this.setData({
       content: wx.getStorageSync('content')
