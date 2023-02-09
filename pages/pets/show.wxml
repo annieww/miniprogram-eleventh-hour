@@ -30,11 +30,11 @@
     </view>
   
   <!-- 4.adopt button -->
-    <view class="buttons" wx:if="{{!current_user.admin || !isBooker}}">
-      <button  type="default" plain="true" class="btn" bindtap="submitBooking">Adopt</button>
+    <view class="buttons" wx:if="{{!isAdmin && !isBooker}}">
+      <button  type="default" plain="true" class="btn" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">Adopt</button>
       <button type="primary" plain="true" open-type="share" class="btn">Share</button>
     </view>
-		<view class="buttons" wx:if="{{current_user.admin}}">
+		<view class="buttons" wx:if="{{isAdmin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>
       <button type="delete" plain="true" open-type="share" bindtap="delete">Delete</button>
     </view>

@@ -26,20 +26,19 @@ Component({
     //   selectedIconPath: "/images/admin-active.png"       
     //   }
 		// ]
-		routerList:[]
+		routerList:[],
+    isAdmin: true
   },
 
   methods: {
     switchTab: function (e) {
-      console.log('selectedTabIndex: ', this.data.selectedTabIndex)
       const data = e.currentTarget.dataset
-      console.log('switching to tab ',data)
       const url = data.path
       this.setData({
         selectedTabIndex: data.index
       })
       wx.switchTab({url: url})
-		},
+		}, 
 		onChange(event) {
 			console.log('selectedTabIndex: ', this.data.selectedTabIndex)
 			this.setData({ selectedTabIndex: event.detail });

@@ -1,8 +1,5 @@
 /* pages/admin/profile.wxss */
-.main {
-  flex-direction: column;
-  padding-bottom: 20rpx;
-}
+
 
 .header {
   height: 200rpx;
@@ -19,20 +16,42 @@
   border-radius: 20rpx;
 }
 
-.admin-box {
-  display: flex;
+.admin-card {
+	display: flex;
 }
 
-.avatar {
+.admin-avatar {
   height: 100rpx;
   width: 100rpx;
-  border-radius: 50%;
+	border-radius: 50%;
 }
+
+.user-avatar {
+	border-radius: 50%;
+	width: 100rpx;
+  height: 100rpx;
+  background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items:center;
+	margin-right: 20rpx;
+}
+
+.user-name {
+	/* margin-left: 50rpx; */
+	display: flex;
+	align-items: center;
+}
+
+.user-header {
+	display: flex;
+	align-items: center;
+	}
 
 .user-card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+	flex-direction: column;
+	vertical-align: middle;
   background-color: #fff;
   padding: 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -40,16 +59,10 @@
   border-radius: 10px;
 }
 
-.user-card__name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
 .pet-gallery {
-  display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  margin-top: 20px;
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
 }
 
 .pet-card {

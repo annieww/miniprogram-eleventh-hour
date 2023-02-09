@@ -8,10 +8,12 @@ Page({
 		specialNeedDisplay: '',
 		adoptionStatus: '', 
 		current_user: {}, 
+		userImage: '',
+		userName: '',
+		userWechatId: ''
   },
 
   onLoad(options) {
-
   },
 
   onReady() {
@@ -26,11 +28,11 @@ Page({
       url: `${app.globalData.baseURL}/pets/${id}`,
       success(res) {
         if (res.statusCode === 200) {
-					console.log(res.data.my_booking)
 					const pet = res.data.pet;
 					const my_booking = res.data.my_booking;
 					const current_user = res.data.current_user;
 					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
+					const isAdmin = current_user.admin? true : false
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
@@ -42,10 +44,10 @@ Page({
 						specialNeedDisplay: specialNeedDisplay,
 						adoptionStatus: adoptionStatus,
 						current_user: current_user, 
-						isBooker: isBooker
+						isBooker: isBooker,
+						isAdmin: isAdmin,
 					})
-					console.log("isbooker", isBooker)
-          console.log("From show.js: status code", res.statusCode)
+					console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
       }
     })
@@ -53,50 +55,53 @@ Page({
 
   onShow() {
     if (app.globalData.header) {
-      this.getData()
+			this.getData()
     } else {
 			wx.event.on('loginFinished', this, this.getData)
     }
 	},
 	
-	showBookingModal(e){
-		console.log('pet show - booking:', e)
-	},
+	handleGetUserInfo(e) {
+		let userInfo = e.detail.userInfo
+		if (userInfo) {
+			let userName = userInfo.nickName
+			let userWechatId = userInfo.openId
+			let userImage = userInfo.avatarUrl
+		}
+		console.log("user info -> ", userInfo)
+  },
 
-	submitBooking(e){
-		console.log("submit booking -> e",e)
+	createBooking(e){
 		let page = this
 		let date = Date.now()
-		wx.request({
-      url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
-      header: app.globalData.header,
-      method: "POST",
-      data: {
-        created_at: date
-			},
-			success(res) {
-				console.log("submit booking: res", res)
-				if (res.statusCode === 201) {
-					console.log("From show.js : res.data", res.data)
-					const booking = res.data.booking;
-					wx.showModal({
-						title: 'Elevent Hour Rescues',
-						content: 'Thank you for your kind request. Our team will contact you shortly',
-						complete: (res) => {
-							if (res.cancel) {
-								
-							}
-					
-							if (res.confirm) {
-								
+		wx.showModal({
+			title: 'Elevent Hour Rescues',
+			content: 'Thank you for your kind request. Our team will contact you shortly',
+			complete: (res) => {
+				if (res.cancel) {
+				}
+				if (res.confirm) {
+					wx.request({
+						url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
+						header: app.globalData.header,
+						method: "POST",
+						data: {
+							created_at: date, 
+							name: userName,
+							wechat_id: userWechatId,
+							image: userImage
+						},
+						success(res) {
+							if (res.statusCode === 201) {
+								console.log("From show.js : res.data", res.data)
+								const booking = res.data.booking;
+							} else {
+								console.log("From show.js: status code is", res.statusCode)
 							}
 						}
 					})
-				} else {
-					console.log("From show.js: status code is", res.statusCode)
-					console.log("From show.js: error message", res.data.errors)
 				}
-				}
+			}
 		})
 	},
 
@@ -126,7 +131,6 @@ Page({
               })
             }
           })
-
         } else {
         }
       }

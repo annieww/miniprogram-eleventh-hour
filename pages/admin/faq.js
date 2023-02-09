@@ -14,8 +14,9 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      content: wx.getStorageSync('content')
-    })
+			content: wx.getStorageSync('content')
+			    
+		})
   },
 
   /**

@@ -23,11 +23,11 @@
     "list": [{
       "pagePath": "pages/pets/index",
       "iconPath": "images/home.png",
-      "selectedIconPath": "images/home-active.png"
+			"selectedIconPath": "images/home-active.png"
     }, {
       "pagePath": "pages/admin/faq",
       "iconPath": "images/faq.png",
-      "selectedIconPath": "images/faq-active.png"
+			"selectedIconPath": "images/faq-active.png"
     }, {
       "pagePath": "pages/user/profile",
       "iconPath": "images/paw.png",
@@ -36,12 +36,13 @@
       "pagePath": "pages/pets/form",
       "iconPath": "images/add.png",
       "selectedIconPath": "images/add-active.png"
-    }, {
-      "pagePath": "pages/admin/profile",
-      "iconPath": "images/admin.png",
-      "selectedIconPath": "images/admin-active.png"
-    }]
-  },
+		}, {
+			"pagePath": "pages/admin/profile",
+			"iconPath": "images/admin.png",
+			"selectedIconPath": "images/admin-active.png"
+		}]
+	},
+	
   "usingComponents": {},
   "style": "v2",
   "sitemapLocation": "sitemap.json"
