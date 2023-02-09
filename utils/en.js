@@ -11,21 +11,11 @@ let en = {
   text4: '1. What to do when you found a stray/lost pet in the street?',
   text5: '2. What should you know about adopting pets? ',
   text6: '3. Who to contact if you want help out the organization? ',
-  text8: 'tell us a bit more about yourself by completing your general information.',
-  text9: 'complete my profile',
-  text10: 'my info',
-  text11: 'my status',
   text12: 'my adoption requests',
-  text13: 'my favorites',
   submit: 'submit',
   cancel: 'cancel',
   admin_form: 'upload pet info',
-  request_form: 'complete my general info',
-  application_tab: 'general applications',
   request_tab: 'adoption requests',
-  listing_tab: 'pet listings',
-  event_link: 'event',
-  faq_link: 'FAQ',
   authorize_button: 'Authorize'
 }
 module.exports = {

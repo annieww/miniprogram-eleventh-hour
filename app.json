@@ -1,15 +1,13 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
+		"pages/login/login",
     "pages/pets/index",
     "pages/pets/show",
     "pages/pets/form",
     "pages/admin/profile",
     "pages/admin/faq",
     "pages/user/profile",
-		"pages/user/form",
-		"pages/user/info"
+		"pages/user/form"
   ],
   "window":{
     "backgroundTextStyle":"light",

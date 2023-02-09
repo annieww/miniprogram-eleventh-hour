@@ -5,74 +5,42 @@
   <view class="header">
     <view class="header-box">
       <view class="authorize-box">
-        <button wx:if='{{!hasUserInfo}}' open-type="getUserProfile" bindtap="getUserProfile">{{content.authorize_button}}</button> 
+        <button class="authorize-btn" wx:if='{{!hasUserInfo}}' open-type="getUserProfile" bindtap="getUserProfile">{{content.authorize_button}}</button> 
         <view wx:else class="user-box">
           <view><image class="avatar" mode="aspectFill" src="{{avatarUrl}}"></image></view>
           <view class="user-name">{{nickName}}</view>
         </view>
       </view> 
-    
-      <view class="info-and-status">
-        <view class="my-info">{{content.text10}}</view>
-        <view class="my-status">{{content.text11}}</view>
-        <view class="review">pending</view>
-      </view>
     </view>
   </view>
 
-  <!-- COMPLETE PROFILE -->
-  <view wx:if="{{!general_info.length}}" class="complete-profile">
-    <view class="complete-text">
-      {{content.text8}}
-    </view>
-    <button bindtap="goToForm" class="complete-btn" style="width: 460rpx;" type="positive">{{content.text9}}</button>    
-  </view>
+	<!-- CONTACT CUSTOMER SERVICE -->
+	<view>
+		<button class="contact-btn" open-type="contact" bindcontact="handleContact">Enquire Now</button>	
+	</view>
 
   <view class="page-content">
     <!-- TABS -->
     <view class="tabs-box">
       <!-- REQUESTS TAB -->
       <view class="request-tab">
-        <view class="tab-title {{active_tab === 'request' ? 'active': 'inactive'}}" bindtap="active_request">
+        <view class="tab-title">
           {{content.text12}}</view>
-        <view wx:if="{{active_tab === 'request'}}" class="highlight" bindtap="active_request"></view>
+        <view class="highlight"></view>
       </view>
-      <!-- FAVORITES TAB --> 
-      <view class="favorite-tab">
-        <view class="tab-title {{active_tab === 'favorite' ? 'active': 'inactive'}}" bindtap="active_favorite">
-          {{content.text13}}</view>
-        <view wx:if="{{active_tab === 'favorite'}}" class="highlight" bindtap="active_favorite"></view>
-    </view>
     </view>
 
-    <!-- MY REQUESTS SCROLL VIEW -->
-    <view wx:if="{{active_tab === 'request'}}"  class="request-scroll-view-box">
-      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="request-view"
-        wx:for="{{requested_pets}}"  
-        wx:key="*this">
-          <view class="request-inner-view"></view>
-          <view class="info-text">
-            <view class="pet-name">{{item.name}}</view>
-          </view>
-
-        </view>
-      </scroll-view>
-    </view>
-  <!-- MY FAVORITES SCROLL VIEW -->
-    <view wx:if="{{active_tab === 'favorite'}}" class="favorite-scroll-view-box">
-      <scroll-view scroll-x="true" bindscroll="scroll" style="width: 100%; white-space: nowrap;" class="scroll-view">
-        <view class="favorite-view"
-        wx:for="{{favorited_pets}}"  
-        wx:key="*this">
-          <view class="favorite-inner-view"></view>
-          <view class="info-text">
-            <view class="pet-name">{{item.name}}</view>
-          </view>
-        </view>
-      </scroll-view>
-    </view>
-
-  </view>
-
+    <!-- MY REQUESTS -->
+		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
+			<wux-wing-blank size="default">
+				<wux-card
+					title="{{item.name}}"
+					thumb="/images/paw.png"
+					thumb-style="border-radius: 50%;"
+				>
+					<view slot="body">{{item.description}}</view>
+				</wux-card>
+			</wux-wing-blank>
+		</view>
+	</view>
 </view>

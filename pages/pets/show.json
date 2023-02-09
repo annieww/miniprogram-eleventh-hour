@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "wux-icon": "../../dist/icon/index"
+		"wux-icon": "../../dist/icon/index",
+		"tabbar":"/custom-tab-bar/index"
   }
 }

@@ -141,7 +141,12 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  
+	goToLogin() {
+		wx.redirectTo({
+			url: '/pages/login/login',
+		})
+	},
+	
   onLoad(options) {
     this.setData({
       content: wx.getStorageSync('content')
@@ -164,6 +169,7 @@ Page({
 		})
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
+			console.log('getTabBar-->', this.getTabBar())
       this.getTabBar().setData({
 				selectedTabIndex: 0      })
     }

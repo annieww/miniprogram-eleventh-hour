@@ -35,6 +35,38 @@
 					"query": "",
 					"launchMode": "default",
 					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/index/index",
+					"query": "",
+					"launchMode": "default",
+					"scene": null,
+					"partialCompile": {
+						"enabled": false,
+						"pages": []
+					}
+				},
+				{
+					"name": "",
+					"pathName": "pages/login/login",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/user/profile",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/login/form",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
 				}
 			]
 		}
@@ -43,5 +75,6 @@
 		"urlCheck": false,
 		"compileHotReLoad": false
 	},
-	"projectname": "miniprogram-eleventh-hour"
+	"projectname": "miniprogram-eleventh-hour",
+	"libVersion": "2.30.0"
 }

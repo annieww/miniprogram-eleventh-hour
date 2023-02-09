@@ -11,21 +11,11 @@ let zh = {
   text4: '1. 发现流浪动物时，我应该做什么？',
   text5: '2. 在领养动物前，我应该知道什么？',
   text6: '3. 想领养动物，我应该联系谁？',
-  text8: '申请领养前，请完善个人信息',
-  text9: '填写信息',
-  text10: '我的信息',
-  text11: '我的状态',
   text12: '已发送请求',
-  text13: '我的收藏',
   submit: '提交',
   cancel: '取消',
-  pets_form: '上传动物信息',
-  user_form: '填写我的信息',
-  application_tab: '领养人申请',
+  admin_form: '上传动物信息',
   request_tab: '收到的请求',
-  listing_tab: '已上传',
-  event_link: '最新活动',
-  faq_link: '常见问题',
   authorize_button: '点击授权'
 }
 
