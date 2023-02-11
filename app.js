@@ -28,11 +28,14 @@ App({
           data: { code: res.code }, // pass code in request body
           success(loginRes) {
 						app.globalData.header = loginRes.data.headers
+						app.globalData.user = loginRes.data.user
 						let role;
 						if(loginRes.data.user.admin){
 							role = 'admin';
+							wx.setStorageSync('role', 'admin')
 						} else {
 							role = 'user';
+							wx.setStorageSync('role', 'user')
 						}
 						app.globalData.role = role
 						event.emit('loginFinished') }

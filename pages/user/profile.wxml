@@ -16,7 +16,7 @@
 
 	<!-- CONTACT CUSTOMER SERVICE -->
 	<view>
-		<button class="contact-btn" open-type="contact" bindcontact="handleContact">Enquire Now</button>	
+		<button class="contact-btn" open-type="contact" bindcontact="handleContact">Message EHR</button>	
 	</view>
 
   <view class="page-content">
@@ -34,8 +34,8 @@
 		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
 			<wux-wing-blank size="default">
 				<wux-card
-					title="{{item.name}}"
-					thumb="/images/paw.png"
+					title="{{item.name}}" 
+					thumb="{{item.image_url}}"
 					thumb-style="border-radius: 50%;"
 				>
 					<view slot="body">{{item.description}}</view>

@@ -6,12 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    requested_pets: [
-      {name: 'Tiger', description: 'active cat'},
-      {name: 'Snowy', description: 'friendly dog'},
-      {name: 'Dobby', description: 'nice puppy'}
-		],
-		
+    requested_pets: [],
     nickName: '',
     avatarUrl: '', 
     userInfo: {},
@@ -33,9 +28,7 @@ Page({
       }
     })
   },
-  /**
-   * Lifecycle function--Called when page load
-   */
+
   onLoad(options) {
     if (wx.getUserProfile) {
       this.setData({
@@ -44,16 +37,9 @@ Page({
     }
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
   onReady() {
-
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
 	handleContact (e) {
 		console.log(e.detail.path)
 		console.log(e.detail.query)
@@ -70,26 +56,26 @@ Page({
       content: app.globalData.content
     })
     if (app.globalData.header) {
-      // proceed to fetch api
       this.getData()
     } else {
-      // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.getData)
     }
   },
 
   getData(){
-    const user_id = app.globalData.user.id
-    const page = this
+		const user_id = app.globalData.user.id
+		const page = this
     wx.request({
       url: `${app.globalData.baseURL}/users/${user_id}`,
       method: "GET",
       header: app.globalData.header,
       success(res) {
-        console.log("From user/profile.js: onshow request succesfully")
-        console.log("From user/profile.js: res",res)
-          let general_info = res.data.upcoming
+				console.log("From user/profile.js: res",res)
+				page.setData({
+					requested_pets: res.data.booked_pets
+				})
       }
+			
     })
   },
 
@@ -99,37 +85,26 @@ Page({
     })
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
+
   onHide() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
+
   onUnload() {
 
   },
 
-  /**
-   * Page event handler function--Called when user drop down
-   */
+
   onPullDownRefresh() {
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
+
   onReachBottom() {
 
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
   onShareAppMessage() {
 
   },

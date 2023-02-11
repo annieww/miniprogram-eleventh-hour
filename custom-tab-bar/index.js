@@ -43,7 +43,6 @@ Component({
 			this.setData({
 				list: this.data.allList[0].adminList
 			})
-			console.log(this.data.list)
 		} else {
 			this.setData({
 				list: this.data.allList[0].userList
@@ -53,9 +52,7 @@ Component({
 
   methods: {
 		switchTab(e) {
-			console.log("selected ->>>", this.data.selected)
 			const data = e.currentTarget.dataset
-			console.log(data.path, data.index)
       const url = data.path
       this.setData({
 				selected: data.index
