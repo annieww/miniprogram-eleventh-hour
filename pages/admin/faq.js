@@ -33,7 +33,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
       this.getTabBar().setData({
-        selectedTabIndex: 1
+        selected: 1
       })
     }
     this.setData({

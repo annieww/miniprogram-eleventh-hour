@@ -11,14 +11,13 @@ App({
 		user: {},
     baseURL: "http://localhost:3000/api/v1", 
 		language: wx.getStorageSync('language'),
-		routerList: [],
-  }, 
+		role: ''
+	}, 
 
   onLaunch() {
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    // 登录
     const app = this
     wx.login({
       success: res => {
@@ -28,17 +27,19 @@ App({
           method: 'post',
           data: { code: res.code }, // pass code in request body
           success(loginRes) {
-						app.globalData.user =	loginRes.data.user
 						app.globalData.header = loginRes.data.headers
-						const isAdmin = loginRes.data.user.admin? true : false
-						app.globalData.isAdmin = isAdmin
-            console.log("Hello from app.js: app.globalData","admin->", isAdmin)
-            event.emit('loginFinished')
-          }
-        })
+						let role;
+						if(loginRes.data.user.admin){
+							role = 'admin';
+						} else {
+							role = 'user';
+						}
+						app.globalData.role = role
+						event.emit('loginFinished') }
+				})
       }
     }),
-     this.updateContent()
+		this.updateContent()
   },
   updateContent() {
     let lastLanguage = wx.getStorageSync('language') // identify the current language
@@ -58,5 +59,5 @@ App({
       wx.setStorageSync('language', 'zh')
     }
     this.updateContent()
-	}, 
+	}
 })
