@@ -38,7 +38,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/login/form",
+					"pathName": "pages/admin/faq",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

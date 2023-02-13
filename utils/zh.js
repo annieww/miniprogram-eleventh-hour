@@ -8,15 +8,16 @@ let zh = {
   foster_tab: '寄养',
   about_title: '关于我们',
   faq_title: '常见问题',
-  text4: '1. 发现流浪动物时，我应该做什么？',
-  text5: '2. 在领养动物前，我应该知道什么？',
-  text6: '3. 想领养动物，我应该联系谁？',
+  faq1: '发现流浪动物时，我应该做什么？',
+  faq2: '在领养动物前，我应该知道什么？',
+  faq3: '想领养动物，我应该联系谁?',
   text12: '已发送请求',
   submit: '提交',
   cancel: '取消',
   admin_form: '上传动物信息',
   request_tab: '收到的请求',
-  authorize_button: '点击授权'
+	authorize_button: '点击授权', 
+	contact_button: '立即联系我们'
 }
 
 module.exports = {

@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "usingComponents": { 
+		"wux-sticky": "../../dist/sticky/index",
+		"wux-sticky-item": "../../dist/sticky-item/index",
+		"wux-icon": "../../dist/icon/index",
+		"wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+		"wux-input": "../../dist/input/index"
+  }
 }

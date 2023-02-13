@@ -1,6 +1,6 @@
 <!--pages/pets/index.wxml-->
 <view class="main">
-  <view class="language-btn" bindtap="changeLanguage"> EN | 中文</view>
+	<image class="language-btn" bindtap="changeLanguage" src="/images/switcher.png"/>
   <!-- 1.about us -->
   <view class="header">
     <view class="logo-box">
@@ -13,11 +13,11 @@
       <view class="div-line"></view> 
     </view>
     <view class="content-box">
-      <view class="ehr-title">{{content.text1}}</view>
+      <!-- <view class="ehr-title">{{content.text1}}</view> -->
       <view class="header-content">
         <view class="ehr-content">{{content.about1}}</view>
       </view>
-      <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view>
+      <!-- <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view> -->
     </view>
   </view>
 
