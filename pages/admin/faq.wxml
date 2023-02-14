@@ -10,14 +10,14 @@
 			<view class="question">
 				<view  data-index="{{index}}" bindtap="toggleAnswer">{{item.question}}
 				</view>
-				<wux-icon size="16" color="#444" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+				<wux-icon wx:if="{{isAdmin}}" size="16" color="#444" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
 				</view>
 			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
   		</view>
   </wux-sticky-item>
 	
 	<view class="add-faq-container">
-		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm"/>
+		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin}}"/>
 			<view class="add-faq-form" wx:if="{{showAddForm}}">
 				<input class="add-input" placeholder="question" bindinput="updateNewQuestion"/>
 				<textarea class="add-input" placeholder="answer" bindinput="updateNewAnswer" />

@@ -15,7 +15,8 @@ Page({
 			// One boolean for each FAQ item, used to control its state
 			newQuestion: "",
 			newAnswer: "", 
-			showAddForm: false
+			showAddForm: false, 
+			isAdmin: false
   },
 
   onLoad(options) {
@@ -83,6 +84,12 @@ Page({
 			content: app.globalData.content, 
 			faqList: wx.getStorageSync('faqData')
 		})
+		const role = wx.getStorageSync('role')
+		if (role == 'admin') {
+			this.setData({
+				isAdmin: true
+			})
+		}
 	},
 	
   onHide() {
