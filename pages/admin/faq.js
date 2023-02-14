@@ -1,10 +1,5 @@
-// pages/admin/faq.js
 const app = getApp()
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
 			faqList: [
 				{
@@ -24,10 +19,8 @@ Page({
   },
 
   onLoad(options) {
-    this.setData({
-			content: wx.getStorageSync('content')   
-		})
 	},
+
 	toggleAnswer(e) {
 		const index = e.currentTarget.dataset.index
 		const newIsOpen = [...this.data.isOpen];
@@ -42,7 +35,7 @@ Page({
 
 		const newFaqList = [ ...this.data.faqList, newFaq]
 		const newIsOpen = [ ...this.data.isOpen, false]
-
+		
 		this.setData({
 			faqList: newFaqList,
 			isOpen: newIsOpen,
@@ -50,6 +43,7 @@ Page({
 			newAnswer: "", 
 			showAddForm: false
 		});
+		wx.setStorageSync('faqData', newFaqList)
 	},
 
 	updateNewQuestion(e) {
@@ -65,6 +59,7 @@ Page({
 		let newFaqList = [ ...this.data.faqList];
 		newFaqList.splice(index, 1);
 		this.setData({ faqList: newFaqList });
+		wx.setStorageSync('faqData', this.data.faqList)
 	},
 
 	toggleAddForm(e){
@@ -83,10 +78,11 @@ Page({
       this.getTabBar().setData({
         selected: 1
       })
-    }
+		}
     this.setData({
-      content: app.globalData.content
-    })
+			content: app.globalData.content, 
+			faqList: wx.getStorageSync('faqData')
+		})
 	},
 	
   onHide() {
