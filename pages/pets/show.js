@@ -64,9 +64,11 @@ Page({
 	handleGetUserInfo(e) {
 		let userInfo = e.detail.userInfo
 		if (userInfo) {
-			let userName = userInfo.nickName
-			let userWechatId = userInfo.openId
-			let userImage = userInfo.avatarUrl
+			this.setData({
+				userName: userInfo.nickName,
+				userWechatId: userInfo.openId,
+				userImage : userInfo.avatarUrl
+			})
 		}
 		console.log("user info -> ", userInfo)
   },
@@ -75,7 +77,7 @@ Page({
 		let page = this
 		let date = Date.now()
 		wx.showModal({
-			title: 'Elevent Hour Rescues',
+			title: 'Eleventh Hour Rescues',
 			content: 'Thank you for your kind request. Our team will contact you shortly',
 			complete: (res) => {
 				if (res.cancel) {
@@ -87,9 +89,9 @@ Page({
 						method: "POST",
 						data: {
 							created_at: date, 
-							name: userName,
-							wechat_id: userWechatId,
-							image: userImage
+							name: this.data.userName,
+							wechat_id: this.data.userWechatId,
+							image: this.data.userImage
 						},
 						success(res) {
 							if (res.statusCode === 201) {

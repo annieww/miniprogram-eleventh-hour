@@ -6,7 +6,8 @@ Page({
    * Page initial data
    */
   data: {
-    requested_pets: [],
+		requested_pets: [],
+		bookings: [],
     nickName: '',
     avatarUrl: '', 
     userInfo: {},
@@ -72,19 +73,31 @@ Page({
       success(res) {
 				console.log("From user/profile.js: res",res)
 				page.setData({
-					requested_pets: res.data.booked_pets
+					requested_pets: res.data.booked_pets, 
+					bookings: res.data.bookings
 				})
       }
-			
+    })
+	},
+	
+	delete(e) {
+		const index = e.currentTarget.dataset.index
+		const pet_id = this.data.requested_pets[index].id
+		const booking_id = this.data.bookings[index].id
+		console.log(pet_id, booking_id)
+		const page = this
+    wx.request({
+			header: app.globalData.header,
+			url: `${app.globalData.baseURL}/pets/${pet_id}/bookings/${booking_id}`,
+			method: 'DELETE',
+			success: (res) => {
+				this.getData()
+			}, 
+			fail: (err) => {
+				console.log(err)
+			}
     })
   },
-
-  goToForm() {
-    wx.redirectTo({
-      url: '/pages/user/form',
-    })
-  },
-
 
   onHide() {
 

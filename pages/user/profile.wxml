@@ -32,7 +32,8 @@
 
     <!-- MY REQUESTS -->
 		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
-			<wux-wing-blank size="default">
+			<wux-wing-blank size="default" class="card">
+				<wux-icon size="18" color="#444" type="ios-close-circle-outline" class="delete-request" bindtap="delete" data-index="{{index}}"/>
 				<wux-card
 					title="{{item.name}}" 
 					thumb="{{item.image_url}}"
