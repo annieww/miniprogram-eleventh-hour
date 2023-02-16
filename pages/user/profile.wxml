@@ -16,7 +16,7 @@
 
 	<!-- CONTACT CUSTOMER SERVICE -->
 	<view>
-		<button class="contact-btn" open-type="contact" bindcontact="handleContact">Enquire Now</button>	
+		<button class="contact-btn" open-type="contact" bindcontact="handleContact">{{content.contact_button}}</button>	
 	</view>
 
   <view class="page-content">
@@ -32,12 +32,12 @@
 
     <!-- MY REQUESTS -->
 		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
-			<wux-wing-blank size="default">
+				<wux-icon size="22" color="#cccccc" type="ios-close-circle-outline" class="delete-request" bindtap="delete" data-index="{{index}}"/>
+			<wux-wing-blank size="default" class="card">
 				<wux-card
-					title="{{item.name}}"
-					thumb="/images/paw.png"
-					thumb-style="border-radius: 50%;"
-				>
+					title="{{item.name}}" 
+					thumb="{{item.image_url}}"
+					thumb-style="border-radius: 50%;">
 					<view slot="body">{{item.description}}</view>
 				</wux-card>
 			</wux-wing-blank>

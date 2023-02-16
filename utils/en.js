@@ -7,16 +7,13 @@ let en = {
   adopt_tab: 'adopt',
   foster_tab: 'foster',
   about_title: 'About Us',
-  faq_title: 'Frequently Asked Questions',
-  text4: '1. What to do when you found a stray/lost pet in the street?',
-  text5: '2. What should you know about adopting pets? ',
-  text6: '3. Who to contact if you want help out the organization? ',
-  text12: 'my adoption requests',
+  text12: 'My Requests',
   submit: 'submit',
   cancel: 'cancel',
   admin_form: 'upload pet info',
   request_tab: 'adoption requests',
-  authorize_button: 'Authorize'
+	authorize_button: 'Authorize', 
+	contact_button: 'Message EHR'
 }
 module.exports = {
   content: en

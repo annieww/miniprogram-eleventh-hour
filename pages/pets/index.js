@@ -138,18 +138,10 @@ Page({
 		], 
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
-	goToLogin() {
-		wx.redirectTo({
-			url: '/pages/login/login',
-		})
-	},
 	
   onLoad(options) {
     this.setData({
-      content: wx.getStorageSync('content')
+			content: wx.getStorageSync('content')
 		})
   },
   
@@ -171,7 +163,8 @@ Page({
       this.getTabBar()){
 			console.log('getTabBar-->', this.getTabBar())
       this.getTabBar().setData({
-				selectedTabIndex: 0      })
+				selected: 0 
+			})
     }
     if (app.globalData.header) {
     // proceed to fetch api

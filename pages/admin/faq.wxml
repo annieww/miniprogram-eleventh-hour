@@ -1,20 +1,27 @@
-<!--pages/admin/faq.wxml-->
-<view class="header">
-  <view><image class="avatar" mode="aspectFill" src="../../images/stick.jpg"/></view>
-</view>
 
 <view class="page-content">
   <view class="page-title">{{content.about_title}}</view>
-  <view class="ehr-content">{{content.about2}}</view>
+	<text class="about">We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.
+	</text>
 
-  <view class="page-title">{{content.faq_title}}</view>
-    <view class="content-card">
-      {{content.text4}}
-    </view>
-    <view class="content-card">
-      {{content.text5}}
-    </view>
-    <view class="content-card">
-      {{content.text6}}
-    </view>
-  </view>
+	<wux-sticky-item class="faq-container">
+    <view slot="title">FAQs</view>
+    <view slot="content" class="faq-item" wx:for="{{faqList}}" wx:key="index">
+			<view class="question">
+				<view  data-index="{{index}}" bindtap="toggleAnswer">{{item.question}}
+				</view>
+				<wux-icon wx:if="{{isAdmin}}" size="16" color="#444" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+				</view>
+			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
+  		</view>
+  </wux-sticky-item>
+	
+	<view class="add-faq-container">
+		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin}}"/>
+			<view class="add-faq-form" wx:if="{{showAddForm}}">
+				<input class="add-input" placeholder="question" bindinput="updateNewQuestion"/>
+				<textarea class="add-input" placeholder="answer" bindinput="updateNewAnswer" />
+				<button plain="true" bindtap="addFAQ">Save</button>
+			</view>
+	</view>
+</view>

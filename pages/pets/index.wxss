@@ -4,8 +4,10 @@ page {
   padding-bottom: 150rpx;
 }
 .language-btn {
-  position: absolute;
-  top: 25rpx;
+	position: absolute;
+	height: 50rpx;
+	width: 65rpx;
+  top: 30rpx;
   right: 25rpx;
   padding: 0rpx;
   /* background-color: orange; */
@@ -33,7 +35,8 @@ page {
 .ehr-heading {
   font-size: 40rpx;
   font-weight: bold;
-  margin-left: 40rpx;
+	margin-left: 40rpx;
+	text-align: center;
 }
 
 .ehr-logo {
@@ -53,7 +56,7 @@ page {
   padding: 15rpx;
   margin: 15rpx;
   background-color: #C5EBE7;
-  border-radius: 30rpx;
+  border-radius: 20rpx;
 }
 
 .ehr-title {
@@ -63,7 +66,6 @@ page {
 }
 
 .ehr-content {
-  /* font-size: 32rpx; */
   padding: 15rpx;
 }
 

@@ -24,32 +24,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/index/index",
-					"query": "",
-					"launchMode": "default",
-					"scene": null
-				},
-				{
-					"name": "",
 					"pathName": "pages/admin/profile",
-					"query": "",
-					"launchMode": "default",
-					"scene": null
-				},
-				{
-					"name": "",
-					"pathName": "pages/index/index",
-					"query": "",
-					"launchMode": "default",
-					"scene": null,
-					"partialCompile": {
-						"enabled": false,
-						"pages": []
-					}
-				},
-				{
-					"name": "",
-					"pathName": "pages/login/login",
 					"query": "",
 					"launchMode": "default",
 					"scene": null
@@ -63,7 +38,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/login/form",
+					"pathName": "pages/admin/faq",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

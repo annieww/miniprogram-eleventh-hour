@@ -86,3 +86,13 @@
 .requests-box {
 	padding: 20rpx;
 }
+
+.card {
+	z-index: 1;
+}
+.delete-request {
+	position: relative;
+	left: 604rpx;
+	top: 60rpx;
+	z-index: 2;
+}
