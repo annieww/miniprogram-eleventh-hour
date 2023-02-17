@@ -22,7 +22,7 @@
   </view>
 
   <!-- 2.event swiper -->
-  <view class="swiper-swiper">
+  <!-- <view class="swiper-swiper">
     <swiper class="event-swiper" autoplay="true" interval="4000" circular="true" indicator-dots="true" indicator-color="rgba(128,128,128,1)" indicator-active-color="rgba(253,82,0,1)"> 
       <block wx:for="{{events}}" wx:key="*this" wx:for-item="event">
         <swiper-item class="event-card">
@@ -36,7 +36,7 @@
         </swiper-item>
       </block>
     </swiper>
-  </view>
+  </view> -->
 
   <!-- 3.pet tag -->
 
