@@ -262,3 +262,7 @@ page {
   justify-content: start;
   font-weight: 600;
 }
+
+.pet-age {
+	font-weight: 300;
+}

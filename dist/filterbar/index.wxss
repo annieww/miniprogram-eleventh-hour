@@ -313,7 +313,8 @@
 .wux-filterbar__btns .wux-filterbar__btn--danger {
   background-color: #00B5A3;
   color: #fff;
-  margin-bottom: 150rpx;
+	margin-bottom: 150rpx;
+	font-weight:bold;
 }
 .wux-filterbar__btns .wux-filterbar__btn--danger::before {
   display: none
