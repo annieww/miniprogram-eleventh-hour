@@ -16,23 +16,30 @@
             <view> Status: {{adoptionStatus}}</view>
           </view>
           <view>
-            <view> Neutered: {{neuteredDisplay}}</view>
-            <view> Vaccinated: {{vaccinatedDisplay}}</view>
+            <view class="yes-no"> 
+							<view>Neutered: </view>
+							<image class="status-icon" src="{{ neuteredDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
+						</view>
+            <view class="yes-no"> 
+							<view>Vaccinated:</view>
+							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
+						</view>
             <view> Size: {{pet.size}}</view>
           </view>
         </view>
   <!-- 3. add info container -->
-  <view class="more-info">
-  <text> More: </text>
-    <text class="more-cmnt">{{pet.description}}</text>
-    <text class="more-cmnt"> Special need: {{specialNeedDisplay}}</text>
-  </view>
-    </view>
+			<view class="more-info">
+				<text class="info-title">Description</text>
+				<text>{{pet.description}}</text>
+				<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view>
+			</view>
+
+  	</view>
   
   <!-- 4.adopt button -->
     <view class="buttons" wx:if="{{!isAdmin && !isBooker}}">
-      <button  type="default" plain="true" class="btn" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">Adopt</button>
-      <button type="primary" plain="true" open-type="share" class="btn">Share</button>
+      <button class="btn-adopt" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">Adopt</button>
+      <button open-type="share" class="btn-share">Share</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>

@@ -120,7 +120,7 @@
     <!-- Buttons -->
       <view class="btn-area">
         <button class="btn-submit" formType="submit">Submit</button>
-        <button plain="true" bindtap="resetForm">Reset</button>
+        <button class="btn-reset" bindtap="resetForm">Reset</button>
         </view>
     </form>
   </view>
