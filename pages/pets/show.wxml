@@ -11,9 +11,9 @@
         <view class="pet-name"> {{pet.name}}</view>
         <view class="pet-info">
           <view>
-            <view> Age: {{pet.age}}</view>
-            <view> Gender: {{pet.gender}}</view>
-            <view> Status: {{adoptionStatus}}</view>
+            <view>Age: <text class="info-text">{{pet.age}}</text></view>
+            <view>Gender: <text class="info-text">{{pet.gender}}</text></view>
+            <view>Status: <text class="info-text">{{adoptionStatus}}</text></view>
           </view>
           <view>
             <view class="yes-no"> 
@@ -24,13 +24,13 @@
 							<view>Vaccinated:</view>
 							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
 						</view>
-            <view> Size: {{pet.size}}</view>
+            <view> Size: <text class="info-text">{{pet.size}}</text></view>
           </view>
         </view>
   <!-- 3. add info container -->
 			<view class="more-info">
 				<text class="info-title">Description</text>
-				<text>{{pet.description}}</text>
+				<text class="info-text">{{pet.description}}</text>
 				<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view>
 			</view>
 

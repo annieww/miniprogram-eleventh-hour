@@ -24,7 +24,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/pets/form",
+					"pathName": "pages/pets/index",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

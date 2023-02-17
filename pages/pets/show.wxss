@@ -37,6 +37,10 @@
   background-color: #eeeeee;
 }
 
+.info-text {
+	font-weight: 200;
+}
+
 .yes-no {
   display: flex;
   justify-content: start;
