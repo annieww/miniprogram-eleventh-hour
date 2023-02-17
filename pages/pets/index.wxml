@@ -38,19 +38,6 @@
     </swiper>
   </view> -->
 
-  <!-- 3.pet tag -->
-
-    <!-- <view class="tag-scroll-filter"></view> -->
-    <!-- <view style="width: 100%; white-space: nowrap;" class="tags-scroll-view">
-      <view class="tag-button" bindtap="selectTag" wx:for="{{tags}}" wx:key="*this" data-index="{{index}}" data-tag="{{item.name}}" style="border: {{tag === item.name ? '1px solid #FD5200' : 'none'}}; box-shadow: {{tag === item.name ? 'none' : '0 0 15rpx rgba(0,0,0,0.2)'}};">
-        <view class="inner-tag-view">
-          <image class="tag-img" src="{{item.image_url}}"></image>
-          <view class="tag-name">{{item.name}}</view>
-          <view>{{item.show}}</view>
-        </view>
-      </view>
-    </view> -->
-
   <view class="divider">
     <view class="div-line"></view> 
   </view>
@@ -77,7 +64,10 @@
     <view class="div-line"></view> 
   </view> -->
   <!-- 4.pet list -->
-  <view class="pet-cards-box">
+	<view wx:if="{{pets == 0}}" class="empty-box">
+			<view class="empty-message">Please select again</view>
+		</view>
+  <view class="pet-cards-box">	
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
       <!-- <view class="filter"></view> -->
       <view class="image-box">

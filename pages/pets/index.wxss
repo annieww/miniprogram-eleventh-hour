@@ -215,7 +215,25 @@ page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50rpx;
-  margin: 50rpx;
+	margin: 50rpx;
+	align-items: center;
+}
+
+.empty-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50rpx;
+}
+
+.empty-message {
+	text-align: center;
+  padding: 15rpx;
+  margin: 15rpx;
+  background-color: #C5EBE7;
+	border-radius: 20rpx;
+	width: 500rpx;
 }
 
 .pet-card {
