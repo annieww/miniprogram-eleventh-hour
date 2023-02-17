@@ -23,7 +23,7 @@
   height: 52rpx;
   font-size: 48rpx;
   line-height: 52rpx;
-  color: #33cd5f;
+  color: #00B5A3;
   border: 2rpx solid #e8e8e8;
   box-sizing: border-box;
   display: -ms-flexbox;
@@ -57,7 +57,7 @@
 .wux-input-number--circle .wux-input-number__selector {
   width: 52rpx;
   border-radius: 50%;
-  border: 2rpx solid #33cd5f
+  border: 2rpx solid #00B5A3
 }
 .wux-input-number--circle .wux-input-number__selector--disabled {
   border-color: #ccc!important
@@ -93,10 +93,10 @@
   border-color: #ef473a
 }
 .wux-input-number .wux-input-number__selector--balanced {
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-input-number--circle .wux-input-number__selector--balanced {
-  border-color: #33cd5f
+  border-color: #00B5A3
 }
 .wux-input-number .wux-input-number__selector--energized {
   color: #ffc900

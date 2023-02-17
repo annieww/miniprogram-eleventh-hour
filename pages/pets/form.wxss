@@ -8,7 +8,12 @@
   display: flex;
   margin: 20rpx;
   display: flex;
-  gap: 20rpx;
+	gap: 20rpx;
+}
+
+.btn-submit {
+	background-color: #00B5A3;
+	color: white;
 }
 
 .image-card {

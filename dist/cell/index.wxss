@@ -42,7 +42,8 @@
   right: 0;
   height: 1PX;
   border-bottom: 1PX solid #d9d9d9;
-  color: #d9d9d9;
+	/* color: #d9d9d9; */
+	color: black;
   transform-origin: 0 100%;
   transform: scaleY(.5);
   left: 30rpx
@@ -67,7 +68,8 @@
   flex: 1
 }
 .wux-cell__text {
-  text-align: left
+	text-align: left;
+	font-weight: 400;
 }
 .wux-cell__desc {
   text-align: left;
@@ -76,12 +78,13 @@
   color: rgba(0,0,0,.45)
 }
 .wux-cell__ft {
-  text-align: right;
-  color: rgba(0,0,0,.45)
+  text-align: left;
+	/* color: rgba(0,0,0,.45) */
 }
 .wux-cell--access .wux-cell__ft {
-  padding-right: 34rpx;
-  position: relative
+  padding-right: 64rpx;
+	position: relative;
+	font-weight: 400;
 }
 .wux-cell--access .wux-cell__ft::after {
   content: " ";

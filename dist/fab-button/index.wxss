@@ -37,7 +37,7 @@
   height: 100rpx;
   border-radius: 50%;
   z-index: 1020;
-  background-color: #33cd5f;
+  background-color: #00B5A3;
   color: #fff;
   overflow: visible;
   transition-duration: .3s;
@@ -95,7 +95,7 @@
   color: #fff!important;
   border-radius: 50%;
   overflow: visible;
-  background-color: #33cd5f!important;
+  background-color: #00B5A3!important;
   transition-duration: .3s;
   display: -ms-flexbox;
   display: flex;
@@ -189,7 +189,7 @@
 .wux-fab-button--balanced .wux-fab-button__action,
 .wux-fab-button--balanced .wux-fab-button__button,
 .wux-fab-button--balanced .wux-fab-button__button--disabled {
-  background-color: #33cd5f!important
+  background-color: #00B5A3!important
 }
 .wux-fab-button--energized .wux-fab-button__action,
 .wux-fab-button--energized .wux-fab-button__button,

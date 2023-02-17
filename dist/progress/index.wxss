@@ -12,7 +12,7 @@
   background-color: #f3f3f3
 }
 .wux-progress__bar {
-  background-color: #33cd5f;
+  background-color: #00B5A3;
   transition: all .3s linear 0s
 }
 .wux-progress__text {

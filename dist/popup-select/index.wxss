@@ -53,7 +53,7 @@
 }
 .wux-select__button--confirm {
   right: 0;
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-select__button--hover {
   background-color: #ececec

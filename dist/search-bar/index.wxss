@@ -88,7 +88,7 @@
 .wux-search-bar__cancel {
   margin-left: 20rpx;
   line-height: 56rpx;
-  color: #33cd5f;
+  color: #00B5A3;
   white-space: nowrap
 }
 .wux-search-bar__icon {

@@ -17,7 +17,7 @@
   display: block;
   -ms-flex: 1;
   flex: 1;
-  color: #33cd5f!important;
+  color: #00B5A3!important;
   position: relative
 }
 .wux-dialog__button::after {
@@ -36,7 +36,7 @@
   color: #444!important
 }
 .wux-dialog__button--primary {
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-dialog__button--light {
   color: #ddd!important
@@ -54,7 +54,7 @@
   color: #ef473a!important
 }
 .wux-dialog__button--balanced {
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-dialog__button--energized {
   color: #ffc900!important

@@ -15,7 +15,7 @@ Page({
     options2: ['dog', 'cat', 'other'],
     options3: ['mini', 'small', 'medium', 'large'],
     resetForm: true, 
-    src: "/images/add+.png",
+    src: "/images/image.png",
     formData: {},
     description: "",
     fileList: []
@@ -45,7 +45,7 @@ Page({
 
   resetForm() {
     this.setData(
-      {formData: {} , src: "/images/add+.png"})
+      {formData: {} , src: "/images/image.png"})
   },
   // Pop-up selection for Gender, Species, and Size
   setValue(values, key, field) {

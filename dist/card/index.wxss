@@ -129,7 +129,7 @@
   display: block;
   -ms-flex: 1;
   flex: 1;
-  color: #33cd5f;
+  color: #00B5A3;
   text-align: center
 }
 .wux-card__action::before {
@@ -151,7 +151,7 @@
   color: #444!important
 }
 .wux-card__action--primary {
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-card__action--light {
   color: #ddd!important
@@ -169,7 +169,7 @@
   color: #ef473a!important
 }
 .wux-card__action--balanced {
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-card__action--energized {
   color: #ffc900!important

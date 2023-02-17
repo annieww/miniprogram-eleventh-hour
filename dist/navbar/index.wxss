@@ -55,7 +55,7 @@
   color: #fff
 }
 .wux-navbar--balanced {
-  background-color: #33cd5f;
+  background-color: #00B5A3;
   color: #fff
 }
 .wux-navbar--energized {

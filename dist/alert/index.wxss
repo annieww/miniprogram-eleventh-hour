@@ -48,7 +48,7 @@
 }
 .wux-alert--balanced {
   color: #fff;
-  background-color: #33cd5f
+  background-color: #00B5A3
 }
 .wux-alert--energized {
   color: #fff;

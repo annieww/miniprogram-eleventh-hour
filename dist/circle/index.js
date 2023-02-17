@@ -40,7 +40,7 @@ baseComponent({
         },
         color: {
             type: String,
-            value: '#33cd5f',
+            value: '#00B5A3',
         },
         sAngle: {
             type: Number,

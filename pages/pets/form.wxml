@@ -4,13 +4,14 @@
 <view class="page">
   <view class="page-body">
     <form bindsubmit="create">      
-    <wux-cell-group title="Basic information">
+    <wux-cell-group title="Basic Information">
         <!-- Name -->
         <wux-cell 
         hover-class="none"
         >
           <wux-input 
           label="Name"
+					placeholder="Snoopy"
           controlled
           type="text"
           maxlength="10"
@@ -22,6 +23,7 @@
         <wux-cell >
             <wux-input 
             label="Age"
+						placeholder="1 year"
             controlled
             type="text"
             maxlength="10"
@@ -64,7 +66,7 @@
           </wux-popup-select>
         </wux-cell-group>
     <!-- Neutered & Vaccinated & Special need-->
-      <wux-cell-group title="Health related information">
+      <wux-cell-group title="Health Related Information">
         <wux-cell name="neutered">
           <text>Neutered</text>
           <wux-switch
@@ -97,12 +99,12 @@
         </wux-cell>
         </wux-cell-group>
     <!-- Image Upload -->
-      <wux-cell-group title="Upload an image" >
+      <wux-cell-group title="Upload an Image" >
         <view class="image-card" bindtap="chooseImage" >
         <image src="{{src}}" style="width: 156rpx; height: 156rpx;" mode="aspectFill"/></view>
       </wux-cell-group>
     <!-- Description -->
-      <wux-cell-group title="Additional information">
+      <wux-cell-group title="Additional Information">
         <wux-cell hover-class="none">
           <wux-textarea
             hasCount
@@ -111,13 +113,14 @@
             value="{{formData.description}}"
             cursorSpacing="80"
             bind:change="inputAddInfo"
+						placeholder="Snoopy is a friendly puppy..."
           />
         </wux-cell>
         </wux-cell-group>
     <!-- Buttons -->
       <view class="btn-area">
-        <button class="btn" plain="true" type="primary" formType="submit">Submit</button>
-        <button class="btn" plain="true" bindtap="resetForm">Reset</button>
+        <button class="btn-submit" formType="submit">Submit</button>
+        <button class="btn-reset" plain="true" bindtap="resetForm">Reset</button>
         </view>
     </form>
   </view>

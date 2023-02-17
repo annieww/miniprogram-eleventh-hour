@@ -30,7 +30,7 @@
   text-align: center
 }
 .wux-tabbar-item--current {
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-tabbar-item--disabled {
   opacity: .3
@@ -51,7 +51,7 @@
   color: #ef473a
 }
 .wux-tabbar-item--balanced.wux-tabbar-item--current {
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-tabbar-item--energized.wux-tabbar-item--current {
   color: #ffc900

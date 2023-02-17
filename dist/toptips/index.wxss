@@ -19,7 +19,7 @@
   padding: 0 52rpx
 }
 .wux-toptips__content--success {
-  background-color: #33cd5f
+  background-color: #00B5A3
 }
 .wux-toptips__content--info {
   background-color: #387ef5

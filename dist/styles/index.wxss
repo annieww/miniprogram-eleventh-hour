@@ -59,13 +59,13 @@
   border-color: #11c1f3!important
 }
 .wux-balanced {
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-balanced--bg {
-  background-color: #33cd5f!important
+  background-color: #00B5A3!important
 }
 .wux-balanced--border {
-  border-color: #33cd5f!important
+  border-color: #00B5A3!important
 }
 .wux-energized {
   color: #ffc900!important

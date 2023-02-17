@@ -50,7 +50,7 @@
 }
 .wux-date-picker__button--confirm {
   right: 0;
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-date-picker__button--hover {
   background-color: #ececec

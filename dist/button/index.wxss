@@ -250,27 +250,27 @@
 .wux-button--balanced,
 .wux-button--balanced--disabled {
   border-color: transparent!important;
-  background-color: #33cd5f!important;
+  background-color: #00B5A3!important;
   color: #fff!important
 }
 .wux-button--balanced.wux-button--hover {
-  background-color: #28a54c!important;
+  background-color: #00B5A3!important;
   color: #fff!important
 }
 .wux-button--balanced.wux-button--outline,
 .wux-button--balanced.wux-button--outline.wux-button--disabled {
-  border-color: #33cd5f!important;
+  border-color: #00B5A3!important;
   background-color: transparent!important;
-  color: #33cd5f!important
+  color: #00B5A3!important
 }
 .wux-button--balanced.wux-button--outline.wux-button--hover {
-  background-color: #33cd5f!important;
+  background-color: #00B5A3!important;
   color: #fff!important
 }
 .wux-button--balanced.wux-button--clear,
 .wux-button--balanced.wux-button--clear.wux-button--disabled {
   background-color: transparent!important;
-  color: #28a54c!important
+  color: #00B5A3!important
 }
 .wux-button--balanced.wux-button--clear.wux-button--hover {
   opacity: .3!important

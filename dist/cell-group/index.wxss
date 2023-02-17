@@ -1,13 +1,14 @@
 .wux-cell-group__hd {
-  padding: 30rpx 30rpx 18rpx;
-  font-size: 28rpx;
-  color: rgba(0,0,0,.45);
+  padding: 40rpx 30rpx 18rpx;
+  font-size: 32rpx;
+  color: rgba(0,0,0,.65);
   width: 100%;
-  box-sizing: border-box
+	box-sizing: border-box;
+	font-weight: normal;
 }
 .wux-cell-group__bd {
   position: relative;
-  background-color: #fff
+	background-color: #fff;
 }
 .wux-cell-group__bd::after {
   content: " ";

@@ -19,12 +19,12 @@
   justify-content: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #33cd5f;
+  color: #00B5A3;
   font-size: 28rpx;
   line-height: 1;
   transition: background .3s;
   position: relative;
-  border: 2rpx solid #33cd5f;
+  border: 2rpx solid #00B5A3;
   width: 100%;
   box-sizing: border-box;
   border-left-width: 0
@@ -37,7 +37,7 @@
   border-radius: 0 12rpx 12rpx 0
 }
 .wux-segment__item--current {
-  background: #33cd5f;
+  background: #00B5A3;
   color: #fff
 }
 .wux-segment--light .wux-segment__item {
@@ -81,11 +81,11 @@
   color: #fff
 }
 .wux-segment--balanced .wux-segment__item {
-  color: #33cd5f;
-  border-color: #33cd5f
+  color: #00B5A3;
+  border-color: #00B5A3
 }
 .wux-segment--balanced .wux-segment__item--current {
-  background: #33cd5f;
+  background: #00B5A3;
   color: #fff
 }
 .wux-segment--energized .wux-segment__item {

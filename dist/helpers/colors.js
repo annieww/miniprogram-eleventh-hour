@@ -10,7 +10,7 @@ export const colors = {
     'stable': '#b2b2b2',
     'positive': '#387ef5',
     'calm': '#11c1f3',
-    'balanced': '#33cd5f',
+    'balanced': '#00B5A3',
     'energized': '#ffc900',
     'assertive': '#ef473a',
     'royal': '#886aea',

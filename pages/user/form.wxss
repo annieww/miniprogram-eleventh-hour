@@ -5,7 +5,7 @@
   height: 100vh;
   padding-left: 50rpx;
   padding-right: 50rpx;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
 }
 
 .header-content {
@@ -45,7 +45,7 @@ input {
   padding: 14rpx;
   margin-top: 14rpx;
   padding-left: 40rpx;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-size: 12pt;
 }
 

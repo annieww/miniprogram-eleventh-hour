@@ -22,7 +22,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #33cd5f
+  background: #00B5A3
 }
 .wux-tabs__tab--vertical {
   padding: 0 30rpx
@@ -34,7 +34,7 @@
   left: auto
 }
 .wux-tabs__tab--current {
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-tabs__tab--horizontal.wux-tabs__tab--scroll {
   display: -ms-inline-flexbox;
@@ -76,10 +76,10 @@
   color: #ef473a
 }
 .wux-tabs__tab--balanced .wux-tabs__tab-bar {
-  background: #33cd5f
+  background: #00B5A3
 }
 .wux-tabs__tab--balanced.wux-tabs__tab--current {
-  color: #33cd5f
+  color: #00B5A3
 }
 .wux-tabs__tab--energized .wux-tabs__tab-bar {
   background: #ffc900

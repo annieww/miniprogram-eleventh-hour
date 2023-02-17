@@ -4,7 +4,7 @@ import classNames from '../helpers/classNames'
 const defaultIcon = {
     type: 'success',
     size: 93,
-    color: '#33cd5f',
+    color: '#00B5A3',
 }
 
 const getIcon = (icon) => {
