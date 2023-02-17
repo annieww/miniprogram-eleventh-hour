@@ -67,11 +67,11 @@
 	font-size: 28rpx;
 	font-weight: 400;
 	color: #FD5200;
-	margin-top: 30px;
+	margin-top: 8rpx;
 	border: 1px solid #FD5200;
-	width: 220rpx;
+	width: 200rpx;
 	border-radius: 15rpx;
-	padding: 10rpx;
+	padding: 8rpx;
 	display: flex;
 	justify-content: center;
 }
