@@ -1,6 +1,6 @@
 /* pages/pets/form.wxss */
 .page {
-  padding-top: 50rpx;
+  padding-top: 30rpx;
   padding-bottom: 150rpx;
 }
 
@@ -9,6 +9,7 @@
   margin: 20rpx;
   display: flex;
 	gap: 20rpx;
+	margin-top: 70rpx;
 }
 
 .btn-submit {
