@@ -38,7 +38,10 @@ Page({
           wx.removeStorageSync('editId')
         }
       })
-    } 
+		} 
+		wx.setNavigationBarTitle({
+			title: 'Post a Pet',
+		})
   },
   onReady() {
   },

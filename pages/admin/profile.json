@@ -1,5 +1,6 @@
 {
   "usingComponents": {
 		"tabbar":"/custom-tab-bar/index"
-	}
+	},
+	"navigationBarTitleText": "Admin"
 }

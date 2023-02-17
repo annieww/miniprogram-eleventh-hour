@@ -10,6 +10,9 @@ Page({
 		}else{
 			wx.event.on('loginFinished', this, this.getData)
 		}
+		wx.setNavigationBarTitle({
+			title: 'Admin',
+		})
 	},
 
 	getData() {
