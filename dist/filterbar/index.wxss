@@ -198,7 +198,8 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center
+	align-items: center;
+	font-weight: 400;
 }
 .wux-filterbar__panel-selected {
   width: auto;
