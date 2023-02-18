@@ -47,7 +47,17 @@
 }
 
 .contact-btn {
-	color: #FD5200;
+	background-color: #f8f8f8;
+	display: flex;
+	box-shadow: black;
+	border-radius: 10rpx;
+}
+
+.msg-icon {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 4rpx;
+	margin-right: 8rpx;
 }
 
 .page-content {
@@ -79,7 +89,7 @@
 
 .tab-title{
   width: 450rpx;
-	font-size: 40rpx;
+	font-size: 36rpx;
   font-weight: bold;
 }
 

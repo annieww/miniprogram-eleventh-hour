@@ -23,35 +23,58 @@
 .about {
 	color: #444;
 	font-size: 28rpx;
-	text-align: justify;
+	text-align: start;
+	margin-bottom: 40rpx;
+}
+
+.faq-title {
+	font-size: 32rpx;
+	font-weight: 400;
 }
 
 .question {
+	font-size: 28rpx;
+	font-weight: 450;
 	background-color: #eeeeee;
 	color: #444;
 	cursor: pointer;
-	padding: 10rpx;
+	padding: 28rpx;
 	border: none;
-	text-align: left;
+	/* text-align: left; */
 	outline: none;
 	display: flex;
 	justify-content: space-between;
-
 }
+
+.delete-question {
+	margin-right: 40rpx;
+	margin-top: 4rpx;
+}
+
+.question-title {
+	display: flex;
+	justify-content: space-between;
+}
+
 .active, .question:hover{
 	background-color: #ccc;
 }
 
 .answer {
 	color: #444;
-	text-align: justify;
+	text-align: left;
+	padding-left: 28rpx;
+	padding-top: 14rpx;
+	padding-bottom: 40rpx;
+	font-size: 28rpx;
+	font-weight: 400;
 }
 
 .add-icon {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 15rpx;
+	margin-top: 40rpx;
 }
 
 .add-input {
@@ -61,4 +84,16 @@
 	padding: 10rpx;
 	font-size: 28rpx;
 	margin: 10rpx auto
+}
+
+.add-faq-form {
+	margin-top: 40rpx;
+}
+
+.btn-faq {
+	margin-top: 40rpx;
+}
+
+.add-faq-container {
+	padding-bottom: 150rpx;
 }

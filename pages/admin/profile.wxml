@@ -6,7 +6,7 @@
       <view class="admin-card">
         <view>
 				<image class="admin-avatar" mode="aspectFill" src="{{admin.image}}"></image>
-        <view class="admin-name">Admin : {{admin.name}}</view>
+        <view class="admin-name">Admin: {{admin.name}}</view>
 				</view>
       </view>
     </view>
