@@ -3,10 +3,24 @@
    
 <view class="page">
   <view class="page-body">
-    <form bindsubmit="create">      
-    <wux-cell-group title="Basic Information">
+    <form bindsubmit="create">  
+
+		<wux-cell-group title="Basic Information">
+      <wux-cell hover-class="none">
+        <wux-textarea label="Name" placeholder="Snoopy" controlled
+          type="text" maxlength="10" value="{{formData.name}}"
+          bind:change="inputName"/>
+      </wux-cell>
+      <wux-cell hover-class="none">
+        <wux-textarea label="Age" placeholder="1 year" controlled
+            type="text" maxlength="10" value="{{formData.age}}"
+            bind:change="inputAge" />
+      </wux-cell>
+
+
+    <!-- <wux-cell-group title="Basic Information"> -->
         <!-- Name -->
-        <wux-cell 
+        <!-- <wux-cell 
         hover-class="none"
         >
           <wux-input 
@@ -19,9 +33,9 @@
           value="{{formData.name}}"
           bind:change="inputName"
          />
-        </wux-cell>
+        </wux-cell> -->
         <!-- Age -->
-        <wux-cell >
+        <!-- <wux-cell >
             <wux-input 
             label="Age"
 						placeholder="1 year"
@@ -31,7 +45,7 @@
             value="{{formData.age}}"
             bind:change="inputAge" 
             />
-        </wux-cell>
+        </wux-cell> -->
         <!-- Gender -->
           <wux-popup-select
             options="{{ options1 }}"
