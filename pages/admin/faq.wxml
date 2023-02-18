@@ -5,11 +5,11 @@
 	</view>
 
 	<wux-sticky-item class="faq-container">
-    <view class="faq-title" slot="title">FAQs</view>
+    <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
     <view slot="content" class="faq-item" wx:for="{{faqList}}" wx:key="index">
 			<view class="question">
 					<view class="question-title" data-index="{{index}}" bindtap="toggleAnswer">
-						<wux-icon wx:if="{{isAdmin}}" size="16" color="#fd5200" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+						<wux-icon wx:if="{{isAdmin}}" size="16" color="#d81e06" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
 						{{item.question}}
 					</view>
 					<wux-icon data-index="{{index}}" bindtap="toggleAnswer" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
@@ -20,7 +20,7 @@
   </wux-sticky-item>
 	
 	<view class="add-faq-container">
-		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin && !showAddForm}}"/>
+		<wux-icon class="add-icon" type="ios-add-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin && !showAddForm}}"/>
 		<wux-icon class="add-icon" type="ios-arrow-dropup-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{showAddForm}}"/>
 
 			<view class="add-faq-form" wx:if="{{showAddForm}}">

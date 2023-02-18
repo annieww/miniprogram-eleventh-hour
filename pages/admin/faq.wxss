@@ -27,6 +27,10 @@
 	margin-bottom: 40rpx;
 }
 
+.faq-icon {
+	margin-right: 10rpx;
+}
+
 .faq-title {
 	font-size: 32rpx;
 	font-weight: 400;
@@ -47,7 +51,7 @@
 }
 
 .delete-question {
-	margin-right: 40rpx;
+	margin-right: 30rpx;
 	margin-top: 4rpx;
 }
 
