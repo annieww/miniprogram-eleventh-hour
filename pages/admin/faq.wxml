@@ -16,7 +16,6 @@
 					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
 					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
 				</view>
-				
 			</view>
 			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
   		</view>

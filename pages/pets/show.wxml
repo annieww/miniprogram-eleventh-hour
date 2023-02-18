@@ -56,6 +56,6 @@
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>
-      <button type="delete" plain="true" open-type="share" bindtap="delete">Delete</button>
+      <button type="delete" plain="true" bindtap="delete">Delete</button>
     </view>
   </view>
