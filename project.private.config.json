@@ -4,7 +4,7 @@
 			"list": [
 				{
 					"name": "",
-					"pathName": "pages/user/profile",
+					"pathName": "pages/admin/faq",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

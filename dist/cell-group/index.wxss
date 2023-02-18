@@ -1,7 +1,7 @@
 .wux-cell-group__hd {
-  padding: 40rpx 30rpx 18rpx;
+  padding: 30rpx 30rpx 18rpx;
   font-size: 32rpx;
-  color: rgba(0,0,0,.65);
+	color: rgba(0,0,0,.65);
   width: 100%;
 	box-sizing: border-box;
 	font-weight: normal;

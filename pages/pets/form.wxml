@@ -1,52 +1,22 @@
 <!--pages/pets/form.wxml-->
-
-   
 <view class="page">
   <view class="page-body">
     <form bindsubmit="create">  
 
 		<wux-cell-group title="Basic Information">
+			<!-- Name -->
       <wux-cell hover-class="none">
         <wux-textarea label="Name" placeholder="Snoopy" controlled
           type="text" maxlength="10" value="{{formData.name}}"
           bind:change="inputName"/>
       </wux-cell>
+			<!-- Age -->
       <wux-cell hover-class="none">
         <wux-textarea label="Age" placeholder="1 year" controlled
             type="text" maxlength="10" value="{{formData.age}}"
             bind:change="inputAge" />
-      </wux-cell>
-
-
-    <!-- <wux-cell-group title="Basic Information"> -->
-        <!-- Name -->
-        <!-- <wux-cell 
-        hover-class="none"
-        >
-          <wux-input 
-					class="form-name"
-          label="Name"
-					placeholder="Snoopy"
-          controlled
-          type="text"
-          maxlength="10"
-          value="{{formData.name}}"
-          bind:change="inputName"
-         />
-        </wux-cell> -->
-        <!-- Age -->
-        <!-- <wux-cell >
-            <wux-input 
-            label="Age"
-						placeholder="1 year"
-            controlled
-            type="text"
-            maxlength="10"
-            value="{{formData.age}}"
-            bind:change="inputAge" 
-            />
-        </wux-cell> -->
-        <!-- Gender -->
+      </wux-cell>  
+  				<!-- Gender --> 
           <wux-popup-select
             options="{{ options1 }}"
             data-index="1"
@@ -57,6 +27,7 @@
           >
             <wux-cell title="Gender" is-link extra="{{ formData.gender }}"></wux-cell>
           </wux-popup-select>
+
         <!-- Species -->
           <wux-popup-select
             value="{{ value2 }}"

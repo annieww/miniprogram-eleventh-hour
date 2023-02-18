@@ -8,12 +8,15 @@
     <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
     <view slot="content" class="faq-item" wx:for="{{faqList}}" wx:key="index">
 			<view class="question">
-					<view class="question-title" data-index="{{index}}" bindtap="toggleAnswer">
-						<wux-icon wx:if="{{isAdmin}}" size="16" color="#d81e06" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
-						{{item.question}}
-					</view>
-					<wux-icon data-index="{{index}}" bindtap="toggleAnswer" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
-					<wux-icon data-index="{{index}}" bindtap="toggleAnswer" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+				<view class="delete-box" data-index="{{index}}" >
+					<wux-icon wx:if="{{isAdmin}}" size="16" color="#d81e06" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+				</view>
+				<view data-index="{{index}}" bindtap="toggleAnswer" class="question-title" > 
+					<view>{{item.question}}</view>
+					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
+					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+				</view>
+				
 			</view>
 			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
   		</view>

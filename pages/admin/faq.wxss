@@ -50,14 +50,19 @@
 	justify-content: space-between;
 }
 
+.delete-box {
+	display: flex;
+}
+
 .delete-question {
-	margin-right: 30rpx;
-	margin-top: 4rpx;
+	margin-right: 20rpx;
+	margin-top: 6rpx;
 }
 
 .question-title {
 	display: flex;
 	justify-content: space-between;
+	width: 700rpx;
 }
 
 .active, .question:hover{

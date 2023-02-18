@@ -6,7 +6,7 @@ Page({
     name: '',
     value1: '',
     value2: '',
-    value3: '',
+		value3: '',
     neutered: false,
     vaccinated: false,
     special_need: false,
@@ -87,7 +87,7 @@ Page({
       [field]: e.detail.value,
       formData 
     })
-  },
+	},
   inputNeutered(e) {
     this.onChange('neutered', e)
   },
