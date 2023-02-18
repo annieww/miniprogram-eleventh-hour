@@ -34,6 +34,9 @@
     </view>
 
     <!-- MY REQUESTS -->
+		<view wx:if="{{requested_pets == 0}}" class="empty-box">
+			<view class="empty-message">You haven't sent any request yet</view>
+		</view>
 		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
 				<wux-icon size="22" color="#cccccc" type="ios-close-circle-outline" class="delete-request" bindtap="delete" data-index="{{index}}"/>
 			<wux-wing-blank size="default" class="card">

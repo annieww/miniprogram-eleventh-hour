@@ -38,7 +38,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/admin/faq",
+					"pathName": "pages/user/profile",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

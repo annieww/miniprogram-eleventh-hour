@@ -66,7 +66,7 @@
   <!-- 4.pet list -->
 	<view wx:if="{{pets == 0}}" class="empty-box">
 			<view class="empty-message">Please select again</view>
-		</view>
+	</view>
   <view class="pet-cards-box">	
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
       <!-- <view class="filter"></view> -->
