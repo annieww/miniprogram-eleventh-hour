@@ -76,6 +76,13 @@
 	justify-content: center;
 }
 
+.pet-gender-icon {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 6rpx;
+  margin-left: 10rpx;
+}
+
 .buttons {
   display: flex;
   margin: 20rpx;

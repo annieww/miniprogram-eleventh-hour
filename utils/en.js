@@ -4,8 +4,9 @@ let en = {
   about2: 'EHRS was born the day our founder got a call to rescue stray and abandoned dogs on death row. We got them out without a second thought. Then, the phone rang again.. and again.. and again.',
   text3: 'more',
   filter_tab: 'Filter',
-  adopt_tab: 'adopt',
-  foster_tab: 'foster',
+  adopt_btn: 'Adopt',
+	foster_tab: 'foster',
+	share_btn: 'Share',
   about_title: 'About Us',
   text12: 'My Requests',
   submit: 'submit',
@@ -13,7 +14,23 @@ let en = {
   admin_form: 'upload pet info',
   request_tab: 'adoption requests',
 	authorize_button: 'Authorize', 
-	contact_button: 'Message EHR'
+	contact_button: 'Message EHR',
+	empty_pet: 'Please select another option',
+	empty_request: 'You haven\'t sent any request yet',
+	age: 'Age: ',
+	gender: 'Gender: ',
+	status: 'Status: ',
+	neutered: 'Neutered: ',
+	vaccinated: 'Vaccinated: ',
+	size: 'Size: ',
+	description: 'Description',
+	available: 'available',
+	unavailable: 'adopted',
+	mini: 'mini',
+	small: 'small',
+	medium: 'medium',
+	large: 'large',
+	special: 'special need'
 }
 module.exports = {
   content: en

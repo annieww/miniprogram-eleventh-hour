@@ -9,29 +9,39 @@
   <view class="bottom-container">
     <view class="pet-card">
         <view class="pet-name"> {{pet.name}}
-					<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view>
+					<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">{{content.special}}</view>
 				</view>
         <view class="pet-info">
           <view>
-            <view>Age: <text class="info-text">{{pet.age}}</text></view>
-            <view>Gender: <text class="info-text">{{pet.gender}}</text></view>
-            <view>Status: <text class="info-text">{{adoptionStatus}}</text></view>
+            <view>{{content.age}}<text class="info-text">{{pet.age}}</text></view>
+            <view>{{content.gender}}
+							<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+						</view>
+            <view>{{content.status}}
+							<text wx:if="{{adoptionStatus == 'available'}}" class="info-text">{{content.available}}</text>
+							<text wx:if="{{adoptionStatus == 'unavailable'}}" class="info-text">{{content.available}}</text>
+						</view>
           </view>
           <view>
             <view class="yes-no"> 
-							<view>Neutered: </view>
+							<view>{{content.neutered}}</view>
 							<image class="status-icon" src="{{ neuteredDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
 						</view>
             <view class="yes-no"> 
-							<view>Vaccinated:</view>
+							<view>{{content.vaccinated}}</view>
 							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
 						</view>
-            <view> Size: <text class="info-text">{{pet.size}}</text></view>
+            <view>{{content.size}}
+							<text wx:if="{{pet.size == 'mini'}}" class="info-text">{{content.mini}}</text>
+							<text wx:if="{{pet.size == 'small'}}" class="info-text">{{content.small}}</text>
+							<text wx:if="{{pet.size == 'medium'}}" class="info-text">{{content.medium}}</text>
+							<text wx:if="{{pet.size == 'large'}}" class="info-text">{{content.large}}</text>
+						</view>
           </view>
         </view>
   <!-- 3. add info container -->
 			<view class="more-info">
-				<text class="info-title">Description</text>
+				<text class="info-title">{{content.description}}</text>
 				<text class="info-text">{{pet.description}}</text>
 				<!-- <view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view> -->
 			</view>
@@ -40,8 +50,8 @@
   
   <!-- 4.adopt button -->
     <view class="buttons" wx:if="{{!isAdmin && !isBooker}}">
-      <button class="btn-adopt" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">Adopt</button>
-      <button open-type="share" class="btn-share">Share</button>
+      <button class="btn-adopt" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">{{content.adopt_btn}}</button>
+      <button open-type="share" class="btn-share">{{content.share_btn}}</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>

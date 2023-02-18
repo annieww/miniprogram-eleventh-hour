@@ -14,6 +14,9 @@ Page({
   },
 
   onLoad(options) {
+		this.setData({
+			content: wx.getStorageSync('content')
+		})
   },
 
   onReady() {
@@ -46,6 +49,7 @@ Page({
 						current_user: current_user, 
 						isBooker: isBooker,
 						isAdmin: isAdmin,
+						content: app.globalData.content,
 					})
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
@@ -54,6 +58,9 @@ Page({
   },
 
   onShow() {
+		this.setData({
+			content: app.globalData.content
+		})
     if (app.globalData.header) {
 			this.getData()
     } else {
