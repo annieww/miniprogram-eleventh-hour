@@ -20,7 +20,9 @@
   </wux-sticky-item>
 	
 	<view class="add-faq-container">
-		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin}}"/>
+		<wux-icon class="add-icon" type="ios-add-circle-outline" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin && !showAddForm}}"/>
+		<wux-icon class="add-icon" type="ios-arrow-dropup-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{showAddForm}}"/>
+
 			<view class="add-faq-form" wx:if="{{showAddForm}}">
 				<input class="add-input" placeholder="Question" bindinput="updateNewQuestion"/>
 				<textarea class="add-input" placeholder="Answer" bindinput="updateNewAnswer" />
