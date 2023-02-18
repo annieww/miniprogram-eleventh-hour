@@ -10,6 +10,7 @@
         hover-class="none"
         >
           <wux-input 
+					class="form-name"
           label="Name"
 					placeholder="Snoopy"
           controlled
@@ -116,12 +117,12 @@
 						placeholder="Snoopy is a friendly puppy..."
           />
         </wux-cell>
-        </wux-cell-group>
+      </wux-cell-group>
     <!-- Buttons -->
       <view class="btn-area">
         <button class="btn-submit" formType="submit">Submit</button>
         <button class="btn-reset" bindtap="resetForm">Reset</button>
-        </view>
+      </view>
     </form>
   </view>
 </view>

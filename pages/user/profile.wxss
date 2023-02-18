@@ -22,7 +22,7 @@
 }
 
 .authorize-btn {
-	margin-top: 40rpx
+	margin-top: 40rpx;
 }
 
 .user-box {
@@ -47,10 +47,8 @@
 }
 
 .contact-btn {
-	background-color: #f8f8f8;
 	display: flex;
 	justify-content: center;
-	box-shadow: black;
 	border-radius: 10rpx;
 	padding: 15rpx;
 }

@@ -1,7 +1,11 @@
 /* pages/pets/form.wxss */
 .page {
-  padding-top: 30rpx;
-  padding-bottom: 150rpx;
+	padding-bottom: 150rpx;
+}
+
+.wux-input__control {
+	font-family: Arial, Helvetica, sans-serif;
+	color: blue;
 }
 
 .btn-area {
@@ -38,5 +42,5 @@
 }
 
 .wux-select {
-  margin-bottom: 55rpx;
+	margin-bottom: 80rpx;
 }

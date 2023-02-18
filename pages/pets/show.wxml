@@ -14,7 +14,8 @@
         <view class="pet-info">
           <view>
             <view>{{content.age}}<text class="info-text">{{pet.age}}</text></view>
-            <view>{{content.gender}}
+            <view class="gender-box">
+							{{content.gender}}
 							<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 						</view>
             <view>{{content.status}}
