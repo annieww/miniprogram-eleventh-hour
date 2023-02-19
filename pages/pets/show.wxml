@@ -15,12 +15,9 @@
           <view>
             <view>{{content.age}}<text class="info-text">{{pet.age}}</text></view>
             <view class="gender-box">
-							{{content.gender}}
-							<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+							{{content.gender}}<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 						</view>
-            <view>{{content.status}}
-							<text wx:if="{{adoptionStatus == 'available'}}" class="info-text">{{content.available}}</text>
-							<text wx:if="{{adoptionStatus == 'not available'}}" class="info-text">{{content.unavailable}}</text>
+            <view>{{content.status}}<text wx:if="{{adoptionStatus == 'available'}}" class="info-text">{{content.available}}</text><text wx:if="{{adoptionStatus == 'not available'}}" class="info-text">{{content.unavailable}}</text>
 						</view>
           </view>
           <view>
