@@ -51,6 +51,7 @@ Page({
 						isAdmin: isAdmin,
 						content: app.globalData.content,
 					})
+					console.log('from pet/show, res.data->', res.data)
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
       }
