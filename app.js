@@ -32,15 +32,15 @@ App({
 						let role;
 						console.log('loginRes.data -> ', loginRes.data)
 						if(loginRes.data.user.admin){
-							// role = 'admin';
-							// wx.setStorageSync('role', 'admin')
-							role = 'user';
-							wx.setStorageSync('role', 'user')
-						} else {
-							// role = 'user';
-							// wx.setStorageSync('role', 'user')
 							role = 'admin';
 							wx.setStorageSync('role', 'admin')
+							// role = 'user';
+							// wx.setStorageSync('role', 'user')
+						} else {
+							role = 'user';
+							wx.setStorageSync('role', 'user')
+							// role = 'admin';
+							// wx.setStorageSync('role', 'admin')
 						}
 						app.globalData.role = role
 						event.emit('loginFinished') }

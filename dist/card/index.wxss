@@ -6,7 +6,8 @@
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #fff
+	background-color: #fff;
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
 }
 .wux-card--hover {
   background-color: #ececec
@@ -47,7 +48,7 @@
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  font-size: 34rpx;
+  font-size: 32rpx;
   padding: 18rpx 30rpx;
   -ms-flex-align: center;
   align-items: center
@@ -71,8 +72,8 @@
   color: #000
 }
 .wux-card__thumb {
-  width: 64rpx;
-  height: 64rpx;
+  width: 84rpx;
+  height: 84rpx;
   display: inline-block;
   position: relative;
   margin-left: auto;
@@ -92,7 +93,7 @@
   padding: 30rpx 30rpx 12rpx;
   font-size: 30rpx;
   color: rgba(0,0,0,.85);
-  min-height: 80rpx
+  min-height: 60rpx
 }
 .wux-card__ft {
   display: -ms-flexbox;

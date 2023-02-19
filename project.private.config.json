@@ -4,7 +4,7 @@
 			"list": [
 				{
 					"name": "",
-					"pathName": "pages/admin/faq",
+					"pathName": "pages/pets/index",
 					"query": "",
 					"launchMode": "default",
 					"scene": null
@@ -24,7 +24,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/pets/index",
+					"pathName": "pages/user/profile",
 					"query": "",
 					"launchMode": "default",
 					"scene": null

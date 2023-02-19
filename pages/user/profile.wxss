@@ -68,7 +68,7 @@
 }
 
 .tabs-box {
-  height: 150rpx;
+  height: 120rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,7 +94,7 @@
 }
 
 .requests-box {
-	padding: 20rpx;
+	padding: 10rpx;
 }
 
 .card {
@@ -102,8 +102,8 @@
 }
 .delete-request {
 	position: relative;
-	left: 604rpx;
-	top: 60rpx;
+	left: 603rpx;
+	top: -201rpx;
 	z-index: 2;
 }
 

@@ -80,6 +80,15 @@ Page({
     })
 	},
 	
+	goToPet(e) {
+    console.log('From index.js - goToPet: e', e)
+    const id = e.currentTarget.dataset.id
+    console.log("From index.js - goToPet: petid: ",id)
+    wx.navigateTo({
+        url: `/pages/pets/show?id=${id}`,
+      })
+  },
+
 	delete(e) {
 		const index = e.currentTarget.dataset.index
 		const pet_id = this.data.requested_pets[index].id
