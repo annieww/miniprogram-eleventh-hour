@@ -9,7 +9,7 @@
     <view slot="content" class="faq-item" wx:for="{{faqList}}" wx:key="index">
 			<view class="question">
 				<view class="delete-box" data-index="{{index}}" >
-					<wux-icon wx:if="{{isAdmin}}" size="18" color="#d81e06" type="ios-close-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+					<wux-icon wx:if="{{isAdmin}}" size="18" color="#d81e06" type="ios-remove-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
 				</view>
 				<view data-index="{{index}}" bindtap="toggleAnswer" class="question-title" > 
 					<view>{{item.question}}</view>

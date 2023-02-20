@@ -11,7 +11,7 @@
 				},
 				{
 					"name": "",
-					"pathName": "pages/pets/show",
+					"pathName": "pages/admin/faq",
 					"query": "",
 					"launchMode": "default",
 					"scene": null,

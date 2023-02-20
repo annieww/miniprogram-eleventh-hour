@@ -91,6 +91,7 @@ Page({
 
 	delete(e) {
 		const index = e.currentTarget.dataset.index
+		const id = this.data.requested_pets[index].id
 		const pet_id = this.data.requested_pets[index].id
 		const booking_id = this.data.bookings[index].id
 		console.log(pet_id, booking_id)

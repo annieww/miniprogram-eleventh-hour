@@ -6,13 +6,14 @@
   background: #d9d9d9;
   width: 100%;
   height: 64rpx;
-  line-height: 64rpx
+	line-height: 64rpx;
+	margin-bottom: 5rpx;
 }
 .wux-sticky-item__title {
   width: 100%;
   padding: 0 30rpx;
   box-sizing: border-box;
-  background: #d9d9d9
+  background: #d9d9d9;
 }
 .wux-sticky-item--fixed .wux-sticky-item__title {
   position: fixed;
