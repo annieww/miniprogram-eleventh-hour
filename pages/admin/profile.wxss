@@ -1,6 +1,4 @@
 /* pages/admin/profile.wxss */
-
-
 .header {
   height: 200rpx;
   padding: 20rpx;
@@ -26,6 +24,36 @@
 	border-radius: 50%;
 }
 
+.tabs-box {
+  height: 130rpx;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding-left: 20rpx;
+	margin-top: 10rpx;
+}
+
+request-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.highlight{
+  margin-bottom: 15rpx;
+  padding: 10rpx;
+  background-color: #C5EBE7;
+  display: flex;
+  justify-content: space-between;
+  height: 5rpx;
+  width: 220rpx;
+  border-radius: 20rpx;
+}
+
+.user-list {
+	padding: 20rpx;
+}
+
 .user-avatar {
 	border-radius: 50%;
 	width: 100rpx;
@@ -37,10 +65,8 @@
 	margin-right: 20rpx;
 }
 
-.user-name {
-	/* margin-left: 50rpx; */
-	display: flex;
-	align-items: center;
+user-id {
+	font-size: 28rpx;
 }
 
 .user-header {
@@ -56,22 +82,24 @@
   padding: 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 .pet-gallery {
 	display: flex;
-	margin-top: 20px;
+	margin-top: 15px;
 	justify-content: center;
+	align-items: center;
 }
 
 .pet-card {
-  width: 200rpx;
-  height: 200rpx;
+  width: 170rpx;
+  height: 170rpx;
   border: 1px solid #ccc;
   border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
+	overflow: hidden;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
 }
 
 .pet-image {
@@ -87,8 +115,8 @@
   height: 30%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
+	justify-content: center;
+	font-size: 28rpx;
+	font-weight: 350;
 }
 
