@@ -44,7 +44,11 @@ Page({
 			newAnswer: "", 
 			showAddForm: false
 		});
-		wx.setStorageSync('faqData', newFaqList)
+    wx.setStorageSync('faqData', newFaqList)
+    wx.showToast({
+      title: 'FAQ added',
+      duration: 1000
+    })
 	},
 
 	updateNewQuestion(e) {
@@ -57,10 +61,24 @@ Page({
 
 	deleteFaq(e){
 		const index = e.currentTarget.dataset.index
-		let newFaqList = [ ...this.data.faqList];
-		newFaqList.splice(index, 1);
-		this.setData({ faqList: newFaqList });
-		wx.setStorageSync('faqData', this.data.faqList)
+    let newFaqList = [ ...this.data.faqList];
+    wx.showModal({
+      title: 'Note!',
+      content: 'Delete this FAQ?',
+      complete: (res) => {
+        if (res.cancel) {
+        }
+        if (res.confirm) {
+          newFaqList.splice(index, 1);
+          this.setData({ faqList: newFaqList });
+          wx.setStorageSync('faqData', this.data.faqList)
+          wx.showToast({
+            title: 'Deleted!',
+            duration: 1000
+          })
+        }
+      }
+    })
 	},
 
 	toggleAddForm(e){

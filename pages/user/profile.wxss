@@ -100,11 +100,16 @@
 .card {
 	z-index: 1;
 }
+
 .delete-request {
 	position: relative;
-	left: 603rpx;
-	top: -201rpx;
-	z-index: 2;
+	left: 575rpx;
+	top: -223rpx;
+  z-index: 2;
+  width: 70rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
 }
 
 .empty-box {

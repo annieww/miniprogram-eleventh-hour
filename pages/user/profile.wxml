@@ -41,15 +41,16 @@
 		<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
 			<!-- <view bindtap="delete" data-index="{{index}}" ><wux-icon size="22" color="#d81e06" type="ios-close-circle-outline" class="delete-request"/></view> -->
 			<wux-wing-blank size="default" class="card">
-				<wux-card
-					bindtap="goToPet" data-id="{{item.id}}"
-					title="{{item.name}}" 
-					thumb="{{item.image_url}}"
-					thumb-style="border-radius: 50%;">
-					<view slot="body">{{item.description}}</view>
-				</wux-card>
+				<view bindtap="goToPet" class="pet-title" data-id="{{item.id}}">
+          <wux-card
+            title="{{item.name}}" 
+            thumb="{{item.image_url}}"
+            thumb-style="border-radius: 50%;">
+            <view slot="body">{{item.description}}</view>
+				  </wux-card>
+        </view>
 			</wux-wing-blank>
-			<view bindtap="delete" data-index="{{index}}" ><wux-icon size="22" color="#d81e06" type="ios-close-circle-outline" class="delete-request"/></view>
+			<view bindtap="delete" class="delete-request" data-index="{{index}}" ><wux-icon size="22" color="#d81e06" type="ios-close-circle-outline"/></view>
 		</view>
 	</view>
 </view>
