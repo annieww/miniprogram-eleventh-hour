@@ -83,10 +83,10 @@ Page({
 
 	createBooking(e){
 		let page = this
-		let date = Date.now()
+    let date = Date.now()
 		wx.showModal({
-			title: 'Eleventh Hour Rescues',
-			content: 'Thank you for your kind request. Our team will contact you shortly',
+      title: 'Note!',
+      content: 'Adopt this pet?',
 			complete: (res) => {
 				if (res.cancel) {
 				}
@@ -103,13 +103,25 @@ Page({
 						},
 						success(res) {
 							if (res.statusCode === 201) {
+                wx.showToast({
+                  title: 'Thank you!',
+                  duration: 1000
+                })
 								console.log("From show.js : res.data", res.data)
                 const booking = res.data.booking;
                 wx.redirectTo({
                   url: `/pages/pets/show?id=${res.data.pet.id}`,
                 })
 							} else {
-								console.log("From show.js: status code is", res.statusCode)
+                console.log("From show.js: status code is", res.statusCode)
+                wx.showModal({
+                  title: 'Sorry',
+                  content: 'You have reached maximum number of applications. Our team will contact you shortly.',
+                  complete: (res) => {
+                    if (res.cancel) { }
+                    if (res.confirm) { }
+                  }
+                })
 							}
 						}
 					})
