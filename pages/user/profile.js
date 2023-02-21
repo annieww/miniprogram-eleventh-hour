@@ -8,6 +8,7 @@ Page({
   data: {
 		requested_pets: [],
 		bookings: [],
+		// bookings: {},
     nickName: '',
     avatarUrl: '', 
     userInfo: {},
@@ -93,20 +94,35 @@ Page({
 		const index = e.currentTarget.dataset.index
 		const id = this.data.requested_pets[index].id
 		const pet_id = this.data.requested_pets[index].id
-		const booking_id = this.data.bookings[index].id
+    const booking_id = this.data.bookings[index].id
 		console.log(pet_id, booking_id)
-		const page = this
-    wx.request({
-			header: app.globalData.header,
-			url: `${app.globalData.baseURL}/pets/${pet_id}/bookings/${booking_id}`,
-			method: 'DELETE',
-			success: (res) => {
-				this.getData()
-			}, 
-			fail: (err) => {
-				console.log(err)
-			}
+    const page = this
+    wx.showModal({
+      title: 'Note!',
+      content: 'Delete this request?',
+      complete: (res) => {
+        if (res.cancel) {
+        }
+        if (res.confirm) {
+          wx.request({
+            header: app.globalData.header,
+            url: `${app.globalData.baseURL}/pets/${pet_id}/bookings/${booking_id}`,
+            method: 'DELETE',
+            success: (res) => {
+              this.getData()
+              wx.showToast({
+                title: 'Deleted!',
+                duration: 1000
+              })
+            }, 
+            fail: (err) => {
+              console.log(err)
+            }
+          })
+        }
+      }
     })
+      
   },
 
   onHide() {
