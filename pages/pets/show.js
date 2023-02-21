@@ -104,7 +104,10 @@ Page({
 						success(res) {
 							if (res.statusCode === 201) {
 								console.log("From show.js : res.data", res.data)
-								const booking = res.data.booking;
+                const booking = res.data.booking;
+                wx.redirectTo({
+                  url: `/pages/pets/show?id=${res.data.pet.id}`,
+                })
 							} else {
 								console.log("From show.js: status code is", res.statusCode)
 							}

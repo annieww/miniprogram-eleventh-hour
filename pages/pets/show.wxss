@@ -124,3 +124,11 @@
 	border: 1px solid grey;
 	border-radius: 40rpx;
 }
+
+.btn-sent {
+	background-color: white;
+	color: grey;
+	border: 1px solid grey;
+  border-radius: 40rpx;
+  font-weight: 350;
+}
