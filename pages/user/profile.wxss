@@ -94,22 +94,26 @@
 }
 
 .requests-box {
-	padding: 10rpx;
+  padding: 5rpx;
+  margin-bottom: 36rpx;
 }
 
 .card {
-	z-index: 1;
+  z-index: 1;
+  position: relative;
 }
 
 .delete-request {
-	position: relative;
-	left: 575rpx;
-	top: -223rpx;
+	position: absolute;
+	left: 588rpx;
+	top: 20rpx;
   z-index: 2;
-  width: 70rpx;
+  height: 80rpx;
+  width: 80rpx;
   padding: 10rpx;
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 
 .empty-box {
