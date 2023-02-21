@@ -52,7 +52,7 @@
       <button open-type="share" class="btn-share">{{content.share_btn}}</button>
     </view>
     <view class="buttons" wx:if="{{isBooker}}">
-      <button class="btn-sent">request sent</button>
+      <button class="btn-sent">{{content.sent_msg}}</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
       <button type="default" plain="true" class="btn" bindtap="edit">Edit</button>

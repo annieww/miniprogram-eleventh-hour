@@ -68,7 +68,7 @@
 }
 
 .tabs-box {
-  height: 120rpx;
+  height: 130rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;

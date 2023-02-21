@@ -30,7 +30,8 @@ let zh = {
 	small: '小型',
 	medium: '中型',
 	large: '大型',
-	special: '特殊需求'
+  special: '特殊需求',
+  sent_msg: '申请已发送'
 }
 
 module.exports = {

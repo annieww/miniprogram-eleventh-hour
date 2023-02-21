@@ -30,7 +30,8 @@ let en = {
 	small: 'small',
 	medium: 'medium',
 	large: 'large',
-	special: 'special need'
+  special: 'special need',
+  sent_msg: 'request sent'
 }
 module.exports = {
   content: en
