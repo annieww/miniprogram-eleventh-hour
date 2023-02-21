@@ -103,10 +103,10 @@ Page({
 						},
 						success(res) {
 							if (res.statusCode === 201) {
-                wx.showToast({
-                  title: 'Thank you!',
-                  duration: 1000
-                })
+                // wx.showToast({
+                //   title: 'Thank you!',
+                //   duration: 1000
+                // })
 								console.log("From show.js : res.data", res.data)
                 const booking = res.data.booking;
                 wx.redirectTo({

@@ -70,10 +70,16 @@
 .tabs-box {
   height: 130rpx;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding-left: 20rpx;
 	margin-top: 10rpx;
+}
+
+request-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .highlight{
@@ -83,13 +89,13 @@
   display: flex;
   justify-content: space-between;
   height: 5rpx;
-  width: 190rpx;
+  width: 220rpx;
   border-radius: 20rpx;
 }
 
 .tab-title{
-  width: 450rpx;
-	font-size: 36rpx;
+  /* width: 450rpx; */
+	font-size: 34rpx;
   font-weight: bold;
 }
 
@@ -131,4 +137,12 @@
   background-color: #eeccbc;
 	border-radius: 20rpx;
 	width: 500rpx;
+}
+
+.pet-length {
+  color: #ebaf93;
+}
+
+.max-length {
+  color: grey;
 }
