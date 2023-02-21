@@ -5,7 +5,7 @@
   <view class="header">
     <view class="logo-box">
       <view class="logo-and-heading">
-        <image bindtap="goToLogin" class="ehr-logo" mode="widthFix" src="/images/pet-logo.png"></image>
+        <image class="ehr-logo" mode="widthFix" src="/images/pet-logo.png"></image>
         <view class="ehr-heading">Eleventh Hour Rescues 动物救助</view>
       </view>
     </view>
