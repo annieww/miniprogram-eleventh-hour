@@ -73,7 +73,7 @@ baseComponent({
         },
         maxlength: {
             type: Number,
-            value: 140,
+            value: 540,
         },
         autoHeight: {
             type: Boolean,

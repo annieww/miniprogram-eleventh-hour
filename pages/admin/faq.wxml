@@ -1,4 +1,3 @@
-
 <view class="page-content">
   <view class="page-title">{{content.about_title}}</view>
 	<view class="about">We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.
@@ -6,15 +5,18 @@
 
 	<wux-sticky-item class="faq-container">
     <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
-    <view slot="content" class="faq-item" wx:for="{{faqList}}" wx:key="index">
-			<view class="question">
-				<view class="delete-box" data-index="{{index}}" >
-					<wux-icon wx:if="{{isAdmin}}" size="18" color="#d81e06" type="ios-remove-circle-outline" class="delete-question" bindtap="deleteFaq" data-index="{{index}}"/>
+    <view class="faq-item" slot="content" wx:for="{{faqList}}" wx:key="index">
+			<view class="question-box">
+				<!-- <view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
+					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
+				</view> -->
+				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" > 
+					<view class="question">{{item.question}}</view>
+					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
+					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
 				</view>
-				<view data-index="{{index}}" bindtap="toggleAnswer" class="question-title" > 
-					<view>{{item.question}}</view>
-					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
-					<wux-icon data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+				<view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
+					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
 				</view>
 			</view>
 			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
@@ -26,8 +28,8 @@
 		<wux-icon class="add-icon" type="ios-arrow-dropup-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{showAddForm}}"/>
 
 			<view class="add-faq-form" wx:if="{{showAddForm}}">
-				<input class="add-input" placeholder="Question" bindinput="updateNewQuestion"/>
-				<textarea class="add-input" placeholder="Answer" bindinput="updateNewAnswer" />
+				<input class="add-input" placeholder="Question" maxlength="200" bindinput="updateNewQuestion"/>
+				<textarea class="add-input" placeholder="Answer" maxlength="400" bindinput="updateNewAnswer" />
 				<button class="btn-faq" plain="true" bindtap="addFAQ">Submit</button>
 			</view>
 	</view>
