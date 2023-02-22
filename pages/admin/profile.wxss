@@ -1,4 +1,11 @@
 /* pages/admin/profile.wxss */
+.main {
+	padding-left: 10rpx;
+	padding-right: 10rpx;
+	flex-direction: column;
+  padding-bottom: 150rpx;
+}
+
 .header {
   height: 200rpx;
   padding: 20rpx;
@@ -6,22 +13,33 @@
 }
 
 .header-box {
-  height: 200rpx;
-  display: flex;
-  justify-content: space-around;
+  height: 180rpx;
+  /* display: flex;
+  justify-content: space-around; */
   align-items: center;
   border: 1px solid #00B5A3;
   border-radius: 20rpx;
 }
 
-.admin-card {
+.admin-box {
+	margin-left: 30rpx;
+	margin-top: 30rpx;
 	display: flex;
+	align-items: center;
 }
 
 .admin-avatar {
-  height: 100rpx;
-  width: 100rpx;
+  height: 120rpx;
+  width: 120rpx;
 	border-radius: 50%;
+	display: inline-block;
+  overflow: hidden;
+	border: 1rpx solid grey;
+}
+
+.admin-name {
+  font-size: 30rpx;
+  margin-left: 20rpx;
 }
 
 .tabs-box {
@@ -48,6 +66,11 @@ request-tab {
   height: 5rpx;
   width: 220rpx;
   border-radius: 20rpx;
+}
+
+.tab-title{
+	font-size: 34rpx;
+  font-weight: bold;
 }
 
 .user-list {
@@ -96,7 +119,7 @@ user-id {
   width: 170rpx;
   height: 170rpx;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 10rpx;
 	overflow: hidden;
 	margin-left: 20rpx;
 	margin-right: 20rpx;
@@ -120,3 +143,19 @@ user-id {
 	font-weight: 350;
 }
 
+.empty-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50rpx;
+}
+
+.empty-message {
+	text-align: center;
+  padding: 15rpx;
+  margin: 15rpx;
+  background-color: #C5EBE7;
+	border-radius: 20rpx;
+	width: 500rpx;
+}

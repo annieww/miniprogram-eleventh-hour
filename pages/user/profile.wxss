@@ -1,5 +1,7 @@
 /* pages/user/profile.wxss */
 .main {
+	padding-left: 10rpx;
+	padding-right: 10rpx;
   flex-direction: column;
   padding-bottom: 150rpx;
 }
@@ -60,13 +62,6 @@
 	margin-right: 8rpx;
 }
 
-.page-content {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  padding: 20rpx;
-}
-
 .tabs-box {
   height: 130rpx;
   display: flex;
@@ -94,14 +89,14 @@ request-tab {
 }
 
 .tab-title{
-  /* width: 450rpx; */
 	font-size: 34rpx;
   font-weight: bold;
 }
 
 .requests-box {
-  padding: 5rpx;
-  margin-bottom: 36rpx;
+	/* padding: 5rpx; */
+	padding: 20rpx;
+  /* margin-bottom: 36rpx; */
 }
 
 .card {
