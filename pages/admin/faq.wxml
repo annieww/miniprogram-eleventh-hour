@@ -1,6 +1,6 @@
 <view class="page-content">
   <view class="page-title">{{content.about_title}}</view>
-	<view class="about">We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.
+	<view class="about">{{content.about2}}
 	</view>
 
 	<wux-sticky-item class="faq-container">

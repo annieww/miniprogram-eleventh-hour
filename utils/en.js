@@ -1,7 +1,6 @@
 let en = {
-  text1: 'about us', 
   about1: 'We are a small organization of rescuers living in Shanghai, China. We come from all over the world, and met one another through our individual work in the rescue community.',
-  about2: 'EHRS was born the day our founder got a call to rescue stray and abandoned dogs on death row. We got them out without a second thought. Then, the phone rang again.. and again.. and again.',
+  about2: 'We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.',
   filter_tab: 'Filter',
   adopt_btn: 'Adopt',
 	share_btn: 'Share',
