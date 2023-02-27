@@ -67,7 +67,7 @@
 .delete-icon {
 	position: absolute;
 	left: 40rpx;
-	top: 4rpx;
+	top: 12rpx;
 }
 
 .question-arrow-box {
