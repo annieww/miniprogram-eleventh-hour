@@ -39,7 +39,7 @@
 
 .faq-title {
 	position: absolute;
-	left: 22rpx;
+	left: 16rpx;
 	font-size: 32rpx;
 	font-weight: 450;
 }
@@ -50,8 +50,8 @@
 	color: #444;
 	cursor: pointer;
 	padding: 8rpx;
-	padding-left: 12rpx;
-	padding-right: 12rpx;
+	padding-left: 10rpx;
+	padding-right: 10rpx;
 	border: none;
 	outline: none;
 	display: flex;
@@ -73,16 +73,16 @@
 .question-arrow-box {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
+	justify-content: start;
 	width: 590rpx;
 	margin-left: 9rpx;
 	font-weight: 450;
+	padding-top: 8rpx;
+	padding-bottom: 8rpx;
 }
 
-.arrow-icon {
-	position: absolute;
-	right: -25rpx;
-	top: 3rpx;
+.question {
+	margin-left: 12rpx;
 }
 
 .item-question {
@@ -96,8 +96,8 @@
 .answer {
 	color: #444;
 	text-align: left;
-	padding-left: 20rpx;
-	padding-right: 20rpx;
+	padding-left: 50rpx;
+	padding-right: 50rpx;
 	padding-top: 10rpx;
 	padding-bottom: 30rpx;
 	font-size: 30rpx;

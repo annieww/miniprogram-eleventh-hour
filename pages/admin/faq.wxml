@@ -11,9 +11,9 @@
 					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
 				</view> -->
 				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" > 
-					<view class="question">{{item.question}}</view>
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+					<view class="question">{{item.question}}</view>
 				</view>
 				<view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
 					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
