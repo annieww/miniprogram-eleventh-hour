@@ -2,10 +2,10 @@ let zh = {
   about1: 'EHRS是一家位于上海的小型动物救援组织。我们的成员来自世界各地，通过动物救援工作相识。',
   about2: 'EHRS是一家位于上海的小型动物救援组织。我们的成员来自世界各地，通过动物救援工作相识。EHRS致力于帮助无家可归的动物找到属于它们的家。',
   filter_tab: '筛选',
-  adopt_btn: '领养',
+  adopt_btn: '喜欢',
 	share_btn: '分享',
   about_title: '关于我们',
-  text12: '已发送的请求',
+  text12: '我喜欢的',
   submit: '提交',
   cancel: '取消',
   admin_form: '上传动物信息',
@@ -29,7 +29,7 @@ let zh = {
 	medium: '中型',
 	large: '大型',
   special: '特殊需求',
-  sent_msg: '申请已发送'
+  sent_msg: '已喜欢'
 }
 
 module.exports = {

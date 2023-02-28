@@ -86,7 +86,7 @@ Page({
     let date = Date.now()
 		wx.showModal({
       title: 'Note!',
-      content: 'Adopt this pet?',
+      content: 'Like this pet?',
 			complete: (res) => {
 				if (res.cancel) {
 				}
@@ -103,25 +103,21 @@ Page({
 						},
 						success(res) {
 							if (res.statusCode === 201) {
-                // wx.showToast({
-                //   title: 'Thank you!',
-                //   duration: 1000
-                // })
+								page.setData({
+									isBooker: true,
+									bookingId: res.data.id
+								})
+                wx.showToast({
+                  title: 'Liked!',
+									duration: 1000
+								})	
 								console.log("From show.js : res.data", res.data)
-                const booking = res.data.booking;
-                wx.redirectTo({
-                  url: `/pages/pets/show?id=${res.data.pet.id}`,
-                })
+								// const booking = res.data.booking;
 							} else {
-                console.log("From show.js: status code is", res.statusCode)
-                wx.showModal({
-                  title: 'Sorry',
-                  content: 'You have reached maximum number of applications. Our team will contact you shortly.',
-                  complete: (res) => {
-                    if (res.cancel) { }
-                    if (res.confirm) { }
-                  }
-                })
+								console.log("From show.js: status code is", res.statusCode)
+								wx.showToast({
+									title: 'Please try again!',
+								})
 							}
 						}
 					})
@@ -142,7 +138,7 @@ Page({
   delete(e) {
     let id = this.data.pet.id
     wx.showModal({
-      title: 'Are you sure?',
+      title: 'Note!',
       content: 'Are you sure to delete this post?',
       success(res) {
         if (res.confirm) {
