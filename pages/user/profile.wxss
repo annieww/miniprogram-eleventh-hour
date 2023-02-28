@@ -72,7 +72,6 @@
   justify-content: start;
   align-items: start;
 	margin-top: 10rpx;
-	padding-left: 12rpx;
 }
 
 .request-tab {
@@ -138,8 +137,4 @@
 
 .pet-length {
   color: #ebaf93;
-}
-
-.max-length {
-  color: grey;
 }
