@@ -7,7 +7,7 @@
 }
 
 .header {
-  height: 200rpx;
+  height: 180rpx;
   padding: 20rpx;
   margin-bottom: 20rpx;
 }
@@ -48,6 +48,10 @@
   margin-left: 20rpx;
 }
 
+.contact-box {
+	height: 100rpx;
+}
+
 .contact-btn {
 	display: flex;
 	justify-content: center;
@@ -63,26 +67,26 @@
 }
 
 .tabs-box {
-  height: 130rpx;
+  height: 100rpx;
   display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  padding-left: 20rpx;
+  justify-content: start;
+  align-items: start;
 	margin-top: 10rpx;
+	padding-left: 12rpx;
 }
 
-request-tab {
+.request-tab {
+	width: 330rpx;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .highlight{
   margin-bottom: 15rpx;
   padding: 10rpx;
   background-color: #eeccbc;
-  display: flex;
-  justify-content: space-between;
   height: 5rpx;
   width: 220rpx;
   border-radius: 20rpx;
@@ -94,9 +98,7 @@ request-tab {
 }
 
 .requests-box {
-	/* padding: 5rpx; */
 	padding: 20rpx;
-  /* margin-bottom: 36rpx; */
 }
 
 .card {

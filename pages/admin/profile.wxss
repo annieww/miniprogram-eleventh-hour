@@ -7,15 +7,13 @@
 }
 
 .header {
-  height: 200rpx;
+  height: 180rpx;
   padding: 20rpx;
   margin-bottom: 20rpx;
 }
 
 .header-box {
   height: 180rpx;
-  /* display: flex;
-  justify-content: space-around; */
   align-items: center;
   border: 1px solid #00B5A3;
   border-radius: 20rpx;
@@ -43,26 +41,26 @@
 }
 
 .tabs-box {
-  height: 130rpx;
+  height: 100rpx;
   display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  padding-left: 20rpx;
+  justify-content: start;
+  align-items: start;
 	margin-top: 10rpx;
+	padding-left: 12rpx;
 }
 
-request-tab {
+.request-tab {
+	width: 330rpx;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .highlight{
   margin-bottom: 15rpx;
   padding: 10rpx;
   background-color: #C5EBE7;
-  display: flex;
-  justify-content: space-between;
   height: 5rpx;
   width: 220rpx;
   border-radius: 20rpx;

@@ -15,8 +15,8 @@
 			<view class="request-tab">
 				<view class="tab-title">
 						{{content.request_tab}} 
-					<view class="highlight"></view>
 				</view>
+				<view class="highlight"></view>
 			</view>
 		</view>
 
