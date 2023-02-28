@@ -108,11 +108,11 @@
 
 .delete-request {
 	position: absolute;
-	left: 588rpx;
+	left: 580rpx;
 	top: 20rpx;
   z-index: 2;
-  height: 80rpx;
-  width: 80rpx;
+  height: 52rpx;
+  width: 60rpx;
   padding: 10rpx;
   display: flex;
   justify-content: center;
