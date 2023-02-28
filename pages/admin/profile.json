@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-		"tabbar":"/custom-tab-bar/index"
+		"tabbar":"/custom-tab-bar/index",
+		"wux-icon": "../../dist/icon/index"
 	},
 	"navigationBarTitleText": "Admin"
 }
