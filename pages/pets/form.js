@@ -19,32 +19,16 @@ Page({
     formData: {},
     description: "",
     fileList: []
-  },
+	},
+	
   onLoad(options) {
-    const page = this
-    if (page.data.resetForm) this.resetForm();
-    const id = wx.getStorageSync('editId')
-    if (id) {
-      console.log('id found -> get pet data from server (to show in form)')
-      wx.request({
-        header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${id}`,
-        // method: 'GET',
-        success(res) {
-					let data = res.data
-					console.log('data onLoad->', data)
-          page.setData({
-            formData: res.data.pet,
-            src: res.data.pet.image_url
-          })
-          wx.removeStorageSync('editId')
-        }
-      })
-		} 
+		wx.setStorageSync('new', true)
+		console.log('form onLoad, options ->', options)
 		wx.setNavigationBarTitle({
 			title: 'Post a Pet',
 		})
-  },
+	},
+	
   onReady() {
   },
 
@@ -70,7 +54,10 @@ Page({
   },
   
   onShow() {
-		console.log('form onShow')
+    this.resetForm()
+		const page = this
+		let { formData } = page.data
+
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
       this.getTabBar().setData({
@@ -80,6 +67,27 @@ Page({
     this.setData({
       content: app.globalData.content
 		})
+
+		if(wx.getStorageSync('new')){
+			page.setData({formData})
+		}
+		const id = wx.getStorageSync('editId')
+    if (id) {
+      console.log('id found -> update')
+      wx.request({
+        header: app.globalData.header,
+        url: `${app.globalData.baseURL}/pets/${id}`,
+        success(res) {
+					let data = res.data
+					console.log('success onShow, data->', data)
+          page.setData({
+            formData: res.data.pet,
+            src: res.data.pet.image_url
+          })
+          wx.removeStorageSync('editId')
+        }
+      })
+    } 
   },
 
   // Switch Area for Age & Health Related Info
@@ -140,7 +148,7 @@ Page({
     })
   },
 
-   create(e) {
+  create(e) {
 		wx.setStorageSync('new', true)
 		console.log('from create button --->',e)
 		const page = this
@@ -150,9 +158,10 @@ Page({
     if (pet.adoptable === undefined || pet.adoptable === null) {
       pet.adoptable = true;
     }
-    console.log("this is the data to send back -->", page.data.pet)
+    console.log("this is the data to send back, page.data.pet -->", page.data.pet)
 		console.log('page.data ->', page.data)
-     // UPDATE FUNCTION
+		 // UPDATE FUNCTION
+		 // Find Pet ID
     if (page.data.pet.id !== undefined && page.data.pet.id !== null) {
       wx.request({
         header: app.globalData.header,
@@ -209,12 +218,6 @@ Page({
     }
   },
 
-  // goBack() {
-  //   wx.redirectTo({
-  //     url: '/pages/admin/profile',
-  //   })
-  // },
- 
   onHide() {
   },
 

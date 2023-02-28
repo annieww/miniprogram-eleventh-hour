@@ -136,7 +136,7 @@ Page({
       header: app.globalData.header,
       url: "form"
     })
-    console.log('editId is ->', this.data.pet.id)
+    console.log('from pet/show, editId is ->', this.data.pet.id)
   },
 
   delete(e) {
