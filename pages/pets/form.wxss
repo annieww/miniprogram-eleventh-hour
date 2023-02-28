@@ -11,7 +11,6 @@
 .btn-area {
   display: flex;
   margin: 20rpx;
-  display: flex;
 	gap: 20rpx;
 	margin-top: 70rpx;
 }

@@ -3,7 +3,7 @@
 	padding-left: 10rpx;
 	padding-right: 10rpx;
   flex-direction: column;
-  padding-bottom: 150rpx;
+  padding-bottom: 175rpx;
 }
 
 .header {

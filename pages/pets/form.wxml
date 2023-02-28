@@ -7,13 +7,13 @@
 			<!-- Name -->
       <wux-cell hover-class="none">
         <wux-textarea label="Name" placeholder="Snoopy" controlled
-          type="text" maxlength="10" value="{{formData.name}}"
+          maxlength="10" value="{{formData.name}}"
           bind:change="inputName"/>
       </wux-cell>
 			<!-- Age -->
       <wux-cell hover-class="none">
         <wux-textarea label="Age" placeholder="1 year" controlled
-            type="text" maxlength="10" value="{{formData.age}}"
+            maxlength="10" value="{{formData.age}}"
             bind:change="inputAge" />
       </wux-cell>  
   				<!-- Gender --> 
@@ -105,8 +105,8 @@
       </wux-cell-group>
     <!-- Buttons -->
       <view class="btn-area">
-        <button class="btn-submit" formType="submit">Submit</button>
         <button class="btn-reset" bindtap="resetForm">Reset</button>
+				<button class="btn-submit" formType="submit">Submit</button>
       </view>
     </form>
   </view>

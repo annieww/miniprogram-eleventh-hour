@@ -91,7 +91,6 @@
 .buttons {
   display: flex;
   margin: 20rpx;
-  display: flex;
   gap: 30rpx;
 }
 
@@ -131,4 +130,17 @@
 	border: 1px solid grey;
   border-radius: 40rpx;
   font-weight: 350;
+}
+
+.btn-delete {
+	background-color: white;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 40rpx;
+}
+
+.btn-edit {
+	background-color: #00B5A3;
+	color: white;
+	border-radius: 40rpx;
 }

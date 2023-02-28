@@ -29,8 +29,10 @@ Page({
       wx.request({
         header: app.globalData.header,
         url: `${app.globalData.baseURL}/pets/${id}`,
-        method: 'GET',
+        // method: 'GET',
         success(res) {
+					let data = res.data
+					console.log('data onLoad->', data)
           page.setData({
             formData: res.data.pet,
             src: res.data.pet.image_url
@@ -68,6 +70,7 @@ Page({
   },
   
   onShow() {
+		console.log('form onShow')
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()){
       this.getTabBar().setData({
@@ -76,7 +79,7 @@ Page({
     }
     this.setData({
       content: app.globalData.content
-    })
+		})
   },
 
   // Switch Area for Age & Health Related Info
@@ -138,14 +141,17 @@ Page({
   },
 
    create(e) {
-    const page = this
+		wx.setStorageSync('new', true)
+		console.log('from create button --->',e)
+		const page = this
+		console.log('header:', app.globalData.header)
     let pet = page.data.formData
     page.setData({pet})
     if (pet.adoptable === undefined || pet.adoptable === null) {
       pet.adoptable = true;
     }
     console.log("this is the data to send back -->", page.data.pet)
-
+		console.log('page.data ->', page.data)
      // UPDATE FUNCTION
     if (page.data.pet.id !== undefined && page.data.pet.id !== null) {
       wx.request({
