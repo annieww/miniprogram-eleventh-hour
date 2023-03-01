@@ -116,6 +116,7 @@ Page({
                   // wx.redirectTo({
                   //   url: '/pages/pets/index',
                   // })
+
                 } else {
                   console.log("From show.js: status code is", res.statusCode)
                   wx.showToast({
@@ -164,6 +165,7 @@ Page({
                   // wx.redirectTo({
                   //   url: '/pages/user/profile',
                   // })
+
                 } else {
                   console.log("From show.js: status code is", res.statusCode)
                   wx.showToast({
