@@ -136,31 +136,41 @@ Page({
     // If pet is already favorited
 		if (page.data.isBooker) {
       console.log ('From Unfavorite Btn: page.data.bookings.id', page.data.bookings.id)
-			wx.request({
-				url: `${app.globalData.baseURL}/bookings/${page.data.bookings.id}`,
-        method: 'DELETE',
-				header: app.globalData.header,
-				success(res) {
-          if (res.statusCode === 200) {
-            console.log("booking removed")
-            page.setData({
-              isBooker: false,
-              bookingId: null
+      wx.showModal({
+        title: 'Note!',
+        content: 'Remove from favorites?',
+        complete: (res) => {
+          if (res.cancel) {
+          }
+          if (res.confirm) {
+            wx.request({
+              url: `${app.globalData.baseURL}/bookings/${page.data.bookings.id}`,
+              method: 'DELETE',
+              header: app.globalData.header,
+              success(res) {
+                if (res.statusCode === 200) {
+                  console.log("booking removed")
+                  page.setData({
+                    isBooker: false,
+                    bookingId: null
+                  })
+                  wx.showToast({
+                    title: "Unfavorited :(",
+                    duration: 1000
+                  })  
+                  wx.redirectTo({
+                    url: '/pages/pets/index',
+                  })
+                } else {
+                  console.log("From show.js: status code is", res.statusCode)
+                  wx.showToast({
+                    title: 'Try again!',
+                  })
+                }
+              }
             })
-            wx.showToast({
-              title: "Unfavorited :(",
-              duration: 1000
-            })  
-            wx.redirectTo({
-              url: '/pages/pets/index',
-            })
-          } else {
-						console.log("From show.js: status code is", res.statusCode)
-						wx.showToast({
-							title: 'Try again!',
-						})
-					}
-				}
+          }
+        }
       })
     // If pet is not favorited yet
 		} else {
@@ -197,7 +207,7 @@ Page({
                   console.log('booking success!, booking.id ->', res.data.booking.id)
                   console.log("From show.js : res.data", res.data)
                   wx.redirectTo({
-                    url: '/pages/pets/index',
+                    url: '/pages/user/profile',
                   })
                 } else {
                   console.log("From show.js: status code is", res.statusCode)
