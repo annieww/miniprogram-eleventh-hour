@@ -99,7 +99,7 @@ Page({
     const page = this
     wx.showModal({
       title: 'Note!',
-      content: 'Remove from likes?',
+      content: 'Delete from favorites?',
       complete: (res) => {
         if (res.cancel) {
         }

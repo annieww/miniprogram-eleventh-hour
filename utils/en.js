@@ -2,10 +2,10 @@ let en = {
   about1: 'We are a small organization of rescuers living in Shanghai, China. We come from all over the world, and met one another through our individual work in the rescue community.',
   about2: 'We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.',
   filter_tab: 'Filter',
-  adopt_btn: 'Like',
+  adopt_btn: 'Favorite',
 	share_btn: 'Share',
   about_title: 'About Us',
-  text12: 'My Likes',
+  text12: 'My Favorites',
   submit: 'Submit',
   cancel: 'Cancel',
   admin_form: 'upload pet info',
@@ -13,8 +13,8 @@ let en = {
 	authorize_button: 'Authorize', 
 	contact_button: 'Message EHR',
 	empty_pet: 'Please select another option',
-	empty_request: 'You haven\'t sent any request yet',
-	empty_user: 'You haven\'t received anu request yet',
+	empty_request: 'You haven\'t favorited any pet yet',
+	empty_user: 'You haven\'t received any request yet',
 	age: 'Age: ',
 	gender: 'Gender: ',
 	status: 'Status: ',
@@ -29,7 +29,7 @@ let en = {
 	medium: 'medium',
 	large: 'large',
   special: 'special need',
-  sent_msg: 'Liked'
+  sent_msg: 'Favorited'
 }
 module.exports = {
   content: en

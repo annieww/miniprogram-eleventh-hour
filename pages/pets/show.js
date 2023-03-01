@@ -108,7 +108,7 @@ Page({
 									bookingId: res.data.id
 								})
                 wx.showToast({
-                  title: 'Liked!',
+                  title: 'Favorited!',
 									duration: 1000
 								})	
 								console.log("From show.js : res.data", res.data)
