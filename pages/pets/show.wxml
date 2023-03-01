@@ -47,13 +47,10 @@
   	</view>
   
   <!-- 4.adopt button -->
-    <!-- <view class="buttons" wx:if="{{!isAdmin && !isBooker}}">
-			<button open-type="share" class="btn-share">{{content.share_btn}}</button>
-      <button class="btn-adopt" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">{{content.adopt_btn}}</button>
-    </view> -->
     <view class="buttons" wx:if="{{!isAdmin}}">
 			<button open-type="share" class="btn-share">{{content.share_btn}}</button>
-      <button class="btn-sent" bindtap="toggleBooking">{{ isBooker ? 'Unfavorite' : 'Favorite'}}</button>
+      <button wx:if="{{isBooker}}" class="btn-sent" bindtap="toggleBooking">{{content.sent_msg}}</button>
+			<button wx:if="{{!isBooker}}" class="btn-adopt" bindtap="toggleBooking">{{content.adopt_btn}}</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
 			<button class="btn-delete" bindtap="delete">Delete</button>
