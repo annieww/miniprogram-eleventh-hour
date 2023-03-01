@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 20rpx;
+	padding: 20rpx;
 }
 
 .page-title {
@@ -11,6 +11,7 @@
   color: #FD5200;
 	font-weight: bold;
 	padding-left: 20rpx;
+	margin-top: 30rpx;
 }
 
 .ehr-content {
@@ -18,7 +19,8 @@
 }
 
 .page-content {
-  padding: 24rpx;
+	padding: 24rpx;
+	padding-bottom: 35rpx;
 }
 
 .about {

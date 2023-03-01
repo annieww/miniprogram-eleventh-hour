@@ -126,10 +126,9 @@
 
 .btn-sent {
 	background-color: white;
-	color: grey;
-	border: 1px solid grey;
+	color: #FD5200;
+	border: 1px solid #FD5200;
   border-radius: 40rpx;
-  font-weight: 350;
 }
 
 .btn-delete {

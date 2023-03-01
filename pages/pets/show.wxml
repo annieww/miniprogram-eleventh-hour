@@ -52,7 +52,8 @@
       <button class="btn-adopt" bindtap="createBooking" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">{{content.adopt_btn}}</button>
     </view>
     <view class="buttons" wx:if="{{isBooker}}">
-      <button class="btn-sent">{{content.sent_msg}}</button>
+			<button open-type="share" class="btn-share">{{content.share_btn}}</button>
+      <button class="btn-sent" bindtap="removeBooking">{{content.sent_msg}}</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
 			<button class="btn-delete" bindtap="delete">Delete</button>

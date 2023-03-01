@@ -86,7 +86,7 @@ Page({
     let date = Date.now()
 		wx.showModal({
       title: 'Note!',
-      content: 'Like this pet?',
+      content: 'Favorite this pet?',
 			complete: (res) => {
 				if (res.cancel) {
 				}
@@ -124,6 +124,10 @@ Page({
 				}
 			}
 		})
+	},
+
+	removeBooking(e) {
+
 	},
 
   edit(e) {

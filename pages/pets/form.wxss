@@ -1,18 +1,21 @@
 /* pages/pets/form.wxss */
 .page {
-	padding-bottom: 150rpx;
+	padding-bottom: 180rpx;
 }
 
-.wux-input__control {
-	font-family: Arial, Helvetica, sans-serif;
-	color: blue;
+.page-title {
+  font-size: 40rpx;
+  color: #00B5A3;
+	font-weight: bold;
+	padding-left: 30rpx;
+	margin-top: 30rpx;
 }
 
 .btn-area {
   display: flex;
   margin: 20rpx;
 	gap: 20rpx;
-	margin-top: 70rpx;
+	margin-top: 60rpx;
 }
 
 .btn-submit {

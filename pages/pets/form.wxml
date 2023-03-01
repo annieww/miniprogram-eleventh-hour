@@ -1,6 +1,7 @@
 <!--pages/pets/form.wxml-->
 <view class="page">
   <view class="page-body">
+		<view class="page-title">Upload pet information</view>
     <form bindsubmit="create">  
 
 		<wux-cell-group title="Basic Information">
