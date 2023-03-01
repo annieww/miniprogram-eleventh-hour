@@ -13,43 +13,43 @@
 }
 
 .header-box {
-  height: 180rpx;
+	display: flex;
+	justify-content: center;
 	align-items: center;
+	height: 200rpx;
   border: 1px solid #FD5200;
-  border-radius: 20rpx;
+	border-radius: 20rpx;
 }
 
 .authorize-box {
 	justify-content: center;
 }
 
-.authorize-btn {
-	margin-top: 40rpx;
-}
-
 .user-box {
-	margin-left: 30rpx;
-	margin-top: 30rpx;
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 }
 
 .avatar {
-  width: 120rpx;
-  height: 120rpx;
+  width: 108rpx;
+  height: 108rpx;
   border-radius: 50%;
-  display: inline-block;
-  overflow: hidden;
+  /* display: inline-block;
+	overflow: hidden; */
 	border: 1rpx solid grey;
 }
 
 .user-name {
   font-size: 30rpx;
-  margin-left: 20rpx;
 }
 
 .contact-box {
 	height: 100rpx;
+	margin-top: 50rpx;
+	margin-bottom: 50rpx;
+	display: flex;
+	align-items: center;
 }
 
 .contact-btn {
@@ -71,7 +71,6 @@
   display: flex;
   justify-content: start;
   align-items: start;
-	margin-top: 10rpx;
 }
 
 .request-tab {
