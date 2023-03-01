@@ -65,11 +65,12 @@
 }
 .wux-cell__bd {
   -ms-flex: 1;
-  flex: 1
+	flex: 1;
+	font-weight: 450;
 }
 .wux-cell__text {
 	text-align: left;
-	font-weight: 400;
+	font-weight: 450;
 }
 .wux-cell__desc {
   text-align: left;

@@ -13,7 +13,7 @@ let zh = {
 	authorize_button: '点击授权', 
 	contact_button: '立即联系我们',
 	empty_pet: '请选择其它类型的动物',
-	empty_request: '您还没有发送请求',
+	empty_request: '您还没有收藏',
 	empty_user: '您还没有收到申请',
 	age: '年龄：',
 	gender: '性别：',

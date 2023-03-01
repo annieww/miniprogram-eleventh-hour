@@ -37,7 +37,7 @@
 }
 
 .admin-admin, .user-user {
-	color: grey;
+	color: rgba(0,0,0,.65);
 	font-weight: 350;
 }
 

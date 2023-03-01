@@ -13,7 +13,8 @@
   overflow: hidden;
   width: 210rpx;
   -ms-flex-item-align: start;
-  align-self: flex-start
+	align-self: flex-start;
+	font-weight: 450;
 }
 .wux-textarea__control {
   -ms-flex: 1;
