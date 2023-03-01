@@ -10,13 +10,17 @@ Page({
 		current_user: {}, 
 		userImage: '',
 		userName: '',
-		userWechatId: ''
+    userWechatId: '',
+    isBooker: false,
+    bookingId: null,
   },
 
   onLoad(options) {
 		this.setData({
-			content: wx.getStorageSync('content')
-		})
+      content: wx.getStorageSync('content'),
+      petId: options.id
+    })
+    console.log('from onLoad -> ', options)
   },
 
   onReady() {
@@ -35,7 +39,7 @@ Page({
 					const my_booking = res.data.my_booking;
 					const current_user = res.data.current_user;
 					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
-					const isAdmin = current_user.admin? true : false
+					const isAdmin = current_user.admin? true : false;
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
@@ -50,6 +54,7 @@ Page({
 						isBooker: isBooker,
 						isAdmin: isAdmin,
 						content: app.globalData.content,
+						bookings: res.data.my_booking,
 					})
 					console.log('from pet/show, res.data->', res.data)
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
@@ -111,8 +116,8 @@ Page({
                   title: 'Favorited!',
 									duration: 1000
 								})	
+								console.log('booking success!')
 								console.log("From show.js : res.data", res.data)
-								// const booking = res.data.booking;
 							} else {
 								console.log("From show.js: status code is", res.statusCode)
 								wx.showToast({
@@ -126,8 +131,114 @@ Page({
 		})
 	},
 
-	removeBooking(e) {
+	toggleBooking(e) {
+    let page = this
+    // If pet is already favorited
+		if (page.data.isBooker) {
+      console.log ('From Unfavorite Btn: page.data.bookings.id', page.data.bookings.id)
+			wx.request({
+				url: `${app.globalData.baseURL}/bookings/${page.data.bookings.id}`,
+        method: 'DELETE',
+				header: app.globalData.header,
+				success(res) {
+          if (res.statusCode === 200) {
+            console.log("booking removed")
+            page.setData({
+              isBooker: false,
+              bookingId: null
+            })
+            wx.showToast({
+              title: "Unfavorited :(",
+              duration: 1000
+            })  
+            wx.redirectTo({
+              url: '/pages/pets/index',
+            })
+          } else {
+						console.log("From show.js: status code is", res.statusCode)
+						wx.showToast({
+							title: 'Try again!',
+						})
+					}
+				}
+      })
+    // If pet is not favorited yet
+		} else {
+      let page = this
+      let date = Date.now()
+      console.log ('From Favorite Btn: page.data', page.data)
+      wx.showModal({
+        title: 'Note!',
+        content: 'Favorite this pet?',
+        complete: (res) => {
+          if (res.cancel) {
+          }
+          if (res.confirm) {
+            wx.request({
+              url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
+              header: app.globalData.header,
+              method: "POST",
+              data: {
+                created_at: date, 
+                name: this.data.userName,
+                wechat_id: this.data.userWechatId,
+                image: this.data.userImage
+              },
+              success(res) {
+                if (res.statusCode === 201) {
+                  page.setData({
+                    isBooker: true,
+                    bookingId: res.data.id
+                  })
+                  wx.showToast({
+                    title: 'Favorited!',
+                    duration: 1000
+                  })	
+                  console.log('booking success!, booking.id ->', res.data.booking.id)
+                  console.log("From show.js : res.data", res.data)
+                  wx.redirectTo({
+                    url: '/pages/pets/index',
+                  })
+                } else {
+                  console.log("From show.js: status code is", res.statusCode)
+                  wx.showToast({
+                    title: 'Please try again!',
+                  })
+                }
+              }
+            })
+          }
+        }
+      })
+		}
+	},
 
+ 	removeBooking(e) {
+		let page = this
+			wx.request({
+				url: `${app.globalData.baseURL}/bookings/${page.data.bookings.id}`,
+        method: 'DELETE',
+				header: app.globalData.header,
+				success(res) {
+          if (res.statusCode === 200) {
+            console.log("booking removed")
+            page.setData({
+              isBooker: false,
+              // bookingId: null
+            })
+            wx.showToast({
+              title: "Unfavorited :(",
+              duration: 1000
+						})  
+          } else {
+						console.log("From show.js: status code is", res.statusCode)
+								wx.showToast({
+									title: 'Try again!',
+								})
+					}
+				}
+			})
+		
 	},
 
   edit(e) {
