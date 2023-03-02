@@ -3,6 +3,10 @@
   <!-- 1.pet image -->
   <view class="pet-img">
     <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
+		<view class="favorite-icon" wx:if="{{!isAdmin}}">
+      <image class="icon" wx:if="{{!isBooker}}"  bindtap="toggleBooking" src="/images/heart-empty.png"/>
+			<image class="icon" wx:if="{{isBooker}}" bindtap="toggleBooking" src="/images/heart-full.png"/>
+    </view>
   </view>
   
   <!-- 2.pet info -->
@@ -46,11 +50,9 @@
 
   	</view>
   
-  <!-- 4.adopt button -->
+  <!-- 4.Buttons -->
     <view class="buttons" wx:if="{{!isAdmin}}">
 			<button open-type="share" class="btn-share">{{content.share_btn}}</button>
-      <button wx:if="{{isBooker}}" class="btn-sent" bindtap="toggleBooking">{{content.sent_msg}}</button>
-			<button wx:if="{{!isBooker}}" class="btn-adopt" bindtap="toggleBooking">{{content.adopt_btn}}</button>
     </view>
 		<view class="buttons" wx:if="{{isAdmin}}">
 			<button class="btn-delete" bindtap="delete">Delete</button>

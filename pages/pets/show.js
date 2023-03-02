@@ -93,7 +93,9 @@ Page({
 		if (page.data.isBooker) {
       wx.showModal({
         title: 'Note!',
-        content: 'Remove from favorites?',
+				content: 'Remove from favorites?',
+				confirmText: 'Yes',
+				cancelText: 'No',
         complete: (res) => {
           if (res.cancel) {
           }
@@ -135,7 +137,9 @@ Page({
       console.log ('From Favorite Btn: page.data', page.data)
       wx.showModal({
         title: 'Note!',
-        content: 'Favorite this pet?',
+				content: 'Favorite this pet?',
+				confirmText: 'Yes',
+				cancelText: 'No',
         complete: (res) => {
           if (res.cancel) {
           }
