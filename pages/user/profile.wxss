@@ -137,3 +137,7 @@
 .pet-length {
   color: #ebaf93;
 }
+
+.max-length {
+	color: grey;
+}

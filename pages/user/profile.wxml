@@ -26,7 +26,7 @@
     <!-- REQUESTS TAB -->
     <view class="request-tab">
       <view class="tab-title">
-        {{content.text12}} <text class="pet-length">({{requested_pets.length}})</text></view>
+        {{content.text12}} <text class="pet-length">{{requested_pets.length}}</text><text class="max-length">/10</text></view>
       <view class="highlight"></view>
     </view>
   </view>
