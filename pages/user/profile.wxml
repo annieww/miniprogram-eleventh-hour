@@ -17,7 +17,7 @@
 	<!-- CONTACT CUSTOMER SERVICE -->
 	<view class="contact-box">
 		<button class="contact-btn" open-type="contact" bindcontact="handleContact">
-		<image class="msg-icon" src="/images/message.png"></image>
+		<image class="msg-icon" src="/images/message_fill.png"></image>
 		{{content.contact_button}}
 		</button>	
 	</view>
