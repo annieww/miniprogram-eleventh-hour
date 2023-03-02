@@ -10,6 +10,18 @@
   background-color: rgb(177, 171, 171);
 }
 
+.favorite-icon {
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  z-index: 2;
+}
+
+.icon {
+	height: 70rpx;
+  width: 70rpx;
+}
+
 .pet-avt {
   height: 700rpx;
   object-fit: cover;
@@ -111,7 +123,7 @@
   display: flex;
 }
 	
-.btn-adopt {
+.btn-contact {
 	background-color:#FD5200;
 	color: white;
 	border-radius: 40rpx;

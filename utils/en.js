@@ -11,7 +11,7 @@ let en = {
   admin_form: 'upload pet info',
   request_tab: 'Adoption Requests',
 	authorize_button: 'Authorize', 
-	contact_button: 'Message EHR',
+	contact_button: 'Contact EHR',
 	empty_pet: 'Please select another option',
 	empty_request: 'You haven\'t favorited any pet yet',
 	empty_user: 'You haven\'t received any request yet',
