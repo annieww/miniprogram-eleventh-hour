@@ -132,56 +132,42 @@ Page({
       })
     // If pet is not favorited yet
 		} else {
-      let page = this
-      let date = Date.now()
-      console.log ('From Favorite Btn: page.data', page.data)
-      wx.showModal({
-        title: 'Note!',
-				content: 'Favorite this pet?',
-				confirmText: 'Yes',
-				cancelText: 'No',
-        complete: (res) => {
-          if (res.cancel) {
-          }
-          if (res.confirm) {
-            wx.request({
-              url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
-              header: app.globalData.header,
-              method: "POST",
-              data: {
-                created_at: date, 
-                name: this.data.userName,
-                wechat_id: this.data.userWechatId,
-                image: this.data.userImage
-              },
-              success(res) {
-                if (res.statusCode === 201) {
-                  page.setData({
-                    isBooker: true,
-                    bookingId: res.data.id
-                  })
-                  wx.showToast({
-                    title: 'Favorited!',
-                    duration: 1000
-                  })	
-                  console.log('booking success!, booking.id ->', res.data.booking.id)
-                  console.log("From show.js : res.data", res.data)
-                  // wx.redirectTo({
-                  //   url: '/pages/user/profile',
-                  // })
+		let page = this
+		let date = Date.now()
+		console.log ('From Favorite Btn: page.data', page.data)
+		wx.request({
+			url: `${app.globalData.baseURL}/pets/${this.data.pet.id}/bookings`,
+			header: app.globalData.header,
+			method: "POST",
+			data: {
+				created_at: date, 
+				name: this.data.userName,
+				wechat_id: this.data.userWechatId,
+				image: this.data.userImage
+			},
+			success(res) {
+				if (res.statusCode === 201) {
+					page.setData({
+						isBooker: true,
+						bookingId: res.data.id
+					})
+					wx.showToast({
+						title: 'Favorited!',
+						duration: 1000
+					})	
+					console.log('booking success!, booking.id ->', res.data.booking.id)
+					console.log("From show.js : res.data", res.data)
 
-                } else {
-                  console.log("From show.js: status code is", res.statusCode)
-                  wx.showToast({
-                    title: 'Please try again!',
-                  })
-                }
-              }
-            })
-          }
-        }
-      })
-		}
+
+						} else {
+							console.log("From show.js: status code is", res.statusCode)
+							wx.showToast({
+								title: 'Please try again!',
+							})
+						}
+			}
+    })
+    }
 	},
 
   edit(e) {
