@@ -25,6 +25,13 @@
 	justify-content: center;
 }
 
+.authorize-btn {
+	background-color: white;
+	border: 1px solid grey;
+	border-radius: 40rpx;
+	color: grey;
+}
+
 .user-box {
 	display: flex;
 	align-items: center;
@@ -55,8 +62,9 @@
 .contact-btn {
 	display: flex;
 	justify-content: center;
-	border-radius: 10rpx;
-	padding: 15rpx;
+	background-color:#FD5200;
+	color: white;
+	border-radius: 40rpx;
 }
 
 .msg-icon {
@@ -136,4 +144,8 @@
 
 .pet-length {
   color: #ebaf93;
+}
+
+.max-length {
+	color: grey;
 }
