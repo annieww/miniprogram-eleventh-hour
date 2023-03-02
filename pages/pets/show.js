@@ -170,6 +170,11 @@ Page({
     }
 	},
 
+	handleContact (e) {
+		console.log(e.detail.path)
+		console.log(e.detail.query)
+	},
+	
   edit(e) {
     wx.setStorageSync('editId', this.data.pet.id)
     wx.switchTab({

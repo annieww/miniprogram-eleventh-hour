@@ -123,7 +123,7 @@
   display: flex;
 }
 	
-.btn-adopt {
+.btn-contact {
 	background-color:#FD5200;
 	color: white;
 	border-radius: 40rpx;
