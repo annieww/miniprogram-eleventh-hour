@@ -29,6 +29,7 @@
 	margin-bottom: 40rpx;
 	padding-left: 20rpx;
 	padding-right: 20rpx;
+	font-size: 32rpx;
 }
 
 .faq-icon {
@@ -85,6 +86,7 @@
 
 .question {
 	margin-left: 12rpx;
+	font-size: 30rpx;
 }
 
 .item-question {
@@ -118,7 +120,7 @@
 	height: 32;
 	width: 600rpx;
 	padding: 10rpx;
-	font-size: 28rpx;
+	font-size: 30rpx;
 	margin: 10rpx auto
 }
 

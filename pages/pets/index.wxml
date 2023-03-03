@@ -13,7 +13,6 @@
       <view class="div-line"></view> 
     </view>
     <view class="content-box">
-      <!-- <view class="ehr-title">{{content.text1}}</view> -->
       <view class="header-content">
         <view class="ehr-content">{{content.about1}}</view>
       </view>

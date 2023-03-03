@@ -24,45 +24,10 @@ Page({
   onLoad(options) {
 		wx.setStorageSync('new', true)
 		console.log('form onLoad, options ->', options)
+
 		wx.setNavigationBarTitle({
 			title: 'Post a Pet',
 		})
-
-		this.resetForm()
-		const page = this
-		let { formData } = page.data
-
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()){
-      this.getTabBar().setData({
-        selected: 2
-      })
-    }
-    this.setData({
-      content: app.globalData.content
-		})
-
-		if(wx.getStorageSync('new')){
-			page.setData({formData})
-		}
-		const id = wx.getStorageSync('editId')
-    if (id) {
-      console.log('id found -> update')
-      wx.request({
-        header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${id}`,
-        success(res) {
-					let data = res.data
-					console.log('success onShow, data->', data)
-          page.setData({
-            formData: res.data.pet,
-            src: res.data.pet.image_url
-          })
-          wx.removeStorageSync('editId')
-        }
-      })
-    } 
-
 	},
 	
   onReady() {
@@ -90,7 +55,46 @@ Page({
   },
   
   onShow() {
+		if (typeof this.getTabBar === 'function' &&
+		this.getTabBar()){
+			this.getTabBar().setData({
+				selected: 2
+			})
+    }
+    this.setData({
+			content: app.globalData.content
+		})
+		
+		//
+		console.log('form onshow')
+
+		this.resetForm()
+    const page = this
+    let { formData } = page.data
+
+    if(wx.getStorageSync('new')) {
+      page.setData({formData})
+    }
     
+    const id = wx.getStorageSync('editId')
+    if (id) {
+      console.log('id found -> update')
+      wx.request({
+        header: app.globalData.header,
+				url: `${app.globalData.baseURL}/pets/${id}`,
+				method: 'GET',
+        success(res) {
+					let data = res.data
+					console.log('success from onLoad, data->', data)
+          page.setData({
+            formData: res.data.pet,
+            src: res.data.pet.image_url
+          })
+          wx.removeStorageSync('editId')
+        }
+      })
+    } 
+
   },
 
   // Switch Area for Age & Health Related Info

@@ -7,13 +7,13 @@
 		<wux-cell-group title="Basic Information">
 			<!-- Name -->
       <wux-cell hover-class="none">
-        <wux-textarea label="Name" placeholder="Snoopy" controlled
+        <wux-textarea label="Name" controlled
           maxlength="10" value="{{formData.name}}"
           bind:change="inputName"/>
       </wux-cell>
 			<!-- Age -->
       <wux-cell hover-class="none">
-        <wux-textarea label="Age" placeholder="1 year" controlled
+        <wux-textarea label="Age" controlled
             maxlength="10" value="{{formData.age}}"
             bind:change="inputAge" />
       </wux-cell>  
@@ -100,7 +100,7 @@
             value="{{formData.description}}"
             cursorSpacing="80"
             bind:change="inputAddInfo"
-						placeholder="Snoopy is a friendly puppy..."
+						placeholder="Friendly puppy to be adopted..."
           />
         </wux-cell>
       </wux-cell-group>

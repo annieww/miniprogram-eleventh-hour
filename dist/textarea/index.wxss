@@ -32,6 +32,7 @@
   height: 1.47058824em;
   min-height: 1.47058824em;
 	line-height: 1.47058824;
+	
 	font-weight: 400;
 }
 .wux-textarea__extra {

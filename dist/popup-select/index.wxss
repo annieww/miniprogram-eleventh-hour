@@ -1,5 +1,5 @@
 .wux-select__scroll-view {
-  max-height: 540rpx
+	max-height: 540
 }
 .wux-select__toolbar {
   position: relative;
@@ -7,7 +7,7 @@
   font-size: 34rpx;
   line-height: 1.5;
   color: rgba(0,0,0,.85);
-  background: #f7f7f8
+	background: #f7f7f8
 }
 .wux-select__toolbar::before {
   content: " ";
@@ -25,7 +25,7 @@
   height: 88rpx;
   display: -ms-flexbox;
   display: flex;
-  text-align: center
+	text-align: center
 }
 .wux-select__title {
   position: absolute;

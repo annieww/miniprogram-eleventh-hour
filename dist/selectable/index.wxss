@@ -1,7 +1,7 @@
 .wux-selectable {
   position: relative;
 	display: inline-block;
-	padding-bottom: 80rpx;
+	padding-bottom: 100rpx;
 }
 .wux-selectable__input {
   position: absolute;
