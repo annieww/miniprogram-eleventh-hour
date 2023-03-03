@@ -36,7 +36,8 @@
 }
 .wux-textarea__extra {
   color: rgba(0,0,0,.45);
-  margin-left: 10rpx
+	margin-left: 10rpx;
+	margin-top: 10rpx
 }
 .wux-textarea__error {
   margin-left: 10rpx

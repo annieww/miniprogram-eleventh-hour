@@ -27,34 +27,8 @@ Page({
 		wx.setNavigationBarTitle({
 			title: 'Post a Pet',
 		})
-	},
-	
-  onReady() {
-  },
 
-  resetForm() {
-    this.setData(
-      {formData: {} , src: "/images/image.png"})
-  },
-  // Pop-up selection for Gender, Species, and Size
-  setValue(values, key, field) {
-    let { formData } = this.data
-    formData[field] = values.value
-    this.setData({
-      [`value${key}`]: values.value, 
-      formData
-    })
-  },
-
-  onConfirm(e) {
-    const { index } = e.currentTarget.dataset
-    const { field } = e.currentTarget.dataset
-    this.setValue(e.detail, index, field)
-    console.log(`onConfirm${index}`, e.detail, field)
-  },
-  
-  onShow() {
-    this.resetForm()
+		this.resetForm()
 		const page = this
 		let { formData } = page.data
 
@@ -88,6 +62,35 @@ Page({
         }
       })
     } 
+
+	},
+	
+  onReady() {
+  },
+
+  resetForm() {
+    this.setData(
+      {formData: {} , src: "/images/image.png"})
+  },
+  // Pop-up selection for Gender, Species, and Size
+  setValue(values, key, field) {
+    let { formData } = this.data
+    formData[field] = values.value
+    this.setData({
+      [`value${key}`]: values.value, 
+      formData
+    })
+  },
+
+  onConfirm(e) {
+    const { index } = e.currentTarget.dataset
+    const { field } = e.currentTarget.dataset
+    this.setValue(e.detail, index, field)
+    console.log(`onConfirm${index}`, e.detail, field)
+  },
+  
+  onShow() {
+    
   },
 
   // Switch Area for Age & Health Related Info
@@ -120,17 +123,17 @@ Page({
 
   chooseImage: function () {
     const page = this
-    page.setData({resetForm: false})
+		page.setData({resetForm: false})
     // Upload an image
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
+			sourceType: ['album', 'camera'],
       success: function (res) {
-        console.log('img successfully uploaded', res)
+				console.log('img successfully uploaded', res)
         page.setData({
           src: res.tempFilePaths
-        })
+				})
       }
     })
    },
