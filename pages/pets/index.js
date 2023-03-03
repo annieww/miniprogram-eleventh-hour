@@ -151,7 +151,7 @@ Page({
   },
 
   getData(){
-    const page = this
+		const page = this
     wx.request({
       url: `${app.globalData.baseURL}/pets`,
       method: "GET",
@@ -160,7 +160,7 @@ Page({
         page.setData({
           pets: res.data,
 					content: app.globalData.content,
-        })
+				})
       }
     })
   },

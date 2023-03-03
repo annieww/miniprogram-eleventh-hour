@@ -281,6 +281,12 @@ page {
   font-weight: 600;
 }
 
+.name-box {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
 .pet-age {
 	font-weight: 300;
 }
