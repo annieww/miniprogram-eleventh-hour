@@ -27,11 +27,12 @@ App({
           method: 'post',
           data: { code: res.code }, // pass code in request body
           success(loginRes) {
+						console.log("Hello from app.js: loginRes",loginRes) 
 						app.globalData.header = loginRes.data.headers
 						app.globalData.user = loginRes.data.user
 						let role;
 						console.log('loginRes.data -> ', loginRes.data)
-						if(loginRes.data.user.admin){
+						if(loginRes.data.user.role){
 							role = 'admin';
 							wx.setStorageSync('role', 'admin')
 							// role = 'user';
