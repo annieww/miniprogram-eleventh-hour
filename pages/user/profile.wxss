@@ -7,18 +7,20 @@
 }
 
 .header {
-  height: 180rpx;
+  height: 260rpx;
   padding: 20rpx;
-  margin-bottom: 20rpx;
+	margin-bottom: 20rpx;
 }
 
 .header-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 200rpx;
+	flex-direction: column;
+	height: 260rpx;
   border: 1px solid #FD5200;
 	border-radius: 20rpx;
+	margin-bottom: 40rpx;
 }
 
 .authorize-box {
@@ -34,6 +36,7 @@
 
 .user-box {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
@@ -45,6 +48,10 @@
   /* display: inline-block;
 	overflow: hidden; */
 	border: 1rpx solid grey;
+}
+
+.input-username {
+	text-align: center;
 }
 
 .user-name {

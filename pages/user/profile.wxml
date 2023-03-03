@@ -4,14 +4,15 @@
   <!-- HEADER -->
   <view class="header">
     <view class="header-box">
-      <view class="authorize-box">
-        <button class="authorize-btn" wx:if='{{!hasUserInfo}}' open-type="getUserProfile" bindtap="getUserProfile">{{content.authorize_button}}</button> 
-        <view wx:else class="user-box">
+			<view wx:if='{{!hasUserInfo}}' class="authorize-box">
+				<button class="authorize-btn" open-type="chooseAvatar" bind:chooseavatar="bindchooseavatar">{{content.authorize_button}}</button>
+			</view>
+			<view wx:if='{{hasUserInfo}}' class="user-box">
           <view><image class="avatar" mode="aspectFill" src="{{avatarUrl}}"></image></view>
-          <view class="user-name">{{nickName}}</view>
-        </view>
-      </view> 
-    </view>
+					<view class="user-name">{{nickName}}</view>
+					<view class="input-username"><input type="nickname" class="weui-input" placeholder="input nickname"/></view>
+			</view>
+  	</view>
   </view>
 
 	<!-- CONTACT CUSTOMER SERVICE -->
