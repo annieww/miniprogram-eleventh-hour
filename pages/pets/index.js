@@ -3,55 +3,30 @@ const app = getApp()
 
 Page({
   data: {
-    events: [
-      {
-        id: 1,
-        name: "Adoption Day",
-        location: "Jing'An",
-        time: "October 30th",
-        image_url: "https://images.unsplash.com/photo-1514373941175-0a141072bbc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
-      },
-      {
-        id: 2,
-        name: "Dogs of the month",
-        image_url: "https://images.unsplash.com/photo-1516222338250-863216ce01ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-      },
-      {
-        id: 3,
-        name: "Cats of the month",
-        image_url: "https://images.unsplash.com/photo-1594142404563-64cccaf5a10f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-      }
-      // {
-      //   id: 4,
-      //   name: "Adoption FAQ",
-      //   image_url: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
-      // }
-    ],
-
-    pets: [
-      {
-        // id: 1,
-        name: "Dobby",
-        species: "Dog",
-        gender: "Male",
-        age: "1 year",
-        tag: "foster",
-        vaccination_status: "fully vaccinated",
-        neutered: "true",
-        image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-      },
-      {
-        // id: 2,
-        name: "Tiger",
-        species: 'Cat',
-        gender: "Female",
-        age: "6 months",
-        tag: "adopt",
-        vaccination_status: "fully vaccinated",
-        neutered: "false",
-        image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
-      }
-    ],
+    // pets: [
+    //   {
+    //     // id: 1,
+    //     name: "Dobby",
+    //     species: "Dog",
+    //     gender: "Male",
+    //     age: "1 year",
+    //     tag: "foster",
+    //     vaccination_status: "fully vaccinated",
+    //     neutered: "true",
+    //     image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    //   },
+    //   {
+    //     // id: 2,
+    //     name: "Tiger",
+    //     species: 'Cat',
+    //     gender: "Female",
+    //     age: "6 months",
+    //     tag: "adopt",
+    //     vaccination_status: "fully vaccinated",
+    //     neutered: "false",
+    //     image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+    //   }
+    // ],
 
     items: [
       {
