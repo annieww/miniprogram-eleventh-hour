@@ -157,14 +157,13 @@ Page({
 					})	
 					console.log('booking success!, booking.id ->', res.data.booking.id)
 					console.log("From show.js : res.data", res.data)
-
-
-						} else {
-							console.log("From show.js: status code is", res.statusCode)
-							wx.showToast({
-								title: 'Please try again!',
-							})
-						}
+				} else {
+					console.log("From show.js: status code is", res.statusCode)
+					if (res.statusCode === 422)
+					wx.showToast({
+						title: "Error",
+					})
+				}
 			}
     })
     }
@@ -174,7 +173,7 @@ Page({
 		console.log(e.detail.path)
 		console.log(e.detail.query)
 	},
-	
+
   edit(e) {
     wx.setStorageSync('editId', this.data.pet.id)
     wx.switchTab({

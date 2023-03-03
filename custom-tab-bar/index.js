@@ -17,11 +17,13 @@ Component({
 			pagePath: "/pages/pets/form",
       iconPath: "/images/add.png",
       selectedIconPath: "/images/add-active.png"
-			},{
-			pagePath: "/pages/admin/profile",
-			iconPath: "/images/admin.png",
-			selectedIconPath: "/images/admin-active.png"
-			}],
+			},
+			// {
+			// pagePath: "/pages/admin/profile",
+			// iconPath: "/images/admin.png",
+			// selectedIconPath: "/images/admin-active.png"
+			// }
+		],
 
 			userList: [{
 			pagePath: "/pages/pets/index",

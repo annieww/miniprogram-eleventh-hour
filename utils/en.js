@@ -9,7 +9,7 @@ let en = {
   submit: 'Submit',
   cancel: 'Cancel',
   admin_form: 'upload pet info',
-  request_tab: 'Adoption Requests',
+  request_tab: 'Activities',
 	authorize_button: 'Authorize', 
 	contact_button: 'Contact EHR',
 	empty_pet: 'Please select another option',
