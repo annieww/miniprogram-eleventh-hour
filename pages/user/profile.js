@@ -13,24 +13,37 @@ Page({
     avatarUrl: '', 
     userInfo: {},
     hasUserInfo: false,
-    canIuseGetUserProfile: false
+		canIuseGetUserProfile: false,
+		avatarUrl: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0",
   },
-
+	
+	bindchooseavatar(e) {
+		const avatarUrl = e.detail.avatarUrl
+		console.log('e.detail', e.detail)
+		console.log("avatarUrl",e.detail.avatarUrl)
+		this.setData({
+			avatarUrl,
+			hasUserInfo: true,
+		})
+	},
+	
   getUserProfile: function(e) {
     wx.getUserProfile({
       desc: 'complete your profile',
       success: (res) => {
         console.log('res.userInfo -->', res.userInfo)
-        this.setData({
+				app.globalData.userInfo = res.userInfo
+				this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
           nickName: res.userInfo.nickName,
           avatarUrl: res.userInfo.avatarUrl
-        })
+				})
+
       }
     })
-  },
-
+	},
+	
   onLoad(options) {
     if (wx.getUserProfile) {
       this.setData({
