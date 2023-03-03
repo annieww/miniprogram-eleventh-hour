@@ -9,7 +9,7 @@ App({
     userInfo: '',
 		header: null,
 		user: {},
-    baseURL: "http://localhost:3000/api/v1", 
+    baseURL: "http://mp-ehr.petiteapp.cloud/api/v1", 
 		language: wx.getStorageSync('language'),
 		role: ''
 	}, 
