@@ -129,27 +129,35 @@
 	margin-top: 15px;
 	justify-content: center;
 	align-items: center;
+	
 }
 
 .pet-card {
-  width: 170rpx;
-  height: 170rpx;
-  border: 1px solid #ccc;
-  border-radius: 10rpx;
+  width: 120rpx;
+  height: 120rpx;
+	border-radius: 50%;
+	border: 0.5px solid black;
 	overflow: hidden;
-	margin-left: 20rpx;
-	margin-right: 20rpx;
+	margin-left: -40rpx;
+	position: relative;
 }
+
 
 .pet-image {
   width: 100%;
-  height: 70%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+	background-size: cover;
+	border-radius: 50%;
+  position: absolute;
+  top: -10%;
+  left: -10%;
 }
 
-.pet-name {
+
+
+/* .pet-name 
   width: 100%;
   height: 30%;
   display: flex;
@@ -157,7 +165,7 @@
 	justify-content: center;
 	font-size: 28rpx;
 	font-weight: 320;
-}
+} */
 
 .empty-box {
 	display: flex;

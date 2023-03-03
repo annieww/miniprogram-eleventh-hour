@@ -9,7 +9,7 @@ let zh = {
   submit: '提交',
   cancel: '取消',
   admin_form: '上传动物信息',
-  request_tab: '收到的请求',
+  request_tab: '活动记录',
 	authorize_button: '点击授权', 
 	contact_button: '立即联系我们',
 	empty_pet: '请选择其它类型的动物',

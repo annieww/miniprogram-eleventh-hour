@@ -13,7 +13,7 @@
 			</view>
 		</view>
 
-		<view class="tabs-box">
+		<view class="tabs-box"> -->
 			<!-- REQUESTS TAB -->
 			<view class="request-tab">
 				<view class="tab-title">
@@ -26,7 +26,7 @@
 		<!-- IF NO REQUESTS -->
 		<view wx:if="{{requested_users == 0}}" class="empty-box">
 			<view class="empty-message">{{content.empty_user}}</view>
-		</view>
+		</view> 
 		<!-- CONTENT -->
 		<view class="user-list">
 		<block wx:for="{{requested_users}}" wx:key="id">
@@ -37,17 +37,17 @@
 					<view class="id-box">
 						<view class="admin-admin">username</view>
 						<view class="user-id">{{item.name}}</view> 
-					</view>
+					</view> 
 				</view>
 				<view class="pet-gallery">
 					<view class="pet-card" wx:for="{{item.booked_pets}}" wx:key="index" bindtap="navigateToPetShowPage" data-pet-id="{{item.id}}">
 					<view class="pet-image" style="background-image:url({{item.image_url}})"></view>
 					<view class="pet-name">{{item.name}}</view>
 					</view>
-				</view>
+				</view> 
 			</view>
 		</block>
-	</view>
+		</view>
 </view>
 
 
