@@ -3,17 +3,18 @@
 	<view class="main">
 		<view class="header">
 			<view class="header-box">
-				<view class="admin-box">
-					<image class="admin-avatar" mode="aspectFill" src="{{admin.image}}"></image>
-					<view class="name-box">
-						<view class="admin-admin">admin</view>
-						<view class="admin-name">{{admin.name}}</view>
-					</view>
+				<view wx:if='{{!hasUserInfo}}' class="authorize-box">
+					<button class="authorize-btn" open-type="chooseAvatar" bind:chooseavatar="bindchooseavatar">{{content.authorize_button}}</button>
+				</view>
+				<view wx:if='{{hasUserInfo}}' class="user-box">
+						<view><image class="avatar" mode="aspectFill" src="{{avatarUrl}}"></image></view>
+						<view class="user-name">{{nickName}}</view>
+						<view class="input-username"><input type="nickname" class="weui-input" placeholder="input nickname"/></view>
 				</view>
 			</view>
 		</view>
 
-		<view class="tabs-box"> -->
+		<view class="tabs-box">
 			<!-- REQUESTS TAB -->
 			<view class="request-tab">
 				<view class="tab-title">
@@ -35,7 +36,6 @@
 				<view class="user-header">
 					<image class="user-avatar" style="background-image: url({{item.image}})" wx:if="{{item.image}}" />
 					<view class="id-box">
-						<view class="admin-admin">username</view>
 						<view class="user-id">{{item.name}}</view> 
 					</view> 
 				</view>
