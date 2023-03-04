@@ -14,22 +14,22 @@
 			</view>
 		</view>
 
-		<view class="tabs-box">
-			<!-- REQUESTS TAB -->
+		<!-- REQUESTS TAB -->
+		<!-- <view class="tabs-box">
 			<view class="request-tab">
 				<view class="tab-title">
 						{{content.request_tab}} 
 				</view>
 				<view class="highlight"></view>
 			</view>
-		</view>
+		</view> -->
 
 		<!-- IF NO REQUESTS -->
-		<view wx:if="{{requested_users == 0}}" class="empty-box">
+		<!-- <view wx:if="{{requested_users == 0}}" class="empty-box">
 			<view class="empty-message">{{content.empty_user}}</view>
-		</view> 
+		</view>  -->
 		<!-- CONTENT -->
-		<view class="user-list">
+		<!-- <view class="user-list">
 		<block wx:for="{{requested_users}}" wx:key="id">
 			<view class="user-card">
 				<view class="delete-request" bindtap="delete" data-index="{{index}}"><wux-icon size="22" color="#d81e06" type="ios-close-circle-outline"/></view>
@@ -47,7 +47,7 @@
 				</view> 
 			</view>
 		</block>
-		</view>
+		</view> -->
 </view>
 
 
