@@ -180,8 +180,16 @@ Page({
           console.log('update success?', res)
           page.upload(page.data.pet.id)
           page.setData({resetForm: true})
-          wx.switchTab({
-            url: 'index'
+          wx.showToast({
+            title: 'Update success!',
+            duration: 1000,
+            success(resolve) {
+              setTimeout(() => {
+                wx.navigateTo({
+                  url: `/pages/pets/show?id=${page.data.pet.id}`,
+                })
+              }, 1000)
+            }
           })
         }
       })
@@ -205,16 +213,21 @@ Page({
             })
           } else {
             wx.showToast({
-              title: "Success!",
-              duration: 2000
+              title: "Create success!",
+              duration: 1000,
+              success(resolve) {
+                setTimeout(() => {
+                  wx.navigateTo({
+                    url: `/pages/pets/show?id=${res.data.pet.id}`,
+                  }, 1000)
+                })
+              }
             })  
             // Calling IMG UPLOAD FUNCTION
             const id = res.data.pet.id
             page.setData({resetForm: true})
             page.upload(id)
-            wx.switchTab({
-              url: 'index',
-            })
+  
           }
         },
         fail(error) {

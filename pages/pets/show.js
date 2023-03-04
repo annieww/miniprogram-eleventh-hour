@@ -189,6 +189,8 @@ Page({
     wx.showModal({
       title: 'Note!',
       content: 'Are you sure to delete this post?',
+      cancelText: 'No',
+      confirmText: 'Yes',
       success(res) {
         if (res.confirm) {
           wx.request({
@@ -196,8 +198,16 @@ Page({
             url: `${app.globalData.baseURL}/pets/${id}`,
             method: 'DELETE',
             success(res){
-              wx.switchTab({
-                url: '/pages/pets/index',
+              wx.showToast({
+                title: 'Deleted!',
+                duration: 1000,
+                success(resolve) {
+                  setTimeout(() => {
+                    wx.switchTab({
+                      url: '/pages/pets/index',
+                    })
+                  }, 1000)
+                }
               })
             }
           })
