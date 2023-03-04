@@ -67,8 +67,6 @@ Page({
 		
 		//
 		console.log('form onshow')
-
-		this.resetForm()
     const page = this
     let { formData } = page.data
 
@@ -82,13 +80,14 @@ Page({
       wx.request({
         header: app.globalData.header,
 				url: `${app.globalData.baseURL}/pets/${id}`,
-				method: 'GET',
+				// method: 'GET',
         success(res) {
 					let data = res.data
 					console.log('success from onLoad, data->', data)
           page.setData({
             formData: res.data.pet,
-            src: res.data.pet.image_url
+            src: res.data.pet.image_url,
+            editId: id,
           })
           wx.removeStorageSync('editId')
         }
