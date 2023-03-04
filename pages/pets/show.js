@@ -39,7 +39,8 @@ Page({
 					const my_booking = res.data.my_booking;
 					const current_user = res.data.current_user;
 					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
-					const isAdmin = current_user.admin? true : false;
+					// const isAdmin = current_user.admin? true : false;
+					const isAdmin = current_user.role === "admin";
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';

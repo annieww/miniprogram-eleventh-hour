@@ -13,7 +13,6 @@
       <view class="div-line"></view> 
     </view>
     <view class="content-box">
-      <!-- <view class="ehr-title">{{content.text1}}</view> -->
       <view class="header-content">
         <view class="ehr-content">{{content.about1}}</view>
       </view>
@@ -76,7 +75,7 @@
       <view class="pet-info">
         <view class="pet-title-box">
           <view class="pet-name">
-            {{pet.name}}
+            <view class="name-box">{{pet.name}}</view>
             <image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
           </view>
           <view class="pet-age">{{pet.age}}</view>

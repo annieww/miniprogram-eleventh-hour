@@ -14,10 +14,6 @@ page {
   font-size: 30rpx;
 }
 
-.header {
-  margin-bottom: 20rpx
-}
-
 .logo-box {
   height: 200rpx;
   display: flex;
@@ -59,14 +55,8 @@ page {
   border-radius: 20rpx;
 }
 
-.ehr-title {
-  font-size: 35rpx;
-  color: #FD5200;
-  font-weight: bold;
-}
-
 .ehr-content {
-  padding: 15rpx;
+	padding: 15rpx;
 }
 
 .more-link {
@@ -130,14 +120,14 @@ page {
 .divider {
   display: flex;
   flex-direction: column;
-  align-items: center;
+	align-items: center;
 }
 
 .div-line{
   background: #00B5A3;
   width: 95%;
-  height: 3rpx;
-  margin-top: 10rpx;
+	height: 3rpx;
+	margin-top: 15rpx;
   margin-bottom: 15rpx;
 }
 
@@ -279,6 +269,12 @@ page {
   display: flex;
   justify-content: start;
   font-weight: 600;
+}
+
+.name-box {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .pet-age {

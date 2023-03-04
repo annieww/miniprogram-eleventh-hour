@@ -24,6 +24,7 @@ Page({
   onLoad(options) {
 		wx.setStorageSync('new', true)
 		console.log('form onLoad, options ->', options)
+
 		wx.setNavigationBarTitle({
 			title: 'Post a Pet',
 		})
@@ -54,32 +55,37 @@ Page({
   },
   
   onShow() {
-    this.resetForm()
-		const page = this
-		let { formData } = page.data
-
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()){
-      this.getTabBar().setData({
-        selected: 2
-      })
+		if (typeof this.getTabBar === 'function' &&
+		this.getTabBar()){
+			this.getTabBar().setData({
+				selected: 2
+			})
     }
     this.setData({
-      content: app.globalData.content
+			content: app.globalData.content
 		})
+		
+		//
+		console.log('form onshow')
 
-		if(wx.getStorageSync('new')){
-			page.setData({formData})
-		}
-		const id = wx.getStorageSync('editId')
+		this.resetForm()
+    const page = this
+    let { formData } = page.data
+
+    if(wx.getStorageSync('new')) {
+      page.setData({formData})
+    }
+    
+    const id = wx.getStorageSync('editId')
     if (id) {
       console.log('id found -> update')
       wx.request({
         header: app.globalData.header,
-        url: `${app.globalData.baseURL}/pets/${id}`,
+				url: `${app.globalData.baseURL}/pets/${id}`,
+				method: 'GET',
         success(res) {
 					let data = res.data
-					console.log('success onShow, data->', data)
+					console.log('success from onLoad, data->', data)
           page.setData({
             formData: res.data.pet,
             src: res.data.pet.image_url
@@ -88,6 +94,7 @@ Page({
         }
       })
     } 
+
   },
 
   // Switch Area for Age & Health Related Info
@@ -120,17 +127,17 @@ Page({
 
   chooseImage: function () {
     const page = this
-    page.setData({resetForm: false})
+		page.setData({resetForm: false})
     // Upload an image
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
+			sourceType: ['album', 'camera'],
       success: function (res) {
-        console.log('img successfully uploaded', res)
+				console.log('img successfully uploaded', res)
         page.setData({
           src: res.tempFilePaths
-        })
+				})
       }
     })
    },

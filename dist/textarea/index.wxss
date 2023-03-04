@@ -32,11 +32,13 @@
   height: 1.47058824em;
   min-height: 1.47058824em;
 	line-height: 1.47058824;
+	
 	font-weight: 400;
 }
 .wux-textarea__extra {
   color: rgba(0,0,0,.45);
-  margin-left: 10rpx
+	margin-left: 10rpx;
+	margin-top: 10rpx
 }
 .wux-textarea__error {
   margin-left: 10rpx

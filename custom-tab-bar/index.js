@@ -13,11 +13,11 @@ Component({
 			pagePath: "/pages/admin/faq",
 			iconPath: "/images/faq.png",
 			selectedIconPath: "/images/faq-active.png"
-			},{
+			}, {
 			pagePath: "/pages/pets/form",
       iconPath: "/images/add.png",
       selectedIconPath: "/images/add-active.png"
-			},
+			}
 			// {
 			// pagePath: "/pages/admin/profile",
 			// iconPath: "/images/admin.png",
