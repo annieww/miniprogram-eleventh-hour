@@ -36,7 +36,6 @@
 				<view class="user-header">
 					<image class="user-avatar" style="background-image: url({{item.image}})" wx:if="{{item.image}}" />
 					<view class="id-box">
-						<view class="admin-admin">username</view>
 						<view class="user-id">{{item.name}}</view> 
 					</view> 
 				</view>
