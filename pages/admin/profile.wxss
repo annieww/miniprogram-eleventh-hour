@@ -7,36 +7,53 @@
 }
 
 .header {
-  height: 180rpx;
+  height: 260rpx;
   padding: 20rpx;
   margin-bottom: 20rpx;
 }
 
 .header-box {
-  height: 180rpx;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 260rpx;
   border: 1px solid #00B5A3;
   border-radius: 20rpx;
 }
 
-.admin-box {
-	margin-left: 30rpx;
-	margin-top: 30rpx;
+.authorize-box {
+	justify-content: center;
+}
+
+.authorize-btn {
+	background-color: white;
+	border: 1px solid grey;
+	border-radius: 40rpx;
+	color: grey;
+}
+
+.user-box {
 	display: flex;
+	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 
-.admin-avatar {
-  height: 120rpx;
-  width: 120rpx;
-	border-radius: 50%;
-	display: inline-block;
-  overflow: hidden;
+.avatar {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  /* display: inline-block;
+	overflow: hidden; */
 	border: 1rpx solid grey;
-	margin-right: 20rpx;
 }
 
-.admin-admin, .user-user {
+.input-username {
+	text-align: center;
+}
+
+.user-user {
 	color: rgba(0,0,0,.65);
 	font-weight: 350;
 }

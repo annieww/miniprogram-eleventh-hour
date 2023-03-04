@@ -10,7 +10,6 @@ Page({
 		bookings: [],
 		// bookings: {},
     nickName: '',
-    avatarUrl: '', 
     userInfo: {},
     hasUserInfo: false,
 		canIuseGetUserProfile: false,
