@@ -126,6 +126,7 @@
 
 .add-faq-form {
 	margin-top: 40rpx;
+	margin-bottom: 500rpx;
 }
 
 .btn-faq {

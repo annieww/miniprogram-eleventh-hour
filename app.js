@@ -30,18 +30,15 @@ App({
 						console.log("Hello from app.js: loginRes",loginRes) 
 						app.globalData.header = loginRes.data.headers
 						app.globalData.user = loginRes.data.user
+						app.globalData.userId = loginRes.data.user.id
 						let role;
 						console.log('loginRes.data -> ', loginRes.data)
 						if(loginRes.data.user.role){
 							role = 'admin';
 							wx.setStorageSync('role', 'admin')
-							// role = 'user';
-							// wx.setStorageSync('role', 'user')
 						} else {
 							role = 'user';
 							wx.setStorageSync('role', 'user')
-							// role = 'admin';
-							// wx.setStorageSync('role', 'admin')
 						}
 						app.globalData.role = role
 						event.emit('loginFinished') }

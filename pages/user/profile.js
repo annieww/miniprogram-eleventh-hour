@@ -11,21 +11,39 @@ Page({
 		// bookings: {},
     nickName: '',
     userInfo: {},
-    hasUserInfo: false,
-		canIuseGetUserProfile: false,
-		avatarUrl: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0",
+    // hasUserInfo: '',
+		// canIuseGetUserProfile: false,
+		image: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0",
   },
 	
-	bindchooseavatar(e) {
-		const avatarUrl = e.detail.avatarUrl
+	onChooseAvatar(e) {
+		const image = e.detail.avatarUrl
+		this.image = e.detail.avatarUrl
+		console.log('this->', this)
 		console.log('e.detail', e.detail)
-		console.log("avatarUrl",e.detail.avatarUrl)
+		console.log("avatarUrl", e.detail.avatarUrl)
+		wx.uploadFile({
+			url:  `${app.globalData.baseURL}/upload`,
+			filePath: image,
+			name: 'file',
+			formData: {
+				'user': 'test'
+			},
+			// success(res) {
+			// 	const data = JSON.parse(res.data)
+			// }
+		})
 		this.setData({
-			avatarUrl,
-			hasUserInfo: true,
+			image: e.detail.avatarUrl,
+			// hasUserInfo: true,
 		})
 	},
 	
+	submitNickname (e) {
+		const nickName = e.detail.value.nickName
+		console.log('nickName', nickName)
+	},
+
   getUserProfile: function(e) {
     wx.getUserProfile({
       desc: 'complete your profile',
