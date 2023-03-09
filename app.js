@@ -9,7 +9,7 @@ App({
     userInfo: '',
 		header: null,
 		user: {},
-    baseURL: "http://ehr-ehr.petiteapp.cloud/api/v1", 
+    baseURL: "https://ehr-ehr.petiteapp.cloud/api/v1", 
 		language: wx.getStorageSync('language'),
 		role: ''
 	}, 
@@ -18,7 +18,8 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    const app = this
+		const app = this
+		let isLogin = false
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -42,7 +43,10 @@ App({
 						}
 						app.globalData.role = role
 						event.emit('loginFinished') }
+						
 				})
+				isLogin = true
+				console.log('from app.js, isLogin ->', isLogin)
       }
     }),
 		this.updateContent()

@@ -16,57 +16,37 @@ Page({
 		image: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0",
   },
 	
-	onChooseAvatar(e) {
-		const image = e.detail.avatarUrl
-		this.image = e.detail.avatarUrl
-		console.log('this->', this)
-		console.log('e.detail', e.detail)
-		console.log("avatarUrl", e.detail.avatarUrl)
-		wx.uploadFile({
-			url:  `${app.globalData.baseURL}/upload`,
-			filePath: image,
-			name: 'file',
-			formData: {
-				'user': 'test'
-			},
-			// success(res) {
-			// 	const data = JSON.parse(res.data)
-			// }
-		})
-		this.setData({
-			image: e.detail.avatarUrl,
-			// hasUserInfo: true,
-		})
-	},
+	// onChooseAvatar(e) {
+	// 	const image = e.detail.avatarUrl
+	// 	this.image = e.detail.avatarUrl
+	// 	console.log('this->', this)
+	// 	console.log('e.detail', e.detail)
+	// 	console.log("avatarUrl", e.detail.avatarUrl)
+	// 	wx.uploadFile({
+	// 		url:  `${app.globalData.baseURL}/upload`,
+	// 		filePath: image,
+	// 		name: 'file',
+	// 		formData: {
+	// 			'user': 'test'
+	// 		},
+	// 		// success(res) {
+	// 		// 	const data = JSON.parse(res.data)
+	// 		// }
+	// 	})
+	// 	this.setData({
+	// 		image: e.detail.avatarUrl,
+	// 		// hasUserInfo: true,
+	// 	})
+	// },
 	
-	submitNickname (e) {
-		const nickName = e.detail.value.nickName
-		console.log('nickName', nickName)
-	},
+	// submitNickname (e) {
+	// 	const nickName = e.detail.value.nickName
+	// 	console.log('nickName', nickName)
+	// },
 
-  getUserProfile: function(e) {
-    wx.getUserProfile({
-      desc: 'complete your profile',
-      success: (res) => {
-        console.log('res.userInfo -->', res.userInfo)
-				app.globalData.userInfo = res.userInfo
-				this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
-          nickName: res.userInfo.nickName,
-          avatarUrl: res.userInfo.avatarUrl
-				})
-
-      }
-    })
-	},
 	
   onLoad(options) {
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+
   },
 
   onReady() {

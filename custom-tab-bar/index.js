@@ -44,7 +44,7 @@ Component({
 	
 	attached() {
 		const role = wx.getStorageSync('role')
-		console.log(role)
+		console.log('from custom tabbar, role ->', role)
 		if (role == 'admin') {
 			this.setData({
 				list: this.data.allList[0].adminList

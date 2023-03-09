@@ -59,9 +59,6 @@
       cancelText="Cancel"
     />
     
-  <!-- <view class="divider">
-    <view class="div-line"></view> 
-  </view> -->
   <!-- 4.pet list -->
 	<view wx:if="{{pets == 0}}" class="empty-box">
 			<view class="empty-message">{{content.empty_pet}}</view>
