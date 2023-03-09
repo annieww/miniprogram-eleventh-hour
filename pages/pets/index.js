@@ -109,8 +109,7 @@ Page({
     this.setData({
 			content: app.globalData.content
 		})
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()){
+    if (typeof this.getTabBar === 'function' && this.getTabBar()){
 			console.log('getTabBar-->', this.getTabBar())
       this.getTabBar().setData({
 				selected: 0 
@@ -199,13 +198,6 @@ Page({
     }
   },
 
-  // selectLanguage(e) {
-  //   if (this.data.tag !== e.currentTarget.dataset.tag) {
-  //     this.setData({
-  //       language: e.currentTarget.dataset.tag
-  //     })
-  //   }
-  // },
   changeLanguage() {
     app.changeLanguage()
     wx.reLaunch({
