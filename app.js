@@ -40,7 +40,10 @@ App({
 						} else if(loginRes.data.user.role === 'user') {
 							role = 'user';
 							wx.setStorageSync('role', 'user')
-						}
+						} else {
+							role = 'user';
+							wx.setStorageSync('role', 'user')
+						} 
 						app.globalData.role = role
 						console.log('app.globalData.role ->', app.globalData.role)
 						event.emit('loginFinished') }

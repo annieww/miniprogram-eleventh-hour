@@ -12,6 +12,7 @@
 	font-weight: bold;
 	padding-left: 20rpx;
 	margin-top: 30rpx;
+	margin-bottom: 30rpx;
 }
 
 .ehr-content {
@@ -26,7 +27,7 @@
 .about {
 	color: #444;
 	text-align: start;
-	margin-bottom: 40rpx;
+	margin-bottom: 60rpx;
 	padding-left: 20rpx;
 	padding-right: 20rpx;
 	font-size: 32rpx;
