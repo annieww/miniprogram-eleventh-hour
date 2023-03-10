@@ -45,7 +45,7 @@
 	<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
 		<view class="pet-card">
 			<view bindtap="delete" data-index="{{index}}" class="delete-request"><wux-icon size="22" 
-				color="#d81e06" type="ios-close-circle"/></view>
+				color="#444" type="ios-close-circle"/></view>
 			<view bindtap="goToPet" class="pet-title" data-id="{{item.id}}">
 				<image class="pet-avatar" src="{{item.image_url}}" mode="aspectFill"></image>
 				<view class="name-box">
