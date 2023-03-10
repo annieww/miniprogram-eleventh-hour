@@ -27,7 +27,7 @@
 			<view class="add-faq-form" wx:if="{{showAddForm}}">
 				<input class="add-input" placeholder="Question" maxlength="200" bindinput="updateNewQuestion"/>
 				<textarea class="add-input" placeholder="Answer" maxlength="400" bindinput="updateNewAnswer" />
-				<button class="btn-faq" plain="true" bindtap="addFAQ">Submit</button>
+				<button class="btn-faq" plain="true" bindtap="addFaq">Submit</button>
 			</view>
 	</view>
 </view>

@@ -34,27 +34,47 @@ Page({
     newIsOpen[index] = !newIsOpen[index];
     this.setData({ isOpen: newIsOpen });
 	},
-	addFAQ() {
+	// addFAQ() {
+	// 	const newFaq = {
+	// 		question: this.data.newQuestion,
+	// 		answer: this.data.newAnswer
+	// 	};
+
+	// 	const newFaqList = [ ...this.data.faqList, newFaq]
+	// 	const newIsOpen = [ ...this.data.isOpen, false]
+		
+	// 	this.setData({
+	// 		faqList: newFaqList,
+	// 		isOpen: newIsOpen,
+	// 		newQuestion: "",
+	// 		newAnswer: "", 
+	// 		showAddForm: false
+	// 	});
+  //   wx.setStorageSync('faqData', newFaqList)
+  //   wx.showToast({
+  //     title: 'FAQ added',
+  //     duration: 1000
+  //   })
+	// },
+	addFaq(e){
+		const page = this
 		const newFaq = {
 			question: this.data.newQuestion,
 			answer: this.data.newAnswer
-		};
-
-		const newFaqList = [ ...this.data.faqList, newFaq]
-		const newIsOpen = [ ...this.data.isOpen, false]
-		
-		this.setData({
-			faqList: newFaqList,
-			isOpen: newIsOpen,
-			newQuestion: "",
-			newAnswer: "", 
-			showAddForm: false
-		});
-    wx.setStorageSync('faqData', newFaqList)
-    wx.showToast({
-      title: 'FAQ added',
-      duration: 1000
-    })
+		}
+		wx.request({
+			header: app.globalData.header,
+			url: `${app.globalData.baseURL}/faqs`,
+			method: 'POST',
+			data: {faq: newFaq},
+			success(res) {
+				page.getData()
+				page.toggleAddForm()
+			},
+			fail(error) {
+				console.log({error})
+			}
+		})
 	},
 
 	updateNewQuestion(e) {
@@ -65,23 +85,55 @@ Page({
 		this.setData({ newAnswer: e.detail.value })
 	},
 
+	// deleteFaq(e){
+	// 	const index = e.currentTarget.dataset.index
+  //   let newFaqList = [ ...this.data.faqList];
+  //   wx.showModal({
+  //     title: 'Note!',
+  //     content: 'Delete this FAQ?',
+  //     complete: (res) => {
+  //       if (res.cancel) {
+  //       }
+  //       if (res.confirm) {
+  //         newFaqList.splice(index, 1);
+  //         this.setData({ faqList: newFaqList });
+  //         wx.setStorageSync('faqData', this.data.faqList)
+  //         wx.showToast({
+  //           title: 'Deleted!',
+  //           duration: 1000
+  //         })
+  //       }
+  //     }
+  //   })
+	// },
+	
 	deleteFaq(e){
+		console.log("delete", e)
 		const index = e.currentTarget.dataset.index
+		const page = this
+		const id = this.faqList[index].id
     let newFaqList = [ ...this.data.faqList];
     wx.showModal({
-      title: 'Note!',
+      title: 'Note',
       content: 'Delete this FAQ?',
       complete: (res) => {
         if (res.cancel) {
         }
         if (res.confirm) {
-          newFaqList.splice(index, 1);
-          this.setData({ faqList: newFaqList });
-          wx.setStorageSync('faqData', this.data.faqList)
-          wx.showToast({
-            title: 'Deleted!',
-            duration: 1000
-          })
+					wx.request({
+						url: `${app.globalData.baseURL}/faqs/${page.data.faqList.id}`,
+						method: 'DELETE',
+						header: app.globalData.header,
+            success(res) {
+							console.log("deleted")
+							page.getData()
+						},
+						error() {
+							console.log({error})
+						}
+					})
+          
+         
         }
       }
     })
