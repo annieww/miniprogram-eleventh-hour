@@ -108,20 +108,21 @@ Page({
 	// },
 	
 	deleteFaq(e){
-		console.log("delete", e)
-		const index = e.currentTarget.dataset.index
 		const page = this
-		const id = this.faqList[index].id
-    let newFaqList = [ ...this.data.faqList];
+		const index = e.currentTarget.dataset.index
+		let id = page.data.faqList[index].id
+		console.log("delete id", id)
     wx.showModal({
       title: 'Note',
-      content: 'Delete this FAQ?',
+			content: 'Delete this FAQ?',
+			confirmText: "Yes",
+			cancelText: "No",
       complete: (res) => {
         if (res.cancel) {
         }
         if (res.confirm) {
 					wx.request({
-						url: `${app.globalData.baseURL}/faqs/${page.data.faqList.id}`,
+						url: `${app.globalData.baseURL}/faqs/${id}`,
 						method: 'DELETE',
 						header: app.globalData.header,
             success(res) {
@@ -131,9 +132,7 @@ Page({
 						error() {
 							console.log({error})
 						}
-					})
-          
-         
+					}) 
         }
       }
     })
