@@ -80,13 +80,14 @@
 
 .tabs-box {
   height: 100rpx;
-  display: flex;
-  justify-content: start;
-  align-items: start;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 40rpx;
+	padding-left: 40rpx;
 }
 
 .request-tab {
-	width: 330rpx;
   display: flex;
   flex-direction: column;
 	justify-content: center;
@@ -95,10 +96,10 @@
 
 .highlight{
   margin-bottom: 15rpx;
-	padding: 10rpx;
-  background-color: #eeccbc;
-  height: 5rpx;
-  width: 220rpx;
+	padding: 6rpx;
+	background-color: #FD5200;
+  /* background-color: #eeccbc; */
+  width: 70rpx;
   border-radius: 20rpx;
 }
 
@@ -108,7 +109,7 @@
 }
 
 .requests-box {
-	padding: 35rpx;
+	padding: 30rpx;
 	padding-left: 40rpx;
 	padding-right: 40rpx;
 }

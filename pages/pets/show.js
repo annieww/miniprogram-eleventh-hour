@@ -87,6 +87,15 @@ Page({
 		console.log("user info -> ", userInfo)
   },
 
+	showNeed(e) {
+		wx.showModal({
+			title: 'Special Need',
+			content: 'This animal may have health issues and need special care',
+			cancelText: 'Cancel',
+			confirmText: 'Confirm',
+		})
+	},
+
 	toggleBooking(e) {
 		let page = this
 		page.getData()

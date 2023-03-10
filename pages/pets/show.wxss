@@ -22,6 +22,16 @@
   width: 70rpx;
 }
 
+.need-box {
+	display: flex;
+}
+
+.need-icon {
+	height: 70rpx;
+	width: 70rpx;
+	margin-left: 6rpx;
+}
+
 .pet-avt {
   height: 700rpx;
   object-fit: cover;
@@ -46,7 +56,8 @@
 	padding-bottom: 30rpx;
   display: flex;
   justify-content: space-evenly;
-  background-color: #eeeeee;
+	background-color: #eeeeee;
+	border-radius: 30rpx;
 }
 
 .info-text {
@@ -78,14 +89,16 @@
 .special-need {
 	font-size: 28rpx;
 	font-weight: 400;
-	color: #FD5200;
+	/* background-color: rgb(248, 170, 183); */
+	background-color: #fb6f92;
 	margin-top: 8rpx;
-	border: 1px solid #FD5200;
+	color:white;
 	width: 200rpx;
-	border-radius: 15rpx;
-	padding: 8rpx;
+	border-radius: 20rpx;
+	padding: 4rpx;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .gender-box {

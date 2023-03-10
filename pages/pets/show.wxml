@@ -13,7 +13,10 @@
   <view class="bottom-container">
     <view class="pet-card">
         <view class="pet-name"> {{pet.name}}
-					<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">{{content.special}}</view>
+					<view bindtap="showNeed" class="need-box" wx:if="{{ specialNeedDisplay == 'yes' }}">
+						<view class="special-need">{{content.special}}</view>
+						<image class="need-icon" src="/images/medicine.png"/>
+					</view>
 				</view>
         <view class="pet-info">
           <view>
@@ -45,9 +48,7 @@
 			<view class="more-info">
 				<text class="info-title">{{content.description}}</text>
 				<text class="info-text">{{pet.description}}</text>
-				<!-- <view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view> -->
 			</view>
-
   	</view>
   
   <!-- 4.Buttons -->

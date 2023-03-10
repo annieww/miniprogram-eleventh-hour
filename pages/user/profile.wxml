@@ -31,10 +31,10 @@
   <view class="tabs-box">
     <!-- REQUESTS TAB -->
     <view class="request-tab">
-      <view class="tab-title">
-        {{content.text12}} <text class="pet-length">{{requested_pets.length}}</text><text class="max-length">/10</text></view>
+      <view class="tab-title">{{content.text12}}</view>
       <view class="highlight"></view>
     </view>
+		<view><text class="pet-length">{{requested_pets.length}}</text><text class="max-length">/10</text></view>
   </view>
 
   <!-- MY REQUESTS -->
