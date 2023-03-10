@@ -48,7 +48,7 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"compileHotReLoad": false
+		"compileHotReLoad": true
 	},
 	"projectname": "miniprogram-eleventh-hour",
 	"libVersion": "2.30.0"

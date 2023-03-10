@@ -45,7 +45,7 @@ Component({
 	attached() {
 		const role = wx.getStorageSync('role')
 		console.log(role)
-		if (role == 'admin') {
+		if (role === "admin") {
 			this.setData({
 				list: this.data.allList[0].adminList
 			})
@@ -65,5 +65,5 @@ Component({
       })
 			wx.switchTab({url: url})
     }
-  }
+	}
 })

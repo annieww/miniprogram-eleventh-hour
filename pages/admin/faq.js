@@ -1,16 +1,7 @@
 const app = getApp()
 Page({
   data: {
-			faqList: [
-				{
-					question: 'Who are EHR?',
-					answer: 'We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. We work in partnership with animal shelters and other organizations to provide medical care, foster homes, and adoption services for rescued animals. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.'
-				},
-				{
-					question: 'What should you know about adopting pets?',
-					answer: "1.Commitment: Adopting a pet is a long-term commitment, so be prepared to provide the necessary care and attention for the animal's entire life.2.Time and energy: Pets require time and energy, so make sure you have enough time in your schedule to devote to them. Different pets have different needs, so research the specific requirements of the pet you want to adopt. 3.Living situation: Consider your living situation and make sure it is suitable for the type of pet you want to adopt. Some pets require a lot of space, while others are more adaptable to smaller living environments."
-				}
-			],
+			faqList: [],
 			isOpen: [false, false],
 			// One boolean for each FAQ item, used to control its state
 			newQuestion: "",
@@ -20,6 +11,21 @@ Page({
   },
 
   onLoad(options) {
+	},
+
+	getData(e) {
+		const page = this
+		wx.request({
+      url: `${app.globalData.baseURL}/faqs`,
+      method: "GET",
+      header: app.globalData.header,
+      success(res) {
+        page.setData({
+          faqList: res.data,
+					content: app.globalData.content,
+				})
+      }
+    })
 	},
 
 	toggleAnswer(e) {
@@ -98,10 +104,7 @@ Page({
         selected: 1
       })
 		}
-    this.setData({
-			content: app.globalData.content, 
-			faqList: wx.getStorageSync('faqData')
-		})
+		this.getData()
 		const role = wx.getStorageSync('role')
 		if (role == 'admin') {
 			this.setData({
