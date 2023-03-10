@@ -103,7 +103,7 @@
 .buttons {
   display: flex;
   margin: 20rpx;
-  gap: 30rpx;
+	gap: 30rpx;
 }
 
 .bottom-container {
@@ -116,13 +116,13 @@
   margin-top: -40rpx;
   background-color: white;
   padding: 20rpx;
-  min-height: 60vh;
+	min-height: 60vh;
 }
 
 .box {
   display: flex;
 }
-	
+
 .btn-contact {
 	background-color:#FD5200;
 	color: white;

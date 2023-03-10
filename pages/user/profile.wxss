@@ -161,6 +161,7 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: 30rpx;
+	width: 490rpx;
 }
 
 .pet-avatar {
