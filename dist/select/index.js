@@ -9,9 +9,9 @@ const defaults = {
     multiple: false,
     max: -1,
     toolbar: {
-        title: '请选择',
-        cancelText: '取消',
-        confirmText: '确定',
+        title: 'Select',
+        cancelText: 'Cancel',
+        confirmText: 'Confirm',
     },
     onChange() {},
     onConfirm() {},

@@ -10,6 +10,7 @@
 			</view> -->
 			<view class="user-box">
           <view><image class="avatar" mode="aspectFill" src="/images/pet-logo.png"></image></view>
+					<view bindtap="changeLanguage" class="language-text">{{content.change}}</view>
 					<!-- <view class="user-name">{{nickName}}</view>
 					<form bindsubmit="submitNickname"><view class="input-username">
 						<input type="nickname" class="weui-input" placeholder="input nickname"/></view>

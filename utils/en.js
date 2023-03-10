@@ -29,7 +29,8 @@ let en = {
 	medium: 'medium',
 	large: 'large',
   special: 'special need',
-  sent_msg: 'Favorited'
+	sent_msg: 'Favorited',
+	change: '中文'
 }
 module.exports = {
   content: en

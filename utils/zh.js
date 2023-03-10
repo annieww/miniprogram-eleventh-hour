@@ -29,7 +29,8 @@ let zh = {
 	medium: '中型',
 	large: '大型',
   special: '特殊需求',
-  sent_msg: '已收藏'
+	sent_msg: '已收藏',
+	change: 'English'
 }
 
 module.exports = {

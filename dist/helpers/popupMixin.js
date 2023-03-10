@@ -6,9 +6,9 @@ const CELL_NAME = '../cell/index'
 const FIELD_NAME = '../field/index'
 
 const defaultToolbar = {
-    title: '请选择',
-    cancelText: '取消',
-    confirmText: '确定',
+    title: 'Select',
+    cancelText: 'Cancel',
+    confirmText: 'Confirm',
 }
 
 const defaultEvents = {

@@ -91,6 +91,13 @@ Page({
     })
 	},
 	
+  changeLanguage() {
+    app.changeLanguage()
+    wx.reLaunch({
+      url: '/pages/user/profile',
+    })
+	},
+	
 	goToPet(e) {
     console.log('From index.js - goToPet: e', e)
     const id = e.currentTarget.dataset.id

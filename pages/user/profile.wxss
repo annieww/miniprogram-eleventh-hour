@@ -7,7 +7,7 @@
 }
 
 .header {
-  height: 100rpx;
+  height: 165rpx;
   padding: 20rpx;
 	margin-bottom: 20rpx;
 }
@@ -48,6 +48,10 @@
   /* display: inline-block;
 	overflow: hidden; */
 	border: 1rpx solid grey;
+}
+
+.language-text {
+	text-decoration: underline;
 }
 
 .input-username {
