@@ -147,7 +147,8 @@
 	margin-top: -40rpx;
   background-color: white;
   padding: 20rpx;
-	min-height: 60vh;
+	/* min-height: 60vh; */
+	min-height: 70vh;
 }
 
 .mask {
