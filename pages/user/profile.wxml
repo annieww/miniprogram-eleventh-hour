@@ -1,33 +1,26 @@
 <!--pages/user/profile.wxml-->
-<view class="main">
 
+<view class="page">
   <!-- HEADER -->
   <view class="header">
     <view class="header-box">
-			<!-- <view class="authorize-box">
-				<button class="authorize-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">{{content.authorize_button}}
-				</button>
-			</view> -->
 			<view class="user-box">
           <view><image class="avatar" mode="aspectFill" src="/images/pet-logo.png"></image></view>
 					<view bindtap="changeLanguage" class="language-text">{{content.change}}</view>
-					<!-- <view class="user-name">{{nickName}}</view>
-					<form bindsubmit="submitNickname"><view class="input-username">
-						<input type="nickname" class="weui-input" placeholder="input nickname"/></view>
-						<button form-type="submit" type="primary">Submit</button>
-					</form> -->
 			</view>
-  	</view>
+
+			<!-- CONTACT CUSTOMER SERVICE -->
+			<view class="contact-box">
+				<button class="contact-btn" open-type="contact" bindcontact="handleContact">
+				<image class="msg-icon" src="/images/message_fill.png"></image>
+			{{content.contact_button}}
+				</button>	
+			</view>
+		</view>
+
   </view>
 
-	<!-- CONTACT CUSTOMER SERVICE -->
-	<view class="contact-box">
-		<button class="contact-btn" open-type="contact" bindcontact="handleContact">
-		<image class="msg-icon" src="/images/message_fill.png"></image>
-		{{content.contact_button}}
-		</button>	
-	</view>
-
+<view class="main">
   <view class="tabs-box">
     <!-- REQUESTS TAB -->
     <view class="request-tab">
@@ -55,4 +48,5 @@
 			</view>
 		</view>
 	</view>
+</view>
 </view>

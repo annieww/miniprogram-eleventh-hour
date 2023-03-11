@@ -1,30 +1,23 @@
 /* pages/user/profile.wxss */
-.main {
-	padding-left: 20rpx;
-	padding-right: 20rpx;
-  flex-direction: column;
-  padding-bottom: 175rpx;
+.page {
+	background-color: #C5EBE7;
 }
 
 .header {
-  height: 185rpx;
-  padding: 20rpx;
-	margin-bottom: 20rpx;
+	z-index: 1;
+	height: 400rpx;
+	position: sticky;
+	top: 0;
+	background-color: #C5EBE7;
 }
-/* 
+
 .header-box {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 260rpx;
-  border: 1px solid #FD5200;
-	border-radius: 20rpx;
 	margin-bottom: 40rpx;
-} */
-
-.authorize-box {
-	justify-content: center;
+	padding-top: 30rpx;
 }
 
 .user-box {
@@ -38,22 +31,16 @@
   width: 160rpx;
   height: 160rpx;
   border-radius: 50%;
-  /* display: inline-block;
-	overflow: hidden; */
-	border: 1rpx solid grey;
+  display: inline-block;
+	overflow: hidden;
+	border: 1rpx solid #343a40;
+	background-color: white;
 }
 
 .language-text {
 	text-decoration: underline;
+	color:#343a40;
 }
-
-/* .input-username {
-	text-align: center;
-}
-
-.user-name {
-  font-size: 30rpx;
-} */
 
 .contact-box {
 	height: 100rpx;
@@ -66,7 +53,7 @@
 .contact-btn {
 	display: flex;
 	justify-content: center;
-	background-color:#FD5200;
+	background-color: #343a40;
 	color: white;
 	border-radius: 40rpx;
 }
@@ -76,6 +63,20 @@
 	height: 40rpx;
 	margin-top: 4rpx;
 	margin-right: 8rpx;
+}
+
+.main {
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	flex-direction: column;
+	padding-top: 20rpx;
+	padding-bottom: 175rpx;
+	border-radius: 30rpx;
+	border: 1px solid #808080;
+	z-index: 3;
+	min-height: 60vh;
+	position: relative;
+	background-color: white;
 }
 
 .tabs-box {
@@ -97,15 +98,15 @@
 .highlight{
   margin-bottom: 15rpx;
 	padding: 6rpx;
-	background-color: #FD5200;
-  /* background-color: #eeccbc; */
+	background-color: #00B5A3;
   width: 70rpx;
   border-radius: 20rpx;
 }
 
 .tab-title{
 	font-size: 34rpx;
-  font-weight: bold;
+	font-weight: bold;
+	color:#343a40;
 }
 
 .requests-box {
@@ -135,17 +136,18 @@
 	text-align: center;
   padding: 15rpx;
   margin: 15rpx;
-  background-color: #eeccbc;
+  background-color: #C5EBE7;
 	border-radius: 20rpx;
 	width: 500rpx;
+	color: #343a40;
 }
 
 .pet-length {
-  color: #ebaf93;
+	color: #343a40;
 }
 
 .max-length {
-	color: grey;
+	color:#00B5A3;
 }
 
 .pet-card {
@@ -155,6 +157,7 @@
 	border-radius: 40rpx;
 	display: flex;
 	justify-content: flex-start;
+	background-color: white;
 }
 
 .pet-title {
@@ -180,9 +183,9 @@
 }
 
 .pet-name {
-	font-size: 40rpx;
+	font-size: 35rpx;
 	font-weight: 500;
-	color:grey;
+	color: #343a40;
 }
 
 .pet-gender-icon {

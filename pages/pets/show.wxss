@@ -60,9 +60,9 @@
 }
 
 .pet-name {
-  font-size: 40rpx;
+  font-size: 60rpx;
   font-weight: bold;
-  color: black;
+  color:#343a40;
   margin-bottom: 40rpx;
 }
 
@@ -73,10 +73,12 @@
   justify-content: space-evenly;
 	background-color: #eeeeee;
 	border-radius: 30rpx;
+	color: #343a40;
 }
 
 .info-text {
 	font-weight: 300;
+	color:#343a40;
 }
 
 .yes-no {
@@ -99,6 +101,7 @@
 .info-title {
 	font-weight: 500;
 	margin-top: 30px;
+	color: #343a40;
 }
 
 .pet-name-box {
@@ -147,7 +150,8 @@
 	margin-top: -40rpx;
   background-color: white;
   padding: 20rpx;
-	min-height: 60vh;
+	/* min-height: 60vh; */
+	min-height: 70vh;
 }
 
 .mask {
@@ -159,7 +163,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.2);
+	/* background-color: rgba(0, 0, 0, 0.1); */
 	z-index: 9999;
 }
 
@@ -171,10 +175,11 @@
 	padding: 20rpx;
 	width: 75%;
 	height: 25%;
+	border: 1px solid #808080;
 	background-color: #fff7f5;
 	position: relative;
 	border-radius: 40rpx;
-	box-shadow: 0 0 15rpx rgba(0,0,0,0.1);
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
 }
 
 .window-btn {
@@ -224,10 +229,16 @@
 	color: grey;
 	border: 1px solid grey;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .btn-edit {
 	background-color: #00B5A3;
 	color: white;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

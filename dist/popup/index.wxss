@@ -84,8 +84,7 @@
   height: 100%;
   text-align: center;
 	overflow: hidden;
-	padding-bottom: 100rpx;
-
+	padding-bottom: 105rpx;
 }
 .wux-popup__title {
   font-weight: 400;
