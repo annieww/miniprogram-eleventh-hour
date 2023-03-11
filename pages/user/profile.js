@@ -8,42 +8,10 @@ Page({
   data: {
 		requested_pets: [],
 		bookings: [],
-		// bookings: {},
     nickName: '',
     userInfo: {},
-    // hasUserInfo: '',
-		// canIuseGetUserProfile: false,
 		image: "https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0",
   },
-	
-	// onChooseAvatar(e) {
-	// 	const image = e.detail.avatarUrl
-	// 	this.image = e.detail.avatarUrl
-	// 	console.log('this->', this)
-	// 	console.log('e.detail', e.detail)
-	// 	console.log("avatarUrl", e.detail.avatarUrl)
-	// 	wx.uploadFile({
-	// 		url:  `${app.globalData.baseURL}/upload`,
-	// 		filePath: image,
-	// 		name: 'file',
-	// 		formData: {
-	// 			'user': 'test'
-	// 		},
-	// 		// success(res) {
-	// 		// 	const data = JSON.parse(res.data)
-	// 		// }
-	// 	})
-	// 	this.setData({
-	// 		image: e.detail.avatarUrl,
-	// 		// hasUserInfo: true,
-	// 	})
-	// },
-	
-	// submitNickname (e) {
-	// 	const nickName = e.detail.value.nickName
-	// 	console.log('nickName', nickName)
-	// },
-
 	
   onLoad(options) {
 
