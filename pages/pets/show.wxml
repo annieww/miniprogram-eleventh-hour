@@ -70,7 +70,8 @@
   
   <!-- 4.Buttons -->
     <view class="contact-box" wx:if="{{!isAdmin}}">
-			<button class="btn-contact" style="width:300px; height:45px; padding: 10px;" open-type="contact" bindcontact="handleContact">{{content.contact_button}}</button>	
+			<button class="btn-contact" style="width:300px; height:45px; padding: 10px;" open-type="contact" bindcontact="handleContact">
+				<image class="msg-icon" src="/images/message_fill.png"></image>{{content.contact_button}}</button>	
     </view>
 
 		<view class="buttons-box" wx:if="{{isAdmin}}">
