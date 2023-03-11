@@ -71,7 +71,7 @@
 	z-index: 3;
 	min-height: 60vh;
 	position: relative;
-	background-color: white;
+	background-color: #fff7f5;
 }
 
 .tabs-box {
@@ -94,14 +94,13 @@
   margin-bottom: 15rpx;
 	padding: 6rpx;
 	background-color: #FD5200;
-  /* background-color: #eeccbc; */
   width: 70rpx;
   border-radius: 20rpx;
 }
 
 .tab-title{
 	font-size: 34rpx;
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .requests-box {
@@ -137,7 +136,7 @@
 }
 
 .pet-length {
-  color: #ebaf93;
+	color: #FD5200;
 }
 
 .max-length {
@@ -151,6 +150,7 @@
 	border-radius: 40rpx;
 	display: flex;
 	justify-content: flex-start;
+	background-color: white;
 }
 
 .pet-title {
@@ -176,9 +176,9 @@
 }
 
 .pet-name {
-	font-size: 40rpx;
+	font-size: 35rpx;
 	font-weight: 500;
-	color:grey;
+	color: #495057;
 }
 
 .pet-gender-icon {
