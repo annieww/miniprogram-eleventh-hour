@@ -1,6 +1,7 @@
 <view class="page-content">
-  <view class="page-title"><image class="paw-icon" src="/images/paw-icon.png"></image>{{content.about_title}}</view>
+  <view class="page-title">{{content.about_title}}</view>
 	<view class="about">{{content.about2}}
+		<image class="paw-icon" src="/images/paw-icon.png"></image>
 	</view>
 
 	<wux-sticky-item class="faq-container">

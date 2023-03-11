@@ -17,15 +17,7 @@
 	font-weight: bold;
 	padding-left: 20rpx;
 	margin-top: 30rpx;
-	margin-bottom: 30rpx;
-	display: flex;
-	align-items: center;
-}
-
-.paw-icon {
-	width: 60rpx;
-	height: 60rpx;
-	margin-right: 8rpx;
+	margin-bottom: 20rpx;
 }
 
 .about {
@@ -36,6 +28,15 @@
 	background-color: #fff7f5;
 	border-radius: 40rpx;
 	padding: 35rpx;
+	position: relative;
+}
+
+.paw-icon {
+	width: 70rpx;
+	height: 70rpx;
+	position: absolute;
+	right: 12px;
+	bottom: -15px;
 }
 
 .faq-icon {
