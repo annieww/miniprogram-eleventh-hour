@@ -144,7 +144,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  margin-top: -40rpx;
+	margin-top: -40rpx;
   background-color: white;
   padding: 20rpx;
 	min-height: 60vh;
@@ -159,7 +159,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.2);
 	z-index: 9999;
 }
 
@@ -168,7 +168,7 @@
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	padding: 30rpx;
+	padding: 20rpx;
 	width: 75%;
 	height: 25%;
 	background-color: #fff7f5;
@@ -190,7 +190,8 @@
 }
 
 .window-content {
-	padding: 20rpx;
+	padding: 5rpx;
+	text-align: center;
 }
 
 .box {
