@@ -6,6 +6,11 @@
 	padding: 20rpx;
 }
 
+.page-content {
+	padding: 24rpx;
+	padding-bottom: 35rpx;
+}
+
 .page-title {
   font-size: 40rpx;
   color: #FD5200;
@@ -13,24 +18,24 @@
 	padding-left: 20rpx;
 	margin-top: 30rpx;
 	margin-bottom: 30rpx;
+	display: flex;
+	align-items: center;
 }
 
-.ehr-content {
-  margin-bottom: 20rpx;
-}
-
-.page-content {
-	padding: 24rpx;
-	padding-bottom: 35rpx;
+.paw-icon {
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 8rpx;
 }
 
 .about {
-	color: #444;
+	/* color: #444; */
 	text-align: start;
 	margin-bottom: 60rpx;
-	padding-left: 20rpx;
-	padding-right: 20rpx;
 	font-size: 32rpx;
+	background-color: #fff7f5;
+	border-radius: 40rpx;
+	padding: 35rpx;
 }
 
 .faq-icon {
