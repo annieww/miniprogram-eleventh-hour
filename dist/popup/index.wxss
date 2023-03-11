@@ -77,12 +77,15 @@
 }
 .wux-popup__content {
   position: relative;
-  background-color: #fff;
+	background-color: #fff;
+	/* background-color: green; */
   border: 0;
   background-clip: padding-box;
   height: 100%;
   text-align: center;
-  overflow: hidden
+	overflow: hidden;
+	padding-bottom: 100rpx;
+
 }
 .wux-popup__title {
   font-weight: 400;

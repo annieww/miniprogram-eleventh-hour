@@ -207,13 +207,16 @@
 	background-color:#FD5200;
 	color: white;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.btn-sent {
-	background-color: white;
-	color: #FD5200;
-	border: 1px solid #FD5200;
-  border-radius: 40rpx;
+.msg-icon {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 4rpx;
+	margin-right: 8rpx;
 }
 
 .btn-delete {

@@ -1,12 +1,12 @@
 .tab-bar {
   position: fixed;
-  border: 1px solid #808080;
-  bottom: 0;
-  left: 0;
-  right: 0;
+	border: 1px solid #808080;
+  bottom: 20px;
+  left: 35px;
+  right: 35px;
   margin: 0px 0px;
-  border-radius: 50rpx;
-  height: 70px;
+  border-radius: 50%;
+  height: 60px;
   background-color: white;
   display: flex;
 }
