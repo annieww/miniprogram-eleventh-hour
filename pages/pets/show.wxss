@@ -150,6 +150,49 @@
 	min-height: 60vh;
 }
 
+.mask {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 9999;
+}
+
+.window {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	padding: 30rpx;
+	width: 75%;
+	height: 25%;
+	background-color: #fff7f5;
+	position: relative;
+	border-radius: 40rpx;
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.1);
+}
+
+.window-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.dog-icon {
+	width: 90rpx;
+	height: 90rpx;
+	margin-top: 40rpx;
+}
+
+.window-content {
+	padding: 20rpx;
+}
+
 .box {
   display: flex;
 }

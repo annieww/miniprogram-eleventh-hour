@@ -5,12 +5,22 @@
     <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
   </view>
   
+	<view class="mask" wx:if="{{showWindow}}" bindtap="clickMask">
+		<view class="window" wx:if="{{showWindow}}">
+			<view class="window-btn" bindtap="clickMask"><wux-icon size="22" 
+				color="#444" type="ios-close-circle"/></view>
+			<view><image class="dog-icon" src="/images/paw-icon.png"></image></view>
+			<view class="window-content">
+				This animal has health issues and needs special care
+			</view>
+		</view>
+	</view>
   <!-- 2.pet info -->
-  <view class="bottom-container">
+  <view class="bottom-container">		
     <view class="pet-card">
 			<view class="pet-name-box">
 			  <view class="pet-name"> {{pet.name}}
-					<view bindtap="showNeed" class="need-box" wx:if="{{ specialNeedDisplay == 'yes' }}">
+					<view bindtap="clickNeed" class="need-box" wx:if="{{ specialNeedDisplay == 'yes' }}">
 						<view class="special-need">{{content.special}}</view>
 						<image class="need-icon" src="/images/medicine.png"/>
 					</view>

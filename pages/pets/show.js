@@ -12,7 +12,8 @@ Page({
 		userName: '',
     userWechatId: '',
     isBooker: false,
-    bookingId: null,
+		bookingId: null,
+		showWindow: false,
   },
 
   onLoad(options) {
@@ -87,12 +88,15 @@ Page({
 		console.log("user info -> ", userInfo)
   },
 
-	showNeed(e) {
-		wx.showModal({
-			title: 'Special Need',
-			content: 'This animal may have health issues and need special care',
-			cancelText: 'Cancel',
-			confirmText: 'Confirm',
+	clickNeed(e) {
+		this.setData({
+			showWindow: true,
+		})
+	},
+
+	clickMask(e) {
+		this.setData({
+			showWindow: false,
 		})
 	},
 
