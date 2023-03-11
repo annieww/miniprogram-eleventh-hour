@@ -1,6 +1,6 @@
 <!--pages/user/profile.wxml-->
 
-
+<view class="page">
   <!-- HEADER -->
   <view class="header">
     <view class="header-box">
@@ -48,4 +48,5 @@
 			</view>
 		</view>
 	</view>
+</view>
 </view>

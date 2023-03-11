@@ -1,10 +1,14 @@
 /* pages/user/profile.wxss */
+.page {
+	background-color: #C5EBE7;
+}
+
 .header {
 	z-index: 1;
 	height: 400rpx;
-	margin-bottom: 20rpx;
 	position: sticky;
 	top: 0;
+	background-color: #C5EBE7;
 }
 
 .header-box {
@@ -29,12 +33,13 @@
   border-radius: 50%;
   display: inline-block;
 	overflow: hidden;
-	border: 1rpx solid grey;
+	border: 1rpx solid #343a40;
 	background-color: white;
 }
 
 .language-text {
 	text-decoration: underline;
+	color:#343a40;
 }
 
 .contact-box {
@@ -48,7 +53,7 @@
 .contact-btn {
 	display: flex;
 	justify-content: center;
-	background-color:#FD5200;
+	background-color: #343a40;
 	color: white;
 	border-radius: 40rpx;
 }
@@ -71,7 +76,7 @@
 	z-index: 3;
 	min-height: 60vh;
 	position: relative;
-	background-color: #fff7f5;
+	background-color: white;
 }
 
 .tabs-box {
@@ -93,7 +98,7 @@
 .highlight{
   margin-bottom: 15rpx;
 	padding: 6rpx;
-	background-color: #FD5200;
+	background-color: #00B5A3;
   width: 70rpx;
   border-radius: 20rpx;
 }
@@ -101,6 +106,7 @@
 .tab-title{
 	font-size: 34rpx;
 	font-weight: bold;
+	color:#343a40;
 }
 
 .requests-box {
@@ -130,17 +136,18 @@
 	text-align: center;
   padding: 15rpx;
   margin: 15rpx;
-  background-color: #eeccbc;
+  background-color: #C5EBE7;
 	border-radius: 20rpx;
 	width: 500rpx;
+	color: #343a40;
 }
 
 .pet-length {
-	color: #FD5200;
+	color: #343a40;
 }
 
 .max-length {
-	color: grey;
+	color:#00B5A3;
 }
 
 .pet-card {
@@ -178,7 +185,7 @@
 .pet-name {
 	font-size: 35rpx;
 	font-weight: 500;
-	color: #495057;
+	color: #343a40;
 }
 
 .pet-gender-icon {
