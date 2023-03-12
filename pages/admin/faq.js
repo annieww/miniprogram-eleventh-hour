@@ -154,6 +154,7 @@ Page({
         selected: 1
       })
 		}
+		this.setData({ content: app.globalData.content })
 		this.getData()
 		const role = wx.getStorageSync('role')
 		if (role == 'admin') {
