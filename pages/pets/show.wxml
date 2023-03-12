@@ -5,14 +5,13 @@
     <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
   </view>
   
-	<view class="mask" wx:if="{{showWindow}}" bindtap="clickMask">
-		<view class="window" wx:if="{{showWindow}}">
-			<view class="window-btn" bindtap="clickMask"><wux-icon size="22" 
-				color="#444" type="ios-close-circle"/></view>
+	<view class="mask" catchtouchmove="preventTouchMove" data-target="self" hidden="{{!showWindow}}" bindtap="hideWindow">
+		<view class="window">
 			<view><image class="dog-icon" src="/images/paw-icon.png"></image></view>
 			<view class="window-content">
-				This animal has health issues and needs special care
+				{{content.window}}
 			</view>
+			<button class="btn-understand" bindtap="hideWindow" data-target="self" >{{content.understand}}</button>
 		</view>
 	</view>
   <!-- 2.pet info -->

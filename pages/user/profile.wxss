@@ -106,7 +106,7 @@
 .tab-title{
 	font-size: 34rpx;
 	font-weight: bold;
-	color:#343a40;
+	/* color:#343a40; */
 }
 
 .requests-box {
@@ -143,11 +143,11 @@
 }
 
 .pet-length {
-	color: #343a40;
+	color:#00B5A3;
 }
 
 .max-length {
-	color:#00B5A3;
+	/* color: #343a40; */
 }
 
 .pet-card {

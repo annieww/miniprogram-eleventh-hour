@@ -94,11 +94,15 @@ Page({
 		})
 	},
 
-	clickMask(e) {
-		this.setData({
-			showWindow: false,
-		})
+	hideWindow(e) {
+		console.log('e.target.dataset', e.target.dataset)
+		if (e.target.dataset.target == "self")
+			this.setData({
+				showWindow: false,
+			})
 	},
+
+	preventTouchMove(){},
 
 	toggleBooking(e) {
 		let page = this
