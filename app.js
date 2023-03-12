@@ -32,7 +32,7 @@ App({
 						app.globalData.user = loginRes.data.user
 						let role;
 						console.log('loginRes.data -> ', loginRes.data)
-						if(loginRes.data.user.role){
+						if(loginRes.data.user.role === 'admin'){
 							role = "admin";
 							wx.setStorageSync('role', "admin")
 						} else {
