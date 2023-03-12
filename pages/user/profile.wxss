@@ -146,10 +146,6 @@
 	color:#00B5A3;
 }
 
-.max-length {
-	/* color: #343a40; */
-}
-
 .pet-card {
   z-index: 1;
 	position: relative;
