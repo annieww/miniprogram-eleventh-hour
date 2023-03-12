@@ -14,13 +14,6 @@
 	display: flex;
 }
 
-/* .favorite-icon {
-  position: absolute;
-  top: 30rpx;
-  right: 40rpx;
-  z-index: 2;
-} */
-
 .share-icon {
 	width: 70rpx;
 	height: 70rpx;
@@ -62,7 +55,6 @@
 .pet-name {
   font-size: 60rpx;
   font-weight: bold;
-  color:#343a40;
   margin-bottom: 40rpx;
 }
 
@@ -163,35 +155,40 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* background-color: rgba(0, 0, 0, 0.1); */
+	/* background-color: rgba(0, 0, 0, 0.2); */
 	z-index: 9999;
 }
 
 .window {
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 	padding: 20rpx;
 	width: 75%;
 	height: 25%;
 	border: 1px solid #808080;
-	background-color: #fff7f5;
+	background-color: white;
 	position: relative;
 	border-radius: 40rpx;
 	box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
 }
 
-.window-btn {
-	position: absolute;
-	top: 20px;
-	right: 20px;
+.btn-understand {
+	background-color: white;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50rpx;
+	font-size: 16px;
 }
 
 .dog-icon {
 	width: 90rpx;
 	height: 90rpx;
-	margin-top: 40rpx;
 }
 
 .window-content {

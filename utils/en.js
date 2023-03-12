@@ -30,7 +30,9 @@ let en = {
 	large: 'large',
   special: 'special need',
 	sent_msg: 'Favorited',
-	change: '中文'
+	change: '中文',
+	window: 'This animal has health issues and needs special care',
+	understand: 'I understand'
 }
 module.exports = {
   content: en
