@@ -9,7 +9,8 @@ App({
     userInfo: '',
 		header: null,
 		user: {},
-    baseURL: "https://ehr-ehr.petiteapp.cloud/api/v1", 
+		// baseURL: "https://mp-ehr.petiteapp.cloud/api/v1", 
+		baseURL: "https://localhost:3000/api/v1",
 		language: wx.getStorageSync('language'),
 		role: ''
 	}, 
@@ -28,7 +29,6 @@ App({
           method: 'post',
           data: { code: res.code }, // pass code in request body
           success(loginRes) {
-						console.log("Hello from app.js: loginRes",loginRes) 
 						app.globalData.header = loginRes.data.headers
 						app.globalData.user = loginRes.data.user
 						app.globalData.userId = loginRes.data.user.id

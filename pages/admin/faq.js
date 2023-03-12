@@ -1,16 +1,7 @@
 const app = getApp()
 Page({
   data: {
-			// faqList: [
-			// 	{
-			// 		question: 'Who are EHR?',
-			// 		answer: 'We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. We work in partnership with animal shelters and other organizations to provide medical care, foster homes, and adoption services for rescued animals. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.'
-			// 	},
-			// 	{
-			// 		question: 'What should you know about adopting pets?',
-			// 		answer: "1.Commitment: Adopting a pet is a long-term commitment, so be prepared to provide the necessary care and attention for the animal's entire life.2.Time and energy: Pets require time and energy, so make sure you have enough time in your schedule to devote to them. Different pets have different needs, so research the specific requirements of the pet you want to adopt. 3.Living situation: Consider your living situation and make sure it is suitable for the type of pet you want to adopt. Some pets require a lot of space, while others are more adaptable to smaller living environments."
-			// 	}
-			// ],
+			faqList: [],
 			isOpen: [false, false],
 			// One boolean for each FAQ item, used to control its state
 			newQuestion: "",
@@ -22,33 +13,68 @@ Page({
   onLoad(options) {
 	},
 
+	getData(e) {
+		const page = this
+		wx.request({
+      url: `${app.globalData.baseURL}/faqs`,
+      method: "GET",
+      header: app.globalData.header,
+      success(res) {
+        page.setData({
+          faqList: res.data,
+					content: app.globalData.content,
+				})
+      }
+    })
+	},
+
 	toggleAnswer(e) {
 		const index = e.currentTarget.dataset.index
 		const newIsOpen = [...this.data.isOpen];
     newIsOpen[index] = !newIsOpen[index];
     this.setData({ isOpen: newIsOpen });
 	},
-	addFAQ() {
+	// addFAQ() {
+	// 	const newFaq = {
+	// 		question: this.data.newQuestion,
+	// 		answer: this.data.newAnswer
+	// 	};
+
+	// 	const newFaqList = [ ...this.data.faqList, newFaq]
+	// 	const newIsOpen = [ ...this.data.isOpen, false]
+		
+	// 	this.setData({
+	// 		faqList: newFaqList,
+	// 		isOpen: newIsOpen,
+	// 		newQuestion: "",
+	// 		newAnswer: "", 
+	// 		showAddForm: false
+	// 	});
+  //   wx.setStorageSync('faqData', newFaqList)
+  //   wx.showToast({
+  //     title: 'FAQ added',
+  //     duration: 1000
+  //   })
+	// },
+	addFaq(e){
+		const page = this
 		const newFaq = {
 			question: this.data.newQuestion,
 			answer: this.data.newAnswer
-		};
-
-		const newFaqList = [ ...this.data.faqList, newFaq]
-		const newIsOpen = [ ...this.data.isOpen, false]
-		
-		this.setData({
-			faqList: newFaqList,
-			isOpen: newIsOpen,
-			newQuestion: "",
-			newAnswer: "", 
-			showAddForm: false
-		});
-    wx.setStorageSync('faqData', newFaqList)
-    wx.showToast({
-      title: 'FAQ added',
-      duration: 1000
-    })
+		}
+		wx.request({
+			header: app.globalData.header,
+			url: `${app.globalData.baseURL}/faqs`,
+			method: 'POST',
+			data: {faq: newFaq},
+			success(res) {
+				page.getData()
+				page.toggleAddForm()
+			},
+			fail(error) {
+				console.log({error})
+			}
+		})
 	},
 
 	updateNewQuestion(e) {
@@ -59,23 +85,54 @@ Page({
 		this.setData({ newAnswer: e.detail.value })
 	},
 
+	// deleteFaq(e){
+	// 	const index = e.currentTarget.dataset.index
+  //   let newFaqList = [ ...this.data.faqList];
+  //   wx.showModal({
+  //     title: 'Note!',
+  //     content: 'Delete this FAQ?',
+  //     complete: (res) => {
+  //       if (res.cancel) {
+  //       }
+  //       if (res.confirm) {
+  //         newFaqList.splice(index, 1);
+  //         this.setData({ faqList: newFaqList });
+  //         wx.setStorageSync('faqData', this.data.faqList)
+  //         wx.showToast({
+  //           title: 'Deleted!',
+  //           duration: 1000
+  //         })
+  //       }
+  //     }
+  //   })
+	// },
+	
 	deleteFaq(e){
+		const page = this
 		const index = e.currentTarget.dataset.index
-    let newFaqList = [ ...this.data.faqList];
+		let id = page.data.faqList[index].id
+		console.log("delete id", id)
     wx.showModal({
-      title: 'Note!',
-      content: 'Delete this FAQ?',
+      title: 'Note',
+			content: 'Delete this FAQ?',
+			confirmText: "Yes",
+			cancelText: "No",
       complete: (res) => {
         if (res.cancel) {
         }
         if (res.confirm) {
-          newFaqList.splice(index, 1);
-          this.setData({ faqList: newFaqList });
-          wx.setStorageSync('faqData', this.data.faqList)
-          wx.showToast({
-            title: 'Deleted!',
-            duration: 1000
-          })
+					wx.request({
+						url: `${app.globalData.baseURL}/faqs/${id}`,
+						method: 'DELETE',
+						header: app.globalData.header,
+            success(res) {
+							console.log("deleted")
+							page.getData()
+						},
+						error() {
+							console.log({error})
+						}
+					}) 
         }
       }
     })
@@ -97,10 +154,7 @@ Page({
         selected: 1
       })
 		}
-    this.setData({
-			content: app.globalData.content, 
-			faqList: wx.getStorageSync('faqData')
-		})
+		this.getData()
 		const role = wx.getStorageSync('role')
 		if (role == 'admin') {
 			this.setData({
