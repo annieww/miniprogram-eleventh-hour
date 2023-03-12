@@ -1,15 +1,14 @@
 /* pages/user/profile.wxss */
-.main {
-	padding-left: 10rpx;
-	padding-right: 10rpx;
-  flex-direction: column;
-  padding-bottom: 175rpx;
+.page {
+	background-color: #C5EBE7;
 }
 
 .header {
-  height: 260rpx;
-  padding: 20rpx;
-	margin-bottom: 20rpx;
+	z-index: 1;
+	height: 400rpx;
+	position: sticky;
+	top: 0;
+	background-color: #C5EBE7;
 }
 
 .header-box {
@@ -17,21 +16,8 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: 260rpx;
-  border: 1px solid #FD5200;
-	border-radius: 20rpx;
 	margin-bottom: 40rpx;
-}
-
-.authorize-box {
-	justify-content: center;
-}
-
-.authorize-btn {
-	background-color: white;
-	border: 1px solid grey;
-	border-radius: 40rpx;
-	color: grey;
+	padding-top: 30rpx;
 }
 
 .user-box {
@@ -42,25 +28,23 @@
 }
 
 .avatar {
-  width: 108rpx;
-  height: 108rpx;
+  width: 160rpx;
+  height: 160rpx;
   border-radius: 50%;
-  /* display: inline-block;
-	overflow: hidden; */
-	border: 1rpx solid grey;
+  display: inline-block;
+	overflow: hidden;
+	border: 1rpx solid #343a40;
+	background-color: white;
 }
 
-.input-username {
-	text-align: center;
-}
-
-.user-name {
-  font-size: 30rpx;
+.language-text {
+	text-decoration: underline;
+	color:#343a40;
 }
 
 .contact-box {
 	height: 100rpx;
-	margin-top: 50rpx;
+	margin-top: 20rpx;
 	margin-bottom: 50rpx;
 	display: flex;
 	align-items: center;
@@ -69,7 +53,7 @@
 .contact-btn {
 	display: flex;
 	justify-content: center;
-	background-color:#FD5200;
+	background-color: #343a40;
 	color: white;
 	border-radius: 40rpx;
 }
@@ -81,15 +65,30 @@
 	margin-right: 8rpx;
 }
 
+.main {
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	flex-direction: column;
+	padding-top: 20rpx;
+	padding-bottom: 175rpx;
+	border-radius: 30rpx;
+	border: 1px solid #808080;
+	z-index: 3;
+	min-height: 60vh;
+	position: relative;
+	background-color: white;
+}
+
 .tabs-box {
   height: 100rpx;
-  display: flex;
-  justify-content: start;
-  align-items: start;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 40rpx;
+	padding-left: 40rpx;
 }
 
 .request-tab {
-	width: 330rpx;
   display: flex;
   flex-direction: column;
 	justify-content: center;
@@ -98,38 +97,31 @@
 
 .highlight{
   margin-bottom: 15rpx;
-  padding: 10rpx;
-  background-color: #eeccbc;
-  height: 5rpx;
-  width: 220rpx;
+	padding: 6rpx;
+	background-color: #00B5A3;
+  width: 70rpx;
   border-radius: 20rpx;
 }
 
 .tab-title{
 	font-size: 34rpx;
-  font-weight: bold;
+	font-weight: bold;
+	/* color:#343a40; */
 }
 
 .requests-box {
-	padding: 20rpx;
-}
-
-.card {
-  z-index: 1;
-  position: relative;
+	padding: 30rpx;
+	padding-left: 40rpx;
+	padding-right: 40rpx;
 }
 
 .delete-request {
 	position: absolute;
-	left: 580rpx;
-	top: 20rpx;
+	left: 566rpx;
+	top: 26rpx;
   z-index: 2;
   height: 52rpx;
   width: 60rpx;
-  padding: 10rpx;
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 
 .empty-box {
@@ -144,15 +136,60 @@
 	text-align: center;
   padding: 15rpx;
   margin: 15rpx;
-  background-color: #eeccbc;
+  background-color: #C5EBE7;
 	border-radius: 20rpx;
 	width: 500rpx;
+	color: #343a40;
 }
 
 .pet-length {
-  color: #ebaf93;
+	color:#00B5A3;
 }
 
 .max-length {
-	color: grey;
+	/* color: #343a40; */
+}
+
+.pet-card {
+  z-index: 1;
+	position: relative;
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.1);
+	border-radius: 40rpx;
+	display: flex;
+	justify-content: flex-start;
+	background-color: white;
+}
+
+.pet-title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 30rpx;
+	width: 490rpx;
+}
+
+.pet-avatar {
+	width: 200rpx;
+  height: 200rpx;
+	border-radius: 40rpx;
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.1);
+}
+
+.name-box {
+	margin-left: 20rpx;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.pet-name {
+	font-size: 35rpx;
+	font-weight: 500;
+	color: #343a40;
+}
+
+.pet-gender-icon {
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 10rpx;
 }

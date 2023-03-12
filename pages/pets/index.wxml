@@ -9,13 +9,15 @@
         <view class="ehr-heading">Eleventh Hour Rescues 动物救助</view>
       </view>
     </view>
-    <view class="divider">
+    <!-- <view class="divider">
       <view class="div-line"></view> 
-    </view>
+    </view> -->
     <view class="content-box">
+			<image src="/images/quote.png" class="quote"></image>
       <view class="header-content">
         <view class="ehr-content">{{content.about1}}</view>
       </view>
+			<image src="/images/quote-two.png" class="quote-two"></image>
       <!-- <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view> -->
     </view>
   </view>
@@ -36,10 +38,10 @@
       </block>
     </swiper>
   </view> -->
-
+<!-- 
   <view class="divider">
     <view class="div-line"></view> 
-  </view>
+  </view> -->
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
     <view class="filter-bar-item" bindtap="showMenu">
@@ -59,9 +61,6 @@
       cancelText="Cancel"
     />
     
-  <!-- <view class="divider">
-    <view class="div-line"></view> 
-  </view> -->
   <!-- 4.pet list -->
 	<view wx:if="{{pets == 0}}" class="empty-box">
 			<view class="empty-message">{{content.empty_pet}}</view>

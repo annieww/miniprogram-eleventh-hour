@@ -7,25 +7,43 @@
   width: 100vw;
   height: 700rpx;
   top: 0;
-  background-color: rgb(177, 171, 171);
+	background-color: rgb(177, 171, 171);
 }
 
-.favorite-icon {
-  position: absolute;
-  top: 30rpx;
-  right: 40rpx;
-  z-index: 2;
+.favorite-share-box {
+	display: flex;
 }
 
-.icon {
+.share-icon {
+	width: 70rpx;
 	height: 70rpx;
-  width: 70rpx;
+}
+
+.share-box {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.heart-icon {
+	width: 70rpx;
+	height: 70rpx;
+	margin-right: 10rpx;
+}
+
+.need-box {
+	display: flex;
+}
+
+.need-icon {
+	height: 70rpx;
+	width: 70rpx;
+	margin-left: 6rpx;
 }
 
 .pet-avt {
   height: 700rpx;
   object-fit: cover;
-  width: 100%;
+	width: 100%;
 }
 
 /* pet card */
@@ -35,9 +53,8 @@
 }
 
 .pet-name {
-  font-size: 40rpx;
+  font-size: 60rpx;
   font-weight: bold;
-  color: black;
   margin-bottom: 40rpx;
 }
 
@@ -46,11 +63,14 @@
 	padding-bottom: 30rpx;
   display: flex;
   justify-content: space-evenly;
-  background-color: #eeeeee;
+	background-color: #eeeeee;
+	border-radius: 30rpx;
+	color: #343a40;
 }
 
 .info-text {
 	font-weight: 300;
+	color:#343a40;
 }
 
 .yes-no {
@@ -73,19 +93,26 @@
 .info-title {
 	font-weight: 500;
 	margin-top: 30px;
+	color: #343a40;
+}
+
+.pet-name-box {
+	display: flex;
+	justify-content: space-between;
 }
 
 .special-need {
 	font-size: 28rpx;
 	font-weight: 400;
-	color: #FD5200;
+	background-color: #fb6f92;
 	margin-top: 8rpx;
-	border: 1px solid #FD5200;
+	color:white;
 	width: 200rpx;
-	border-radius: 15rpx;
-	padding: 8rpx;
+	border-radius: 20rpx;
+	padding: 4rpx;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .gender-box {
@@ -100,47 +127,98 @@
   margin-left: 6rpx;
 }
 
-.buttons {
+.buttons-box {
   display: flex;
   margin: 20rpx;
-  gap: 30rpx;
+	gap: 30rpx;
 }
 
 .bottom-container {
   z-index: 3;
   position: relative;
-  /* border: 1px solid black; */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
-  margin-top: -40rpx;
+	margin-top: -40rpx;
   background-color: white;
   padding: 20rpx;
-  min-height: 60vh;
+	/* min-height: 60vh; */
+	min-height: 70vh;
+}
+
+.mask {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: rgba(0, 0, 0, 0.2); */
+	z-index: 9999;
+}
+
+.window {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20rpx;
+	width: 75%;
+	height: 25%;
+	border: 1px solid #808080;
+	background-color: white;
+	position: relative;
+	border-radius: 40rpx;
+	box-shadow: 0 0 15rpx rgba(0,0,0,0.2);
+}
+
+.btn-understand {
+	background-color: white;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 50rpx;
+	font-size: 16px;
+}
+
+.dog-icon {
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.window-content {
+	padding: 5rpx;
+	text-align: center;
 }
 
 .box {
   display: flex;
 }
-	
+
+.contact-box {
+	display: flex;
+	justify-content: center;
+}
+
 .btn-contact {
 	background-color:#FD5200;
 	color: white;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.btn-share {
-	background-color: white;
-	color: grey;
-	border: 1px solid grey;
-	border-radius: 40rpx;
-}
-
-.btn-sent {
-	background-color: white;
-	color: #FD5200;
-	border: 1px solid #FD5200;
-  border-radius: 40rpx;
+.msg-icon {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 4rpx;
+	margin-right: 8rpx;
 }
 
 .btn-delete {
@@ -148,10 +226,16 @@
 	color: grey;
 	border: 1px solid grey;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .btn-edit {
 	background-color: #00B5A3;
 	color: white;
 	border-radius: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

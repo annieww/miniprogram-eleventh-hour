@@ -1,35 +1,33 @@
 <!--pages/user/profile.wxml-->
-<view class="main">
 
+<view class="page">
   <!-- HEADER -->
   <view class="header">
     <view class="header-box">
-			<view wx:if='{{!hasUserInfo}}' class="authorize-box">
-				<button class="authorize-btn" open-type="chooseAvatar" bind:chooseavatar="bindchooseavatar">{{content.authorize_button}}</button>
+			<view class="user-box">
+          <view><image class="avatar" mode="aspectFill" src="/images/pet-logo.png"></image></view>
+					<view bindtap="changeLanguage" class="language-text">{{content.change}}</view>
 			</view>
-			<view wx:if='{{hasUserInfo}}' class="user-box">
-          <view><image class="avatar" mode="aspectFill" src="{{avatarUrl}}"></image></view>
-					<view class="user-name">{{nickName}}</view>
-					<view class="input-username"><input type="nickname" class="weui-input" placeholder="input nickname"/></view>
+
+			<!-- CONTACT CUSTOMER SERVICE -->
+			<view class="contact-box">
+				<button class="contact-btn" open-type="contact" bindcontact="handleContact">
+				<image class="msg-icon" src="/images/message_fill.png"></image>
+			{{content.contact_button}}
+				</button>	
 			</view>
-  	</view>
+		</view>
+
   </view>
 
-	<!-- CONTACT CUSTOMER SERVICE -->
-	<view class="contact-box">
-		<button class="contact-btn" open-type="contact" bindcontact="handleContact">
-		<image class="msg-icon" src="/images/message_fill.png"></image>
-		{{content.contact_button}}
-		</button>	
-	</view>
-
+<view class="main">
   <view class="tabs-box">
     <!-- REQUESTS TAB -->
     <view class="request-tab">
-      <view class="tab-title">
-        {{content.text12}} <text class="pet-length">{{requested_pets.length}}</text><text class="max-length">/10</text></view>
+      <view class="tab-title">{{content.text12}}</view>
       <view class="highlight"></view>
     </view>
+		<view><text class="pet-length">{{requested_pets.length}}</text><text class="max-length">/10</text></view>
   </view>
 
   <!-- MY REQUESTS -->
@@ -38,15 +36,17 @@
 	</view>
 
 	<view class="requests-box" wx:for="{{requested_pets}}" wx:key="*this">
-		<wux-wing-blank size="default" class="card">
-      <view class="delete-request" bindtap="delete" data-index="{{index}}"><wux-icon size="22" color="#d81e06" type="ios-close-circle-outline"/></view>
-      <wux-card
-        bindtap="goToPet" class="pet-title" data-id="{{item.id}}"
-        title="{{item.name}}" 
-        thumb="{{item.image_url}}"
-        thumb-style="border-radius: 50%;">
-        <view slot="body">{{item.description}}</view>
-			</wux-card>
-		</wux-wing-blank>
+		<view class="pet-card">
+			<view bindtap="delete" data-index="{{index}}" class="delete-request"><wux-icon size="22" 
+				color="#444" type="ios-close-circle"/></view>
+			<view bindtap="goToPet" class="pet-title" data-id="{{item.id}}">
+				<image class="pet-avatar" src="{{item.image_url}}" mode="aspectFill"></image>
+				<view class="name-box">
+					<view class="pet-name">{{item.name}}</view>
+					<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+				</view>
+			</view>
+		</view>
 	</view>
+</view>
 </view>

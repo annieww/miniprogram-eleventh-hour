@@ -9,7 +9,7 @@ App({
     userInfo: '',
 		header: null,
 		user: {},
-		// baseURL: "http://mp-ehr.petiteapp.cloud/api/v1", 
+		// baseURL: "https://mp-ehr.petiteapp.cloud/api/v1", 
 		baseURL: "https://localhost:3000/api/v1",
 		language: wx.getStorageSync('language'),
 		role: ''
@@ -19,7 +19,8 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    const app = this
+		const app = this
+		let isLogin = false
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -30,18 +31,26 @@ App({
           success(loginRes) {
 						app.globalData.header = loginRes.data.headers
 						app.globalData.user = loginRes.data.user
+						app.globalData.userId = loginRes.data.user.id
 						let role;
 						console.log('loginRes.data -> ', loginRes.data)
 						if(loginRes.data.user.role === 'admin'){
-							role = "admin";
-							wx.setStorageSync('role', "admin")
+							role = 'admin';
+							wx.setStorageSync('role', 'admin')
+						} else if(loginRes.data.user.role === 'user') {
+							role = 'user';
+							wx.setStorageSync('role', 'user')
 						} else {
-							role = "user";
-							wx.setStorageSync('role', "user")
-						}
+							role = 'user';
+							wx.setStorageSync('role', 'user')
+						} 
 						app.globalData.role = role
+						console.log('app.globalData.role ->', app.globalData.role)
 						event.emit('loginFinished') }
+						
 				})
+				isLogin = true
+				console.log('from app.js, isLogin ->', isLogin)
       }
     }),
 		this.updateContent()

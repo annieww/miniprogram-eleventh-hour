@@ -188,7 +188,7 @@ Page({
                 wx.navigateTo({
                   url: `/pages/pets/show?id=${page.data.pet.id}`,
                 })
-              }, 1000)
+							}, 1000)
             }
           })
         }
@@ -220,7 +220,7 @@ Page({
                   wx.navigateTo({
                     url: `/pages/pets/show?id=${res.data.pet.id}`,
                   }, 1000)
-                })
+								})
               }
             })  
             // Calling IMG UPLOAD FUNCTION

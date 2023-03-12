@@ -3,31 +3,6 @@ const app = getApp()
 
 Page({
   data: {
-    // pets: [
-    //   {
-    //     // id: 1,
-    //     name: "Dobby",
-    //     species: "Dog",
-    //     gender: "Male",
-    //     age: "1 year",
-    //     tag: "foster",
-    //     vaccination_status: "fully vaccinated",
-    //     neutered: "true",
-    //     image_url: "https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-    //   },
-    //   {
-    //     // id: 2,
-    //     name: "Tiger",
-    //     species: 'Cat',
-    //     gender: "Female",
-    //     age: "6 months",
-    //     tag: "adopt",
-    //     vaccination_status: "fully vaccinated",
-    //     neutered: "false",
-    //     image_url: "https://images.unsplash.com/photo-1553545999-8621dce8d75e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
-    //   }
-    // ],
-
     items: [
       {
         type: 'filter',
@@ -134,8 +109,7 @@ Page({
     this.setData({
 			content: app.globalData.content
 		})
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()){
+    if (typeof this.getTabBar === 'function' && this.getTabBar()){
 			console.log('getTabBar-->', this.getTabBar())
       this.getTabBar().setData({
 				selected: 0 
@@ -224,13 +198,6 @@ Page({
     }
   },
 
-  // selectLanguage(e) {
-  //   if (this.data.tag !== e.currentTarget.dataset.tag) {
-  //     this.setData({
-  //       language: e.currentTarget.dataset.tag
-  //     })
-  //   }
-  // },
   changeLanguage() {
     app.changeLanguage()
     wx.reLaunch({

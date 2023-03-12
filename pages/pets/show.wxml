@@ -3,18 +3,37 @@
   <!-- 1.pet image -->
   <view class="pet-img">
     <image class="pet-avt" mode="aspectFill" src="{{pet.image_url}}"></image>
-		<view class="favorite-icon" wx:if="{{!isAdmin}}">
-      <image class="icon" wx:if="{{!isBooker}}"  bindtap="toggleBooking" src="/images/heart-empty.png"/>
-			<image class="icon" wx:if="{{isBooker}}" bindtap="toggleBooking" src="/images/heart-full.png"/>
-    </view>
   </view>
   
+	<view class="mask" catchtouchmove="preventTouchMove" data-target="self" hidden="{{!showWindow}}" bindtap="hideWindow">
+		<view class="window">
+			<view><image class="dog-icon" src="/images/paw-icon.png"></image></view>
+			<view class="window-content">
+				{{content.window}}
+			</view>
+			<button class="btn-understand" bindtap="hideWindow" data-target="self" >{{content.understand}}</button>
+		</view>
+	</view>
   <!-- 2.pet info -->
-  <view class="bottom-container">
+  <view class="bottom-container">		
     <view class="pet-card">
-        <view class="pet-name"> {{pet.name}}
-					<view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">{{content.special}}</view>
+			<view class="pet-name-box">
+			  <view class="pet-name"> {{pet.name}}
+					<view bindtap="clickNeed" class="need-box" wx:if="{{ specialNeedDisplay == 'yes' }}">
+						<view class="special-need">{{content.special}}</view>
+						<image class="need-icon" src="/images/medicine.png"/>
+					</view>
 				</view>
+
+				<view class="favorite-share-box">
+					<view class="favorite-box" wx:if="{{!isAdmin}}">
+						<image class="heart-icon" wx:if="{{!isBooker}}"  bindtap="toggleBooking" src="/images/heart-empty.png"/>
+						<image class="heart-icon" wx:if="{{isBooker}}" bindtap="toggleBooking" src="/images/heart-full.png"/>
+    			</view>
+					<button class="share-box" style="background-color: transparent; margin: 0; padding: 0; width: 45px; height: 45px;" open-type="share"><image class="share-icon" src="/images/share.png"></image></button>
+				</view>
+			</view>
+
         <view class="pet-info">
           <view>
             <view>{{content.age}}<text class="info-text">{{pet.age}}</text></view>
@@ -45,19 +64,16 @@
 			<view class="more-info">
 				<text class="info-title">{{content.description}}</text>
 				<text class="info-text">{{pet.description}}</text>
-				<!-- <view class="special-need" wx:if="{{ specialNeedDisplay == 'yes' }}">special need</view> -->
 			</view>
-
   	</view>
   
   <!-- 4.Buttons -->
-    <view class="buttons" wx:if="{{!isAdmin}}">
-			<button open-type="share" class="btn-share">{{content.share_btn}}</button>
-			<button class="btn-contact" open-type="contact" bindcontact="handleContact">
-			{{content.contact_button}}
-			</button>	
+    <view class="contact-box" wx:if="{{!isAdmin}}">
+			<button class="btn-contact" style="width:300px; height:45px; padding: 10px;" open-type="contact" bindcontact="handleContact">
+				<image class="msg-icon" src="/images/message_fill.png"></image>{{content.contact_button}}</button>	
     </view>
-		<view class="buttons" wx:if="{{isAdmin}}">
+
+		<view class="buttons-box" wx:if="{{isAdmin}}">
 			<button class="btn-delete" bindtap="delete">Delete</button>
       <button class="btn-edit" bindtap="edit">Edit</button>
     </view>

@@ -29,7 +29,10 @@ let zh = {
 	medium: '中型',
 	large: '大型',
   special: '特殊需求',
-  sent_msg: '已收藏'
+	sent_msg: '已收藏',
+	change: 'English',
+	window: '这个宝宝需要您的特殊照顾',
+	understand: '明白了'
 }
 
 module.exports = {

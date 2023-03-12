@@ -12,7 +12,8 @@ Page({
 		userName: '',
     userWechatId: '',
     isBooker: false,
-    bookingId: null,
+		bookingId: null,
+		showWindow: false,
   },
 
   onLoad(options) {
@@ -86,6 +87,22 @@ Page({
 		}
 		console.log("user info -> ", userInfo)
   },
+
+	clickNeed(e) {
+		this.setData({
+			showWindow: true,
+		})
+	},
+
+	hideWindow(e) {
+		console.log('e.target.dataset', e.target.dataset)
+		if (e.target.dataset.target == "self")
+			this.setData({
+				showWindow: false,
+			})
+	},
+
+	preventTouchMove(){},
 
 	toggleBooking(e) {
 		let page = this
