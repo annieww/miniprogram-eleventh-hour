@@ -14,6 +14,17 @@
 	display: flex;
 }
 
+.favorite-box {
+	margin-right: 10rpx;
+}
+
+.favorite-number {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -10rpx;
+}
+
 .share-icon {
 	width: 70rpx;
 	height: 70rpx;
@@ -27,16 +38,17 @@
 .heart-icon {
 	width: 70rpx;
 	height: 70rpx;
-	margin-right: 10rpx;
 }
 
 .need-box {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .need-icon {
-	height: 70rpx;
-	width: 70rpx;
+	height: 42rpx;
+	width: 42rpx;
 	margin-left: 6rpx;
 }
 
@@ -55,7 +67,6 @@
 .pet-name {
   font-size: 60rpx;
   font-weight: bold;
-  margin-bottom: 40rpx;
 }
 
 .pet-info {
@@ -99,13 +110,13 @@
 .pet-name-box {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 25rpx;
 }
 
 .special-need {
 	font-size: 28rpx;
 	font-weight: 400;
 	background-color: #fb6f92;
-	margin-top: 8rpx;
 	color:white;
 	width: 200rpx;
 	border-radius: 20rpx;

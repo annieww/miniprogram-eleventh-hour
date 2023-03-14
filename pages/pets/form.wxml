@@ -53,7 +53,18 @@
           </wux-popup-select>
         </wux-cell-group>
     <!-- Neutered & Vaccinated & Special need-->
-      <wux-cell-group title="Health Related Information">
+      <wux-cell-group title="Other Information">
+				<wux-cell name="adoptable">
+          <text>Adopt-Only</text>
+          <wux-switch
+            name="adoptable"
+            value="{{ formData.adoptable}}"
+            bindchange="inputAdoptOnly"
+            slot="footer"
+          > 
+          </wux-switch>
+        </wux-cell>
+				
         <wux-cell name="neutered">
           <text>Neutered</text>
           <wux-switch
@@ -64,8 +75,9 @@
           > 
           </wux-switch>
         </wux-cell>
+
         <wux-cell name="vaccinated">
-          <text>First Vaccination</text>
+          <text>Vaccinated</text>
           <wux-switch
             name="vaccinated"
             value="{{ formData.vaccinated}}"
@@ -91,7 +103,7 @@
         <image src="{{src}}" style="width: 156rpx; height: 156rpx;" mode="aspectFill"/></view>
       </wux-cell-group>
     <!-- Description -->
-      <wux-cell-group title="Additional Information">
+      <wux-cell-group title="Description">
         <wux-cell hover-class="none">
           <wux-textarea
             hasCount

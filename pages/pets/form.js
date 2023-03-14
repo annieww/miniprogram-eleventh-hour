@@ -10,7 +10,7 @@ Page({
     neutered: false,
     vaccinated: false,
     special_need: false,
-    adoptable: true,
+    adoptable: false, // same as adopt-only
     options1: ['female', 'male'],
     options2: ['dog', 'cat', 'other'],
     options3: ['mini', 'small', 'medium', 'large'],
@@ -105,8 +105,11 @@ Page({
       formData 
     })
 	},
+	inputAdoptOnly(e){
+		this.onChange('adoptable', e)
+	},
   inputNeutered(e) {
-    this.onChange('neutered', e)
+		this.onChange('neutered', e)
   },
   inputVaccination(e) {
     this.onChange('vaccinated', e)
@@ -161,9 +164,9 @@ Page({
 		console.log('header:', app.globalData.header)
     let pet = page.data.formData
     page.setData({pet})
-    if (pet.adoptable === undefined || pet.adoptable === null) {
-      pet.adoptable = true;
-    }
+    // if (pet.adoptable === undefined || pet.adoptable === null) {
+    //   pet.adoptable = true;
+    // }
     console.log("this is the data to send back, page.data.pet -->", page.data.pet)
 		console.log('page.data ->', page.data)
 		 // UPDATE FUNCTION

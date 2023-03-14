@@ -17,13 +17,13 @@ let en = {
 	empty_user: 'You haven\'t received any request yet',
 	age: 'Age: ',
 	gender: 'Gender: ',
-	status: 'Status: ',
+	status: 'Adopt or Foster: ',
 	neutered: 'Neutered: ',
 	vaccinated: 'Vaccinated: ',
 	size: 'Size: ',
 	description: 'Description',
-	available: 'available',
-	unavailable: 'adopted',
+	both: 'both',
+	adopt_only: 'adopt only',
 	mini: 'mini',
 	small: 'small',
 	medium: 'medium',
@@ -31,7 +31,7 @@ let en = {
   special: 'special need',
 	sent_msg: 'Favorited',
 	change: '中文',
-	window: 'This animal has health issues and needs special care',
+	window: 'This animal needs special care',
 	understand: 'I understand'
 }
 module.exports = {

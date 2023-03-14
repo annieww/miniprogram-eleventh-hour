@@ -47,7 +47,7 @@
 		}
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"compileHotReLoad": true
 	},
 	"projectname": "miniprogram-eleventh-hour",

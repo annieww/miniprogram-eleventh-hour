@@ -145,11 +145,11 @@
   box-sizing: border-box
 }
 .wux-filterbar__pop {
-  height: 65%;
+  height: 85%;
   width: 90%;
   overflow: hidden;
   position: fixed;
-  top: 10%;
+  top: 0%;
   left: 10%;
   z-index: 1010;
   background-color: #fff;

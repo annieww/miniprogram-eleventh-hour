@@ -14,6 +14,7 @@
 			<button class="btn-understand" bindtap="hideWindow" data-target="self" >{{content.understand}}</button>
 		</view>
 	</view>
+
   <!-- 2.pet info -->
   <view class="bottom-container">		
     <view class="pet-card">
@@ -21,7 +22,7 @@
 			  <view class="pet-name"> {{pet.name}}
 					<view bindtap="clickNeed" class="need-box" wx:if="{{ specialNeedDisplay == 'yes' }}">
 						<view class="special-need">{{content.special}}</view>
-						<image class="need-icon" src="/images/medicine.png"/>
+						<image class="need-icon" src="/images/info-fill.png"/>
 					</view>
 				</view>
 
@@ -30,6 +31,14 @@
 						<image class="heart-icon" wx:if="{{!isBooker}}"  bindtap="toggleBooking" src="/images/heart-empty.png"/>
 						<image class="heart-icon" wx:if="{{isBooker}}" bindtap="toggleBooking" src="/images/heart-full.png"/>
     			</view>
+
+					<view class="favorite-box" wx:if="{{isAdmin}}">
+						<image class="heart-icon" src="/images/heart-empty.png"/>
+						<view class="favorite-number">
+						{{favorites.length}}
+						</view>
+					</view>
+
 					<button class="share-box" style="background-color: transparent; margin: 0; padding: 0; width: 45px; height: 45px;" open-type="share"><image class="share-icon" src="/images/share.png"></image></button>
 				</view>
 			</view>
@@ -40,7 +49,7 @@
             <view class="gender-box">
 							{{content.gender}}<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 						</view>
-            <view>{{content.status}}<text wx:if="{{adoptionStatus == 'available'}}" class="info-text">{{content.available}}</text><text wx:if="{{adoptionStatus == 'not available'}}" class="info-text">{{content.unavailable}}</text>
+            <view>{{content.status}}<text wx:if="{{adoptOnly == 'false'}}" class="info-text">{{content.both}}</text><text wx:if="{{adoptOnly == 'true'}}" class="info-text">{{content.adopt_only}}</text>
 						</view>
           </view>
           <view>

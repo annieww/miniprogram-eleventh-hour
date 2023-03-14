@@ -217,25 +217,24 @@ page {
 .pet-info {
   color: black;
   margin: 18rpx;
-  display: flex;
-  flex-direction: column;
-  height: 140rpx;
-  justify-content: space-between;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
   box-sizing: border-box;
-  font-size: 30rpx;
+	font-size: 30rpx;
 }
 
 .pet-gender-icon {
   width: 35rpx;
   height: 35rpx;
-  margin-top: 6rpx;
   margin-left: 10rpx;
 }
 
 .pet-name {
   display: flex;
-  justify-content: start;
-  font-weight: 600;
+	justify-content: start;
+	align-items: center;
+	font-weight: 600;
 }
 
 .name-box {

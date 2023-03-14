@@ -66,24 +66,64 @@ Page({
               },
               {
                 label: 'Mini',
-                value: 'Mini'
+                value: 'mini'
               },
               {
                 label: 'Small',
-                value: 'Small'
+                value: 'small'
               },
               {
                 label: 'Medium',
-                value: 'Medium',
+                value: 'medium',
               },
               {
                 label: 'Large',
-                value: 'Large'
+                value: 'large'
+              },
+            ],
+					},
+					{
+            type: 'radio',
+            label: 'Vaccinated',
+            value: 'vaccinated',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true,
+              },
+              {
+                label: 'Vaccinated',
+                value: 'true',
+              },
+              {
+                label: 'Unvaccinated',
+                value: 'false',
               },
             ],
           },
+					{
+            type: 'radio',
+            label: 'Adopt or Foster',
+            value: 'adoptable',
+            children: [
+              {
+                label: 'All',
+                value: 'all',
+                checked: true,
+              },
+              {
+                label: 'Open to Both',
+                value: 'false',
+              },
+              {
+                label: 'Adopt-Only',
+                value: 'true',
+              },
+            ],
+          }
         ],
-        groups: ['001', '002', '003'],
+        groups: ['001', '002', '003', '004', '005'],
       },
 		], 
   },
@@ -121,7 +161,7 @@ Page({
     } else {
       // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.getData)
-    }
+		}
   },
 
   getData(){
@@ -134,9 +174,24 @@ Page({
         page.setData({
           pets: res.data,
 					content: app.globalData.content,
+					bookings: res.data.my_booking,
 				})
-      }
-    })
+			}
+		})
+
+		// wx.request({
+		// 	header: app.globalData.header,
+		// 	url: `${app.globalData.baseURL}/pets/${id}/bookings`,
+		// 	success(res) {
+		// 		if (res.statusCode === 200) {
+		// 			const favorites = res.data.bookings_count;
+
+		// 			page.setData({
+		// 				favorites: favorites,
+		// 			})
+		// 		}
+		// 	}
+		// })
   },
 
   onChange(e) {
@@ -164,7 +219,17 @@ Page({
             .filter((n) => n.checked)
             .map((n) => n.value)
             .join(',')
-          }
+          } else if (n.value === 'vaccinated') {
+            params.vaccinated = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } else if (n.value === 'adoptable') {
+            params.adoptable = n.children
+            .filter((n) => n.checked)
+            .map((n) => n.value)
+            .join(',')
+          } 
         })
     })
     this.getRepos(params)

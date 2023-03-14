@@ -6,7 +6,7 @@ Page({
 		neuteredDisplay: '',
 		vaccinatedDisplay:'',
 		specialNeedDisplay: '',
-		adoptionStatus: '', 
+		adoptOnly: '', 
 		current_user: {}, 
 		userImage: '',
 		userName: '',
@@ -14,6 +14,7 @@ Page({
     isBooker: false,
 		bookingId: null,
 		showWindow: false,
+		favorites: '',
   },
 
   onLoad(options) {
@@ -45,13 +46,13 @@ Page({
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
-					let adoptionStatus = pet.adoptable? 'available': 'not available';
+					let adoptOnly = pet.adoptable? 'true': 'false';
           page.setData({
 						pet: pet,
 						neuteredDisplay: neuteredDisplay,
 						vaccinatedDisplay: vaccinatedDisplay,
 						specialNeedDisplay: specialNeedDisplay,
-						adoptionStatus: adoptionStatus,
+						adoptOnly: adoptOnly,
 						current_user: current_user, 
 						isBooker: isBooker,
 						isAdmin: isAdmin,
@@ -62,7 +63,22 @@ Page({
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
       }
-    })
+		})
+		
+		wx.request({
+			header: app.globalData.header,
+			url: `${app.globalData.baseURL}/pets/${id}/bookings`,
+			success(res) {
+				if (res.statusCode === 200) {
+					const favorites = res.data
+					page.setData({
+						favorites: favorites,
+					})
+				}
+				console.log('favorites->', res.data)
+			}
+			
+		})
   },
 
   onShow() {
@@ -75,7 +91,7 @@ Page({
 			wx.event.on('loginFinished', this, this.getData)
     }
 	},
-	
+
 	handleGetUserInfo(e) {
 		let userInfo = e.detail.userInfo
 		if (userInfo) {
@@ -133,14 +149,10 @@ Page({
                     title: "Unfavorited :(",
                     duration: 1000
                   })  
-                  // wx.redirectTo({
-                  //   url: '/pages/pets/index',
-                  // })
-
                 } else {
                   console.log("From show.js: status code is", res.statusCode)
                   wx.showToast({
-                    title: 'Try again!',
+                    title: 'You can favorite a maximum of 10 pets!',
                   })
                 }
               }

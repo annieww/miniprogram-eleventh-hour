@@ -43,7 +43,7 @@
 				<image class="pet-avatar" src="{{item.image_url}}" mode="aspectFill"></image>
 				<view class="name-box">
 					<view class="pet-name">{{item.name}}</view>
-					<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
+					<image class="pet-gender-icon" src="{{ item.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 				</view>
 			</view>
 		</view>
