@@ -68,7 +68,7 @@ page {
   padding: 15rpx;
   margin: 15rpx;
   background-color: #C5EBE7;
-  border-radius: 20rpx;
+  border-radius: 40rpx 40rpx 0 40rpx;
 }
 
 .ehr-content {

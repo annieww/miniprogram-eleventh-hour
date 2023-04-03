@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "wux-filterbar": "../../dist/filterbar/index"
+		"wux-filterbar": "../../dist/filterbar/index"
   }
 }

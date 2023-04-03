@@ -1,7 +1,7 @@
 <view class="page-content">
 	<view class="image-box"><image class="header-img" src="/images/bluedog.png"></image></view>
   <view class="page-title">{{content.about_title}}</view>
-	<view class="about">{{content.about2}}</view>
+	<view class="about"><text user-select="true">{{content.about2}}</text></view>
 
 	<wux-sticky-item class="faq-container">
     <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
@@ -10,13 +10,13 @@
 				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" > 
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
-					<view class="question">{{item.question}}</view>
+					<view class="question"><text user-select="true">{{item.question}}</text></view>
 				</view>
 				<view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
 					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
 				</view>
 			</view>
-			<view class="answer" wx:if="{{isOpen[index]}}">{{item.answer}}</view>
+			<view class="answer" wx:if="{{isOpen[index]}}"><text user-select="true">{{item.answer}}</text></view>
   		</view>
   </wux-sticky-item>
 	

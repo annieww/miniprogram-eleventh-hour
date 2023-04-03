@@ -74,7 +74,7 @@
 				<text class="info-title">{{content.description}}</text>
 				<view class="description-box">
 					<view class="text-line"></view>
-					<text class="info-text">{{pet.description}}</text>
+					<text class="info-text" user-select="true">{{pet.description}}</text>
 				</view>
 			</view>
   	</view>

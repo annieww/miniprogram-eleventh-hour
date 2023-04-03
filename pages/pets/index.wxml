@@ -15,7 +15,7 @@
     <view class="content-box">
 			<image src="/images/quote.png" class="quote"></image>
       <view class="header-content">
-        <view class="ehr-content">{{content.about1}}</view>
+        <view class="ehr-content"><text user-select="true">{{content.about1}}</text></view>
       </view>
 			<image src="/images/quote-two.png" class="quote-two"></image>
       <!-- <view bindtap="goToFAQ" class="more-link">{{content.text3}}</view> -->

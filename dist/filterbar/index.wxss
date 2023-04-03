@@ -187,19 +187,20 @@
 	padding: 0rpx 30rpx;
 }
 .wux-filterbar__panel:last-child {
-  padding-bottom: 40rpx
+  padding-bottom: 12rpx
 }
 .wux-filterbar__panel-hd {
   padding-top: 30rpx;
   padding-bottom: 5rpx;
   color: #404040;
   font-size: 30rpx;
-  overflow-x: hidden;
+	overflow-x: hidden;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
 	align-items: center;
 	font-weight: 400;
+	margin-top: 5rpx;
 }
 .wux-filterbar__panel-selected {
   width: auto;
@@ -218,7 +219,8 @@
 .wux-filterbar__groups {
   overflow: hidden;
   font-size: 26rpx;
-  margin: 0 -10rpx
+	margin: 0 -10rpx;
+	padding-bottom: 12rpx;
 }
 .wux-filterbar__group {
   width: auto;
@@ -277,7 +279,6 @@
   bottom: 0;
   width: 30rpx;
   height: 30rpx;
-  /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTOQ4POQ5PPrV1f///+dGSO17ff3u7/Kio+lcXvW4uZrptW4AAAACdFJOUwB/timhlQAAAH1JREFUGNNdzkEOQDAQheG6Qo/whNjjBBWs9QbiCFzExl4cFG1HzOvuz5fpjDHqZTqNJQYxiEEMYhCDGMQgBjGIQQxiEOPPRf114NxJx+lrkw5cDXvqyEsv/z1cT2U3p365aY9R9r3T3q1n6ri7cXJPPM23qeVyudfq1gxi3DyiIhPh30TpAAAAAElFTkSuQmCC) no-repeat; */
   background-size: 30rpx auto;
   /* overflow: hidden; */
   z-index: 1
