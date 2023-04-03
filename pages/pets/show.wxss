@@ -23,6 +23,7 @@
 	justify-content: center;
 	align-items: center;
 	margin-top: -10rpx;
+	color: grey;
 }
 
 .share-icon {
@@ -90,9 +91,16 @@
 	align-items: center;
 }
 
-.status-icon {
+.yes-icon {
   width: 34rpx;
 	height: 25rpx;
+	margin-left: 10rpx;
+}
+
+.no-icon {
+	width: 34rpx;
+	height: 34rpx;
+	margin-left: 10rpx;
 }
 
 .more-info {
@@ -133,7 +141,8 @@
 
 .pet-gender-icon {
   width: 32rpx;
-  height: 32rpx;
+	height: 32rpx;
+	margin-left: 10rpx;
 }
 
 .buttons-box {
@@ -257,6 +266,6 @@
 .text-line {
 	width: 2rpx;
 	background-color: black;
-	margin-top: 6rpx;
+	margin-top: 5rpx;
 	margin-right: 26rpx;
 }

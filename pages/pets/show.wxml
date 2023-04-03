@@ -33,7 +33,7 @@
     			</view>
 
 					<view class="favorite-box" wx:if="{{isAdmin}}">
-						<image class="heart-icon" src="/images/heart-empty.png"/>
+						<image class="heart-icon" src="/images/heart-g.png"/>
 						<view class="favorite-number">
 						{{favorites.length}}
 						</view>
@@ -55,11 +55,13 @@
           <view>
             <view class="yes-no"> 
 							<view>{{content.neutered}}</view>
-							<image class="status-icon" src="{{ neuteredDisplay == 'yes' ? '/images/icon-tick.png' : '/images/cross.png'}}"></image>
+							<image wx:if="{{neuteredDisplay  == 'yes' }}" class="yes-icon" src="{{'/images/icon-tick.png'}}"></image>
+							<image wx:if="{{neuteredDisplay  == 'no' }}" class="no-icon" src="{{'/images/cross.png'}}"></image>
 						</view>
             <view class="yes-no"> 
 							<view>{{content.vaccinated}}</view>
-							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/icon-tick.png' : '/images/cross.png'}}"></image>
+							<image wx:if="{{vaccinatedDisplay == 'yes' }}" class="yes-icon" src="{{'/images/icon-tick.png'}}"></image>
+							<image wx:if="{{vaccinatedDisplay == 'no' }}" class="no-icon" src="{{'/images/cross.png'}}"></image>
 						</view>
             <view>{{content.size}}
 							<text wx:if="{{pet.size == 'mini'}}" class="info-text">{{content.mini}}</text>

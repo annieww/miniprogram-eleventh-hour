@@ -58,26 +58,12 @@ Page({
 						isAdmin: isAdmin,
 						content: app.globalData.content,
 						bookings: res.data.my_booking,
+						favorites: res.data.bookings
 					})
 					console.log('from pet/show, res.data->', res.data)
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
       }
-		})
-		
-		wx.request({
-			header: app.globalData.header,
-			url: `${app.globalData.baseURL}/pets/${id}/bookings`,
-			success(res) {
-				if (res.statusCode === 200) {
-					const favorites = res.data
-					page.setData({
-						favorites: favorites,
-					})
-				}
-				console.log('favorites->', res.data)
-			}
-			
 		})
   },
 
