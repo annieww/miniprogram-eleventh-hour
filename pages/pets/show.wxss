@@ -215,7 +215,7 @@
 }
 
 .btn-contact {
-	background-color:#FD5200;
+	background-color:#fc9e87;
 	color: white;
 	border-radius: 40rpx;
 	display: flex;
@@ -257,6 +257,6 @@
 .text-line {
 	width: 2rpx;
 	background-color: black;
-	margin-top: 10rpx;
+	margin-top: 6rpx;
 	margin-right: 26rpx;
 }

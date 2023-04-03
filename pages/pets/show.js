@@ -190,8 +190,11 @@ Page({
 				} else {
 					console.log("From show.js: status code is", res.statusCode)
 					if (res.statusCode === 422)
-					wx.showToast({
-						title: "Error",
+					wx.showModal({
+						title: "Sorry!",
+						content: "You can only favorite a maximum of 10 pets!",
+						showCancel: false,
+      			confirmText: 'I see',
 					})
 				}
 			}
