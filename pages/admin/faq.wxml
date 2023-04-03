@@ -1,8 +1,7 @@
 <view class="page-content">
+	<view class="image-box"><image class="header-img" src="/images/bluedog.png"></image></view>
   <view class="page-title">{{content.about_title}}</view>
-	<view class="about">{{content.about2}}
-		<image class="paw-icon" src="/images/paw-icon.png"></image>
-	</view>
+	<view class="about">{{content.about2}}</view>
 
 	<wux-sticky-item class="faq-container">
     <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>

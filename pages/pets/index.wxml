@@ -38,10 +38,7 @@
       </block>
     </swiper>
   </view> -->
-<!-- 
-  <view class="divider">
-    <view class="div-line"></view> 
-  </view> -->
+
   <!--3a. filters -->
   <block wx:for="{{filterbaritems}}" wx:for-item="item">
     <view class="filter-bar-item" bindtap="showMenu">
@@ -76,7 +73,10 @@
 						<view class="name-box">{{pet.name}}</view>
 						<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 					</view>
-					<view class="pet-age">{{pet.age}}</view>
+					<view class="age-need-box">
+						<view class="pet-age">{{pet.age}}</view>
+						<image class="pet-need" src="{{ pet.special_need == true ? '/images/info-fill.png' : '' }}"></image>
+					</view>
       </view>
     </view>
   </view>

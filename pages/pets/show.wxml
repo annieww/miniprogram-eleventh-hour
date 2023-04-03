@@ -55,11 +55,11 @@
           <view>
             <view class="yes-no"> 
 							<view>{{content.neutered}}</view>
-							<image class="status-icon" src="{{ neuteredDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
+							<image class="status-icon" src="{{ neuteredDisplay == 'yes' ? '/images/icon-tick.png' : '/images/cross.png'}}"></image>
 						</view>
             <view class="yes-no"> 
 							<view>{{content.vaccinated}}</view>
-							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/yes.png' : '/images/cross.png'}}"></image>
+							<image class="status-icon" src="{{ vaccinatedDisplay == 'yes' ? '/images/icon-tick.png' : '/images/cross.png'}}"></image>
 						</view>
             <view>{{content.size}}
 							<text wx:if="{{pet.size == 'mini'}}" class="info-text">{{content.mini}}</text>
@@ -72,7 +72,10 @@
   <!-- 3. add info container -->
 			<view class="more-info">
 				<text class="info-title">{{content.description}}</text>
-				<text class="info-text">{{pet.description}}</text>
+				<view class="description-box">
+					<view class="text-line"></view>
+					<text class="info-text">{{pet.description}}</text>
+				</view>
 			</view>
   	</view>
   

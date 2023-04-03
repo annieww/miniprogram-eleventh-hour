@@ -48,7 +48,7 @@
   flex: 1;
   padding: 0 20rpx;
   width: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
@@ -145,11 +145,11 @@
   box-sizing: border-box
 }
 .wux-filterbar__pop {
-  height: 85%;
+  height: 86%;
   width: 90%;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
-  top: 0%;
+  top: 1%;
   left: 10%;
   z-index: 1010;
   background-color: #fff;
@@ -184,14 +184,14 @@
   }
 }
 .wux-filterbar__panel {
-  padding: 0 30rpx
+	padding: 0rpx 30rpx;
 }
 .wux-filterbar__panel:last-child {
   padding-bottom: 40rpx
 }
 .wux-filterbar__panel-hd {
-  padding-top: 40rpx;
-  padding-bottom: 4rpx;
+  padding-top: 30rpx;
+  padding-bottom: 5rpx;
   color: #404040;
   font-size: 30rpx;
   overflow-x: hidden;
@@ -203,7 +203,7 @@
 }
 .wux-filterbar__panel-selected {
   width: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
@@ -212,7 +212,8 @@
   text-align: right;
   font-size: 26rpx;
   padding-left: 60rpx;
-  color: #00B5A3
+	/* color: #00B5A3 */
+	color: white;
 }
 .wux-filterbar__groups {
   overflow: hidden;
@@ -221,7 +222,7 @@
 }
 .wux-filterbar__group {
   width: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
@@ -238,7 +239,7 @@
 .wux-filterbar__check,
 .wux-filterbar__radio {
   width: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
@@ -246,10 +247,12 @@
   display: block;
   text-align: center;
   line-height: 64rpx;
-  background-color: #00B5A3;
+  /* background-color: #00B5A3; */
   border-radius: 8rpx;
   border: 2rpx solid #00B5A3;
-  box-sizing: border-box;
+	box-sizing: border-box;
+  background-color: #ffffff;
+	color: #00B5A3;
 }
 .wux-filterbar__check,
 .wux-filterbar__radio {
@@ -261,9 +264,11 @@
   opacity: 0;
 }
 .wux-filterbar__btn--checked {
-  border-color: #00B5A3;
+  /* border-color: #00B5A3;
   background-color: #ffffff;
-  color: #00B5A3
+	color: #00B5A3; */
+	background-color: #00B5A3;
+	color: white;
 }
 .wux-filterbar__btn--checked::after {
   content: "";
@@ -272,16 +277,16 @@
   bottom: 0;
   width: 30rpx;
   height: 30rpx;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTOQ4POQ5PPrV1f///+dGSO17ff3u7/Kio+lcXvW4uZrptW4AAAACdFJOUwB/timhlQAAAH1JREFUGNNdzkEOQDAQheG6Qo/whNjjBBWs9QbiCFzExl4cFG1HzOvuz5fpjDHqZTqNJQYxiEEMYhCDGMQgBjGIQQxiEOPPRf114NxJx+lrkw5cDXvqyEsv/z1cT2U3p365aY9R9r3T3q1n6ri7cXJPPM23qeVyudfq1gxi3DyiIhPh30TpAAAAAElFTkSuQmCC) no-repeat;
+  /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAhUExURUdwTOQ4POQ5PPrV1f///+dGSO17ff3u7/Kio+lcXvW4uZrptW4AAAACdFJOUwB/timhlQAAAH1JREFUGNNdzkEOQDAQheG6Qo/whNjjBBWs9QbiCFzExl4cFG1HzOvuz5fpjDHqZTqNJQYxiEEMYhCDGMQgBjGIQQxiEOPPRf114NxJx+lrkw5cDXvqyEsv/z1cT2U3p365aY9R9r3T3q1n6ri7cXJPPM23qeVyudfq1gxi3DyiIhPh30TpAAAAAElFTkSuQmCC) no-repeat; */
   background-size: 30rpx auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1
 }
 .wux-filterbar__btns {
   height: 24rpx;
   min-height: 44px;
   display: -webkit-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* margin: 0 20rpx; */
 }
 .wux-filterbar__btns .wux-filterbar__btn {

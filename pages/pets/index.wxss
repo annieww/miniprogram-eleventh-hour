@@ -246,3 +246,14 @@ page {
 .pet-age {
 	font-weight: 300;
 }
+
+.age-need-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.pet-need {
+	width: 36rpx;
+	height: 36rpx;
+}

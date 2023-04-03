@@ -8,6 +8,7 @@
   height: 64rpx;
 	line-height: 64rpx;
 	margin-bottom: 5rpx;
+	border-radius: 20rpx;
 }
 .wux-sticky-item__title {
   width: 100%;

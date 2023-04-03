@@ -86,14 +86,13 @@
 
 .yes-no {
   display: flex;
-  justify-content: start;
+	justify-content: start;
+	align-items: center;
 }
 
 .status-icon {
-  width: 32rpx;
-	height: 32rpx;
-	margin-top: 8rpx;
-  margin-left: 10rpx;
+  width: 34rpx;
+	height: 25rpx;
 }
 
 .more-info {
@@ -129,13 +128,12 @@
 .gender-box {
 	display: flex;
 	justify-content: start;
+	align-items: center;
 }
 
 .pet-gender-icon {
   width: 32rpx;
   height: 32rpx;
-  margin-top: 8rpx;
-  margin-left: 6rpx;
 }
 
 .buttons-box {
@@ -249,4 +247,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.description-box {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.text-line {
+	width: 2rpx;
+	background-color: black;
+	margin-top: 10rpx;
+	margin-right: 26rpx;
 }

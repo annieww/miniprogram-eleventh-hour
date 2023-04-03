@@ -25,18 +25,20 @@
 	text-align: start;
 	margin-bottom: 60rpx;
 	font-size: 32rpx;
-	background-color: #fff7f5;
-	border-radius: 40rpx;
+	background-color: #f7d8d0;
+	border-radius: 40rpx 40rpx 0 40rpx;
 	padding: 35rpx;
 	position: relative;
 }
 
-.paw-icon {
-	width: 70rpx;
-	height: 70rpx;
-	position: absolute;
-	right: 12px;
-	bottom: -15px;
+.image-box {
+	display: flex;
+	justify-content: center;
+}
+
+.header-img {
+	width: 365rpx;
+	height: 318rpx;
 }
 
 .faq-icon {
@@ -67,6 +69,7 @@
 	display: flex;
 	margin-bottom: 5rpx;
 	position: relative;
+	border-radius: 20rpx;
 }
 
 .delete-box {

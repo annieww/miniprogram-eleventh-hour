@@ -1,6 +1,6 @@
 let en = {
-  about1: 'We are a small organization of rescuers living in Shanghai, China. We come from all over the world, and met one another through our individual work in the rescue community.',
-  about2: 'We are a group of volunteers dedicated to rescuing animals in need, particularly those that are abandoned, abused, neglected, or in danger of being euthanized in Shanghai. Our goal is to find loving, permanent homes for rescued animals and to advocate for animal welfare and responsible pet ownership.',
+  about1: 'Please support Eleventh Hour Rescues Shanghai in finding loving, temporary or permanent, homes for rescued animals in our care. Hear the stories of our individual rescued animals below. Like, share, foster, or adopt if interested.',
+  about2: '“Eleventh Hour Rescues is Everyone’s rescue.” We are an all-volunteer animal rescue community with a core belief that our collective effort can make a positive difference in the lives and welfare among stray and abandoned animals.',
   filter_tab: 'Filter',
   adopt_btn: 'Favorite',
 	share_btn: 'Share',
