@@ -66,6 +66,7 @@
     <view wx:for="{{pets}}" wx:key="*this" wx:for-item="pet" bindtap="goToPet" data-id="{{pet.id}}" class="pet-card">
       <!-- <view class="filter"></view> -->
       <view class="image-box">
+				<image wx:if="{{!pet.image_url}}" mode="aspectFill" class="empty-image" src="/images/pet-logo.png"></image>
         <image class="pet-image" src="{{pet.image_url}}" mode="aspectFill"></image>
       </view>
       <view class="pet-info">

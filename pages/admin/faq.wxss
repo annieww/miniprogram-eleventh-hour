@@ -141,6 +141,7 @@
 
 .btn-faq {
 	margin-top: 40rpx;
+	border-radius: 40rpx;
 }
 
 .add-faq-container {

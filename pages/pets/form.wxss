@@ -22,6 +22,9 @@
 	background-color: #00B5A3;
 	color: white;
 	border-radius: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn-reset {
@@ -29,6 +32,9 @@
 	color: grey;
 	border: 1px solid grey;
 	border-radius: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .image-card {
