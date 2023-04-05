@@ -32,7 +32,8 @@ Page({
 				"id": "21",        
 				"text": "中文"      
 			}
-		]  
+		],
+		showTranslation: false,
 	},
 
 	pressView: function(e){
@@ -41,12 +42,13 @@ Page({
 	},
 	
 	//清空  
-	// clearBut: function (e) {    
-	// 	this.setData({      
-	// 		txt: '',      
-	// 		translateResult: ''    
-	// 	})  
-	// },  
+	clearBut: function (e) {    
+		this.setData({      
+			txt: '',      
+			translateResult: '' ,
+			showTranslation: false   
+		})  
+	},  
 
 	//翻译  
 	translateBut: function () {    
@@ -55,13 +57,15 @@ Page({
 		var salt = (new Date).getTime();    
 		var from = 'auto';    
 		var to = 'auto';    
-		if(selectText==="English"){      
-			from = 'zh',      
-			to = 'en'    
-			} else if(selectText==="中文"){      
-			from = 'en',      
-			to = 'zh'    
-			}        
+		// if(selectText==="English"){      
+		// 	from = 'zh',      
+		// 	to = 'en'    
+		// 	} else if(selectText==="中文"){      
+		// 	from = 'en',      
+		// 	to = 'zh'    
+		// 	}      
+		from = 'en';
+		to = 'zh';
 		var viewText = this.data.descripTxt; 
 		var query = viewText;
 		// var query = "apple";
@@ -84,7 +88,8 @@ Page({
 			},    
 			success: function (res) {        
 				console.log('from translateBut success, res->', res)    
-					that.setData({        
+					that.setData({ 
+						showTranslation: true,       
 						translateResult: res.data.trans_result[0].dst        
 					})      
 			},    

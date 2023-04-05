@@ -6,13 +6,43 @@
 }
 
 .ms-content-box{width:100%;margin-top:20rpx}
-.ms-content{border:1px solid #e2e2e2;background:white;font-size:16px;position:relative;height:30px;line-height:30px}
-.ms-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 40rpx 0 6rpx;font-size:14px;margin-left:20rpx}
-.ms-options{background:white;width:inherit;position:absolute;border:1px solid #e2e2e2;border-top:0;box-sizing:border-box;z-index:3;max-height:150px;overflow:auto}
-.ms-option{height:60rpx;line-height:40rpx;border-top:1px solid #e2e2e2;padding:0 6rpx;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:35rpx}
+.ms-content{
+	border:1px solid #e2e2e2;background:white;font-size:16px;position:relative;height:30px;line-height:30px
+}
+.ms-text{
+	overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 40rpx 0 6rpx;font-size:14px;margin-left:20rpx
+}
+.ms-options{
+	background:white;width:inherit;position:absolute;
+	/* border:1px solid #e2e2e2; */
+	border-top:0;
+	box-sizing:border-box;
+	z-index:3;
+	max-height:150px;
+	overflow:auto
+}
+.ms-option{
+	height:60rpx;
+	width: 500rpx;
+	background-color: antiquewhite;
+	line-height:40rpx;
+	/* border-top:1px solid #e2e2e2; */
+	padding:0 6rpx;
+	text-align:left;
+	overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+	font-size:35rpx;
+	padding-left: 30rpx;
+	padding-top: 30rpx;
+}
 .ms-item:first-child{border-top:0}
 .icon-right,.icon-down,.icon-up{display:inline-block;padding-right:13rpx;position:absolute;right:20rpx;top:10rpx}
-.icon-right::after,.icon-down::after,.icon-up::after{content:"";display:inline-block;position:relative;bottom:2rpx;margin-left:10rpx;height:10px;width:10px;border:solid #bbb;border-width:2px 2px 0 0}
+.icon-right::after,.icon-down::after,.icon-up::after{
+	content:"";
+	display:inline-block;position:relative;
+	bottom:2rpx;margin-left:10rpx;
+	height:10px;width:10px;
+	/* border:solid #bbb; */
+	border-width:2px 2px 0 0}
 .icon-right::after{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 .icon-down::after{bottom:14rpx;-webkit-transform:rotate(135deg);transform:rotate(135deg)}
 .icon-up::after{bottom:0rpx;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
