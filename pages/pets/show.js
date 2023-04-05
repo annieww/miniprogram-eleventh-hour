@@ -1,4 +1,8 @@
 // pages/pets/show.js
+const the_md5 = require("../../utils/md5")
+var inputTxt = '';
+var selectText = '';
+var descripTxt = '';
 const app = getApp()
 Page({
 
@@ -15,7 +19,80 @@ Page({
 		bookingId: null,
 		showWindow: false,
 		favorites: '',
-  },
+		txt: "",    
+		descripTxt: "",
+		translateResult: "",    
+		selectArray: [      
+			{        
+				"id": "10",        
+				"text": "English"      
+			},      
+			{        
+				"id": "21",        
+				"text": "中文"      
+			}
+		]  
+	},
+	
+	//清空  
+	// clearBut: function (e) {    
+	// 	this.setData({      
+	// 		txt: '',      
+	// 		translateResult: ''    
+	// 	})  
+	// },  
+
+	//翻译  
+	translateBut: function () {    
+		var appid = '20230403001627276';    
+		var key = 'LVUwcw1FxpqGTBhhGK06';    
+		var salt = (new Date).getTime();    
+		var from = 'auto';    
+		var to = 'auto';    
+		if(selectText==="English"){      
+			from = 'zh',      
+			to = 'en'    
+			} else if(selectText==="中文"){      
+			from = 'en',      
+			to = 'zh'    
+			}        
+		// var query = inputTxt;    
+		var query = descripTxt;
+		// var query = "apple";
+		var str1 = appid + query + salt + key;    
+		var sign = the_md5.MD5(str1);    
+		let that = this;    
+		// if (query === undefined || query === '') {      
+		// 	return;    
+		// }    
+		wx.request({      
+			url: 'https://api.fanyi.baidu.com/api/trans/vip/translate',      
+			type: 'get',      
+			data: {    
+				q: query,        
+				appid: appid,        
+				salt: salt,        
+				from: from,        
+				to: to,        
+				sign: sign      
+			},    
+			success: function (res) {        
+				console.log('from translateBut success, res->', res)    
+					that.setData({        
+						translateResult: res.data.trans_result[0].dst        
+					})      
+			},    
+		})  
+	},  
+
+	//获取要翻译的内容  
+	getInputValue: function (e) {    
+		inputTxt = e.detail.value  
+	},  
+	//获取翻译类型  
+	select: function(e){    
+		selectText = e.detail.text;  
+	},
 
   onLoad(options) {
 		this.setData({
@@ -42,6 +119,7 @@ Page({
 					const current_user = res.data.current_user;
 					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
 					// const isAdmin = current_user.admin? true : false;
+					const descripTxt = pet.description;
 					const isAdmin = current_user.role === "admin";
 					let neuteredDisplay = pet.neutered ? 'yes' : 'no';
 					let vaccinatedDisplay = pet.vaccinated ? 'yes' : 'no';
@@ -58,10 +136,12 @@ Page({
 						isAdmin: isAdmin,
 						content: app.globalData.content,
 						bookings: res.data.my_booking,
-						favorites: res.data.bookings
+						favorites: res.data.bookings,
+						descripTxt: res.data.pet.description
 					})
 					console.log('from pet/show, res.data->', res.data)
 					console.log("isbooker", isBooker, "isAdmin", isAdmin)
+					console.log('from pet/show, descripTxt', descripTxt)
         }
       }
 		})

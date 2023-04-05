@@ -1,6 +1,7 @@
 {
   "usingComponents": {
 		"wux-icon": "../../dist/icon/index",
-		"tabbar":"/custom-tab-bar/index"
+		"tabbar":"/custom-tab-bar/index",
+		"Select": "/component/select/select"
   }
 }

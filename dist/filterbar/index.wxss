@@ -170,7 +170,7 @@
 }
 .wux-filterbar__pop .wux-filterbar__scroll-view {
   max-height: none;
-  height: 85%;
+  height: 87%;
   height: calc(100% - 88rpx)
 }
 @supports (padding-bottom:constant(safe-area-inset-bottom)) {
@@ -190,11 +190,11 @@
   padding-bottom: 12rpx
 }
 .wux-filterbar__panel-hd {
-  padding-top: 30rpx;
-  padding-bottom: 5rpx;
+  padding-top: 25rpx;
+  padding-bottom: 0rpx;
   color: #404040;
   font-size: 30rpx;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -320,7 +320,7 @@
 .wux-filterbar__btns .wux-filterbar__btn--danger {
   background-color: #00B5A3;
   color: #fff;
-	margin-bottom: 150rpx;
+	margin-bottom: 100rpx;
 	font-weight:bold;
 }
 .wux-filterbar__btns .wux-filterbar__btn--danger::before {
