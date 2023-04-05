@@ -1,12 +1,13 @@
 // pages/pets/show.js
-const the_md5 = require("../../utils/md5")
-var inputTxt = '';
+const the_md5 = require("../../utils/md5");
+// var inputTxt = '';
 var selectText = '';
 var descripTxt = '';
 const app = getApp()
 Page({
 
   data: {
+		tempText: "sclifftop",
 		neuteredDisplay: '',
 		vaccinatedDisplay:'',
 		specialNeedDisplay: '',
@@ -33,6 +34,11 @@ Page({
 			}
 		]  
 	},
+
+	pressView: function(e){
+		var viewText = this.data.descripTxt;
+		console.log('from pressView, viewText ', viewText)
+	},
 	
 	//清空  
 	// clearBut: function (e) {    
@@ -56,8 +62,8 @@ Page({
 			from = 'en',      
 			to = 'zh'    
 			}        
-		// var query = inputTxt;    
-		var query = descripTxt;
+		var viewText = this.data.descripTxt; 
+		var query = viewText;
 		// var query = "apple";
 		var str1 = appid + query + salt + key;    
 		var sign = the_md5.MD5(str1);    

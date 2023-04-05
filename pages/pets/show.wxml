@@ -76,21 +76,25 @@
 				<text class="info-title">{{content.description}}</text>
 				<view class="description-box">
 					<view class="text-line"></view>
-					<view value="{{descripTxt}}" class="info-text" user-select="true">{{pet.description}}</view>
-					
+					<view id="descrip" value="{{descripTxt}}" class="info-text" user-select="true">{{pet.description}}</view>
 				</view>
+				
 				<view class="choose">
-					<Select prop-array='{{selectArray}}' bind:select='select'></Select>
+					<Select bindtap="translateBut" prop-array='{{selectArray}}' bind:select='select'></Select>
 				</view>
-				<view class="txtarea">
+				<!-- <view class="txtarea">
 					<textarea value="{{txt}}" bindinput="getInputValue" class="txt" placeholder="请输入..."></textarea>
-				</view>
+				</view> -->
+				<!-- <view catchtap="pressView">
+					<view id="temp">{{descripTxt}}</view>
+					<view id="click">get view</view>
+				</view> -->
 				<view class="translatearea">
 					<textarea value="{{translateResult}}" class="translatetxt" placeholder="翻译结果..."></textarea>
 				</view>
-				<view class="but">
+				<!-- <view class="but">
 					<button bindtap="translateBut" style="width:35vw;color:#00FA9A;background-color:#FFFACD">翻译</button>
-				</view>	
+				</view>	 -->
 			</view>
   	</view>
 
