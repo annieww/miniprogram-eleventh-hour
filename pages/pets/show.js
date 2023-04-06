@@ -1,13 +1,11 @@
 // pages/pets/show.js
 const the_md5 = require("../../utils/md5");
-// var inputTxt = '';
 var selectText = '';
 var descripTxt = '';
 const app = getApp()
 Page({
 
   data: {
-		tempText: "sclifftop",
 		neuteredDisplay: '',
 		vaccinatedDisplay:'',
 		specialNeedDisplay: '',
@@ -19,27 +17,26 @@ Page({
     isBooker: false,
 		bookingId: null,
 		showWindow: false,
-		favorites: '',
-		txt: "",    
+		favorites: '', 
 		descripTxt: "",
 		translateResult: "",    
-		selectArray: [      
-			{        
-				"id": "10",        
-				"text": "English"      
-			},      
-			{        
-				"id": "21",        
-				"text": "中文"      
-			}
-		],
+		// selectArray: [      
+		// 	{        
+		// 		"id": "10",        
+		// 		"text": "English"      
+		// 	},      
+		// 	{        
+		// 		"id": "21",        
+		// 		"text": "中文"      
+		// 	}
+		// ],
 		showTranslation: false,
 	},
 
-	pressView: function(e){
-		var viewText = this.data.descripTxt;
-		console.log('from pressView, viewText ', viewText)
-	},
+	// pressView: function(e){
+	// 	var viewText = this.data.descripTxt;
+	// 	console.log('from pressView, viewText ', viewText)
+	// },
 	
 	//清空  
 	clearBut: function (e) {    
@@ -97,13 +94,13 @@ Page({
 	},  
 
 	//获取要翻译的内容  
-	getInputValue: function (e) {    
-		inputTxt = e.detail.value  
-	},  
+	// getInputValue: function (e) {    
+	// 	inputTxt = e.detail.value  
+	// },  
 	//获取翻译类型  
-	select: function(e){    
-		selectText = e.detail.text;  
-	},
+	// select: function(e){    
+	// 	selectText = e.detail.text;  
+	// },
 
   onLoad(options) {
 		this.setData({

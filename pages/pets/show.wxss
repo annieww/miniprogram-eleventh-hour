@@ -63,6 +63,8 @@
 .pet-card {
 	padding: 20rpx;
 	margin-bottom: 60rpx;
+	display: block;
+	flex-direction: column;
 }
 
 .pet-name {
@@ -104,8 +106,8 @@
 }
 
 .more-info {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .info-title {
@@ -205,8 +207,8 @@
 }
 
 .dog-icon {
-	width: 90rpx;
-	height: 90rpx;
+	width: 70rpx;
+	height: 70rpx;
 }
 
 .window-content {
@@ -279,17 +281,17 @@
 .translation-box {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 }
 
 .clear-icon {
-	margin-top: 30rpx;
-	width: 45rpx;
-	height: 50rpx;
+	margin-top: 10rpx;
+	width: 40rpx;
+	height: 40rpx;
 }
 
 .translatetxt{
-	margin:20rpx 20rpx 5rpx 5rpx;
 	font-size:30rpx;
 	font-weight: 300;
 	font-family:"Microsoft YaHei";

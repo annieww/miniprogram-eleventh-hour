@@ -3,6 +3,7 @@
   <view class="page-title">{{content.about_title}}</view>
 	<view class="about"><text user-select="true">{{content.about2}}</text></view>
 
+	<!-- FAQ List -->
 	<wux-sticky-item class="faq-container">
     <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
     <view class="faq-item" slot="content" wx:for="{{faqList}}" wx:key="index">
@@ -10,16 +11,28 @@
 				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" > 
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
 					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+					<!-- FAQ Question -->
 					<view class="question"><text user-select="true">{{item.question}}</text></view>
 				</view>
 				<view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
 					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
 				</view>
 			</view>
-			<view class="answer" wx:if="{{isOpen[index]}}"><text user-select="true">{{item.answer}}</text></view>
-  		</view>
+			<!-- FAQ Answer -->
+			<view class="answer" wx:if="{{isOpen[index]}}">
+				<text user-select="true">{{item.answer}}</text>
+				<!-- Language Icon -->
+				<view data-index="{{index}}" bindtap="translateBut" ><image class="switch-icon" src="/images/switcher.png"/></view>
+				<!-- Translated Text -->
+				<view class="translation-box" hidden="{{!showTranslation}}">
+					<view><textarea disabled="{{true}}" value="{{translateResult}}" class="translatetxt"></textarea></view>
+					<view><image class="clear-icon" data-index="{{index}}" bindtap="clearBut" src="/images/clear.png"/></view>
+				</view>
+			</view>
+  	</view>
   </wux-sticky-item>
 	
+	<!-- Admin FAQ Form -->
 	<view class="add-faq-container">
 		<wux-icon class="add-icon" type="ios-add-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin && !showAddForm}}"/>
 		<wux-icon class="add-icon" type="ios-arrow-dropup-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{showAddForm}}"/>

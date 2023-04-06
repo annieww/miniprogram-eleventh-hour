@@ -147,3 +147,21 @@
 .add-faq-container {
 	padding-bottom: 150rpx;
 }
+
+.translation-box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.switch-icon {
+	margin-top: 10rpx;
+	width: 65rpx;
+	height: 45rpx;
+}
+
+.clear-icon {
+	width: 40rpx;
+	height: 40rpx;
+}

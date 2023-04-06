@@ -76,7 +76,7 @@
 				<text class="info-title">{{content.description}}</text>
 				<view class="description-box">
 					<view class="text-line"></view>
-					<view id="descrip" value="{{descripTxt}}" class="info-text" user-select="true">{{pet.description}}</view>
+					<view value="{{descripTxt}}" class="info-text" user-select="true">{{pet.description}}</view>
 				</view>
 				
 				<!-- Language Icon -->
@@ -85,15 +85,10 @@
 					<image bindtap="translateBut"  class="switch-icon" src="/images/switcher.png"></image>
 				</view>
 
-				<!-- <view class="txtarea">
-					<textarea value="{{txt}}" bindinput="getInputValue" class="txt" placeholder="请输入..."></textarea>
-				</view> -->
-
 				<!-- Translated Text -->
 				<view class="translation-box" hidden="{{!showTranslation}}">
-					<textarea value="{{translateResult}}" class="translatetxt"></textarea>
-					<image class="clear-icon" bindtap="clearBut" src="/images/clear.png"/>
-						<!-- <button bindtap="translateBut" style="width:35vw;color:#00FA9A;background-color:#FFFACD">翻译</button> -->
+					<view><textarea disabled="{{true}}" value="{{translateResult}}" class="translatetxt"></textarea></view>
+					<view><image class="clear-icon" bindtap="clearBut" src="/images/clear.png"/></view>
 				</view>
 
 			</view>
