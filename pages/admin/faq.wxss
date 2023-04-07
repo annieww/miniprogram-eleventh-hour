@@ -9,6 +9,7 @@
 .page-content {
 	padding: 24rpx;
 	padding-bottom: 35rpx;
+	/* background-color: green; */
 }
 
 .page-title {
@@ -41,7 +42,16 @@
 	height: 318rpx;
 }
 
+.title-title {
+	background-color: #d9d9d9;
+  height: 64rpx;
+	line-height: 64rpx;
+	border-radius: 20rpx;
+	margin-bottom: 8rpx;
+}
+
 .faq-icon {
+	margin-left: 16rpx;
 	margin-right: 8rpx;
 }
 
@@ -67,7 +77,7 @@
 	border: none;
 	outline: none;
 	display: flex;
-	margin-bottom: 5rpx;
+	margin-bottom: 30rpx;
 	position: relative;
 	border-radius: 20rpx;
 }
@@ -123,6 +133,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-top: 40rpx;
+	margin-bottom: 40rpx;
 }
 
 .add-input {
@@ -155,13 +166,22 @@
 	align-items: center;
 }
 
+.translatetxt{
+	font-size: 30rpx;
+	font-family:"Microsoft YaHei";
+}
+
 .switch-icon {
-	margin-top: 10rpx;
-	width: 65rpx;
-	height: 45rpx;
+	margin-top: 25rpx;
+	width: 40rpx;
+	height: 40rpx;
 }
 
 .clear-icon {
 	width: 40rpx;
 	height: 40rpx;
+}
+
+.faq-accordion-box {
+	margin-bottom: 45rpx;
 }

@@ -82,7 +82,7 @@
 				<!-- Language Icon -->
 				<view class="choose">
 					<!-- <Select bindtap="translateBut" prop-array='{{selectArray}}' bind:select='select'></Select> -->
-					<image bindtap="translateBut"  class="switch-icon" src="/images/switcher.png"></image>
+					<image bindtap="translateBut"  class="switch-icon" src="/images/cn-switcher.png"></image>
 				</view>
 
 				<!-- Translated Text -->

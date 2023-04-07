@@ -274,7 +274,7 @@
 
 .switch-icon {
 	margin-top: 40rpx;
-	width: 75rpx;
+	width: 55rpx;
 	height: 55rpx;
 }
 
@@ -292,7 +292,7 @@
 }
 
 .translatetxt{
-	font-size:30rpx;
+	font-size: 30rpx;
 	font-weight: 300;
 	font-family:"Microsoft YaHei";
 }

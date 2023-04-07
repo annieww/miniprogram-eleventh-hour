@@ -16,9 +16,11 @@ Page({
 			questionTxt: "",
 			answerTxt: "",
 			translateResult: "",
+			current: []
   },
 
   onLoad(options) {
+		this.key = String(Math.floor(Math.random() * 3))
 	},
 
 	getData(e) {
@@ -28,15 +30,10 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
-				// const questionTxt = res.data[index].question
-				// const answerTxt = res.data[index].answer
         page.setData({
           faqList: res.data,
 					content: app.globalData.content,
-					// questionTxt: res.data[index].question,
-					// answerTxt: res.data[index].answer
 				})
-				console.log('from FAQ, res.data->', res.data)
       }
     })
 	},
@@ -53,6 +50,7 @@ Page({
 
 	//翻译  
 	translateBut: function (e) {    
+		console.log('from translateBut, e.currentTarget', e.currentTarget)
 		var appid = '20230403001627276';    
 		var key = 'LVUwcw1FxpqGTBhhGK06';    
 		var salt = (new Date).getTime();    
@@ -62,16 +60,13 @@ Page({
 		to = 'zh';
 
 		let that = this;    
-		console.log('that.data.faqList from translateBut', that.data.faqList)
 		const index = e.currentTarget.dataset.index;
 		const questionTxt = that.data.faqList[index].question;
 		const answerTxt = that.data.faqList[index].answer;
-		var viewText = questionTxt + answerTxt; 
+		var viewText = questionTxt + " " + answerTxt; 
 		var query = viewText;
 		var str1 = appid + query + salt + key;    
 		var sign = the_md5.MD5(str1);    
-
-		console.log('from translateBut, e', e)
 		wx.request({      
 			url: 'https://api.fanyi.baidu.com/api/trans/vip/translate',      
 			type: 'get',      
@@ -84,20 +79,37 @@ Page({
 				sign: sign      
 			},    
 			success: function (res) {        
-				console.log('from translateBut success, res->', res)    
 					that.setData({ 
 						showTranslation: true,       
-						translateResult: res.data.trans_result[0].dst        
-					})      
+						translateResult: res.data.trans_result[0].dst,
+					})   
+					console.log('from translateBut, res', res)   
 			},    
 		})  
 	},  
+
+	openAccordion(e) {
+		const index = e.currentTarget.dataset.index
+		this.setData({ 
+			translateResult: "",
+			showTranslation: false,
+		});
+		console.log('from openAccordion, e.currentTarget', e.currentTarget)
+	},
 
 	toggleAnswer(e) {
 		const index = e.currentTarget.dataset.index
 		const newIsOpen = [...this.data.isOpen];
     newIsOpen[index] = !newIsOpen[index];
-    this.setData({ isOpen: newIsOpen });
+    this.setData({ 
+			isOpen: newIsOpen,
+			translateResult: "",
+			showTranslation: false,
+		});
+		console.log('from toggleAnswer, this.data', this.data)
+		console.log('from toggleAnswer, this.data.isOpen', this.data.isOpen)
+		console.log('from toggleAnswer, e', e)
+		
 	},
 	// addFAQ() {
 	// 	const newFaq = {

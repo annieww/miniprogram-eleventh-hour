@@ -4,34 +4,58 @@
 	<view class="about"><text user-select="true">{{content.about2}}</text></view>
 
 	<!-- FAQ List -->
-	<wux-sticky-item class="faq-container">
-    <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
-    <view class="faq-item" slot="content" wx:for="{{faqList}}" wx:key="index">
+	<view class="title-title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view>
+
+	<!-- <wux-sticky-item class="faq-container">
+    <view class="faq-title" slot="title"><wux-icon type="ios-information-circle" size="16" class="faq-icon"></wux-icon>FAQs</view> -->
+    <!-- <view class="faq-item" slot="content" wx:for="{{faqList}}" wx:key="index">
 			<view class="question-box">
-				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" > 
-					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
-					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/>
+				<view class="question-arrow-box" data-index="{{index}}" bindtap="toggleAnswer" >  -->
+					<!-- <wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-down" wx:if="{{!isOpen[index]}}"/>
+					<wux-icon class="arrow-icon" data-index="{{index}}" size="16" type="ios-arrow-up" wx:if="{{isOpen[index]}}"/> -->
 					<!-- FAQ Question -->
-					<view class="question"><text user-select="true">{{item.question}}</text></view>
-				</view>
-				<view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
+					<!-- <view class="question"><text>{{item.question}}</text></view> -->
+				<!-- </view> -->
+				<!-- <view class="delete-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
 					<wux-icon class="delete-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
-				</view>
-			</view>
+				</view> -->
+			<!-- </view> -->
 			<!-- FAQ Answer -->
-			<view class="answer" wx:if="{{isOpen[index]}}">
-				<text user-select="true">{{item.answer}}</text>
+			<!-- <view class="answer" wx:if="{{isOpen[index]}}">
+				<text user-select="true">{{item.answer}}</text> -->
 				<!-- Language Icon -->
-				<view data-index="{{index}}" bindtap="translateBut" ><image class="switch-icon" src="/images/switcher.png"/></view>
+				<!-- <view data-index="{{index}}" bindtap="translateBut"><image class="switch-icon" src="/images/cn-switcher.png"/></view> -->
 				<!-- Translated Text -->
-				<view class="translation-box" hidden="{{!showTranslation}}">
-					<view><textarea disabled="{{true}}" value="{{translateResult}}" class="translatetxt"></textarea></view>
+				<!-- <view class="translation-box" wx:if="{{showTranslation}}">
+					<view><textarea maxlength="1200" disabled="{{true}}" value="{{translateResult}}" class="translatetxt"></textarea></view>
 					<view><image class="clear-icon" data-index="{{index}}" bindtap="clearBut" src="/images/clear.png"/></view>
+				</view> -->
+			<!-- </view>
+  	</view> -->
+  <!-- </wux-sticky-item> -->
+
+	<!-- FAQ List Accordion -->
+	<wux-accordion-group accordion >
+		<view class="faq-accordion-box" wx:for="{{faqList}}" wx:key="index">
+      <view class="accordion-item" data-index="{{index}}">
+				<view class="del-box" wx:if="{{isAdmin}}" bindtap="deleteFaq" data-index="{{index}}">
+					<wux-icon class="del-icon" size="18" color="#d81e06" type="ios-remove-circle"/>
+				</view>
+				<view>
+					<wux-accordion bindtap="openAccordion" data-index="{{index}}" class="question-txt" title="{{item.question}}">{{item.answer}}
+						<!-- Language Icon -->
+						<view data-index="{{index}}" bindtap="translateBut"><image class="switch-icon" src="/images/cn-switcher.png"/></view>
+						<!-- Translated Text -->
+						<view class="translation-box" wx:if="{{showTranslation}}">
+							<view><textarea maxlength="1200" disabled="{{true}}" value="{{translateResult}}" class="translatetxt"></textarea></view>
+							<view><image class="clear-icon" data-index="{{index}}" bindtap="clearBut" src="/images/clear.png"/></view>
+						</view>
+					</wux-accordion>
 				</view>
 			</view>
-  	</view>
-  </wux-sticky-item>
-	
+		</view>
+  </wux-accordion-group>
+
 	<!-- Admin FAQ Form -->
 	<view class="add-faq-container">
 		<wux-icon class="add-icon" type="ios-add-circle" size="30" color="#444" bindtap="toggleAddForm" wx:if="{{isAdmin && !showAddForm}}"/>
@@ -43,4 +67,5 @@
 				<button class="btn-faq" plain="true" bindtap="addFaq">Submit</button>
 			</view>
 	</view>
+
 </view>
