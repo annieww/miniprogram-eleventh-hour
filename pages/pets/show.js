@@ -30,7 +30,12 @@ Page({
 		// 		"text": "中文"      
 		// 	}
 		// ],
-		showTranslation: false,
+    showTranslation: false,
+    currentLanguage: wx.getStorageSync('language'),
+    ageCompleted: "",
+    numberAge: "",
+    stringAge: "",
+    cnAge:""
 	},
 
 	// pressView: function(e){
@@ -105,7 +110,8 @@ Page({
   onLoad(options) {
 		this.setData({
       content: wx.getStorageSync('content'),
-      petId: options.id
+      petId: options.id,
+      currentLanguage: wx.getStorageSync('language')
     })
     console.log('from onLoad -> ', options)
   },
@@ -116,13 +122,21 @@ Page({
 
   getData() {
 		let page = this
-		let id = page.options.id
+    let id = page.options.id
     wx.request({
       header: app.globalData.header,
       url: `${app.globalData.baseURL}/pets/${id}`,
       success(res) {
         if (res.statusCode === 200) {
 					const pet = res.data.pet;
+          let splitAge = pet.age.split(" ");
+          let numberAge = splitAge[0];
+          let stringAge = splitAge[1];
+          let ageCompleted = stringAge === undefined ? "false" : "true";
+          let cnAge = stringAge === "years"||"year"||"Years"||"Year" ? '岁' : '个月';
+
+          let currentLanguage = wx.getStorageSync('language');
+
 					const my_booking = res.data.my_booking;
 					const current_user = res.data.current_user;
 					const isBooker = my_booking? my_booking.user_id === current_user.id : false;
@@ -134,7 +148,13 @@ Page({
 					let specialNeedDisplay = pet.special_need ? 'yes' : 'no';
 					let adoptOnly = pet.adoptable? 'true': 'false';
           page.setData({
-						pet: pet,
+            pet: pet,
+            splitAge: splitAge,
+            numberAge: numberAge,
+            stringAge: stringAge,
+            cnAge: cnAge,
+            ageCompleted: ageCompleted,
+            currentLanguage: currentLanguage,
 						neuteredDisplay: neuteredDisplay,
 						vaccinatedDisplay: vaccinatedDisplay,
 						specialNeedDisplay: specialNeedDisplay,
@@ -146,10 +166,11 @@ Page({
 						bookings: res.data.my_booking,
 						favorites: res.data.bookings,
 						descripTxt: res.data.pet.description
-					})
+          })
+          console.log('from getData, currentLanguage', currentLanguage)
+          console.log('from getData, numberAge, stringAge', numberAge, stringAge)
 					console.log('from pet/show, res.data->', res.data)
-					console.log("isbooker", isBooker, "isAdmin", isAdmin)
-					console.log('from pet/show, descripTxt', descripTxt)
+          console.log("isbooker", isBooker, "isAdmin", isAdmin)
         }
       }
 		})

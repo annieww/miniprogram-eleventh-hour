@@ -75,7 +75,30 @@
 						<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 					</view>
 					<view class="age-need-box">
-						<view class="pet-age">{{pet.age}}</view>
+						<view class="pet-age">
+              <text wx:if="{{currentLanguage === 'en'}}">{{pet.age}}</text>
+              <text wx:if="{{currentLanguage === 'zh'}}">
+                <wxs module="fn"> 
+                  module.exports={split:function(str){
+                    return str.split(' ')[0];
+                  }}
+                </wxs>
+                <wxs module="fs">
+                  module.exports={split:function(str){
+                    if(str.split(' ')[1].toLowerCase() == "years"){
+                      return "岁";
+                    } else if(str.split(' ')[1].toLowerCase() == "year"){
+                      return "岁";
+                    } else if(str.split(' ')[1].toLowerCase() == "months"){
+                      return "个月";
+                    } else if(str.split(' ')[1].toLowerCase() == "month"){
+                      return "个月";
+                    }
+                  }}
+                </wxs>{{fn.split(pet.age)}}{{fs.split(pet.age)}}
+              </text>
+            </view>
+
 						<image class="pet-need" src="{{ pet.special_need == true ? '/images/info-fill.png' : '' }}"></image>
 					</view>
       </view>

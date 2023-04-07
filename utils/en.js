@@ -32,7 +32,9 @@ let en = {
 	sent_msg: 'Favorited',
 	change: '中文',
 	window: 'This animal needs special care',
-	understand: 'I understand'
+  understand: 'I understand',
+  months: 'Months',
+  years: 'Years'
 }
 module.exports = {
   content: en

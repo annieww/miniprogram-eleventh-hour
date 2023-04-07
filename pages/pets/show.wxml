@@ -45,7 +45,14 @@
 
         <view class="pet-info">
           <view>
-            <view>{{content.age}}<text class="info-text">{{pet.age}}</text></view>
+            <view>{{content.age}}
+              <text class="info-text"> 
+                <text wx:if="{{currentLanguage === 'en' && ageCompleted === 'true'}}">{{pet.age}}</text>
+                <text wx:if="{{currentLanguage === 'zh' && ageCompleted === 'true'}}">{{numberAge}} {{cnAge}}</text>
+                <text wx:if="{{currentLanguage === 'en' && ageCompleted === 'false'}}">{{numberAge}}</text>
+                <text wx:if="{{currentLanguage === 'zh' && ageCompleted === 'false'}}">{{numberAge}}</text>
+              </text>
+            </view>
             <view class="gender-box">
 							{{content.gender}}<image class="pet-gender-icon" src="{{ pet.gender == 'male' ? '/images/boy.png' : '/images/girl.png'}}"></image>
 						</view>

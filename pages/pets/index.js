@@ -1,6 +1,5 @@
 // pages/pets/index.js
 const app = getApp()
-
 Page({
   data: {
     items: [
@@ -125,14 +124,16 @@ Page({
         ],
         groups: ['001', '002', '003', '004', '005'],
       },
-		], 
+    ], 
+    currentLanguage: wx.getStorageSync('language'),
   },
 
 	
   onLoad(options) {
     this.setData({
-			content: wx.getStorageSync('content')
-		})
+      content: wx.getStorageSync('content'),
+      currentLanguage: wx.getStorageSync('language')
+    })
   },
   
   /**
@@ -161,7 +162,7 @@ Page({
     } else {
       // wait until loginFinished, then fetch API
       wx.event.on('loginFinished', this, this.getData)
-		}
+    }
   },
 
   getData(){
@@ -171,11 +172,15 @@ Page({
       method: "GET",
       header: app.globalData.header,
       success(res) {
+        let pets = res.data;
+        let currentLanguage = wx.getStorageSync('language');
         page.setData({
-          pets: res.data,
-					content: app.globalData.content,
-					bookings: res.data.my_booking,
-				})
+          pets,
+          currentLanguage,
+					content: app.globalData.content
+        })
+        console.log('from getData, res.data / pets', res.data)
+        console.log('from getData, currentLanguage', currentLanguage)
 			}
 		})
 

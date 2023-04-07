@@ -73,5 +73,6 @@ App({
       wx.setStorageSync('language', 'zh')
     }
     this.updateContent()
+    console.log('from app changeLanguage, (switch language from), this.globalData.language', this.globalData.language)
 	}
 })
