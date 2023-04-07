@@ -131,9 +131,16 @@ Page({
 					const pet = res.data.pet;
           let splitAge = pet.age.split(" ");
           let numberAge = splitAge[0];
-          let stringAge = splitAge[1];
+          let stringAge = splitAge[1].toLowerCase();
           let ageCompleted = stringAge === undefined ? "false" : "true";
-          let cnAge = stringAge === "years"||"year"||"Years"||"Year" ? '岁' : '个月';
+          let cnAge; 
+          if(stringAge == "years"){
+            cnAge = "岁"
+          } else if(stringAge == "year"){
+            cnAge = "岁"
+          } else {
+            cnAge = "个月"
+          }
 
           let currentLanguage = wx.getStorageSync('language');
 
