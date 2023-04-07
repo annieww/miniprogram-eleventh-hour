@@ -139,10 +139,12 @@ Page({
             cnAge = "岁"
           } else if(stringAge == "year"){
             cnAge = "岁"
-          } else if(ageCompleted = "false"){
-            cnAge = " "
-          } else {
+          } else if(stringAge == "months"){
             cnAge = "个月"
+          } else if(stringAge == "month"){
+            cnAge = "个月"
+          } else {
+            cnAge = " "
           }
 
           let currentLanguage = wx.getStorageSync('language');
