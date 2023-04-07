@@ -131,13 +131,16 @@ Page({
 					const pet = res.data.pet;
           let splitAge = pet.age.split(" ");
           let numberAge = splitAge[0];
-          let stringAge = splitAge[1].toLowerCase();
-          let ageCompleted = stringAge === undefined ? "false" : "true";
+          let stringAge;
+          if(splitAge[1] !== undefined){stringAge = splitAge[1].toLowerCase()}
+          let ageCompleted = splitAge[1] == undefined ? "false" : "true";
           let cnAge; 
           if(stringAge == "years"){
             cnAge = "岁"
           } else if(stringAge == "year"){
             cnAge = "岁"
+          } else if(ageCompleted = "false"){
+            cnAge = " "
           } else {
             cnAge = "个月"
           }
